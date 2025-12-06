@@ -1,0 +1,110 @@
+{
+  "foods": [
+    {
+      "id": "bread",
+      "name": "面包",
+      "category": "staple",
+      "ingredients": ["wheat"],
+      "origin": {
+        "location": "egypt",
+        "time": { "year": -4000, "display": "公元前4000年左右" }
+      },
+      "spreads": [
+        { "from": "egypt", "to": "mediterranean", "time": { "display": "公元前2000年" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "公元前1000年" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "16世纪" } }
+      ],
+      "currentRegions": ["europe", "north-america", "middle-east", "australia"],
+      "description": "西方文明的主食，古埃及人发明了发酵面包，不同地区发展出法棍、吐司等多种形式。"
+    },
+    {
+      "id": "noodles",
+      "name": "面条",
+      "category": "staple",
+      "ingredients": ["wheat"],
+      "origin": {
+        "location": "china",
+        "time": { "year": -2000, "display": "公元前2000年左右" }
+      },
+      "spreads": [
+        { "from": "china", "to": "japan", "time": { "display": "9世纪" }, "via": "遣唐使" },
+        { "from": "china", "to": "korea", "time": { "display": "唐代" } },
+        { "from": "china", "to": "southeast-asia", "time": { "display": "宋代" } },
+        { "from": "asia", "to": "europe", "time": { "display": "13世纪" }, "via": "丝绸之路/马可波罗" }
+      ],
+      "currentRegions": ["china", "japan", "italy", "korea", "vietnam"],
+      "description": "中国发明的主食，青海喇家遗址发现4000年前的面条，传遍全球发展出拉面、乌冬、意面等。"
+    },
+    {
+      "id": "rice-cooked",
+      "name": "米饭",
+      "alias": ["白饭"],
+      "category": "staple",
+      "ingredients": ["rice"],
+      "origin": {
+        "location": "china",
+        "time": { "year": -7000, "display": "公元前7000年" }
+      },
+      "spreads": [
+        { "from": "china", "to": "southeast-asia", "time": { "display": "公元前2000年" } },
+        { "from": "china", "to": "japan", "time": { "display": "公元前300年" } },
+        { "from": "china", "to": "india", "time": { "display": "公元前1500年" } }
+      ],
+      "currentRegions": ["china", "japan", "korea", "southeast-asia", "india"],
+      "description": "亚洲最基本的主食形式，养活全球一半以上人口。"
+    },
+    {
+      "id": "tortilla",
+      "name": "玉米饼",
+      "alias": ["塔可饼"],
+      "category": "staple",
+      "ingredients": ["corn"],
+      "origin": {
+        "location": "mesoamerica",
+        "time": { "year": -3000, "display": "公元前3000年" }
+      },
+      "spreads": [
+        { "from": "mesoamerica", "to": "north-america", "time": { "display": "16世纪" } },
+        { "from": "mexico", "to": "usa", "time": { "display": "19世纪" } },
+        { "from": "usa", "to": "europe", "time": { "display": "20世纪" } }
+      ],
+      "currentRegions": ["mexico", "usa", "central-america"],
+      "description": "中美洲文明的主食，是墨西哥塔可、卷饼的基础。"
+    },
+    {
+      "id": "dumpling",
+      "name": "饺子",
+      "category": "staple",
+      "ingredients": ["wheat"],
+      "origin": {
+        "location": "china",
+        "time": { "display": "东汉末年（约公元200年）" }
+      },
+      "spreads": [
+        { "from": "china", "to": "korea", "time": { "display": "唐代" } },
+        { "from": "china", "to": "japan", "time": { "display": "明代" } },
+        { "from": "china", "to": "central-asia", "time": { "display": "元代" } },
+        { "from": "central-asia", "to": "russia", "time": { "display": "中世纪" } },
+        { "from": "central-asia", "to": "europe", "time": { "display": "中世纪" } }
+      ],
+      "currentRegions": ["china", "korea", "japan", "russia", "poland"],
+      "description": "张仲景发明的食物，中国春节传统美食，传播形成饺子、锅贴、俄罗斯饺子等变体。"
+    },
+    {
+      "id": "mantou",
+      "name": "馒头",
+      "category": "staple",
+      "ingredients": ["wheat"],
+      "origin": {
+        "location": "china",
+        "time": { "display": "三国时期（约公元220年）" }
+      },
+      "spreads": [
+        { "from": "china", "to": "korea", "time": { "display": "唐代" } },
+        { "from": "china", "to": "japan", "time": { "display": "宋代" } }
+      ],
+      "currentRegions": ["china", "korea", "japan"],
+      "description": "相传诸葛亮发明，中国北方重要主食，日本馒头发展为包馅甜点。"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "locations": [
+    { "id": "fertile-crescent", "name": "新月沃地", "type": "region", "parent": "middle-east" },
+    { "id": "mesopotamia", "name": "美索不达米亚", "type": "region", "parent": "middle-east" },
+    { "id": "anatolia", "name": "安纳托利亚", "type": "region", "parent": "turkey" },
+
+    { "id": "yangtze-river", "name": "长江流域", "type": "region", "parent": "china" },
+    { "id": "yellow-river", "name": "黄河流域", "type": "region", "parent": "china" },
+    { "id": "yunnan", "name": "云南", "type": "region", "parent": "china" },
+    { "id": "sichuan", "name": "四川", "type": "region", "parent": "china" },
+
+    { "id": "ganges", "name": "恒河流域", "type": "region", "parent": "india" },
+    { "id": "indus", "name": "印度河流域", "type": "region", "parent": "india" },
+    { "id": "south-india", "name": "南印度", "type": "region", "parent": "india" },
+
+    { "id": "southeast-asia", "name": "东南亚", "type": "region", "parent": "asia" },
+    { "id": "central-asia", "name": "中亚", "type": "region", "parent": "asia" },
+    { "id": "east-asia", "name": "东亚", "type": "region", "parent": "asia" },
+
+    { "id": "mediterranean", "name": "地中海地区", "type": "region", "parent": "europe" },
+    { "id": "iberian", "name": "伊比利亚半岛", "type": "region", "parent": "europe" },
+
+    { "id": "andes", "name": "安第斯山区", "type": "region", "parent": "south-america" },
+    { "id": "amazon", "name": "亚马逊流域", "type": "region", "parent": "south-america" },
+
+    { "id": "mesoamerica", "name": "中美洲", "type": "region", "parent": "north-america" },
+    { "id": "caribbean", "name": "加勒比地区", "type": "region", "parent": "north-america" },
+
+    { "id": "west-africa", "name": "西非", "type": "region", "parent": "africa" },
+    { "id": "east-africa", "name": "东非", "type": "region", "parent": "africa" },
+    { "id": "horn-of-africa", "name": "非洲之角", "type": "region", "parent": "africa" },
+    { "id": "nile-valley", "name": "尼罗河流域", "type": "region", "parent": "africa" }
+  ]
+}

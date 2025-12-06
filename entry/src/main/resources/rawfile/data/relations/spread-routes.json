@@ -1,0 +1,82 @@
+{
+  "_description": "重要的传播路线汇总",
+
+  "columbian-exchange": {
+    "name": "哥伦布大交换",
+    "period": "1492年后",
+    "description": "新旧大陆之间的生物和文化交流",
+    "from-americas-to-world": [
+      { "crop": "corn", "to": ["europe", "africa", "asia"] },
+      { "crop": "potato", "to": ["europe", "asia"] },
+      { "crop": "tomato", "to": ["europe", "asia"] },
+      { "crop": "chili", "to": ["europe", "india", "china", "korea", "thailand"] },
+      { "crop": "sweet-potato", "to": ["asia", "africa"] },
+      { "crop": "pumpkin", "to": ["europe", "asia"] },
+      { "crop": "peanut", "to": ["africa", "asia"] },
+      { "crop": "cacao", "to": ["europe", "africa"] },
+      { "crop": "vanilla", "to": ["europe", "africa", "asia"] },
+      { "crop": "pineapple", "to": ["europe", "asia", "africa"] }
+    ],
+    "from-world-to-americas": [
+      { "crop": "wheat", "to": ["north-america", "south-america"] },
+      { "crop": "rice", "to": ["south-america", "caribbean"] },
+      { "crop": "sugarcane", "to": ["caribbean", "brazil"] },
+      { "crop": "coffee", "to": ["brazil", "colombia", "caribbean"] },
+      { "crop": "banana", "to": ["caribbean", "south-america"] }
+    ]
+  },
+
+  "silk-road": {
+    "name": "丝绸之路",
+    "period": "公元前2世纪至15世纪",
+    "description": "连接东西方的古代贸易路线",
+    "eastward": [
+      { "crop": "grape", "to": ["china"], "via": "张骞通西域" },
+      { "crop": "garlic", "to": ["china"] },
+      { "crop": "cucumber", "to": ["china"] },
+      { "crop": "walnut", "to": ["china"] },
+      { "crop": "sesame", "to": ["china"] },
+      { "crop": "carrot", "to": ["china"] }
+    ],
+    "westward": [
+      { "crop": "peach", "to": ["central-asia", "mediterranean"] },
+      { "crop": "orange", "to": ["middle-east"] },
+      { "crop": "tea", "to": ["central-asia"] }
+    ]
+  },
+
+  "spice-trade": {
+    "name": "香料贸易",
+    "period": "古代至17世纪",
+    "description": "印度洋和地中海的香料贸易网络",
+    "routes": [
+      { "crop": "pepper-black", "from": "india", "to": ["middle-east", "mediterranean", "europe"] },
+      { "crop": "cinnamon", "from": "sri-lanka", "to": ["egypt", "mediterranean", "europe"] },
+      { "crop": "ginger", "from": "southeast-asia", "to": ["india", "middle-east", "mediterranean"] }
+    ]
+  },
+
+  "portuguese-trade": {
+    "name": "葡萄牙海上贸易",
+    "period": "15-17世纪",
+    "description": "葡萄牙的海上扩张和贸易",
+    "routes": [
+      { "crop": "chili", "from": "americas", "to": ["india", "china", "southeast-asia"] },
+      { "crop": "cashew", "from": "brazil", "to": ["india", "africa"] },
+      { "crop": "banana", "from": "africa", "to": ["caribbean"] },
+      { "crop": "coffee", "from": "ethiopia", "via": "arabia", "to": ["india", "indonesia"] }
+    ]
+  },
+
+  "tea-route": {
+    "name": "茶叶之路",
+    "period": "17世纪至今",
+    "description": "茶叶从中国传播到世界的路线",
+    "routes": [
+      { "crop": "tea", "from": "china", "to": ["japan"], "year": 805, "via": "日本僧人" },
+      { "crop": "tea", "from": "china", "to": ["europe"], "year": 1610, "via": "荷兰东印度公司" },
+      { "crop": "tea", "from": "china", "to": ["uk"], "year": 1662, "via": "葡萄牙公主" },
+      { "crop": "tea", "from": "china", "to": ["india"], "year": 1836, "via": "英国东印度公司引种" }
+    ]
+  }
+}

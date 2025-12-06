@@ -1,0 +1,10 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/CropDetail",
+    "pages/FoodDetail",
+    "pages/LocationDetail",
+    "pages/SearchResult",
+    "pages/CategoryList"
+  ]
+}

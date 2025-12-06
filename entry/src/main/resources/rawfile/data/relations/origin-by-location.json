@@ -1,0 +1,218 @@
+{
+  "_description": "按起源地索引的作物和食物",
+
+  "asia": {
+    "crops": [],
+    "foods": []
+  },
+
+  "china": {
+    "crops": ["rice", "millet", "soybean", "tea", "peach"],
+    "foods": ["noodles", "rice-cooked", "dumpling", "mantou", "fried-rice", "soy-sauce", "tofu", "ice-cream"]
+  },
+
+  "yangtze-river": {
+    "crops": ["rice"],
+    "foods": []
+  },
+
+  "yellow-river": {
+    "crops": ["millet"],
+    "foods": []
+  },
+
+  "yunnan": {
+    "crops": ["tea", "orange"],
+    "foods": []
+  },
+
+  "india": {
+    "crops": ["cucumber", "eggplant", "mango", "lemon", "sesame", "pepper-black"],
+    "foods": ["curry"]
+  },
+
+  "japan": {
+    "crops": [],
+    "foods": ["sushi", "ramen", "sake", "miso"]
+  },
+
+  "korea": {
+    "crops": [],
+    "foods": ["kimchi"]
+  },
+
+  "vietnam": {
+    "crops": [],
+    "foods": ["pho"]
+  },
+
+  "southeast-asia": {
+    "crops": ["coconut", "ginger", "banana"],
+    "foods": []
+  },
+
+  "central-asia": {
+    "crops": ["apple", "onion", "garlic", "walnut"],
+    "foods": []
+  },
+
+  "europe": {
+    "crops": [],
+    "foods": []
+  },
+
+  "italy": {
+    "crops": [],
+    "foods": ["pizza", "pasta"]
+  },
+
+  "france": {
+    "crops": [],
+    "foods": []
+  },
+
+  "austria": {
+    "crops": [],
+    "foods": ["croissant"]
+  },
+
+  "ireland": {
+    "crops": [],
+    "foods": ["whiskey"]
+  },
+
+  "belgium": {
+    "crops": [],
+    "foods": ["french-fries"]
+  },
+
+  "switzerland": {
+    "crops": [],
+    "foods": ["chocolate"]
+  },
+
+  "russia": {
+    "crops": [],
+    "foods": ["vodka"]
+  },
+
+  "mediterranean": {
+    "crops": ["cabbage", "olive", "grape"],
+    "foods": ["olive-oil"]
+  },
+
+  "middle-east": {
+    "crops": [],
+    "foods": ["cheese", "hummus"]
+  },
+
+  "fertile-crescent": {
+    "crops": ["wheat", "barley", "grape", "lentil"],
+    "foods": ["wine"]
+  },
+
+  "mesopotamia": {
+    "crops": [],
+    "foods": ["beer"]
+  },
+
+  "anatolia": {
+    "crops": ["oat", "rye"],
+    "foods": []
+  },
+
+  "turkey": {
+    "crops": ["chickpea"],
+    "foods": []
+  },
+
+  "iran": {
+    "crops": ["carrot", "almond"],
+    "foods": []
+  },
+
+  "sri-lanka": {
+    "crops": ["cinnamon"],
+    "foods": []
+  },
+
+  "africa": {
+    "crops": [],
+    "foods": []
+  },
+
+  "ethiopia": {
+    "crops": ["coffee"],
+    "foods": ["coffee-drink"]
+  },
+
+  "horn-of-africa": {
+    "crops": ["sorghum"],
+    "foods": []
+  },
+
+  "west-africa": {
+    "crops": ["watermelon"],
+    "foods": []
+  },
+
+  "north-america": {
+    "crops": [],
+    "foods": []
+  },
+
+  "usa": {
+    "crops": [],
+    "foods": ["hamburger", "ketchup"]
+  },
+
+  "mesoamerica": {
+    "crops": ["corn", "chili", "pumpkin", "vanilla"],
+    "foods": ["tortilla", "hot-chocolate"]
+  },
+
+  "mexico": {
+    "crops": [],
+    "foods": ["tacos", "tequila"]
+  },
+
+  "south-america": {
+    "crops": ["sweet-potato"],
+    "foods": []
+  },
+
+  "andes": {
+    "crops": ["potato", "tomato"],
+    "foods": []
+  },
+
+  "amazon": {
+    "crops": ["pineapple", "cacao"],
+    "foods": []
+  },
+
+  "brazil": {
+    "crops": ["cashew"],
+    "foods": []
+  },
+
+  "oceania": {
+    "crops": [],
+    "foods": []
+  },
+
+  "papua-new-guinea": {
+    "crops": ["banana", "sugarcane"],
+    "foods": []
+  },
+
+  "spain": {
+    "crops": [],
+    "foods": ["paella"]
+  },
+
+  "egypt": {
+    "crops": [],
+    "foods": ["bread"]
+  }
+}

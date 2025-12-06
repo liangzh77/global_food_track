@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "食物全球史 - 探索作物与食物的起源与传播"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "食物全球史主入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "食物全球史"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "crops": [
+    {
+      "id": "apple",
+      "name": "苹果",
+      "category": "fruit",
+      "origin": {
+        "location": "central-asia",
+        "time": { "year": -4000, "display": "公元前4000年" }
+      },
+      "spreads": [
+        { "from": "central-asia", "to": "middle-east", "time": { "display": "公元前3000年" }, "via": "丝绸之路" },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前2000年" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
+        { "from": "europe", "to": "north-america", "time": { "year": 1620, "display": "1620年" }, "via": "欧洲殖民者" }
+      ],
+      "currentRegions": ["china", "usa", "turkey", "poland", "italy"],
+      "description": "哈萨克斯坦山区的野生苹果是现代苹果的祖先，中国是世界最大苹果生产国。"
+    },
+    {
+      "id": "banana",
+      "name": "香蕉",
+      "alias": ["芭蕉"],
+      "category": "fruit",
+      "origin": {
+        "location": "papua-new-guinea",
+        "time": { "year": -8000, "display": "公元前8000年" }
+      },
+      "spreads": [
+        { "from": "papua-new-guinea", "to": "southeast-asia", "time": { "display": "公元前5000年" } },
+        { "from": "southeast-asia", "to": "india", "time": { "display": "公元前4000年" } },
+        { "from": "india", "to": "africa", "time": { "display": "公元前1000年" } },
+        { "from": "africa", "to": "caribbean", "time": { "year": 1516, "display": "1516年" }, "via": "葡萄牙商人" },
+        { "from": "caribbean", "to": "south-america", "time": { "display": "16世纪" } }
+      ],
+      "currentRegions": ["india", "china", "indonesia", "brazil", "ecuador"],
+      "description": "热带地区最重要的水果，无籽香蕉是人类培育的结果。"
+    },
+    {
+      "id": "grape",
+      "name": "葡萄",
+      "category": "fruit",
+      "origin": {
+        "location": "fertile-crescent",
+        "time": { "year": -6000, "display": "公元前6000年" }
+      },
+      "spreads": [
+        { "from": "fertile-crescent", "to": "egypt", "time": { "display": "公元前3000年" } },
+        { "from": "fertile-crescent", "to": "mediterranean", "time": { "display": "公元前2000年" } },
+        { "from": "mediterranean", "to": "france", "time": { "display": "公元前600年" }, "via": "希腊殖民者" },
+        { "from": "europe", "to": "south-america", "time": { "display": "16世纪" }, "via": "西班牙传教士" },
+        { "from": "europe", "to": "south-africa", "time": { "display": "17世纪" } },
+        { "from": "china", "to": "china", "time": { "display": "汉代" }, "via": "张骞通西域引入" }
+      ],
+      "currentRegions": ["china", "italy", "france", "spain", "usa"],
+      "description": "酿造葡萄酒的原料，与人类文明史紧密相连，葡萄干也是古老的保存方式。"
+    },
+    {
+      "id": "orange",
+      "name": "橙子",
+      "alias": ["柳橙", "甜橙"],
+      "category": "fruit",
+      "origin": {
+        "location": "yunnan",
+        "time": { "year": -2500, "display": "公元前2500年" }
+      },
+      "spreads": [
+        { "from": "china", "to": "india", "time": { "display": "公元前1500年" } },
+        { "from": "india", "to": "middle-east", "time": { "display": "公元1世纪" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "10世纪" }, "via": "阿拉伯商人" },
+        { "from": "spain", "to": "south-america", "time": { "display": "16世纪" }, "via": "西班牙殖民者" },
+        { "from": "spain", "to": "usa", "time": { "display": "16世纪" } }
+      ],
+      "currentRegions": ["brazil", "china", "india", "usa", "spain"],
+      "description": "中国云南原产的柑橘类水果，橙汁是现代最流行的果汁。"
+    },
+    {
+      "id": "lemon",
+      "name": "柠檬",
+      "category": "fruit",
+      "origin": {
+        "location": "india",
+        "time": { "year": -2000, "display": "公元前2000年" }
+      },
+      "spreads": [
+        { "from": "india", "to": "middle-east", "time": { "display": "公元1世纪" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "10世纪" }, "via": "阿拉伯商人" },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "12世纪" }, "via": "十字军东征" },
+        { "from": "europe", "to": "north-america", "time": { "display": "16世纪" } }
+      ],
+      "currentRegions": ["india", "mexico", "china", "argentina", "brazil"],
+      "description": "重要的调味水果，曾用于预防航海坏血病，是西餐和饮品的常用食材。"
+    },
+    {
+      "id": "watermelon",
+      "name": "西瓜",
+      "category": "fruit",
+      "origin": {
+        "location": "west-africa",
+        "time": { "year": -4000, "display": "公元前4000年" }
+      },
+      "spreads": [
+        { "from": "west-africa", "to": "nile-valley", "time": { "display": "公元前3000年" } },
+        { "from": "nile-valley", "to": "mediterranean", "time": { "display": "公元前2000年" } },
+        { "from": "mediterranean", "to": "india", "time": { "display": "公元前800年" } },
+        { "from": "india", "to": "china", "time": { "display": "10世纪" } },
+        { "from": "africa", "to": "north-america", "time": { "display": "16世纪" }, "via": "奴隶贸易" }
+      ],
+      "currentRegions": ["china", "turkey", "iran", "brazil", "usa"],
+      "description": "非洲起源的消暑水果，中国是世界最大生产和消费国，产量占全球70%。"
+    },
+    {
+      "id": "mango",
+      "name": "芒果",
+      "category": "fruit",
+      "origin": {
+        "location": "india",
+        "time": { "year": -4000, "display": "公元前4000年" }
+      },
+      "spreads": [
+        { "from": "india", "to": "southeast-asia", "time": { "display": "公元前500年" } },
+        { "from": "india", "to": "middle-east", "time": { "display": "10世纪" } },
+        { "from": "india", "to": "east-africa", "time": { "display": "10世纪" }, "via": "阿拉伯商人" },
+        { "from": "india", "to": "brazil", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
+        { "from": "brazil", "to": "caribbean", "time": { "display": "18世纪" } }
+      ],
+      "currentRegions": ["india", "china", "thailand", "mexico", "indonesia"],
+      "description": "印度国果，被誉为热带水果之王，南亚文化中具有神圣地位。"
+    },
+    {
+      "id": "peach",
+      "name": "桃子",
+      "alias": ["桃"],
+      "category": "fruit",
+      "origin": {
+        "location": "china",
+        "time": { "year": -6000, "display": "公元前6000年" }
+      },
+      "spreads": [
+        { "from": "china", "to": "central-asia", "time": { "display": "公元前2000年" }, "via": "丝绸之路" },
+        { "from": "central-asia", "to": "iran", "time": { "display": "公元前1000年" } },
+        { "from": "iran", "to": "mediterranean", "time": { "display": "公元前400年" }, "via": "亚历山大东征" },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "16世纪" } }
+      ],
+      "currentRegions": ["china", "spain", "italy", "usa", "greece"],
+      "description": "中国原产水果，在中国文化中象征长寿，英文名Peach源于波斯。"
+    },
+    {
+      "id": "pineapple",
+      "name": "菠萝",
+      "alias": ["凤梨"],
+      "category": "fruit",
+      "origin": {
+        "location": "amazon",
+        "time": { "year": -1200, "display": "公元前1200年" }
+      },
+      "spreads": [
+        { "from": "amazon", "to": "caribbean", "time": { "display": "公元前1000年" } },
+        { "from": "caribbean", "to": "europe", "time": { "year": 1493, "display": "1493年" }, "via": "哥伦布" },
+        { "from": "europe", "to": "africa", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
+        { "from": "europe", "to": "asia", "time": { "display": "16世纪" } },
+        { "from": "asia", "to": "philippines", "time": { "display": "17世纪" } }
+      ],
+      "currentRegions": ["costa-rica", "philippines", "brazil", "thailand", "china"],
+      "description": "亚马逊原产的热带水果，曾是欧洲贵族的奢侈品，现为全球流行水果。"
+    },
+    {
+      "id": "coconut",
+      "name": "椰子",
+      "category": "fruit",
+      "origin": {
+        "location": "southeast-asia",
+        "time": { "display": "起源时间不明，可能公元前数千年" }
+      },
+      "spreads": [
+        { "from": "southeast-asia", "to": "india", "time": { "display": "公元前2000年" } },
+        { "from": "southeast-asia", "to": "oceania", "time": { "display": "公元前1500年" }, "via": "南岛语族迁徙" },
+        { "from": "india", "to": "east-africa", "time": { "display": "公元1世纪" }, "via": "印度洋贸易" },
+        { "from": "africa", "to": "caribbean", "time": { "display": "16世纪" }, "via": "葡萄牙/西班牙船只" }
+      ],
+      "currentRegions": ["indonesia", "philippines", "india", "brazil", "thailand"],
+      "description": "热带海岸的标志性植物，可通过海水漂流传播，椰子油、椰奶用途广泛。"
+    }
+  ]
+}

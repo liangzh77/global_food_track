@@ -1,0 +1,25 @@
+{
+  "_description": "按类别索引",
+
+  "crops": {
+    "grain": ["wheat", "rice", "corn", "millet", "sorghum", "barley", "oat", "rye"],
+    "vegetable": ["potato", "tomato", "onion", "garlic", "cabbage", "carrot", "cucumber", "eggplant", "sweet-potato", "pumpkin"],
+    "fruit": ["apple", "banana", "grape", "orange", "lemon", "watermelon", "mango", "peach", "pineapple", "coconut"],
+    "legume": ["soybean", "peanut", "lentil", "chickpea"],
+    "nut": ["almond", "walnut", "cashew"],
+    "spice": ["chili", "pepper-black", "cinnamon", "ginger", "vanilla"],
+    "beverage": ["tea", "coffee", "cacao"],
+    "oil": ["olive", "sesame"],
+    "sugar": ["sugarcane"]
+  },
+
+  "foods": {
+    "staple": ["bread", "noodles", "rice-cooked", "tortilla", "dumpling", "mantou", "croissant"],
+    "dish": ["pizza", "pasta", "sushi", "curry", "ramen", "hamburger", "fried-rice", "pho", "tacos", "paella", "tofu", "hummus"],
+    "beverage": ["beer", "wine", "sake", "baijiu", "whiskey", "vodka", "tequila", "tea-drink", "coffee-drink", "hot-chocolate"],
+    "dessert": ["chocolate", "ice-cream"],
+    "condiment": ["soy-sauce", "ketchup", "miso", "olive-oil"],
+    "preserved": ["kimchi", "cheese"],
+    "snack": ["french-fries"]
+  }
+}

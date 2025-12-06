@@ -1,0 +1,217 @@
+{
+  "foods": [
+    {
+      "id": "pizza",
+      "name": "披萨",
+      "alias": ["比萨"],
+      "category": "dish",
+      "ingredients": ["wheat", "tomato", "olive"],
+      "origin": {
+        "location": "italy",
+        "time": { "year": 1889, "display": "1889年" }
+      },
+      "spreads": [
+        { "from": "italy", "to": "usa", "time": { "display": "19世纪末" }, "via": "意大利移民" },
+        { "from": "usa", "to": "europe", "time": { "display": "20世纪中期" } },
+        { "from": "usa", "to": "asia", "time": { "display": "20世纪后期" } }
+      ],
+      "currentRegions": ["italy", "usa", "europe", "asia", "south-america"],
+      "description": "那不勒斯的玛格丽塔披萨以意大利王后命名，美国将其发扬光大为全球快餐。"
+    },
+    {
+      "id": "pasta",
+      "name": "意大利面",
+      "alias": ["意面"],
+      "category": "dish",
+      "ingredients": ["wheat", "tomato"],
+      "origin": {
+        "location": "italy",
+        "time": { "display": "13世纪左右" }
+      },
+      "spreads": [
+        { "from": "italy", "to": "europe", "time": { "display": "16世纪" } },
+        { "from": "italy", "to": "usa", "time": { "display": "19世纪" }, "via": "意大利移民" },
+        { "from": "europe", "to": "asia", "time": { "display": "20世纪" } }
+      ],
+      "currentRegions": ["italy", "usa", "europe", "asia"],
+      "description": "意大利的代表性主食，配合番茄酱是16世纪后番茄传入意大利的结果。"
+    },
+    {
+      "id": "sushi",
+      "name": "寿司",
+      "category": "dish",
+      "ingredients": ["rice"],
+      "origin": {
+        "location": "japan",
+        "time": { "display": "江户时代（约1800年）" }
+      },
+      "spreads": [
+        { "from": "japan", "to": "usa", "time": { "display": "1960年代" }, "via": "日本移民" },
+        { "from": "usa", "to": "europe", "time": { "display": "1980年代" } },
+        { "from": "japan", "to": "asia", "time": { "display": "1990年代" } }
+      ],
+      "currentRegions": ["japan", "usa", "europe", "asia", "australia"],
+      "description": "现代握寿司起源于江户（东京），是日本料理的代表，全球高端餐饮符号。"
+    },
+    {
+      "id": "curry",
+      "name": "咖喱",
+      "category": "dish",
+      "ingredients": ["chili", "ginger", "garlic"],
+      "origin": {
+        "location": "india",
+        "time": { "display": "约公元前2000年" }
+      },
+      "spreads": [
+        { "from": "india", "to": "uk", "time": { "display": "18世纪" }, "via": "英国东印度公司" },
+        { "from": "india", "to": "japan", "time": { "year": 1868, "display": "1868年" }, "via": "英国海军" },
+        { "from": "india", "to": "thailand", "time": { "display": "古代" } },
+        { "from": "india", "to": "malaysia", "time": { "display": "古代" } }
+      ],
+      "currentRegions": ["india", "uk", "japan", "thailand", "malaysia"],
+      "description": "印度次大陆的烹饪传统，不同地区发展出印度咖喱、日式咖喱、泰式咖喱等变体。"
+    },
+    {
+      "id": "ramen",
+      "name": "拉面",
+      "alias": ["日式拉面"],
+      "category": "dish",
+      "ingredients": ["wheat"],
+      "origin": {
+        "location": "japan",
+        "time": { "year": 1910, "display": "1910年左右" }
+      },
+      "spreads": [
+        { "from": "japan", "to": "usa", "time": { "display": "1980年代" } },
+        { "from": "japan", "to": "asia", "time": { "display": "1990年代" } },
+        { "from": "japan", "to": "europe", "time": { "display": "2000年代" } }
+      ],
+      "currentRegions": ["japan", "usa", "korea", "china", "europe"],
+      "description": "日本对中国拉面的改良创新，发展出豚骨、味噌、酱油等多种风味。"
+    },
+    {
+      "id": "hamburger",
+      "name": "汉堡包",
+      "alias": ["汉堡"],
+      "category": "dish",
+      "ingredients": ["wheat", "potato", "tomato", "onion"],
+      "origin": {
+        "location": "usa",
+        "time": { "display": "19世纪末" }
+      },
+      "spreads": [
+        { "from": "usa", "to": "europe", "time": { "display": "20世纪中期" } },
+        { "from": "usa", "to": "asia", "time": { "display": "1970年代" }, "via": "麦当劳等快餐连锁" },
+        { "from": "usa", "to": "south-america", "time": { "display": "1980年代" } }
+      ],
+      "currentRegions": ["usa", "europe", "asia", "south-america", "australia"],
+      "description": "美国快餐文化的代表，麦当劳将其推广到全球，成为全球化的象征。"
+    },
+    {
+      "id": "french-fries",
+      "name": "薯条",
+      "alias": ["炸薯条"],
+      "category": "snack",
+      "ingredients": ["potato"],
+      "origin": {
+        "location": "belgium",
+        "time": { "display": "17世纪" }
+      },
+      "spreads": [
+        { "from": "belgium", "to": "france", "time": { "display": "18世纪" } },
+        { "from": "france", "to": "usa", "time": { "display": "18世纪" }, "via": "托马斯·杰斐逊" },
+        { "from": "usa", "to": "europe", "time": { "display": "20世纪" }, "via": "快餐连锁" }
+      ],
+      "currentRegions": ["usa", "europe", "asia", "south-america"],
+      "description": "起源有争议，比利时和法国都声称发明，美国快餐业使其风靡全球。"
+    },
+    {
+      "id": "fried-rice",
+      "name": "炒饭",
+      "category": "dish",
+      "ingredients": ["rice"],
+      "origin": {
+        "location": "china",
+        "time": { "display": "隋代（约600年）" }
+      },
+      "spreads": [
+        { "from": "china", "to": "southeast-asia", "time": { "display": "宋元时期" } },
+        { "from": "china", "to": "usa", "time": { "display": "19世纪" }, "via": "中国移民" },
+        { "from": "china", "to": "europe", "time": { "display": "20世纪" } }
+      ],
+      "currentRegions": ["china", "southeast-asia", "usa", "europe"],
+      "description": "扬州炒饭最为著名，各地发展出泰式炒饭、印尼炒饭等变体。"
+    },
+    {
+      "id": "kimchi",
+      "name": "泡菜",
+      "alias": ["韩式泡菜"],
+      "category": "preserved",
+      "ingredients": ["cabbage", "chili", "garlic"],
+      "origin": {
+        "location": "korea",
+        "time": { "display": "三国时代（约公元前37年）" }
+      },
+      "spreads": [
+        { "from": "korea", "to": "japan", "time": { "display": "20世纪" } },
+        { "from": "korea", "to": "usa", "time": { "display": "1980年代" }, "via": "韩国移民" },
+        { "from": "korea", "to": "china", "time": { "display": "古代" } }
+      ],
+      "currentRegions": ["korea", "japan", "china", "usa"],
+      "description": "韩国的国民食品，辣白菜是16世纪辣椒传入后的产物，之前的泡菜不辣。"
+    },
+    {
+      "id": "pho",
+      "name": "越南粉",
+      "alias": ["河粉"],
+      "category": "dish",
+      "ingredients": ["rice"],
+      "origin": {
+        "location": "vietnam",
+        "time": { "display": "19世纪末" }
+      },
+      "spreads": [
+        { "from": "vietnam", "to": "france", "time": { "display": "1950年代" }, "via": "法国殖民" },
+        { "from": "vietnam", "to": "usa", "time": { "display": "1970年代" }, "via": "越战后移民" },
+        { "from": "vietnam", "to": "australia", "time": { "display": "1980年代" } }
+      ],
+      "currentRegions": ["vietnam", "usa", "france", "australia"],
+      "description": "越南的国民汤粉，融合了中国和法国的烹饪元素。"
+    },
+    {
+      "id": "tacos",
+      "name": "塔可",
+      "category": "dish",
+      "ingredients": ["corn"],
+      "origin": {
+        "location": "mexico",
+        "time": { "display": "古代墨西哥" }
+      },
+      "spreads": [
+        { "from": "mexico", "to": "usa", "time": { "display": "19世纪" } },
+        { "from": "usa", "to": "europe", "time": { "display": "20世纪后期" } },
+        { "from": "usa", "to": "asia", "time": { "display": "21世纪" } }
+      ],
+      "currentRegions": ["mexico", "usa", "europe"],
+      "description": "墨西哥传统食物，玉米饼包裹各种馅料，塔可贝尔将其快餐化推向全球。"
+    },
+    {
+      "id": "paella",
+      "name": "西班牙海鲜饭",
+      "alias": ["帕埃利亚"],
+      "category": "dish",
+      "ingredients": ["rice"],
+      "origin": {
+        "location": "spain",
+        "time": { "display": "19世纪中期" }
+      },
+      "spreads": [
+        { "from": "spain", "to": "south-america", "time": { "display": "19世纪" } },
+        { "from": "spain", "to": "europe", "time": { "display": "20世纪" } },
+        { "from": "spain", "to": "usa", "time": { "display": "20世纪后期" } }
+      ],
+      "currentRegions": ["spain", "south-america", "usa"],
+      "description": "瓦伦西亚地区的经典菜肴，体现了阿拉伯人引入稻米对西班牙烹饪的影响。"
+    }
+  ]
+}

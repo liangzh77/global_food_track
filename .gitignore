@@ -1,0 +1,18 @@
+# Build outputs
+/build/
+/entry/build/
+/.hvigor/
+
+# IDE
+/.idea/
+
+# Dependencies
+/oh_modules/
+/node_modules/
+
+# Local configuration
+local.properties
+
+# OS files
+.DS_Store
+Thumbs.db

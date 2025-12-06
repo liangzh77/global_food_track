@@ -1,0 +1,131 @@
+{
+  "crops": [
+    {
+      "id": "soybean",
+      "name": "大豆",
+      "alias": ["黄豆"],
+      "category": "legume",
+      "origin": {
+        "location": "china",
+        "time": { "year": -7000, "display": "公元前7000年" }
+      },
+      "spreads": [
+        { "from": "china", "to": "korea", "time": { "display": "公元前1000年" } },
+        { "from": "china", "to": "japan", "time": { "display": "公元前500年" } },
+        { "from": "china", "to": "southeast-asia", "time": { "display": "公元1世纪" } },
+        { "from": "asia", "to": "europe", "time": { "display": "18世纪" } },
+        { "from": "asia", "to": "usa", "time": { "year": 1765, "display": "1765年" } },
+        { "from": "usa", "to": "brazil", "time": { "display": "20世纪初" } }
+      ],
+      "currentRegions": ["brazil", "usa", "argentina", "china", "india"],
+      "description": "东亚文明的蛋白质来源，豆腐、酱油、豆浆的原料，现为全球最重要的油料和饲料作物。"
+    },
+    {
+      "id": "peanut",
+      "name": "花生",
+      "alias": ["落花生", "长生果"],
+      "category": "legume",
+      "origin": {
+        "location": "south-america",
+        "time": { "year": -3500, "display": "公元前3500年" }
+      },
+      "spreads": [
+        { "from": "south-america", "to": "caribbean", "time": { "display": "公元前2000年" } },
+        { "from": "south-america", "to": "spain", "time": { "display": "16世纪初" }, "via": "西班牙征服者" },
+        { "from": "spain", "to": "africa", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
+        { "from": "africa", "to": "china", "time": { "display": "16世纪" } },
+        { "from": "africa", "to": "usa", "time": { "display": "18世纪" }, "via": "奴隶贸易" }
+      ],
+      "currentRegions": ["china", "india", "nigeria", "usa", "argentina"],
+      "description": "南美原产的重要油料作物，花生酱是美国文化的标志性食品。"
+    },
+    {
+      "id": "lentil",
+      "name": "扁豆",
+      "alias": ["兵豆"],
+      "category": "legume",
+      "origin": {
+        "location": "fertile-crescent",
+        "time": { "year": -8000, "display": "公元前8000年" }
+      },
+      "spreads": [
+        { "from": "fertile-crescent", "to": "egypt", "time": { "display": "公元前4000年" } },
+        { "from": "fertile-crescent", "to": "india", "time": { "display": "公元前3000年" } },
+        { "from": "fertile-crescent", "to": "mediterranean", "time": { "display": "公元前2000年" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "18世纪" } }
+      ],
+      "currentRegions": ["canada", "india", "turkey", "usa", "australia"],
+      "description": "人类最早驯化的豆类之一，印度菜中的重要食材（dhal）。"
+    },
+    {
+      "id": "chickpea",
+      "name": "鹰嘴豆",
+      "alias": ["鸡豆"],
+      "category": "legume",
+      "origin": {
+        "location": "turkey",
+        "time": { "year": -7500, "display": "公元前7500年" }
+      },
+      "spreads": [
+        { "from": "turkey", "to": "middle-east", "time": { "display": "公元前6000年" } },
+        { "from": "middle-east", "to": "india", "time": { "display": "公元前4000年" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前3000年" } },
+        { "from": "mediterranean", "to": "africa", "time": { "display": "公元前1000年" } }
+      ],
+      "currentRegions": ["india", "australia", "turkey", "pakistan", "myanmar"],
+      "description": "鹰嘴豆泥（hummus）的原料，中东和南亚的重要蛋白质来源。"
+    },
+    {
+      "id": "almond",
+      "name": "杏仁",
+      "alias": ["巴旦木"],
+      "category": "nut",
+      "origin": {
+        "location": "iran",
+        "time": { "year": -3000, "display": "公元前3000年" }
+      },
+      "spreads": [
+        { "from": "iran", "to": "middle-east", "time": { "display": "公元前2500年" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前2000年" } },
+        { "from": "mediterranean", "to": "spain", "time": { "display": "中世纪" }, "via": "阿拉伯人" },
+        { "from": "spain", "to": "usa", "time": { "display": "18世纪" }, "via": "西班牙传教士" }
+      ],
+      "currentRegions": ["usa", "spain", "iran", "morocco", "australia"],
+      "description": "地中海地区的古老坚果，加州是世界最大产地，杏仁奶成为流行替代乳品。"
+    },
+    {
+      "id": "walnut",
+      "name": "核桃",
+      "alias": ["胡桃"],
+      "category": "nut",
+      "origin": {
+        "location": "central-asia",
+        "time": { "year": -7000, "display": "公元前7000年" }
+      },
+      "spreads": [
+        { "from": "central-asia", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" },
+        { "from": "central-asia", "to": "mediterranean", "time": { "display": "公元前2000年" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "17世纪" } }
+      ],
+      "currentRegions": ["china", "usa", "iran", "turkey", "mexico"],
+      "description": "中亚原产的健脑坚果，中国是世界最大生产国。"
+    },
+    {
+      "id": "cashew",
+      "name": "腰果",
+      "category": "nut",
+      "origin": {
+        "location": "brazil",
+        "time": { "display": "原产时间不明" }
+      },
+      "spreads": [
+        { "from": "brazil", "to": "india", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
+        { "from": "india", "to": "southeast-asia", "time": { "display": "17世纪" } },
+        { "from": "india", "to": "east-africa", "time": { "display": "17世纪" } }
+      ],
+      "currentRegions": ["vietnam", "india", "ivory-coast", "brazil", "philippines"],
+      "description": "巴西原产坚果，越南是世界最大加工出口国，常用于亚洲烹饪。"
+    }
+  ]
+}

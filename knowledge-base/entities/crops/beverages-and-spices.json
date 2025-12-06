@@ -1,0 +1,190 @@
+{
+  "crops": [
+    {
+      "id": "tea",
+      "name": "茶",
+      "alias": ["茶叶"],
+      "category": "beverage",
+      "origin": {
+        "location": "yunnan",
+        "time": { "year": -2700, "display": "公元前2700年左右" }
+      },
+      "spreads": [
+        { "from": "china", "to": "japan", "time": { "year": 805, "display": "805年" }, "via": "日本僧人从中国带回" },
+        { "from": "china", "to": "korea", "time": { "display": "7世纪" } },
+        { "from": "china", "to": "central-asia", "time": { "display": "唐代" }, "via": "茶马古道" },
+        { "from": "china", "to": "europe", "time": { "year": 1610, "display": "1610年" }, "via": "荷兰商人" },
+        { "from": "china", "to": "india", "time": { "year": 1836, "display": "1836年" }, "via": "英国东印度公司引种" },
+        { "from": "china", "to": "uk", "time": { "year": 1662, "display": "1662年" }, "via": "葡萄牙公主凯瑟琳" }
+      ],
+      "currentRegions": ["china", "india", "kenya", "sri-lanka", "turkey"],
+      "description": "中国对世界的伟大贡献，全球饮用人数最多的饮料之一，深刻影响了英国和日本文化。"
+    },
+    {
+      "id": "coffee",
+      "name": "咖啡",
+      "category": "beverage",
+      "origin": {
+        "location": "ethiopia",
+        "time": { "year": 850, "display": "9世纪左右" }
+      },
+      "spreads": [
+        { "from": "ethiopia", "to": "saudi-arabia", "time": { "display": "15世纪" }, "via": "阿拉伯商人" },
+        { "from": "saudi-arabia", "to": "turkey", "time": { "display": "16世纪" } },
+        { "from": "turkey", "to": "europe", "time": { "year": 1615, "display": "1615年" }, "via": "威尼斯商人" },
+        { "from": "europe", "to": "indonesia", "time": { "display": "17世纪" }, "via": "荷兰东印度公司" },
+        { "from": "europe", "to": "caribbean", "time": { "display": "18世纪" }, "via": "法国殖民者" },
+        { "from": "caribbean", "to": "brazil", "time": { "year": 1727, "display": "1727年" } }
+      ],
+      "currentRegions": ["brazil", "vietnam", "colombia", "indonesia", "ethiopia"],
+      "description": "埃塞俄比亚发现的神奇饮料，咖啡馆文化深刻影响欧洲启蒙运动和现代都市生活。"
+    },
+    {
+      "id": "cacao",
+      "name": "可可",
+      "category": "beverage",
+      "origin": {
+        "location": "amazon",
+        "time": { "year": -1900, "display": "公元前1900年" }
+      },
+      "spreads": [
+        { "from": "amazon", "to": "mesoamerica", "time": { "display": "公元前1500年" } },
+        { "from": "mesoamerica", "to": "spain", "time": { "year": 1528, "display": "1528年" }, "via": "西班牙征服者" },
+        { "from": "spain", "to": "europe", "time": { "display": "17世纪" } },
+        { "from": "europe", "to": "west-africa", "time": { "display": "19世纪" }, "via": "殖民种植园" },
+        { "from": "europe", "to": "southeast-asia", "time": { "display": "19世纪" } }
+      ],
+      "currentRegions": ["ivory-coast", "ghana", "indonesia", "nigeria", "brazil"],
+      "description": "阿兹特克人的神圣饮料，巧克力的原料，西非现为世界最大产地。"
+    },
+    {
+      "id": "sugarcane",
+      "name": "甘蔗",
+      "category": "sugar",
+      "origin": {
+        "location": "papua-new-guinea",
+        "time": { "year": -8000, "display": "公元前8000年" }
+      },
+      "spreads": [
+        { "from": "papua-new-guinea", "to": "southeast-asia", "time": { "display": "公元前6000年" } },
+        { "from": "southeast-asia", "to": "india", "time": { "display": "公元前4000年" } },
+        { "from": "india", "to": "middle-east", "time": { "display": "公元前500年" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "8世纪" }, "via": "阿拉伯扩张" },
+        { "from": "mediterranean", "to": "caribbean", "time": { "year": 1493, "display": "1493年" }, "via": "哥伦布第二次航行" },
+        { "from": "caribbean", "to": "brazil", "time": { "display": "16世纪" } }
+      ],
+      "currentRegions": ["brazil", "india", "china", "thailand", "pakistan"],
+      "description": "糖的主要来源，加勒比甘蔗种植园与奴隶贸易历史紧密相连。"
+    },
+    {
+      "id": "pepper-black",
+      "name": "黑胡椒",
+      "alias": ["胡椒"],
+      "category": "spice",
+      "origin": {
+        "location": "south-india",
+        "time": { "year": -2000, "display": "公元前2000年" }
+      },
+      "spreads": [
+        { "from": "india", "to": "middle-east", "time": { "display": "公元前1000年" }, "via": "香料贸易" },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前500年" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
+        { "from": "india", "to": "southeast-asia", "time": { "display": "中世纪" } }
+      ],
+      "currentRegions": ["vietnam", "india", "brazil", "indonesia", "china"],
+      "description": "曾与黄金等价的香料之王，推动了大航海时代的探索，现为世界最常用香料。"
+    },
+    {
+      "id": "cinnamon",
+      "name": "肉桂",
+      "alias": ["桂皮"],
+      "category": "spice",
+      "origin": {
+        "location": "sri-lanka",
+        "time": { "display": "原产时间不明" }
+      },
+      "spreads": [
+        { "from": "sri-lanka", "to": "egypt", "time": { "display": "公元前2000年" } },
+        { "from": "sri-lanka", "to": "middle-east", "time": { "display": "公元前1500年" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前1000年" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪" } }
+      ],
+      "currentRegions": ["indonesia", "china", "vietnam", "sri-lanka", "madagascar"],
+      "description": "古老的珍贵香料，用于烘焙和咖喱，中国肉桂与锡兰肉桂是两个主要品种。"
+    },
+    {
+      "id": "ginger",
+      "name": "生姜",
+      "alias": ["姜"],
+      "category": "spice",
+      "origin": {
+        "location": "southeast-asia",
+        "time": { "year": -3000, "display": "公元前3000年" }
+      },
+      "spreads": [
+        { "from": "southeast-asia", "to": "india", "time": { "display": "公元前2000年" } },
+        { "from": "india", "to": "middle-east", "time": { "display": "公元前500年" } },
+        { "from": "india", "to": "china", "time": { "display": "公元前500年" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元1世纪" } },
+        { "from": "spain", "to": "caribbean", "time": { "display": "16世纪" } }
+      ],
+      "currentRegions": ["india", "china", "nigeria", "indonesia", "nepal"],
+      "description": "亚洲烹饪的灵魂调料，也是重要的药用植物，姜茶、姜饼广受欢迎。"
+    },
+    {
+      "id": "vanilla",
+      "name": "香草",
+      "alias": ["香荚兰"],
+      "category": "spice",
+      "origin": {
+        "location": "mesoamerica",
+        "time": { "display": "原产时间不明" }
+      },
+      "spreads": [
+        { "from": "mexico", "to": "spain", "time": { "year": 1520, "display": "1520年" }, "via": "西班牙征服者" },
+        { "from": "spain", "to": "europe", "time": { "display": "16世纪" } },
+        { "from": "europe", "to": "madagascar", "time": { "display": "19世纪" }, "via": "法国殖民者" },
+        { "from": "europe", "to": "indonesia", "time": { "display": "19世纪" } }
+      ],
+      "currentRegions": ["madagascar", "indonesia", "mexico", "tahiti", "uganda"],
+      "description": "仅次于藏红花的第二昂贵香料，冰淇淋和甜点的经典风味。"
+    },
+    {
+      "id": "olive",
+      "name": "橄榄",
+      "category": "oil",
+      "origin": {
+        "location": "mediterranean",
+        "time": { "year": -6000, "display": "公元前6000年" }
+      },
+      "spreads": [
+        { "from": "mediterranean", "to": "egypt", "time": { "display": "公元前3000年" } },
+        { "from": "mediterranean", "to": "greece", "time": { "display": "公元前3000年" } },
+        { "from": "mediterranean", "to": "italy", "time": { "display": "公元前1000年" } },
+        { "from": "mediterranean", "to": "spain", "time": { "display": "公元前1000年" }, "via": "腓尼基人" },
+        { "from": "spain", "to": "south-america", "time": { "display": "16世纪" } },
+        { "from": "spain", "to": "usa", "time": { "display": "18世纪" }, "via": "西班牙传教士" }
+      ],
+      "currentRegions": ["spain", "italy", "greece", "turkey", "morocco"],
+      "description": "地中海文明的象征，橄榄油是地中海饮食的基石，与和平、智慧的象征意义。"
+    },
+    {
+      "id": "sesame",
+      "name": "芝麻",
+      "alias": ["胡麻"],
+      "category": "oil",
+      "origin": {
+        "location": "india",
+        "time": { "year": -3000, "display": "公元前3000年" }
+      },
+      "spreads": [
+        { "from": "india", "to": "mesopotamia", "time": { "display": "公元前2000年" } },
+        { "from": "mesopotamia", "to": "egypt", "time": { "display": "公元前1500年" } },
+        { "from": "middle-east", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" },
+        { "from": "africa", "to": "north-america", "time": { "display": "17世纪" }, "via": "奴隶贸易" }
+      ],
+      "currentRegions": ["sudan", "india", "myanmar", "tanzania", "china"],
+      "description": "最古老的油料作物之一，芝麻油和芝麻酱是中东和亚洲烹饪的重要调味品。"
+    }
+  ]
+}

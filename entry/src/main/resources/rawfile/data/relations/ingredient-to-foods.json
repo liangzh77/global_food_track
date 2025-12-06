@@ -1,0 +1,32 @@
+{
+  "_description": "作物到使用它的食物的索引",
+
+  "wheat": ["bread", "noodles", "dumpling", "mantou", "pizza", "pasta", "hamburger", "croissant", "soy-sauce"],
+  "rice": ["rice-cooked", "sushi", "fried-rice", "sake", "paella", "miso", "pho"],
+  "corn": ["tortilla", "tacos"],
+  "barley": ["beer", "whiskey"],
+  "rye": ["whiskey", "vodka"],
+  "sorghum": ["baijiu"],
+
+  "potato": ["french-fries", "vodka"],
+  "tomato": ["pizza", "pasta", "ketchup"],
+  "chili": ["curry", "kimchi"],
+  "onion": ["hamburger"],
+  "garlic": ["curry", "kimchi", "hummus"],
+  "cabbage": ["kimchi"],
+
+  "grape": ["wine"],
+  "sugarcane": ["chocolate"],
+
+  "soybean": ["soy-sauce", "tofu", "miso"],
+  "chickpea": ["hummus"],
+
+  "tea": ["tea-drink"],
+  "coffee": ["coffee-drink"],
+  "cacao": ["chocolate", "hot-chocolate"],
+
+  "olive": ["olive-oil", "hummus"],
+  "sesame": ["hummus"],
+  "lemon": ["hummus"],
+  "ginger": ["curry"]
+}
