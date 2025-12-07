@@ -16,3 +16,15 @@ local.properties
 # OS files
 .DS_Store
 Thumbs.db
+
+# Preview cache
+/entry/.preview/
+
+# Signing keys and certificates (sensitive)
+*.p12
+*.csr
+*.cer
+*.p7b
+
+# Material assets (optional)
+/material/
