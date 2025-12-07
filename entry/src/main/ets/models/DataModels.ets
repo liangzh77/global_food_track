@@ -29,7 +29,8 @@ export type CropCategory =
   | 'beverage'   // 饮料作物
   | 'oil'        // 油料作物
   | 'sugar'      // 糖料作物
-  | 'nut';       // 坚果
+  | 'nut'        // 坚果
+  | 'other';     // 其他作物
 
 // 食物类别
 export type FoodCategory =
@@ -114,6 +115,7 @@ export function getCropCategoryName(category: CropCategory): string {
     case 'oil': return '油料作物';
     case 'sugar': return '糖料作物';
     case 'nut': return '坚果';
+    case 'other': return '其他作物';
     default: return '';
   }
 }

@@ -101,6 +101,7 @@ export function getCropCategoryColor(category: string): string {
     case 'oil': return '#FFCA28';
     case 'sugar': return '#EC407A';
     case 'nut': return '#8D6E63';
+    case 'other': return '#78909C';
     default: return '#2E7D32';
   }
 }
