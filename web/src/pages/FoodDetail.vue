@@ -42,15 +42,26 @@ function goToCrop(cropId: string) {
 function goToLocation(locationId: string) {
   router.push({ name: 'LocationDetail', params: { id: locationId } })
 }
+
+function goHome() {
+  router.push({ name: 'Index' })
+}
+
+function hasLocationDetail(locationId: string): boolean {
+  return dataService.getLocationById(locationId) !== undefined
+}
 </script>
 
 <template>
   <div class="container">
     <!-- 头部 -->
     <div class="header">
-      <div class="header-back">
-        <button class="back-btn" @click="goBack">←</button>
-        <div class="header-title">{{ food?.name || '食物详情' }}</div>
+      <div class="header-nav">
+        <div class="header-back">
+          <button class="back-btn" @click="goBack">←</button>
+          <div class="header-title">{{ food?.name || '食物详情' }}</div>
+        </div>
+        <button class="home-btn" @click="goHome">🏠</button>
       </div>
     </div>
 
@@ -76,17 +87,15 @@ function goToLocation(locationId: string) {
       <!-- 起源 -->
       <div class="detail-section">
         <div class="detail-section-title">起源</div>
-        <div class="detail-text">
-          <p>
-            <span
-              class="tag"
-              style="cursor: pointer;"
-              @click="goToLocation(food.origin.location)"
-            >
-              📍 {{ getLocationName(food.origin.location) }}
-            </span>
-            <span class="tag">🕐 {{ food.origin.time.display }}</span>
-          </p>
+        <div>
+          <span
+            class="tag-lg"
+            style="cursor: pointer;"
+            @click="goToLocation(food.origin.location)"
+          >
+            📍 {{ getLocationName(food.origin.location) }}
+          </span>
+          <span class="tag-lg">🕐 {{ food.origin.time.display }}</span>
         </div>
       </div>
 
@@ -111,9 +120,15 @@ function goToLocation(locationId: string) {
       <div class="detail-section" v-if="food.spreads.length > 0">
         <div class="detail-section-title">传播路线</div>
         <div class="spread-item" v-for="(spread, index) in food.spreads" :key="index">
-          <span>{{ getLocationName(spread.from) }}</span>
+          <span
+            :class="{ 'spread-location': hasLocationDetail(spread.from) }"
+            @click="hasLocationDetail(spread.from) && goToLocation(spread.from)"
+          >{{ getLocationName(spread.from) }}</span>
           <span class="spread-arrow">→</span>
-          <span>{{ getLocationName(spread.to) }}</span>
+          <span
+            :class="{ 'spread-location': hasLocationDetail(spread.to) }"
+            @click="hasLocationDetail(spread.to) && goToLocation(spread.to)"
+          >{{ getLocationName(spread.to) }}</span>
           <span class="spread-time">{{ spread.time.display }}</span>
           <span v-if="spread.via" class="spread-via">({{ spread.via }})</span>
         </div>
@@ -126,7 +141,7 @@ function goToLocation(locationId: string) {
           <span
             v-for="region in food.currentRegions"
             :key="region"
-            class="tag"
+            class="tag-lg"
             style="cursor: pointer;"
             @click="goToLocation(region)"
           >

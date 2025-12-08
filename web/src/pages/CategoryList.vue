@@ -39,6 +39,10 @@ function goBack() {
   router.back()
 }
 
+function goHome() {
+  router.push({ name: 'Index' })
+}
+
 function goToDetail(id: string) {
   if (type.value === 'crop') {
     router.push({ name: 'CropDetail', params: { id } })
@@ -57,9 +61,12 @@ function getItemSubtitle(item: any): string {
   <div class="container">
     <!-- 头部 -->
     <div class="header">
-      <div class="header-back">
-        <button class="back-btn" @click="goBack">←</button>
-        <div class="header-title">{{ categoryName }}</div>
+      <div class="header-nav">
+        <div class="header-back">
+          <button class="back-btn" @click="goBack">←</button>
+          <div class="header-title">{{ categoryName }}</div>
+        </div>
+        <button class="home-btn" @click="goHome">🏠</button>
       </div>
     </div>
 

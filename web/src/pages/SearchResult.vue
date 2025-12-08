@@ -26,6 +26,10 @@ function goBack() {
   router.back()
 }
 
+function goHome() {
+  router.push({ name: 'Index' })
+}
+
 function handleSearch() {
   if (searchText.value.trim()) {
     router.replace({ name: 'SearchResult', query: { keyword: searchText.value.trim() } })
@@ -66,9 +70,12 @@ function getTypeName(type: string): string {
   <div class="container">
     <!-- 头部 -->
     <div class="header">
-      <div class="header-back">
-        <button class="back-btn" @click="goBack">←</button>
-        <div class="header-title">搜索结果</div>
+      <div class="header-nav">
+        <div class="header-back">
+          <button class="back-btn" @click="goBack">←</button>
+          <div class="header-title">搜索结果</div>
+        </div>
+        <button class="home-btn" @click="goHome">🏠</button>
       </div>
     </div>
 

@@ -48,6 +48,10 @@ function goBack() {
   router.back()
 }
 
+function goHome() {
+  router.push({ name: 'Index' })
+}
+
 function goToLocation(id: string) {
   router.push({ name: 'LocationDetail', params: { id } })
 }
@@ -81,9 +85,12 @@ function getSubLocationTypeName(): string {
   <div class="container">
     <!-- 头部 -->
     <div class="header">
-      <div class="header-back">
-        <button class="back-btn" @click="goBack">←</button>
-        <div class="header-title">{{ location?.name || '地区详情' }}</div>
+      <div class="header-nav">
+        <div class="header-back">
+          <button class="back-btn" @click="goBack">←</button>
+          <div class="header-title">{{ location?.name || '地区详情' }}</div>
+        </div>
+        <button class="home-btn" @click="goHome">🏠</button>
       </div>
     </div>
 
