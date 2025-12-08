@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
-import { locationIcons, foodIcons, getLocationIcon, getCropIcon } from '@/types'
+import { foodIcons, getLocationIcon, getCropIcon, getCountryCode, isCountry } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
@@ -13,6 +13,15 @@ const location = computed(() => dataService.getLocationById(locationId.value))
 const icon = computed(() => {
   if (!location.value) return '📍'
   return getLocationIcon(location.value.id, location.value.type)
+})
+
+const countryCode = computed(() => {
+  if (!location.value) return null
+  return getCountryCode(location.value.id)
+})
+
+const isCountryType = computed(() => {
+  return location.value ? isCountry(location.value.type) : false
 })
 
 const subLocations = computed(() => {
@@ -82,7 +91,8 @@ function getSubLocationTypeName(): string {
       <!-- 基本信息 -->
       <div class="detail-section">
         <div style="text-align: center; margin-bottom: 16px;">
-          <span style="font-size: 64px;">{{ icon }}</span>
+          <span v-if="isCountryType && countryCode" :class="['fi', 'fi-' + countryCode]" style="font-size: 64px;"></span>
+          <span v-else style="font-size: 64px;">{{ icon }}</span>
         </div>
         <div class="detail-section-title">基本信息</div>
         <div class="detail-text">
@@ -109,7 +119,10 @@ function getSubLocationTypeName(): string {
           class="list-card"
           @click="goToLocation(sub.id)"
         >
-          <div class="list-card-icon">{{ getLocationIcon(sub.id, sub.type) }}</div>
+          <div class="list-card-icon">
+            <span v-if="isCountry(sub.type) && getCountryCode(sub.id)" :class="['fi', 'fi-' + getCountryCode(sub.id)]"></span>
+            <span v-else>{{ getLocationIcon(sub.id, sub.type) }}</span>
+          </div>
           <div class="list-card-content">
             <div class="list-card-title">{{ sub.name }}</div>
           </div>

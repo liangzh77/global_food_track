@@ -127,17 +127,24 @@ export const foodIcons: Record<string, string> = foodsIconsData.categoryIcons
 // 地点图标
 export const locationIcons: Record<string, string> = locationsIconsData.typeIcons
 export const continentIcons: Record<string, string> = locationsIconsData.continentIcons
-export const countryFlags: Record<string, string> = locationsIconsData.countryFlags
+export const countryCodes: Record<string, string> = locationsIconsData.countryCodes
 
-// 获取地点图标的辅助函数
+// 获取国家代码（用于 CSS 国旗图标）
+export function getCountryCode(locationId: string): string | null {
+  return countryCodes[locationId] || null
+}
+
+// 获取地点图标的辅助函数（用于非国家类型）
 export function getLocationIcon(locationId: string, locationType: string): string {
-  if (locationType === 'country') {
-    return countryFlags[locationId] || '🏳️'
-  }
   if (locationType === 'continent') {
     return continentIcons[locationId] || '🌍'
   }
   return '📍'
+}
+
+// 判断是否是国家
+export function isCountry(locationType: string): boolean {
+  return locationType === 'country'
 }
 
 // 获取作物图标的辅助函数
