@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
-import { cropIcons, cropCategoryNames } from '@/types'
+import { cropCategoryNames, getCropIcon } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
@@ -17,7 +17,7 @@ const categoryName = computed(() => {
 
 const icon = computed(() => {
   if (!crop.value) return '🌱'
-  return cropIcons[crop.value.category] || '🌱'
+  return getCropIcon(crop.value.id, crop.value.category)
 })
 
 const relatedFoods = computed(() => {

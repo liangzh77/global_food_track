@@ -1,0 +1,12 @@
+{
+  "_description": "食物图标映射",
+  "categoryIcons": {
+    "staple": "🍚",
+    "dish": "🍲",
+    "beverage": "🥤",
+    "dessert": "🍰",
+    "snack": "🥟",
+    "condiment": "🧂",
+    "preserved": "🥫"
+  }
+}

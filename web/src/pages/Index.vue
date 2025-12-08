@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
-import { cropIcons, foodIcons, locationIcons } from '@/types'
+import { cropCategoryIcons, foodIcons, getLocationIcon } from '@/types'
 
 const router = useRouter()
 const searchText = ref('')
@@ -115,7 +115,7 @@ function getContinentSummary(continentId: string): string {
             class="category-card"
             @click="goToCategory(item.key, 'crop')"
           >
-            <div class="category-icon">{{ cropIcons[item.key] }}</div>
+            <div class="category-icon">{{ cropCategoryIcons[item.key] }}</div>
             <div class="category-name">{{ item.name }}</div>
           </div>
         </div>
@@ -146,7 +146,7 @@ function getContinentSummary(continentId: string): string {
           class="list-card"
           @click="goToLocation(continent.id)"
         >
-          <div class="list-card-icon">{{ locationIcons.continent }}</div>
+          <div class="list-card-icon">{{ getLocationIcon(continent.id, 'continent') }}</div>
           <div class="list-card-content">
             <div class="list-card-title">{{ continent.name }}</div>
             <div class="list-card-subtitle">{{ getContinentSummary(continent.id) }}</div>

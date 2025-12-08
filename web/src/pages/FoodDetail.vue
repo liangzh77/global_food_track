@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
-import { foodIcons, foodCategoryNames, cropIcons } from '@/types'
+import { foodIcons, foodCategoryNames, getCropIcon } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
@@ -99,7 +99,7 @@ function goToLocation(locationId: string) {
           class="list-card"
           @click="goToCrop(crop!.id)"
         >
-          <div class="list-card-icon">{{ cropIcons[crop!.category] || '🌱' }}</div>
+          <div class="list-card-icon">{{ getCropIcon(crop!.id, crop!.category) }}</div>
           <div class="list-card-content">
             <div class="list-card-title">{{ crop!.name }}</div>
           </div>

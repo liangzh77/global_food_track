@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
-import { locationIcons, cropIcons, foodIcons } from '@/types'
+import { locationIcons, foodIcons, getLocationIcon, getCropIcon } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
@@ -12,7 +12,7 @@ const location = computed(() => dataService.getLocationById(locationId.value))
 
 const icon = computed(() => {
   if (!location.value) return '📍'
-  return locationIcons[location.value.type] || '📍'
+  return getLocationIcon(location.value.id, location.value.type)
 })
 
 const subLocations = computed(() => {
@@ -109,7 +109,7 @@ function getSubLocationTypeName(): string {
           class="list-card"
           @click="goToLocation(sub.id)"
         >
-          <div class="list-card-icon">{{ locationIcons[sub.type] }}</div>
+          <div class="list-card-icon">{{ getLocationIcon(sub.id, sub.type) }}</div>
           <div class="list-card-content">
             <div class="list-card-title">{{ sub.name }}</div>
           </div>
@@ -126,7 +126,7 @@ function getSubLocationTypeName(): string {
           class="list-card"
           @click="goToCrop(crop.id)"
         >
-          <div class="list-card-icon">{{ cropIcons[crop.category] || '🌱' }}</div>
+          <div class="list-card-icon">{{ getCropIcon(crop.id, crop.category) }}</div>
           <div class="list-card-content">
             <div class="list-card-title">{{ crop.name }}</div>
             <div class="list-card-subtitle">{{ crop.origin.time.display }}</div>

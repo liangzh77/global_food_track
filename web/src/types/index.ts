@@ -112,32 +112,43 @@ export const foodCategoryNames: Record<FoodCategory, string> = {
   preserved: '腌制食品'
 }
 
-// 图标映射
-export const cropIcons: Record<string, string> = {
-  grain: '🌾',
-  vegetable: '🥬',
-  fruit: '🍎',
-  legume: '🫘',
-  spice: '🌶️',
-  beverage: '🍵',
-  oil: '🫒',
-  sugar: '🍬',
-  nut: '🥜',
-  other: '🌱'
+// 从共享数据文件导入图标
+import cropsIconsData from '@data/icons/crops.json'
+import foodsIconsData from '@data/icons/foods.json'
+import locationsIconsData from '@data/icons/locations.json'
+
+// 作物图标
+export const cropIcons: Record<string, string> = cropsIconsData.icons
+export const cropCategoryIcons: Record<string, string> = cropsIconsData.categoryIcons
+
+// 食物图标
+export const foodIcons: Record<string, string> = foodsIconsData.categoryIcons
+
+// 地点图标
+export const locationIcons: Record<string, string> = locationsIconsData.typeIcons
+export const continentIcons: Record<string, string> = locationsIconsData.continentIcons
+export const countryFlags: Record<string, string> = locationsIconsData.countryFlags
+
+// 获取地点图标的辅助函数
+export function getLocationIcon(locationId: string, locationType: string): string {
+  if (locationType === 'country') {
+    return countryFlags[locationId] || '🏳️'
+  }
+  if (locationType === 'continent') {
+    return continentIcons[locationId] || '🌍'
+  }
+  return '📍'
 }
 
-export const foodIcons: Record<string, string> = {
-  staple: '🍚',
-  dish: '🍲',
-  beverage: '🥤',
-  dessert: '🍰',
-  snack: '🥟',
-  condiment: '🧂',
-  preserved: '🥫'
-}
-
-export const locationIcons: Record<string, string> = {
-  continent: '🌍',
-  country: '🏳️',
-  region: '📍'
+// 获取作物图标的辅助函数
+export function getCropIcon(cropId: string, category?: string): string {
+  // 优先使用具体作物图标
+  if (cropIcons[cropId]) {
+    return cropIcons[cropId]
+  }
+  // 否则使用类别图标
+  if (category && cropCategoryIcons[category]) {
+    return cropCategoryIcons[category]
+  }
+  return '🌱'
 }

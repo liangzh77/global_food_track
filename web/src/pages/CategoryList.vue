@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
-import { cropIcons, foodIcons, cropCategoryNames, foodCategoryNames } from '@/types'
+import { foodIcons, cropCategoryNames, foodCategoryNames, getCropIcon } from '@/types'
 import type { CropCategory, FoodCategory } from '@/types'
 
 const route = useRoute()
@@ -27,13 +27,13 @@ const items = computed(() => {
   }
 })
 
-const icon = computed(() => {
+function getItemIcon(item: any): string {
   if (type.value === 'crop') {
-    return cropIcons[category.value] || '🌱'
+    return getCropIcon(item.id, item.category)
   } else {
-    return foodIcons[category.value] || '🍽️'
+    return foodIcons[item.category] || '🍽️'
   }
-})
+}
 
 function goBack() {
   router.back()
@@ -76,7 +76,7 @@ function getItemSubtitle(item: any): string {
         class="list-card"
         @click="goToDetail(item.id)"
       >
-        <div class="list-card-icon">{{ icon }}</div>
+        <div class="list-card-icon">{{ getItemIcon(item) }}</div>
         <div class="list-card-content">
           <div class="list-card-title">{{ item.name }}</div>
           <div class="list-card-subtitle">{{ getItemSubtitle(item) }}</div>
