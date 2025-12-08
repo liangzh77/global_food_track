@@ -187,10 +187,56 @@ class DataService {
     return results
   }
 
+  // 备用地点名称映射（用于数据库中没有的地点）
+  private locationNameFallback: Record<string, string> = {
+    'ireland': '爱尔兰',
+    'mediterranean': '地中海地区',
+    'mediterranean-region': '地中海地区',
+    'andes': '安第斯山区',
+    'andes-region': '安第斯山区',
+    'central-asia': '中亚',
+    'southeast-asia': '东南亚',
+    'east-africa': '东非',
+    'west-africa': '西非',
+    'north-africa': '北非',
+    'central-america': '中美洲',
+    'caribbean': '加勒比地区',
+    'arabia': '阿拉伯半岛',
+    'mesopotamia': '美索不达米亚',
+    'fertile-crescent': '新月沃土',
+    'levant': '黎凡特',
+    'anatolia': '安纳托利亚',
+    'persia': '波斯',
+    'bengal': '孟加拉',
+    'malabar': '马拉巴尔海岸',
+    'ceylon': '锡兰',
+    'java': '爪哇',
+    'sumatra': '苏门答腊',
+    'polynesia': '波利尼西亚',
+    'melanesia': '美拉尼西亚',
+    'scandinavia': '斯堪的纳维亚',
+    'iberia': '伊比利亚半岛',
+    'balkans': '巴尔干半岛',
+    'caucasus': '高加索',
+    'siberia': '西伯利亚',
+    'manchuria': '满洲',
+    'tibet': '西藏',
+    'mongolia': '蒙古',
+    'korea': '朝鲜半岛',
+    'indochina': '中南半岛',
+    'malay-peninsula': '马来半岛',
+    'philippines-region': '菲律宾群岛',
+    'new-world': '新大陆',
+    'old-world': '旧大陆'
+  }
+
   // 获取地点名称
   getLocationName(locationId: string): string {
     const location = this.getLocationById(locationId)
-    return location?.name || locationId
+    if (location) {
+      return location.name
+    }
+    return this.locationNameFallback[locationId] || locationId
   }
 
   // 根据作物ID获取使用该作物的食物
