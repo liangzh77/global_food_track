@@ -8,7 +8,7 @@
 
 # Dependencies
 /oh_modules/
-/node_modules/
+node_modules/
 
 # Local configuration
 local.properties
