@@ -90,7 +90,7 @@ function getSubLocationTypeName(): string {
           <button class="back-btn" @click="goBack">←</button>
           <div class="header-title">{{ location?.name || '地区详情' }}</div>
         </div>
-        <button class="home-btn" @click="goHome">🏠</button>
+        <button class="home-btn" @click="goHome">⌂</button>
       </div>
     </div>
 

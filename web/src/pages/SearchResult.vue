@@ -75,7 +75,7 @@ function getTypeName(type: string): string {
           <button class="back-btn" @click="goBack">←</button>
           <div class="header-title">搜索结果</div>
         </div>
-        <button class="home-btn" @click="goHome">🏠</button>
+        <button class="home-btn" @click="goHome">⌂</button>
       </div>
     </div>
 

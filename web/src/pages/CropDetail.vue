@@ -59,7 +59,7 @@ function hasLocationDetail(locationId: string): boolean {
           <button class="back-btn" @click="goBack">←</button>
           <div class="header-title">{{ crop?.name || '作物详情' }}</div>
         </div>
-        <button class="home-btn" @click="goHome">🏠</button>
+        <button class="home-btn" @click="goHome">⌂</button>
       </div>
     </div>
 

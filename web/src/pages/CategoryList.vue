@@ -66,7 +66,7 @@ function getItemSubtitle(item: any): string {
           <button class="back-btn" @click="goBack">←</button>
           <div class="header-title">{{ categoryName }}</div>
         </div>
-        <button class="home-btn" @click="goHome">🏠</button>
+        <button class="home-btn" @click="goHome">⌂</button>
       </div>
     </div>
 
