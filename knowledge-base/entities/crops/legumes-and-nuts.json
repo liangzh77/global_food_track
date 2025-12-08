@@ -17,7 +17,7 @@
         { "from": "asia", "to": "usa", "time": { "year": 1765, "display": "1765年" } },
         { "from": "usa", "to": "brazil", "time": { "display": "20世纪初" } }
       ],
-      "currentRegions": ["brazil", "usa", "argentina", "china", "india"],
+      "currentRegions": ["brazil", "usa", "argentina", "china", "india", "dongbei", "shandong"],
       "description": "东亚文明的蛋白质来源，豆腐、酱油、豆浆的原料，现为全球最重要的油料和饲料作物。"
     },
     {
@@ -36,7 +36,7 @@
         { "from": "africa", "to": "china", "time": { "display": "16世纪" } },
         { "from": "africa", "to": "usa", "time": { "display": "18世纪" }, "via": "奴隶贸易" }
       ],
-      "currentRegions": ["china", "india", "nigeria", "usa", "argentina"],
+      "currentRegions": ["china", "india", "nigeria", "usa", "argentina", "shandong"],
       "description": "南美原产的重要油料作物，花生酱是美国文化的标志性食品。"
     },
     {
@@ -108,7 +108,7 @@
         { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
         { "from": "europe", "to": "north-america", "time": { "display": "17世纪" } }
       ],
-      "currentRegions": ["china", "usa", "iran", "turkey", "mexico"],
+      "currentRegions": ["china", "usa", "iran", "turkey", "mexico", "yunnan", "xinjiang"],
       "description": "中亚原产的健脑坚果，中国是世界最大生产国。"
     },
     {

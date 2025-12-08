@@ -16,7 +16,7 @@
         { "from": "europe", "to": "russia", "time": { "display": "18世纪" }, "via": "彼得大帝推广" },
         { "from": "europe", "to": "china", "time": { "display": "17世纪" } }
       ],
-      "currentRegions": ["china", "india", "russia", "usa", "germany"],
+      "currentRegions": ["china", "india", "russia", "usa", "germany", "dongbei", "inner-mongolia"],
       "description": "改变世界人口格局的作物，曾帮助欧洲人口爆发式增长，薯条、薯片的原料。"
     },
     {
@@ -35,7 +35,7 @@
         { "from": "europe", "to": "china", "time": { "display": "17世纪" } },
         { "from": "europe", "to": "usa", "time": { "display": "18世纪" } }
       ],
-      "currentRegions": ["china", "india", "usa", "turkey", "italy"],
+      "currentRegions": ["china", "india", "usa", "turkey", "italy", "shandong", "xinjiang"],
       "description": "曾被欧洲人认为有毒的观赏植物，后成为意大利菜和全球烹饪的核心食材。"
     },
     {
@@ -55,7 +55,7 @@
         { "from": "india", "to": "thailand", "time": { "display": "17世纪" } },
         { "from": "india", "to": "korea", "time": { "display": "17世纪" } }
       ],
-      "currentRegions": ["china", "india", "mexico", "thailand", "korea"],
+      "currentRegions": ["china", "india", "mexico", "thailand", "korea", "sichuan", "hunan", "yunnan"],
       "description": "彻底改变亚洲饮食的美洲作物，川菜、湘菜、泰国菜、韩国菜的灵魂。"
     },
     {
@@ -73,7 +73,7 @@
         { "from": "middle-east", "to": "europe", "time": { "display": "公元前1000年" } },
         { "from": "europe", "to": "north-america", "time": { "display": "16世纪" } }
       ],
-      "currentRegions": ["china", "india", "usa", "egypt", "iran"],
+      "currentRegions": ["china", "india", "usa", "egypt", "iran", "shandong"],
       "description": "人类最早驯化的蔬菜之一，几乎所有烹饪传统的基础食材。"
     },
     {
@@ -91,7 +91,7 @@
         { "from": "egypt", "to": "mediterranean", "time": { "display": "公元前2000年" } },
         { "from": "mediterranean", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" }
       ],
-      "currentRegions": ["china", "india", "korea", "spain", "usa"],
+      "currentRegions": ["china", "india", "korea", "spain", "usa", "shandong", "jiangsu"],
       "description": "自古被视为有药用价值的调味品，中国是世界最大生产国。"
     },
     {
@@ -108,7 +108,7 @@
         { "from": "europe", "to": "asia", "time": { "display": "16世纪" } },
         { "from": "europe", "to": "north-america", "time": { "display": "17世纪" } }
       ],
-      "currentRegions": ["china", "india", "russia", "germany", "japan"],
+      "currentRegions": ["china", "india", "russia", "germany", "japan", "shandong", "dongbei"],
       "description": "欧洲古老蔬菜，酸菜、泡菜的主要原料，耐储存的重要特性使其流行全球。"
     },
     {
@@ -126,7 +126,7 @@
         { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪" } },
         { "from": "netherlands", "to": "europe", "time": { "display": "17世纪" }, "via": "荷兰培育出橙色品种" }
       ],
-      "currentRegions": ["china", "usa", "russia", "germany", "uk"],
+      "currentRegions": ["china", "usa", "russia", "germany", "uk", "shandong", "inner-mongolia"],
       "description": "最初是紫色或白色的，橙色胡萝卜是17世纪荷兰人培育的品种。"
     },
     {
@@ -144,7 +144,7 @@
         { "from": "mediterranean", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" },
         { "from": "europe", "to": "north-america", "time": { "display": "16世纪" } }
       ],
-      "currentRegions": ["china", "russia", "turkey", "iran", "usa"],
+      "currentRegions": ["china", "russia", "turkey", "iran", "usa", "shandong"],
       "description": "清爽的夏季蔬菜，腌制黄瓜是世界各地流行的做法。"
     },
     {
@@ -162,7 +162,7 @@
         { "from": "middle-east", "to": "mediterranean", "time": { "display": "8世纪" }, "via": "阿拉伯商人" },
         { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪" } }
       ],
-      "currentRegions": ["china", "india", "egypt", "turkey", "japan"],
+      "currentRegions": ["china", "india", "egypt", "turkey", "japan", "shandong", "guangdong"],
       "description": "印度起源的蔬菜，在中国、中东、地中海地区都有独特的烹饪传统。"
     },
     {
@@ -180,7 +180,7 @@
         { "from": "spain", "to": "philippines", "time": { "display": "16世纪" }, "via": "西班牙殖民" },
         { "from": "philippines", "to": "china", "time": { "display": "16世纪末" } }
       ],
-      "currentRegions": ["china", "nigeria", "tanzania", "indonesia", "japan"],
+      "currentRegions": ["china", "nigeria", "tanzania", "indonesia", "japan", "shandong", "fujian"],
       "description": "救荒作物，曾帮助中国人口快速增长，现为健康食品代表。"
     },
     {
@@ -197,7 +197,7 @@
         { "from": "north-america", "to": "europe", "time": { "display": "16世纪" }, "via": "西班牙征服者" },
         { "from": "europe", "to": "asia", "time": { "display": "17世纪" } }
       ],
-      "currentRegions": ["china", "india", "russia", "usa", "mexico"],
+      "currentRegions": ["china", "india", "russia", "usa", "mexico", "shandong"],
       "description": "美洲三姐妹之一（与玉米、豆类），万圣节的标志性元素。"
     }
   ]

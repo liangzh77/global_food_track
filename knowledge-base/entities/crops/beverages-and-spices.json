@@ -17,7 +17,7 @@
         { "from": "china", "to": "india", "time": { "year": 1836, "display": "1836年" }, "via": "英国东印度公司引种" },
         { "from": "china", "to": "uk", "time": { "year": 1662, "display": "1662年" }, "via": "葡萄牙公主凯瑟琳" }
       ],
-      "currentRegions": ["china", "india", "kenya", "sri-lanka", "turkey"],
+      "currentRegions": ["china", "india", "kenya", "sri-lanka", "turkey", "fujian", "zhejiang", "yunnan"],
       "description": "中国对世界的伟大贡献，全球饮用人数最多的饮料之一，深刻影响了英国和日本文化。"
     },
     {
@@ -73,7 +73,7 @@
         { "from": "mediterranean", "to": "caribbean", "time": { "year": 1493, "display": "1493年" }, "via": "哥伦布第二次航行" },
         { "from": "caribbean", "to": "brazil", "time": { "display": "16世纪" } }
       ],
-      "currentRegions": ["brazil", "india", "china", "thailand", "pakistan"],
+      "currentRegions": ["brazil", "india", "china", "thailand", "pakistan", "guangdong", "yunnan"],
       "description": "糖的主要来源，加勒比甘蔗种植园与奴隶贸易历史紧密相连。"
     },
     {
@@ -128,7 +128,7 @@
         { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元1世纪" } },
         { "from": "spain", "to": "caribbean", "time": { "display": "16世纪" } }
       ],
-      "currentRegions": ["india", "china", "nigeria", "indonesia", "nepal"],
+      "currentRegions": ["india", "china", "nigeria", "indonesia", "nepal", "shandong"],
       "description": "亚洲烹饪的灵魂调料，也是重要的药用植物，姜茶、姜饼广受欢迎。"
     },
     {
@@ -183,7 +183,7 @@
         { "from": "middle-east", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" },
         { "from": "africa", "to": "north-america", "time": { "display": "17世纪" }, "via": "奴隶贸易" }
       ],
-      "currentRegions": ["sudan", "india", "myanmar", "tanzania", "china"],
+      "currentRegions": ["sudan", "india", "myanmar", "tanzania", "china", "hubei"],
       "description": "最古老的油料作物之一，芝麻油和芝麻酱是中东和亚洲烹饪的重要调味品。"
     }
   ]

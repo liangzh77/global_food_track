@@ -139,7 +139,7 @@
         { "from": "china", "to": "usa", "time": { "display": "19世纪" }, "via": "中国移民" },
         { "from": "china", "to": "europe", "time": { "display": "20世纪" } }
       ],
-      "currentRegions": ["china", "southeast-asia", "usa", "europe"],
+      "currentRegions": ["china", "southeast-asia", "usa", "europe", "jiangsu", "guangdong"],
       "description": "扬州炒饭最为著名，各地发展出泰式炒饭、印尼炒饭等变体。"
     },
     {

@@ -71,7 +71,7 @@
         { "from": "china", "to": "korea", "time": { "display": "明代" } },
         { "from": "china", "to": "southeast-asia", "time": { "display": "近代" } }
       ],
-      "currentRegions": ["china"],
+      "currentRegions": ["china", "sichuan", "yunnan"],
       "description": "中国传统蒸馏酒，世界销量最大的烈酒，茅台、五粮液是代表品牌。"
     },
     {
@@ -139,7 +139,7 @@
         { "from": "china", "to": "uk", "time": { "year": 1662, "display": "1662年" } },
         { "from": "china", "to": "india", "time": { "year": 1836, "display": "1836年" } }
       ],
-      "currentRegions": ["china", "india", "uk", "japan", "turkey"],
+      "currentRegions": ["china", "india", "uk", "japan", "turkey", "fujian", "zhejiang", "yunnan"],
       "description": "中国神农发现茶叶，发展出绿茶、红茶、乌龙茶等，英国下午茶和日本茶道是文化高峰。"
     },
     {

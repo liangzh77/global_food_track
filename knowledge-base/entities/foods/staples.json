@@ -32,7 +32,7 @@
         { "from": "china", "to": "southeast-asia", "time": { "display": "宋代" } },
         { "from": "asia", "to": "europe", "time": { "display": "13世纪" }, "via": "丝绸之路/马可波罗" }
       ],
-      "currentRegions": ["china", "japan", "italy", "korea", "vietnam"],
+      "currentRegions": ["china", "japan", "italy", "korea", "vietnam", "shandong", "sichuan"],
       "description": "中国发明的主食，青海喇家遗址发现4000年前的面条，传遍全球发展出拉面、乌冬、意面等。"
     },
     {
@@ -50,7 +50,7 @@
         { "from": "china", "to": "japan", "time": { "display": "公元前300年" } },
         { "from": "china", "to": "india", "time": { "display": "公元前1500年" } }
       ],
-      "currentRegions": ["china", "japan", "korea", "southeast-asia", "india"],
+      "currentRegions": ["china", "japan", "korea", "southeast-asia", "india", "guangdong", "jiangsu", "zhejiang", "hunan", "hubei"],
       "description": "亚洲最基本的主食形式，养活全球一半以上人口。"
     },
     {
@@ -87,7 +87,7 @@
         { "from": "central-asia", "to": "russia", "time": { "display": "中世纪" } },
         { "from": "central-asia", "to": "europe", "time": { "display": "中世纪" } }
       ],
-      "currentRegions": ["china", "korea", "japan", "russia", "poland"],
+      "currentRegions": ["china", "korea", "japan", "russia", "poland", "dongbei", "shandong"],
       "description": "张仲景发明的食物，中国春节传统美食，传播形成饺子、锅贴、俄罗斯饺子等变体。"
     },
     {
@@ -103,7 +103,7 @@
         { "from": "china", "to": "korea", "time": { "display": "唐代" } },
         { "from": "china", "to": "japan", "time": { "display": "宋代" } }
       ],
-      "currentRegions": ["china", "korea", "japan"],
+      "currentRegions": ["china", "korea", "japan", "shandong"],
       "description": "相传诸葛亮发明，中国北方重要主食，日本馒头发展为包馅甜点。"
     }
   ]

@@ -14,7 +14,7 @@
         { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
         { "from": "europe", "to": "north-america", "time": { "year": 1620, "display": "1620年" }, "via": "欧洲殖民者" }
       ],
-      "currentRegions": ["china", "usa", "turkey", "poland", "italy"],
+      "currentRegions": ["china", "usa", "turkey", "poland", "italy", "shandong"],
       "description": "哈萨克斯坦山区的野生苹果是现代苹果的祖先，中国是世界最大苹果生产国。"
     },
     {
@@ -33,7 +33,7 @@
         { "from": "africa", "to": "caribbean", "time": { "year": 1516, "display": "1516年" }, "via": "葡萄牙商人" },
         { "from": "caribbean", "to": "south-america", "time": { "display": "16世纪" } }
       ],
-      "currentRegions": ["india", "china", "indonesia", "brazil", "ecuador"],
+      "currentRegions": ["india", "china", "indonesia", "brazil", "ecuador", "guangdong", "fujian", "yunnan"],
       "description": "热带地区最重要的水果，无籽香蕉是人类培育的结果。"
     },
     {
@@ -52,7 +52,7 @@
         { "from": "europe", "to": "south-africa", "time": { "display": "17世纪" } },
         { "from": "china", "to": "china", "time": { "display": "汉代" }, "via": "张骞通西域引入" }
       ],
-      "currentRegions": ["china", "italy", "france", "spain", "usa"],
+      "currentRegions": ["china", "italy", "france", "spain", "usa", "xinjiang"],
       "description": "酿造葡萄酒的原料，与人类文明史紧密相连，葡萄干也是古老的保存方式。"
     },
     {
@@ -71,7 +71,7 @@
         { "from": "spain", "to": "south-america", "time": { "display": "16世纪" }, "via": "西班牙殖民者" },
         { "from": "spain", "to": "usa", "time": { "display": "16世纪" } }
       ],
-      "currentRegions": ["brazil", "china", "india", "usa", "spain"],
+      "currentRegions": ["brazil", "china", "india", "usa", "spain", "guangdong", "fujian", "zhejiang"],
       "description": "中国云南原产的柑橘类水果，橙汁是现代最流行的果汁。"
     },
     {
@@ -106,7 +106,7 @@
         { "from": "india", "to": "china", "time": { "display": "10世纪" } },
         { "from": "africa", "to": "north-america", "time": { "display": "16世纪" }, "via": "奴隶贸易" }
       ],
-      "currentRegions": ["china", "turkey", "iran", "brazil", "usa"],
+      "currentRegions": ["china", "turkey", "iran", "brazil", "usa", "xinjiang", "shandong"],
       "description": "非洲起源的消暑水果，中国是世界最大生产和消费国，产量占全球70%。"
     },
     {
@@ -124,7 +124,7 @@
         { "from": "india", "to": "brazil", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
         { "from": "brazil", "to": "caribbean", "time": { "display": "18世纪" } }
       ],
-      "currentRegions": ["india", "china", "thailand", "mexico", "indonesia"],
+      "currentRegions": ["india", "china", "thailand", "mexico", "indonesia", "guangdong", "yunnan"],
       "description": "印度国果，被誉为热带水果之王，南亚文化中具有神圣地位。"
     },
     {
@@ -143,7 +143,7 @@
         { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
         { "from": "europe", "to": "north-america", "time": { "display": "16世纪" } }
       ],
-      "currentRegions": ["china", "spain", "italy", "usa", "greece"],
+      "currentRegions": ["china", "spain", "italy", "usa", "greece", "shandong"],
       "description": "中国原产水果，在中国文化中象征长寿，英文名Peach源于波斯。"
     },
     {
@@ -162,7 +162,7 @@
         { "from": "europe", "to": "asia", "time": { "display": "16世纪" } },
         { "from": "asia", "to": "philippines", "time": { "display": "17世纪" } }
       ],
-      "currentRegions": ["costa-rica", "philippines", "brazil", "thailand", "china"],
+      "currentRegions": ["costa-rica", "philippines", "brazil", "thailand", "china", "guangdong", "fujian"],
       "description": "亚马逊原产的热带水果，曾是欧洲贵族的奢侈品，现为全球流行水果。"
     },
     {

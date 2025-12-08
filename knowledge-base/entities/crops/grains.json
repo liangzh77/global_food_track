@@ -14,7 +14,7 @@
         { "from": "fertile-crescent", "to": "china", "time": { "year": -3000, "display": "公元前3000年" }, "via": "丝绸之路前身" },
         { "from": "europe", "to": "north-america", "time": { "year": 1500, "display": "16世纪" }, "via": "欧洲殖民者" }
       ],
-      "currentRegions": ["china", "india", "russia", "usa", "france"],
+      "currentRegions": ["china", "india", "russia", "usa", "france", "shandong", "yellow-river", "xinjiang", "dongbei"],
       "description": "人类最早驯化的作物之一，是全球最重要的粮食作物，面包、面条、馒头等主食的核心原料。"
     },
     {
@@ -34,7 +34,7 @@
         { "from": "asia", "to": "europe", "time": { "display": "8世纪" }, "via": "阿拉伯商人" },
         { "from": "europe", "to": "south-america", "time": { "year": 1500, "display": "16世纪" }, "via": "西班牙/葡萄牙殖民者" }
       ],
-      "currentRegions": ["china", "india", "indonesia", "vietnam", "thailand", "japan"],
+      "currentRegions": ["china", "india", "indonesia", "vietnam", "thailand", "japan", "yangtze-river", "guangdong", "jiangsu", "zhejiang", "hunan", "hubei"],
       "description": "养活全球一半以上人口的主粮，尤其在亚洲地区具有核心地位。"
     },
     {
@@ -54,7 +54,7 @@
         { "from": "europe", "to": "africa", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
         { "from": "europe", "to": "china", "time": { "display": "16世纪中期" }, "via": "海上丝绸之路" }
       ],
-      "currentRegions": ["usa", "china", "brazil", "argentina", "mexico"],
+      "currentRegions": ["usa", "china", "brazil", "argentina", "mexico", "dongbei", "shandong", "inner-mongolia"],
       "description": "美洲原住民的神圣作物，现为全球产量最高的谷物，广泛用于食品和饲料。"
     },
     {
@@ -71,7 +71,7 @@
         { "from": "china", "to": "india", "time": { "display": "公元前2000年" } },
         { "from": "asia", "to": "europe", "time": { "display": "公元前1500年" } }
       ],
-      "currentRegions": ["china", "india", "nigeria", "russia"],
+      "currentRegions": ["china", "india", "nigeria", "russia", "yellow-river", "inner-mongolia", "shandong", "dongbei"],
       "description": "中国北方最古老的粮食作物，曾是华夏文明的主粮，耐旱性极强。"
     },
     {
@@ -87,7 +87,7 @@
         { "from": "india", "to": "china", "time": { "display": "公元前1000年" } },
         { "from": "africa", "to": "south-america", "time": { "display": "16世纪" }, "via": "奴隶贸易" }
       ],
-      "currentRegions": ["usa", "nigeria", "india", "china", "mexico"],
+      "currentRegions": ["usa", "nigeria", "india", "china", "mexico", "dongbei", "sichuan"],
       "description": "非洲起源的重要谷物，耐旱耐热，是酿造白酒的重要原料。"
     },
     {

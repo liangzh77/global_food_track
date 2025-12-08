@@ -15,7 +15,7 @@
         { "from": "china", "to": "southeast-asia", "time": { "display": "宋代" } },
         { "from": "japan", "to": "europe", "time": { "display": "17世纪" }, "via": "荷兰商人" }
       ],
-      "currentRegions": ["china", "japan", "korea", "southeast-asia", "usa"],
+      "currentRegions": ["china", "japan", "korea", "southeast-asia", "usa", "guangdong", "fujian"],
       "description": "东亚烹饪的灵魂调味料，日本万字酱油和中国生抽老抽各有特色。"
     },
     {
@@ -51,7 +51,7 @@
         { "from": "asia", "to": "europe", "time": { "display": "18世纪" } },
         { "from": "asia", "to": "usa", "time": { "display": "20世纪" } }
       ],
-      "currentRegions": ["china", "japan", "korea", "southeast-asia", "usa"],
+      "currentRegions": ["china", "japan", "korea", "southeast-asia", "usa", "sichuan"],
       "description": "相传淮南王刘安发明，东亚素食蛋白质的主要来源，如今成为全球健康食品。"
     },
     {
