@@ -42,7 +42,7 @@ function goToLocation(locationId: string) {
 }
 
 function goHome() {
-  router.push({ name: 'Index' })
+  router.push({ name: 'Home' })
 }
 
 function hasLocationDetail(locationId: string): boolean {

@@ -40,7 +40,7 @@ function goBack() {
 }
 
 function goHome() {
-  router.push({ name: 'Index' })
+  router.push({ name: 'Home' })
 }
 
 function goToDetail(id: string) {
