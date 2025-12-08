@@ -54,8 +54,9 @@ class DataService {
       ...(regionsData.locations as Location[])
     ]
 
-    // 加载关系数据
-    this.originByLocation = originByLocationData.origins as Record<string, { crops: string[], foods: string[] }>
+    // 加载关系数据 (过滤掉 _description 字段)
+    const { _description, ...origins } = originByLocationData as Record<string, any>
+    this.originByLocation = origins as Record<string, { crops: string[], foods: string[] }>
   }
 
   // 获取所有作物
