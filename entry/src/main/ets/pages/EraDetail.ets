@@ -152,53 +152,92 @@ struct EraDetail {
     Column() {
       // 实体类型筛选
       Row() {
-        this.FilterButton('全部', this.filter.entityType === 'all', () => {
-          this.filter.entityType = 'all';
-          this.applyFilter();
-        })
-        this.FilterButton('作物', this.filter.entityType === 'crop', () => {
-          this.filter.entityType = 'crop';
-          this.applyFilter();
-        })
-        this.FilterButton('食物', this.filter.entityType === 'food', () => {
-          this.filter.entityType = 'food';
-          this.applyFilter();
-        })
+        Text('全部')
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(this.filter.entityType === 'all' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
+          .backgroundColor(this.filter.entityType === 'all' ? Colors.PRIMARY : 'transparent')
+          .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: 6, bottom: 6 })
+          .borderRadius(16)
+          .border({ width: 1, color: this.filter.entityType === 'all' ? Colors.PRIMARY : '#E0E0E0' })
+          .margin({ right: Sizes.SPACING_SM })
+          .onClick(() => {
+            this.filter.entityType = 'all';
+            this.applyFilter();
+          })
+
+        Text('作物')
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(this.filter.entityType === 'crop' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
+          .backgroundColor(this.filter.entityType === 'crop' ? Colors.PRIMARY : 'transparent')
+          .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: 6, bottom: 6 })
+          .borderRadius(16)
+          .border({ width: 1, color: this.filter.entityType === 'crop' ? Colors.PRIMARY : '#E0E0E0' })
+          .margin({ right: Sizes.SPACING_SM })
+          .onClick(() => {
+            this.filter.entityType = 'crop';
+            this.applyFilter();
+          })
+
+        Text('食物')
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(this.filter.entityType === 'food' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
+          .backgroundColor(this.filter.entityType === 'food' ? Colors.PRIMARY : 'transparent')
+          .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: 6, bottom: 6 })
+          .borderRadius(16)
+          .border({ width: 1, color: this.filter.entityType === 'food' ? Colors.PRIMARY : '#E0E0E0' })
+          .margin({ right: Sizes.SPACING_SM })
+          .onClick(() => {
+            this.filter.entityType = 'food';
+            this.applyFilter();
+          })
       }
       .margin({ bottom: Sizes.SPACING_SM })
 
       // 事件类型筛选
       Row() {
-        this.FilterButton('全部', this.filter.eventType === 'all', () => {
-          this.filter.eventType = 'all';
-          this.applyFilter();
-        })
-        this.FilterButton('起源', this.filter.eventType === 'origin', () => {
-          this.filter.eventType = 'origin';
-          this.applyFilter();
-        })
-        this.FilterButton('传播', this.filter.eventType === 'spread', () => {
-          this.filter.eventType = 'spread';
-          this.applyFilter();
-        })
+        Text('全部')
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(this.filter.eventType === 'all' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
+          .backgroundColor(this.filter.eventType === 'all' ? Colors.PRIMARY : 'transparent')
+          .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: 6, bottom: 6 })
+          .borderRadius(16)
+          .border({ width: 1, color: this.filter.eventType === 'all' ? Colors.PRIMARY : '#E0E0E0' })
+          .margin({ right: Sizes.SPACING_SM })
+          .onClick(() => {
+            this.filter.eventType = 'all';
+            this.applyFilter();
+          })
+
+        Text('起源')
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(this.filter.eventType === 'origin' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
+          .backgroundColor(this.filter.eventType === 'origin' ? Colors.PRIMARY : 'transparent')
+          .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: 6, bottom: 6 })
+          .borderRadius(16)
+          .border({ width: 1, color: this.filter.eventType === 'origin' ? Colors.PRIMARY : '#E0E0E0' })
+          .margin({ right: Sizes.SPACING_SM })
+          .onClick(() => {
+            this.filter.eventType = 'origin';
+            this.applyFilter();
+          })
+
+        Text('传播')
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(this.filter.eventType === 'spread' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
+          .backgroundColor(this.filter.eventType === 'spread' ? Colors.PRIMARY : 'transparent')
+          .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: 6, bottom: 6 })
+          .borderRadius(16)
+          .border({ width: 1, color: this.filter.eventType === 'spread' ? Colors.PRIMARY : '#E0E0E0' })
+          .margin({ right: Sizes.SPACING_SM })
+          .onClick(() => {
+            this.filter.eventType = 'spread';
+            this.applyFilter();
+          })
       }
     }
     .width('100%')
     .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: Sizes.SPACING_SM, bottom: Sizes.SPACING_SM })
     .backgroundColor(Colors.CARD_BACKGROUND)
-  }
-
-  @Builder
-  FilterButton(label: string, active: boolean, onClick: () => void) {
-    Text(label)
-      .fontSize(Sizes.FONT_XS)
-      .fontColor(active ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
-      .backgroundColor(active ? Colors.PRIMARY : 'transparent')
-      .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: 6, bottom: 6 })
-      .borderRadius(16)
-      .border({ width: 1, color: active ? Colors.PRIMARY : '#E0E0E0' })
-      .margin({ right: Sizes.SPACING_SM })
-      .onClick(onClick)
   }
 
   @Builder
@@ -482,7 +521,7 @@ struct EraDetail {
         })
     }
     .width('90%')
-    .maxWidth(400)
+    .constraintSize({ maxWidth: 400 })
     .backgroundColor(Colors.CARD_BACKGROUND)
     .borderRadius(Sizes.RADIUS_MEDIUM)
     .position({ x: '5%', y: '15%' })

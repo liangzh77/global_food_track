@@ -161,19 +161,13 @@ export class TimelineEvent {
   displayTime: string = '';
   name: string = '';
   description: string = '';
-  location?: string;
-  locationId?: string;
-  fromLocation?: string;
-  fromLocationId?: string;
-  toLocation?: string;
-  toLocationId?: string;
-  via?: string;
-
-  constructor(init?: Partial<TimelineEvent>) {
-    if (init) {
-      Object.assign(this, init);
-    }
-  }
+  location: string = '';
+  locationId: string = '';
+  fromLocation: string = '';
+  fromLocationId: string = '';
+  toLocation: string = '';
+  toLocationId: string = '';
+  via: string = '';
 }
 
 // 时间线筛选条件
@@ -181,6 +175,15 @@ export class TimelineFilter {
   entityType: 'all' | 'crop' | 'food' = 'all';
   eventType: 'all' | 'origin' | 'spread' = 'all';
   keyword: string = '';
+}
+
+// 事件统计
+export class EventStats {
+  total: number = 0;
+  cropOrigin: number = 0;
+  cropSpread: number = 0;
+  foodOrigin: number = 0;
+  foodSpread: number = 0;
 }
 
 // 预设时代列表

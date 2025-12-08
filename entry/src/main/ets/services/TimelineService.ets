@@ -8,7 +8,8 @@ import {
   Era,
   ERAS,
   TimelineEntityType,
-  TimelineEventType
+  TimelineEventType,
+  EventStats
 } from '../models/DataModels';
 import { dataService } from './DataService';
 
@@ -29,39 +30,37 @@ class TimelineService {
     dataService.getAllCrops().forEach(crop => {
       // 起源事件
       if (crop.origin.time.year !== undefined) {
-        const event = new TimelineEvent({
-          id: `event-${eventId++}`,
-          entityId: crop.id,
-          entityType: 'crop',
-          eventType: 'origin',
-          year: crop.origin.time.year,
-          displayTime: crop.origin.time.display,
-          name: crop.name,
-          description: crop.description,
-          location: dataService.getLocationName(crop.origin.location),
-          locationId: crop.origin.location
-        });
+        const event = new TimelineEvent();
+        event.id = `event-${eventId++}`;
+        event.entityId = crop.id;
+        event.entityType = 'crop';
+        event.eventType = 'origin';
+        event.year = crop.origin.time.year;
+        event.displayTime = crop.origin.time.display;
+        event.name = crop.name;
+        event.description = crop.description;
+        event.location = dataService.getLocationName(crop.origin.location);
+        event.locationId = crop.origin.location;
         this.events.push(event);
       }
 
       // 传播事件
       crop.spreads.forEach(spread => {
         if (spread.time.year !== undefined) {
-          const event = new TimelineEvent({
-            id: `event-${eventId++}`,
-            entityId: crop.id,
-            entityType: 'crop',
-            eventType: 'spread',
-            year: spread.time.year,
-            displayTime: spread.time.display,
-            name: crop.name,
-            description: crop.description,
-            fromLocation: dataService.getLocationName(spread.from),
-            fromLocationId: spread.from,
-            toLocation: dataService.getLocationName(spread.to),
-            toLocationId: spread.to,
-            via: spread.via
-          });
+          const event = new TimelineEvent();
+          event.id = `event-${eventId++}`;
+          event.entityId = crop.id;
+          event.entityType = 'crop';
+          event.eventType = 'spread';
+          event.year = spread.time.year;
+          event.displayTime = spread.time.display;
+          event.name = crop.name;
+          event.description = crop.description;
+          event.fromLocation = dataService.getLocationName(spread.from);
+          event.fromLocationId = spread.from;
+          event.toLocation = dataService.getLocationName(spread.to);
+          event.toLocationId = spread.to;
+          event.via = spread.via || '';
           this.events.push(event);
         }
       });
@@ -71,39 +70,37 @@ class TimelineService {
     dataService.getAllFoods().forEach(food => {
       // 起源事件
       if (food.origin.time.year !== undefined) {
-        const event = new TimelineEvent({
-          id: `event-${eventId++}`,
-          entityId: food.id,
-          entityType: 'food',
-          eventType: 'origin',
-          year: food.origin.time.year,
-          displayTime: food.origin.time.display,
-          name: food.name,
-          description: food.description,
-          location: dataService.getLocationName(food.origin.location),
-          locationId: food.origin.location
-        });
+        const event = new TimelineEvent();
+        event.id = `event-${eventId++}`;
+        event.entityId = food.id;
+        event.entityType = 'food';
+        event.eventType = 'origin';
+        event.year = food.origin.time.year;
+        event.displayTime = food.origin.time.display;
+        event.name = food.name;
+        event.description = food.description;
+        event.location = dataService.getLocationName(food.origin.location);
+        event.locationId = food.origin.location;
         this.events.push(event);
       }
 
       // 传播事件
       food.spreads.forEach(spread => {
         if (spread.time.year !== undefined) {
-          const event = new TimelineEvent({
-            id: `event-${eventId++}`,
-            entityId: food.id,
-            entityType: 'food',
-            eventType: 'spread',
-            year: spread.time.year,
-            displayTime: spread.time.display,
-            name: food.name,
-            description: food.description,
-            fromLocation: dataService.getLocationName(spread.from),
-            fromLocationId: spread.from,
-            toLocation: dataService.getLocationName(spread.to),
-            toLocationId: spread.to,
-            via: spread.via
-          });
+          const event = new TimelineEvent();
+          event.id = `event-${eventId++}`;
+          event.entityId = food.id;
+          event.entityType = 'food';
+          event.eventType = 'spread';
+          event.year = spread.time.year;
+          event.displayTime = spread.time.display;
+          event.name = food.name;
+          event.description = food.description;
+          event.fromLocation = dataService.getLocationName(spread.from);
+          event.fromLocationId = spread.from;
+          event.toLocation = dataService.getLocationName(spread.to);
+          event.toLocationId = spread.to;
+          event.via = spread.via || '';
           this.events.push(event);
         }
       });
@@ -204,20 +201,14 @@ class TimelineService {
   }
 
   // 获取事件统计
-  getEventStats(events: TimelineEvent[]): {
-    total: number;
-    cropOrigin: number;
-    cropSpread: number;
-    foodOrigin: number;
-    foodSpread: number;
-  } {
-    return {
-      total: events.length,
-      cropOrigin: events.filter(e => e.entityType === 'crop' && e.eventType === 'origin').length,
-      cropSpread: events.filter(e => e.entityType === 'crop' && e.eventType === 'spread').length,
-      foodOrigin: events.filter(e => e.entityType === 'food' && e.eventType === 'origin').length,
-      foodSpread: events.filter(e => e.entityType === 'food' && e.eventType === 'spread').length
-    };
+  getEventStats(events: TimelineEvent[]): EventStats {
+    const stats = new EventStats();
+    stats.total = events.length;
+    stats.cropOrigin = events.filter(e => e.entityType === 'crop' && e.eventType === 'origin').length;
+    stats.cropSpread = events.filter(e => e.entityType === 'crop' && e.eventType === 'spread').length;
+    stats.foodOrigin = events.filter(e => e.entityType === 'food' && e.eventType === 'origin').length;
+    stats.foodSpread = events.filter(e => e.entityType === 'food' && e.eventType === 'spread').length;
+    return stats;
   }
 }
 
