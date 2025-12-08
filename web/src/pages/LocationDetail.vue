@@ -39,6 +39,16 @@ const origins = computed(() => {
   return dataService.getOriginsByLocation(location.value.id)
 })
 
+const currentRegionCrops = computed(() => {
+  if (!location.value) return []
+  return dataService.getCropsByCurrentRegion(location.value.id)
+})
+
+const currentRegionFoods = computed(() => {
+  if (!location.value) return []
+  return dataService.getFoodsByCurrentRegion(location.value.id)
+})
+
 const parentLocation = computed(() => {
   if (!location.value?.parent) return null
   return dataService.getLocationById(location.value.parent)
@@ -173,9 +183,43 @@ function getSubLocationTypeName(): string {
         </div>
       </div>
 
+      <!-- 当前主产区作物 -->
+      <div class="detail-section" v-if="currentRegionCrops.length > 0">
+        <div class="detail-section-title">主产作物 ({{ currentRegionCrops.length }})</div>
+        <div
+          v-for="crop in currentRegionCrops"
+          :key="crop.id"
+          class="list-card"
+          @click="goToCrop(crop.id)"
+        >
+          <div class="list-card-icon">{{ getCropIcon(crop.id, crop.category) }}</div>
+          <div class="list-card-content">
+            <div class="list-card-title">{{ crop.name }}</div>
+          </div>
+          <div class="list-card-arrow">›</div>
+        </div>
+      </div>
+
+      <!-- 当前流行食物 -->
+      <div class="detail-section" v-if="currentRegionFoods.length > 0">
+        <div class="detail-section-title">流行食物 ({{ currentRegionFoods.length }})</div>
+        <div
+          v-for="food in currentRegionFoods"
+          :key="food.id"
+          class="list-card"
+          @click="goToFood(food.id)"
+        >
+          <div class="list-card-icon">{{ foodIcons[food.category] || '🍽️' }}</div>
+          <div class="list-card-content">
+            <div class="list-card-title">{{ food.name }}</div>
+          </div>
+          <div class="list-card-arrow">›</div>
+        </div>
+      </div>
+
       <!-- 空状态 -->
       <div
-        v-if="subLocations.length === 0 && origins.crops.length === 0 && origins.foods.length === 0"
+        v-if="subLocations.length === 0 && origins.crops.length === 0 && origins.foods.length === 0 && currentRegionCrops.length === 0 && currentRegionFoods.length === 0"
         class="empty-state"
       >
         <div class="empty-icon">📭</div>

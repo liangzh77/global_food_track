@@ -243,6 +243,16 @@ class DataService {
   getFoodsByCropId(cropId: string): Food[] {
     return this.foods.filter(f => f.ingredients.includes(cropId))
   }
+
+  // 获取某地点作为主产区的作物
+  getCropsByCurrentRegion(locationId: string): Crop[] {
+    return this.crops.filter(c => c.currentRegions.includes(locationId))
+  }
+
+  // 获取某地点作为流行地区的食物
+  getFoodsByCurrentRegion(locationId: string): Food[] {
+    return this.foods.filter(f => f.currentRegions.includes(locationId))
+  }
 }
 
 export const dataService = new DataService()
