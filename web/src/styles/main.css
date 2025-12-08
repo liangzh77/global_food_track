@@ -288,15 +288,18 @@ body {
 }
 
 .spread-location {
+  display: inline-block;
+  background-color: #E8F5E9;
+  color: var(--color-primary);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
   font-weight: 500;
   cursor: pointer;
-  color: var(--color-text-primary);
-  transition: color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .spread-location:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
+  background-color: #C8E6C9;
 }
 
 .spread-arrow {
