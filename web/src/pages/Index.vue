@@ -1,13 +1,27 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, watch, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { dataService } from '@/services/dataService'
 import { timelineService } from '@/services/timelineService'
 import { cropCategoryIcons, foodIcons, getLocationIcon, ERAS } from '@/types'
 
 const router = useRouter()
+const route = useRoute()
 const searchText = ref('')
 const activeTab = ref(0)
+
+// 从路由参数恢复 tab 状态
+onMounted(() => {
+  const tab = route.query.tab
+  if (tab !== undefined) {
+    activeTab.value = parseInt(tab as string) || 0
+  }
+})
+
+// tab 变化时更新路由参数
+watch(activeTab, (newTab) => {
+  router.replace({ query: { ...route.query, tab: newTab.toString() } })
+})
 
 const cropCategories = [
   { key: 'grain', name: '谷物' },

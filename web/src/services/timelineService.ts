@@ -10,6 +10,47 @@ class TimelineService {
     this.buildTimelineEvents()
   }
 
+  // 从显示文本解析年份
+  private parseYearFromDisplay(display: string): number | undefined {
+    if (!display) return undefined
+
+    // 匹配 "公元前XXX年"
+    let match = display.match(/公元前(\d+)年/)
+    if (match) return -parseInt(match[1])
+
+    // 匹配 "XXXX年"
+    match = display.match(/^(\d{3,4})年/)
+    if (match) return parseInt(match[1])
+
+    // 匹配 "XX世纪"
+    match = display.match(/(\d+)世纪/)
+    if (match) {
+      const century = parseInt(match[1])
+      // 16世纪 -> 1550年 (世纪中期)
+      return (century - 1) * 100 + 50
+    }
+
+    // 匹配 "XXXX年代"
+    match = display.match(/(\d{4})年代/)
+    if (match) return parseInt(match[1]) + 5
+
+    // 匹配朝代
+    const dynastyYears: Record<string, number> = {
+      '唐代': 700,
+      '宋代': 1050,
+      '元代': 1300,
+      '明代': 1500,
+      '清代': 1750,
+      '中世纪': 1200,
+      '古代': -500
+    }
+    for (const [dynasty, year] of Object.entries(dynastyYears)) {
+      if (display.includes(dynasty)) return year
+    }
+
+    return undefined
+  }
+
   private buildTimelineEvents() {
     if (this.initialized) return
 
@@ -19,13 +60,14 @@ class TimelineService {
     // 处理作物数据
     dataService.getAllCrops().forEach(crop => {
       // 起源事件
-      if (crop.origin.time.year !== undefined) {
+      const originYear = crop.origin.time.year ?? this.parseYearFromDisplay(crop.origin.time.display)
+      if (originYear !== undefined) {
         events.push({
           id: `event-${eventId++}`,
           entityId: crop.id,
           entityType: 'crop',
           eventType: 'origin',
-          year: crop.origin.time.year,
+          year: originYear,
           displayTime: crop.origin.time.display,
           name: crop.name,
           description: crop.description,
@@ -36,13 +78,14 @@ class TimelineService {
 
       // 传播事件
       crop.spreads.forEach(spread => {
-        if (spread.time.year !== undefined) {
+        const spreadYear = spread.time.year ?? this.parseYearFromDisplay(spread.time.display)
+        if (spreadYear !== undefined) {
           events.push({
             id: `event-${eventId++}`,
             entityId: crop.id,
             entityType: 'crop',
             eventType: 'spread',
-            year: spread.time.year,
+            year: spreadYear,
             displayTime: spread.time.display,
             name: crop.name,
             description: crop.description,
@@ -59,13 +102,14 @@ class TimelineService {
     // 处理食物数据
     dataService.getAllFoods().forEach(food => {
       // 起源事件
-      if (food.origin.time.year !== undefined) {
+      const originYear = food.origin.time.year ?? this.parseYearFromDisplay(food.origin.time.display)
+      if (originYear !== undefined) {
         events.push({
           id: `event-${eventId++}`,
           entityId: food.id,
           entityType: 'food',
           eventType: 'origin',
-          year: food.origin.time.year,
+          year: originYear,
           displayTime: food.origin.time.display,
           name: food.name,
           description: food.description,
@@ -76,13 +120,14 @@ class TimelineService {
 
       // 传播事件
       food.spreads.forEach(spread => {
-        if (spread.time.year !== undefined) {
+        const spreadYear = spread.time.year ?? this.parseYearFromDisplay(spread.time.display)
+        if (spreadYear !== undefined) {
           events.push({
             id: `event-${eventId++}`,
             entityId: food.id,
             entityType: 'food',
             eventType: 'spread',
-            year: spread.time.year,
+            year: spreadYear,
             displayTime: spread.time.display,
             name: food.name,
             description: food.description,

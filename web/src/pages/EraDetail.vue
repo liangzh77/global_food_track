@@ -270,6 +270,8 @@ function goHome() {
 
 <style scoped>
 .era-detail-page {
+  max-width: 480px;
+  margin: 0 auto;
   min-height: 100vh;
   background-color: #f5f5f5;
   padding-bottom: 20px;
