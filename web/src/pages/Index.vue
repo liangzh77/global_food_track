@@ -2,7 +2,8 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
-import { cropCategoryIcons, foodIcons, getLocationIcon } from '@/types'
+import { timelineService } from '@/services/timelineService'
+import { cropCategoryIcons, foodIcons, getLocationIcon, ERAS } from '@/types'
 
 const router = useRouter()
 const searchText = ref('')
@@ -63,6 +64,18 @@ function getContinentSummary(continentId: string): string {
 
   return parts.length > 0 ? parts.join(' · ') : '点击探索'
 }
+
+function goToEra(eraId: string) {
+  router.push({ path: `/timeline/${eraId}` })
+}
+
+function getEraEventCount(eraId: string): number {
+  return timelineService.getEventCountByEra(eraId)
+}
+
+function getEraYearRange(era: typeof ERAS[0]): string {
+  return timelineService.getEraYearRange(era)
+}
 </script>
 
 <template>
@@ -101,6 +114,11 @@ function getContinentSummary(continentId: string): string {
         :class="{ active: activeTab === 2 }"
         @click="activeTab = 2"
       >地区</div>
+      <div
+        class="tab-item"
+        :class="{ active: activeTab === 3 }"
+        @click="activeTab = 3"
+      >时间线</div>
     </div>
 
     <!-- 内容区域 -->
@@ -138,7 +156,7 @@ function getContinentSummary(continentId: string): string {
       </template>
 
       <!-- 地区 -->
-      <template v-else>
+      <template v-else-if="activeTab === 2">
         <div class="section-title">按地区探索</div>
         <div
           v-for="continent in continents"
@@ -152,6 +170,28 @@ function getContinentSummary(continentId: string): string {
             <div class="list-card-subtitle">{{ getContinentSummary(continent.id) }}</div>
           </div>
           <div class="list-card-arrow">›</div>
+        </div>
+      </template>
+
+      <!-- 时间线 -->
+      <template v-else>
+        <div class="section-title">按时代探索历史</div>
+        <div
+          v-for="era in ERAS"
+          :key="era.id"
+          class="era-card"
+          @click="goToEra(era.id)"
+        >
+          <div class="era-card-icon">{{ era.icon }}</div>
+          <div class="era-card-content">
+            <div class="era-card-title">{{ era.name }}</div>
+            <div class="era-card-years">{{ getEraYearRange(era) }}</div>
+            <div class="era-card-desc">{{ era.description }}</div>
+          </div>
+          <div class="era-card-stats">
+            <span class="event-count">{{ getEraEventCount(era.id) }}</span>
+            <span class="event-label">事件</span>
+          </div>
         </div>
       </template>
     </div>

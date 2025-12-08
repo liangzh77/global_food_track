@@ -4,8 +4,9 @@
 
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
+import { timelineService } from '../services/TimelineService';
 import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getLocationIcon } from '../common/Constants';
-import { Location, CropCategory, FoodCategory, getCropCategoryName, getFoodCategoryName } from '../models/DataModels';
+import { Location, CropCategory, FoodCategory, getCropCategoryName, getFoodCategoryName, Era, ERAS } from '../models/DataModels';
 
 class CategoryItem {
   key: string;
@@ -43,6 +44,14 @@ class LocationParams {
   }
 }
 
+class EraParams {
+  eraId: string;
+
+  constructor(eraId: string) {
+    this.eraId = eraId;
+  }
+}
+
 @Entry
 @Component
 struct Index {
@@ -73,6 +82,7 @@ struct Index {
 
   aboutToAppear(): void {
     dataService.init();
+    timelineService.init();
   }
 
   build() {
@@ -87,8 +97,10 @@ struct Index {
             this.CropCategories()
           } else if (this.activeTab === 1) {
             this.FoodCategories()
-          } else {
+          } else if (this.activeTab === 2) {
             this.LocationExplorer()
+          } else {
+            this.TimelineExplorer()
           }
         }
         .width('100%')
@@ -174,6 +186,7 @@ struct Index {
       this.TabItem('作物', 0)
       this.TabItem('食物', 1)
       this.TabItem('地区', 2)
+      this.TabItem('时间线', 3)
     }
     .width('100%')
     .justifyContent(FlexAlign.SpaceEvenly)
@@ -344,5 +357,107 @@ struct Index {
     }
 
     return parts.length > 0 ? parts.join(' · ') : '点击探索';
+  }
+
+  @Builder
+  TimelineExplorer() {
+    Column() {
+      Text('按时代探索历史')
+        .fontSize(Sizes.FONT_LG)
+        .fontWeight(FontWeight.Medium)
+        .fontColor(Colors.TEXT_PRIMARY)
+        .margin({ bottom: Sizes.SPACING_MD })
+        .alignSelf(ItemAlign.Start)
+
+      // 时间线入口卡片
+      Column() {
+        Text('追溯食物与作物从起源到全球传播的历史轨迹')
+          .fontSize(Sizes.FONT_SM)
+          .fontColor(Colors.TEXT_SECONDARY)
+          .margin({ bottom: Sizes.SPACING_MD })
+
+        Button('查看完整时间线 →')
+          .fontSize(Sizes.FONT_SM)
+          .fontWeight(FontWeight.Medium)
+          .backgroundColor(Colors.PRIMARY)
+          .padding({ left: Sizes.SPACING_LG, right: Sizes.SPACING_LG })
+          .onClick(() => {
+            router.pushUrl({ url: 'pages/Timeline' });
+          })
+      }
+      .width('100%')
+      .padding(Sizes.SPACING_MD)
+      .backgroundColor(Colors.CARD_BACKGROUND)
+      .borderRadius(Sizes.RADIUS_MEDIUM)
+      .alignItems(HorizontalAlign.Center)
+      .margin({ bottom: Sizes.SPACING_MD })
+
+      // 时代列表
+      ForEach(ERAS, (era: Era) => {
+        this.EraCard(era)
+      })
+    }
+    .width('100%')
+    .margin({ top: Sizes.SPACING_MD })
+  }
+
+  @Builder
+  EraCard(era: Era) {
+    Row() {
+      Text(era.icon)
+        .fontSize(36)
+        .width(50)
+        .textAlign(TextAlign.Center)
+        .margin({ right: Sizes.SPACING_MD })
+
+      Column() {
+        Text(era.name)
+          .fontSize(Sizes.FONT_MD)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.TEXT_PRIMARY)
+
+        Text(timelineService.getEraYearRange(era))
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(Colors.TEXT_SECONDARY)
+          .margin({ top: 2 })
+
+        Text(era.description)
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(Colors.TEXT_HINT)
+          .margin({ top: 4 })
+      }
+      .alignItems(HorizontalAlign.Start)
+      .layoutWeight(1)
+
+      Column() {
+        Text(timelineService.getEventCountByEra(era.id).toString())
+          .fontSize(Sizes.FONT_LG)
+          .fontWeight(FontWeight.Bold)
+          .fontColor(Colors.PRIMARY)
+
+        Text('事件')
+          .fontSize(Sizes.FONT_XS)
+          .fontColor(Colors.PRIMARY)
+      }
+      .padding(Sizes.SPACING_SM)
+      .backgroundColor('#E8F5E9')
+      .borderRadius(Sizes.RADIUS_SMALL)
+    }
+    .width('100%')
+    .padding(Sizes.SPACING_MD)
+    .backgroundColor(Colors.CARD_BACKGROUND)
+    .borderRadius(Sizes.RADIUS_MEDIUM)
+    .margin({ bottom: Sizes.SPACING_SM })
+    .shadow({
+      radius: 4,
+      color: '#0D000000',
+      offsetY: 2
+    })
+    .onClick(() => {
+      router.pushUrl({
+        url: 'pages/EraDetail',
+        params: new EraParams(era.id)
+      });
+    })
   }
 }

@@ -32,6 +32,11 @@ const router = createRouter({
       path: '/search',
       name: 'SearchResult',
       component: () => import('@/pages/SearchResult.vue')
+    },
+    {
+      path: '/timeline/:eraId',
+      name: 'EraDetail',
+      component: () => import('@/pages/EraDetail.vue')
     }
   ]
 })

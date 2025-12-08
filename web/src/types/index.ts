@@ -159,3 +159,124 @@ export function getCropIcon(cropId: string, category?: string): string {
   }
   return '🌱'
 }
+
+// ============ 时间线相关类型 ============
+
+// 时代定义
+export interface Era {
+  id: string
+  name: string
+  icon: string
+  startYear: number    // 负数表示公元前
+  endYear: number
+  description: string
+}
+
+// 时间线事件类型
+export type TimelineEventType = 'origin' | 'spread'
+
+// 实体类型（仅作物和食物）
+export type TimelineEntityType = 'crop' | 'food'
+
+// 时间线事件
+export interface TimelineEvent {
+  id: string
+  entityId: string           // 作物或食物的ID
+  entityType: TimelineEntityType
+  eventType: TimelineEventType
+  year: number
+  displayTime: string
+  name: string               // 作物/食物名称
+  description: string        // 简介
+  // 起源事件
+  location?: string          // 地点名称
+  locationId?: string        // 地点ID
+  // 传播事件
+  fromLocation?: string
+  fromLocationId?: string
+  toLocation?: string
+  toLocationId?: string
+  via?: string               // 传播途径
+}
+
+// 时间线筛选条件
+export interface TimelineFilter {
+  entityType: 'all' | 'crop' | 'food'
+  eventType: 'all' | 'origin' | 'spread'
+  keyword: string
+}
+
+// 预设时代列表
+export const ERAS: Era[] = [
+  {
+    id: 'prehistoric',
+    name: '史前时代',
+    icon: '🌾',
+    startYear: -10000,
+    endYear: -5000,
+    description: '农业革命的开端，人类开始驯化作物'
+  },
+  {
+    id: 'ancient',
+    name: '古代文明',
+    icon: '🏛️',
+    startYear: -5000,
+    endYear: -1000,
+    description: '四大文明古国时期，农业技术传播'
+  },
+  {
+    id: 'classical',
+    name: '古典时期',
+    icon: '⚔️',
+    startYear: -1000,
+    endYear: 500,
+    description: '希腊罗马时代，丝绸之路开通'
+  },
+  {
+    id: 'medieval',
+    name: '中世纪',
+    icon: '🏰',
+    startYear: 500,
+    endYear: 1500,
+    description: '阿拉伯商人推动东西方交流'
+  },
+  {
+    id: 'exploration',
+    name: '大航海时代',
+    icon: '⛵',
+    startYear: 1500,
+    endYear: 1800,
+    description: '哥伦布大交换，新旧大陆作物互通'
+  },
+  {
+    id: 'modern',
+    name: '近现代',
+    icon: '🏭',
+    startYear: 1800,
+    endYear: 2100,
+    description: '工业革命后的全球化时代'
+  }
+]
+
+// 时间线事件颜色
+export const timelineEventColors: Record<string, string> = {
+  'crop_origin': '#4CAF50',    // 绿色 - 作物起源
+  'crop_spread': '#2196F3',    // 蓝色 - 作物传播
+  'food_origin': '#FF9800',    // 橙色 - 食物起源
+  'food_spread': '#9C27B0'     // 紫色 - 食物传播
+}
+
+// 获取事件颜色
+export function getEventColor(entityType: TimelineEntityType, eventType: TimelineEventType): string {
+  return timelineEventColors[`${entityType}_${eventType}`] || '#666'
+}
+
+// 获取事件类型名称
+export function getEventTypeName(eventType: TimelineEventType): string {
+  return eventType === 'origin' ? '起源' : '传播'
+}
+
+// 获取实体类型名称
+export function getEntityTypeName(entityType: TimelineEntityType): string {
+  return entityType === 'crop' ? '作物' : '食物'
+}
