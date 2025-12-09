@@ -89,6 +89,12 @@ struct Index {
   aboutToAppear(): void {
     dataService.init();
     timelineService.init();
+    this.currentLang = languageService.getLanguage();
+  }
+
+  // 页面每次显示时调用（包括从其他页面返回时）
+  onPageShow(): void {
+    this.currentLang = languageService.getLanguage();
   }
 
   toggleLanguage(): void {
@@ -171,7 +177,7 @@ struct Index {
           .fontColor(Colors.TEXT_ON_PRIMARY)
 
         Text(this.t('app.subtitle'))
-          .fontSize(Sizes.FONT_SM)
+          .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_ON_PRIMARY)
           .opacity(0.9)
           .margin({ top: Sizes.SPACING_XS })

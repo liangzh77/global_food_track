@@ -50,9 +50,14 @@ struct LocationDetail {
 
   aboutToAppear(): void {
     dataService.init();
+    this.currentLang = languageService.getLanguage();
     const params = router.getParams() as LocationDetailParams;
     this.locationId = params?.locationId || '';
     this.loadData();
+  }
+
+  onPageShow(): void {
+    this.currentLang = languageService.getLanguage();
   }
 
   loadData(): void {

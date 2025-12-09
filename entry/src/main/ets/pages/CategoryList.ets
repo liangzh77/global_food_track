@@ -41,10 +41,15 @@ struct CategoryList {
 
   aboutToAppear(): void {
     dataService.init();
+    this.currentLang = languageService.getLanguage();
     const params = router.getParams() as CategoryListParams;
     this.category = params?.category || '';
     this.type = params?.type || '';
     this.loadData();
+  }
+
+  onPageShow(): void {
+    this.currentLang = languageService.getLanguage();
   }
 
   loadData(): void {

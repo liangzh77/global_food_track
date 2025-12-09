@@ -39,9 +39,14 @@ struct FoodDetail {
 
   aboutToAppear(): void {
     dataService.init();
+    this.currentLang = languageService.getLanguage();
     const params = router.getParams() as FoodDetailParams;
     this.foodId = params?.foodId || '';
     this.loadData();
+  }
+
+  onPageShow(): void {
+    this.currentLang = languageService.getLanguage();
   }
 
   loadData(): void {

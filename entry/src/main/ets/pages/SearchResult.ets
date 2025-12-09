@@ -46,9 +46,14 @@ struct SearchResult {
 
   aboutToAppear(): void {
     dataService.init();
+    this.currentLang = languageService.getLanguage();
     const params = router.getParams() as RouterParams;
     this.keyword = params?.keyword || '';
     this.doSearch();
+  }
+
+  onPageShow(): void {
+    this.currentLang = languageService.getLanguage();
   }
 
   doSearch(): void {

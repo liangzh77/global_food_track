@@ -3,7 +3,7 @@
  */
 
 import router from '@ohos.router';
-import { Colors, Sizes, NavIcons } from '../common/Constants';
+import { Colors, Sizes, NavIcons, getCropIconById, getFoodIconById } from '../common/Constants';
 import { timelineService } from '../services/TimelineService';
 import { dataService } from '../services/DataService';
 import { languageService, Language } from '../services/LanguageService';
@@ -60,6 +60,7 @@ struct EraDetail {
 
   aboutToAppear(): void {
     timelineService.init();
+    this.currentLang = languageService.getLanguage();
 
     const params = router.getParams() as RouteParams;
     if (params && params.eraId) {
@@ -70,6 +71,10 @@ struct EraDetail {
         this.applyFilter();
       }
     }
+  }
+
+  onPageShow(): void {
+    this.currentLang = languageService.getLanguage();
   }
 
   applyFilter(): void {
@@ -113,6 +118,12 @@ struct EraDetail {
     return '';
   }
 
+  // 格式化年份（动态多语言）
+  private formatYear(year: number): string {
+    const _lang = this.currentLang;
+    return timelineService.formatYear(year);
+  }
+
   // 获取时间线实体类型名称
   private getTimelineEntityTypeName(entityType: string): string {
     const _lang = this.currentLang;
@@ -134,6 +145,23 @@ struct EraDetail {
     } else {
       const food = dataService.getFoodById(event.entityId);
       return languageService.getName(food as object);
+    }
+  }
+
+  // 获取事件的实体图标
+  private getEventIcon(event: TimelineEvent): string {
+    if (event.entityType === 'crop') {
+      const crop = dataService.getCropById(event.entityId);
+      if (crop) {
+        return getCropIconById(crop.id, crop.category);
+      }
+      return '🌱';
+    } else {
+      const food = dataService.getFoodById(event.entityId);
+      if (food) {
+        return getFoodIconById(food.id, food.category);
+      }
+      return '🍽️';
     }
   }
 
@@ -463,7 +491,7 @@ struct EraDetail {
           ForEach(this.getGroupedYears(), (year: number) => {
             // 年份标记
             Row() {
-              Text(timelineService.formatYear(year))
+              Text(this.formatYear(year))
                 .fontSize(Sizes.FONT_XS)
                 .fontColor(Colors.TEXT_ON_PRIMARY)
                 .backgroundColor(Colors.PRIMARY)
@@ -500,12 +528,10 @@ struct EraDetail {
   @Builder
   EventItem(event: TimelineEvent) {
     Row() {
-      // 时间线圆点
-      Circle()
-        .width(12)
-        .height(12)
-        .fill(getEventColor(event.entityType, event.eventType))
-        .margin({ right: Sizes.SPACING_MD, left: 20 })
+      // 实体图标
+      Text(this.getEventIcon(event))
+        .fontSize(24)
+        .margin({ right: Sizes.SPACING_MD, left: Sizes.SPACING_SM })
 
       // 事件内容
       Column() {
@@ -532,18 +558,19 @@ struct EraDetail {
             .fontColor(Colors.TEXT_SECONDARY)
             .margin({ top: 4 })
         } else {
-          Row() {
+          Column() {
             Text(`${this.getLocationName(event.fromLocationId)} → ${this.getLocationName(event.toLocationId)}`)
               .fontSize(Sizes.FONT_XS)
               .fontColor(Colors.TEXT_SECONDARY)
 
             if (this.getEventVia(event)) {
-              Text(`（${this.getEventVia(event)}）`)
+              Text(`${this.getEventVia(event)}`)
                 .fontSize(Sizes.FONT_XS)
                 .fontColor(Colors.TEXT_HINT)
-                .margin({ left: 4 })
+                .margin({ top: 2 })
             }
           }
+          .alignItems(HorizontalAlign.Start)
           .margin({ top: 4 })
         }
       }

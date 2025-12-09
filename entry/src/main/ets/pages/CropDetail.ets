@@ -39,9 +39,14 @@ struct CropDetail {
 
   aboutToAppear(): void {
     dataService.init();
+    this.currentLang = languageService.getLanguage();
     const params = router.getParams() as CropDetailParams;
     this.cropId = params?.cropId || '';
     this.loadData();
+  }
+
+  onPageShow(): void {
+    this.currentLang = languageService.getLanguage();
   }
 
   loadData(): void {
