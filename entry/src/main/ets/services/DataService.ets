@@ -14,6 +14,7 @@ import {
   getCropCategoryName,
   getFoodCategoryName
 } from '../models/DataModels';
+import { languageService } from './LanguageService';
 
 // 内嵌数据
 import { CROPS_DATA } from '../data/CropsData';
@@ -178,45 +179,45 @@ class DataService {
     return result;
   }
 
-  // 搜索
+  // 搜索（支持中英文双语搜索）
   search(keyword: string): SearchResultItem[] {
     const results: SearchResultItem[] = [];
     const lowerKeyword = keyword.toLowerCase();
 
-    // 搜索作物
+    // 搜索作物（中英文都搜索）
     this.crops.forEach((crop: Crop, id: string) => {
-      if (this.matchKeyword(crop.name, crop.alias || [], lowerKeyword)) {
+      if (this.matchCropKeyword(crop, lowerKeyword)) {
         const item: SearchResultItem = {
           id: id,
-          name: crop.name,
+          name: languageService.getName(crop as object),
           type: 'crop',
-          subtitle: getCropCategoryName(crop.category)
+          subtitle: languageService.getCropCategoryName(crop.category)
         };
         results.push(item);
       }
     });
 
-    // 搜索食物
+    // 搜索食物（中英文都搜索）
     this.foods.forEach((food: Food, id: string) => {
-      if (this.matchKeyword(food.name, food.alias || [], lowerKeyword)) {
+      if (this.matchFoodKeyword(food, lowerKeyword)) {
         const item: SearchResultItem = {
           id: id,
-          name: food.name,
+          name: languageService.getName(food as object),
           type: 'food',
-          subtitle: getFoodCategoryName(food.category)
+          subtitle: languageService.getFoodCategoryName(food.category)
         };
         results.push(item);
       }
     });
 
-    // 搜索地点
+    // 搜索地点（中英文都搜索）
     this.locations.forEach((loc: Location, id: string) => {
-      if (loc.name.toLowerCase().includes(lowerKeyword)) {
+      if (this.matchLocationKeyword(loc, lowerKeyword)) {
         const item: SearchResultItem = {
           id: id,
-          name: loc.name,
+          name: languageService.getName(loc as object),
           type: 'location',
-          subtitle: this.getLocationTypeText(loc.type)
+          subtitle: languageService.getLocationTypeName(loc.type)
         };
         results.push(item);
       }
@@ -225,23 +226,53 @@ class DataService {
     return results;
   }
 
-  private matchKeyword(name: string, aliases: string[], keyword: string): boolean {
-    if (name.toLowerCase().includes(keyword)) return true;
-    for (let i = 0; i < aliases.length; i++) {
-      if (aliases[i].toLowerCase().includes(keyword)) {
-        return true;
+  // 匹配作物关键词（中英文）
+  private matchCropKeyword(crop: Crop, keyword: string): boolean {
+    // 匹配中文名
+    if (crop.name.toLowerCase().includes(keyword)) return true;
+    // 匹配英文名
+    if (crop.nameEn && crop.nameEn.toLowerCase().includes(keyword)) return true;
+    // 匹配中文别名
+    if (crop.alias) {
+      for (let i = 0; i < crop.alias.length; i++) {
+        if (crop.alias[i].toLowerCase().includes(keyword)) return true;
+      }
+    }
+    // 匹配英文别名
+    if (crop.aliasEn) {
+      for (let i = 0; i < crop.aliasEn.length; i++) {
+        if (crop.aliasEn[i].toLowerCase().includes(keyword)) return true;
       }
     }
     return false;
   }
 
-  private getLocationTypeText(type: string): string {
-    switch (type) {
-      case 'continent': return '大洲';
-      case 'country': return '国家';
-      case 'region': return '地区';
-      default: return '地点';
+  // 匹配食物关键词（中英文）
+  private matchFoodKeyword(food: Food, keyword: string): boolean {
+    // 匹配中文名
+    if (food.name.toLowerCase().includes(keyword)) return true;
+    // 匹配英文名
+    if (food.nameEn && food.nameEn.toLowerCase().includes(keyword)) return true;
+    // 匹配中文别名
+    if (food.alias) {
+      for (let i = 0; i < food.alias.length; i++) {
+        if (food.alias[i].toLowerCase().includes(keyword)) return true;
+      }
     }
+    // 匹配英文别名
+    if (food.aliasEn) {
+      for (let i = 0; i < food.aliasEn.length; i++) {
+        if (food.aliasEn[i].toLowerCase().includes(keyword)) return true;
+      }
+    }
+    return false;
+  }
+
+  // 匹配地点关键词（中英文）
+  private matchLocationKeyword(loc: Location, keyword: string): boolean {
+    if (loc.name.toLowerCase().includes(keyword)) return true;
+    if (loc.nameEn && loc.nameEn.toLowerCase().includes(keyword)) return true;
+    return false;
   }
 
   // 获取某大洲下的所有国家

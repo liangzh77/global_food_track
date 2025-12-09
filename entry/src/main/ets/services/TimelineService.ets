@@ -12,6 +12,7 @@ import {
   EventStats
 } from '../models/DataModels';
 import { dataService } from './DataService';
+import { languageService } from './LanguageService';
 
 class TimelineService {
   private events: TimelineEvent[] = [];
@@ -186,17 +187,28 @@ class TimelineService {
 
   // 格式化年份显示
   formatYear(year: number): string {
+    const isEn = languageService.isEnglish();
     if (year < 0) {
-      return `公元前${Math.abs(year)}年`;
+      return isEn ? `${Math.abs(year)} BCE` : `公元前${Math.abs(year)}年`;
     }
-    return `${year}年`;
+    return isEn ? `${year} CE` : `${year}年`;
   }
 
   // 获取时代的年份范围显示文本
   getEraYearRange(era: Era): string {
-    const startText = era.startYear < 0 ? `公元前${Math.abs(era.startYear)}年` : `${era.startYear}年`;
-    const endText = era.endYear < 0 ? `公元前${Math.abs(era.endYear)}年` :
-                    era.endYear > 2000 ? '至今' : `${era.endYear}年`;
+    const isEn = languageService.isEnglish();
+    let startText: string;
+    let endText: string;
+
+    if (isEn) {
+      startText = era.startYear < 0 ? `${Math.abs(era.startYear)} BCE` : `${era.startYear} CE`;
+      endText = era.endYear < 0 ? `${Math.abs(era.endYear)} BCE` :
+                era.endYear > 2000 ? 'Present' : `${era.endYear} CE`;
+    } else {
+      startText = era.startYear < 0 ? `公元前${Math.abs(era.startYear)}年` : `${era.startYear}年`;
+      endText = era.endYear < 0 ? `公元前${Math.abs(era.endYear)}年` :
+                era.endYear > 2000 ? '至今' : `${era.endYear}年`;
+    }
     return `${startText} - ${endText}`;
   }
 

@@ -4,19 +4,58 @@
       "id": "pizza",
       "name": "披萨",
       "nameEn": "Pizza",
-      "alias": ["比萨"],
+      "alias": [
+        "比萨"
+      ],
       "category": "dish",
-      "ingredients": ["wheat", "tomato", "olive"],
+      "ingredients": [
+        "wheat",
+        "tomato",
+        "olive"
+      ],
       "origin": {
         "location": "italy",
-        "time": { "year": 1889, "display": "1889年", "displayEn": "1889" }
+        "time": {
+          "year": 1889,
+          "display": "1889年",
+          "displayEn": "1889"
+        }
       },
       "spreads": [
-        { "from": "italy", "to": "usa", "time": { "display": "19世纪末", "displayEn": "Late 19th century" }, "via": "意大利移民", "viaEn": "Italian immigrants" },
-        { "from": "usa", "to": "europe", "time": { "display": "20世纪中期", "displayEn": "Mid-20th century" } },
-        { "from": "usa", "to": "asia", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
+        {
+          "from": "italy",
+          "to": "usa",
+          "time": {
+            "display": "19世纪末",
+            "displayEn": "Late 19th century"
+          },
+          "via": "意大利移民",
+          "viaEn": "Italian immigrants"
+        },
+        {
+          "from": "usa",
+          "to": "europe",
+          "time": {
+            "display": "20世纪中期",
+            "displayEn": "Mid-20th century"
+          }
+        },
+        {
+          "from": "usa",
+          "to": "asia",
+          "time": {
+            "display": "20世纪后期",
+            "displayEn": "Late 20th century"
+          }
+        }
       ],
-      "currentRegions": ["italy", "usa", "europe", "asia", "south-america"],
+      "currentRegions": [
+        "italy",
+        "usa",
+        "europe",
+        "asia",
+        "south-america"
+      ],
       "description": "那不勒斯的玛格丽塔披萨以意大利王后命名，美国将其发扬光大为全球快餐。",
       "descriptionEn": "Margherita pizza from Naples was named after the Italian queen. America popularized it as global fast food."
     },
@@ -24,19 +63,55 @@
       "id": "pasta",
       "name": "意大利面",
       "nameEn": "Pasta",
-      "alias": ["意面"],
+      "alias": [
+        "意面"
+      ],
       "category": "dish",
-      "ingredients": ["wheat", "tomato"],
+      "ingredients": [
+        "wheat",
+        "tomato"
+      ],
       "origin": {
         "location": "italy",
-        "time": { "display": "13世纪左右", "displayEn": "Around 13th century" }
+        "time": {
+          "display": "13世纪左右",
+          "displayEn": "Around 13th century"
+        }
       },
       "spreads": [
-        { "from": "italy", "to": "europe", "time": { "display": "16世纪", "displayEn": "16th century" } },
-        { "from": "italy", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" }, "via": "意大利移民", "viaEn": "Italian immigrants" },
-        { "from": "europe", "to": "asia", "time": { "display": "20世纪", "displayEn": "20th century" } }
+        {
+          "from": "italy",
+          "to": "europe",
+          "time": {
+            "display": "16世纪",
+            "displayEn": "16th century"
+          }
+        },
+        {
+          "from": "italy",
+          "to": "usa",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          },
+          "via": "意大利移民",
+          "viaEn": "Italian immigrants"
+        },
+        {
+          "from": "europe",
+          "to": "asia",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
       ],
-      "currentRegions": ["italy", "usa", "europe", "asia"],
+      "currentRegions": [
+        "italy",
+        "usa",
+        "europe",
+        "asia"
+      ],
       "description": "意大利的代表性主食，配合番茄酱是16世纪后番茄传入意大利的结果。",
       "descriptionEn": "Italy's signature staple. Pairing with tomato sauce resulted from tomatoes arriving in Italy after the 16th century."
     },
@@ -45,17 +120,51 @@
       "name": "寿司",
       "nameEn": "Sushi",
       "category": "dish",
-      "ingredients": ["rice"],
+      "ingredients": [
+        "rice"
+      ],
       "origin": {
         "location": "japan",
-        "time": { "display": "江户时代（约1800年）", "displayEn": "Edo period (around 1800)" }
+        "time": {
+          "display": "江户时代（约1800年）",
+          "displayEn": "Edo period (around 1800)"
+        }
       },
       "spreads": [
-        { "from": "japan", "to": "usa", "time": { "display": "1960年代", "displayEn": "1960s" }, "via": "日本移民", "viaEn": "Japanese immigrants" },
-        { "from": "usa", "to": "europe", "time": { "display": "1980年代", "displayEn": "1980s" } },
-        { "from": "japan", "to": "asia", "time": { "display": "1990年代", "displayEn": "1990s" } }
+        {
+          "from": "japan",
+          "to": "usa",
+          "time": {
+            "display": "1960年代",
+            "displayEn": "1960s"
+          },
+          "via": "日本移民",
+          "viaEn": "Japanese immigrants"
+        },
+        {
+          "from": "usa",
+          "to": "europe",
+          "time": {
+            "display": "1980年代",
+            "displayEn": "1980s"
+          }
+        },
+        {
+          "from": "japan",
+          "to": "asia",
+          "time": {
+            "display": "1990年代",
+            "displayEn": "1990s"
+          }
+        }
       ],
-      "currentRegions": ["japan", "usa", "europe", "asia", "australia"],
+      "currentRegions": [
+        "japan",
+        "usa",
+        "europe",
+        "asia",
+        "australia"
+      ],
       "description": "现代握寿司起源于江户（东京），是日本料理的代表，全球高端餐饮符号。",
       "descriptionEn": "Modern nigiri sushi originated in Edo (Tokyo). It represents Japanese cuisine and is a symbol of global fine dining."
     },
@@ -64,18 +173,64 @@
       "name": "咖喱",
       "nameEn": "Curry",
       "category": "dish",
-      "ingredients": ["chili", "ginger", "garlic"],
+      "ingredients": [
+        "chili",
+        "ginger",
+        "garlic"
+      ],
       "origin": {
         "location": "india",
-        "time": { "display": "约公元前2000年", "displayEn": "Around 2000 BCE" }
+        "time": {
+          "display": "约公元前2000年",
+          "displayEn": "Around 2000 BCE"
+        }
       },
       "spreads": [
-        { "from": "india", "to": "uk", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "英国东印度公司", "viaEn": "British East India Company" },
-        { "from": "india", "to": "japan", "time": { "year": 1868, "display": "1868年", "displayEn": "1868" }, "via": "英国海军", "viaEn": "British Navy" },
-        { "from": "india", "to": "thailand", "time": { "display": "古代", "displayEn": "Ancient times" } },
-        { "from": "india", "to": "malaysia", "time": { "display": "古代", "displayEn": "Ancient times" } }
+        {
+          "from": "india",
+          "to": "uk",
+          "time": {
+            "display": "18世纪",
+            "displayEn": "18th century"
+          },
+          "via": "英国东印度公司",
+          "viaEn": "British East India Company"
+        },
+        {
+          "from": "india",
+          "to": "japan",
+          "time": {
+            "year": 1868,
+            "display": "1868年",
+            "displayEn": "1868"
+          },
+          "via": "英国海军",
+          "viaEn": "British Navy"
+        },
+        {
+          "from": "india",
+          "to": "thailand",
+          "time": {
+            "display": "古代",
+            "displayEn": "Ancient times"
+          }
+        },
+        {
+          "from": "india",
+          "to": "malaysia",
+          "time": {
+            "display": "古代",
+            "displayEn": "Ancient times"
+          }
+        }
       ],
-      "currentRegions": ["india", "uk", "japan", "thailand", "malaysia"],
+      "currentRegions": [
+        "india",
+        "uk",
+        "japan",
+        "thailand",
+        "malaysia"
+      ],
       "description": "印度次大陆的烹饪传统，不同地区发展出印度咖喱、日式咖喱、泰式咖喱等变体。",
       "descriptionEn": "A culinary tradition from the Indian subcontinent. Different regions developed Indian, Japanese, and Thai curry variants."
     },
@@ -83,19 +238,54 @@
       "id": "ramen",
       "name": "拉面",
       "nameEn": "Ramen",
-      "alias": ["日式拉面"],
+      "alias": [
+        "日式拉面"
+      ],
       "category": "dish",
-      "ingredients": ["wheat"],
+      "ingredients": [
+        "wheat"
+      ],
       "origin": {
         "location": "japan",
-        "time": { "year": 1910, "display": "1910年左右", "displayEn": "Around 1910" }
+        "time": {
+          "year": 1910,
+          "display": "1910年左右",
+          "displayEn": "Around 1910"
+        }
       },
       "spreads": [
-        { "from": "japan", "to": "usa", "time": { "display": "1980年代", "displayEn": "1980s" } },
-        { "from": "japan", "to": "asia", "time": { "display": "1990年代", "displayEn": "1990s" } },
-        { "from": "japan", "to": "europe", "time": { "display": "2000年代", "displayEn": "2000s" } }
+        {
+          "from": "japan",
+          "to": "usa",
+          "time": {
+            "display": "1980年代",
+            "displayEn": "1980s"
+          }
+        },
+        {
+          "from": "japan",
+          "to": "asia",
+          "time": {
+            "display": "1990年代",
+            "displayEn": "1990s"
+          }
+        },
+        {
+          "from": "japan",
+          "to": "europe",
+          "time": {
+            "display": "2000年代",
+            "displayEn": "2000s"
+          }
+        }
       ],
-      "currentRegions": ["japan", "usa", "korea", "china", "europe"],
+      "currentRegions": [
+        "japan",
+        "usa",
+        "korea",
+        "china",
+        "europe"
+      ],
       "description": "日本对中国拉面的改良创新，发展出豚骨、味噌、酱油等多种风味。",
       "descriptionEn": "Japan's innovative adaptation of Chinese noodles, developed into tonkotsu, miso, shoyu, and other flavors."
     },
@@ -103,139 +293,4178 @@
       "id": "hamburger",
       "name": "汉堡包",
       "nameEn": "Hamburger",
-      "alias": ["汉堡"],
+      "alias": [
+        "汉堡"
+      ],
       "category": "dish",
-      "ingredients": ["wheat", "potato", "tomato", "onion"],
+      "ingredients": [
+        "wheat",
+        "potato",
+        "tomato",
+        "onion"
+      ],
       "origin": {
         "location": "usa",
-        "time": { "display": "19世纪末", "displayEn": "Late 19th century" }
+        "time": {
+          "display": "19世纪末",
+          "displayEn": "Late 19th century"
+        }
       },
       "spreads": [
-        { "from": "usa", "to": "europe", "time": { "display": "20世纪中期", "displayEn": "Mid-20th century" } },
-        { "from": "usa", "to": "asia", "time": { "display": "1970年代", "displayEn": "1970s" }, "via": "麦当劳等快餐连锁", "viaEn": "McDonald's and other fast food chains" },
-        { "from": "usa", "to": "south-america", "time": { "display": "1980年代", "displayEn": "1980s" } }
+        {
+          "from": "usa",
+          "to": "europe",
+          "time": {
+            "display": "20世纪中期",
+            "displayEn": "Mid-20th century"
+          }
+        },
+        {
+          "from": "usa",
+          "to": "asia",
+          "time": {
+            "display": "1970年代",
+            "displayEn": "1970s"
+          },
+          "via": "麦当劳等快餐连锁",
+          "viaEn": "McDonald's and other fast food chains"
+        },
+        {
+          "from": "usa",
+          "to": "south-america",
+          "time": {
+            "display": "1980年代",
+            "displayEn": "1980s"
+          }
+        }
       ],
-      "currentRegions": ["usa", "europe", "asia", "south-america", "australia"],
+      "currentRegions": [
+        "usa",
+        "europe",
+        "asia",
+        "south-america",
+        "australia"
+      ],
       "description": "美国快餐文化的代表，麦当劳将其推广到全球，成为全球化的象征。",
       "descriptionEn": "The symbol of American fast food culture. McDonald's spread it globally, making it an icon of globalization."
-    },
-    {
-      "id": "french-fries",
-      "name": "薯条",
-      "nameEn": "French Fries",
-      "alias": ["炸薯条"],
-      "category": "snack",
-      "ingredients": ["potato"],
-      "origin": {
-        "location": "belgium",
-        "time": { "display": "17世纪", "displayEn": "17th century" }
-      },
-      "spreads": [
-        { "from": "belgium", "to": "france", "time": { "display": "18世纪", "displayEn": "18th century" } },
-        { "from": "france", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "托马斯·杰斐逊", "viaEn": "Thomas Jefferson" },
-        { "from": "usa", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" }, "via": "快餐连锁", "viaEn": "Fast food chains" }
-      ],
-      "currentRegions": ["usa", "europe", "asia", "south-america"],
-      "description": "起源有争议，比利时和法国都声称发明，美国快餐业使其风靡全球。",
-      "descriptionEn": "Origin is disputed between Belgium and France. American fast food industry made it popular worldwide."
     },
     {
       "id": "fried-rice",
       "name": "炒饭",
       "nameEn": "Fried Rice",
       "category": "dish",
-      "ingredients": ["rice"],
+      "ingredients": [
+        "rice"
+      ],
       "origin": {
         "location": "china",
-        "time": { "display": "隋代（约600年）", "displayEn": "Sui Dynasty (around 600 CE)" }
+        "time": {
+          "display": "隋代（约600年）",
+          "displayEn": "Sui Dynasty (around 600 CE)"
+        }
       },
       "spreads": [
-        { "from": "china", "to": "southeast-asia", "time": { "display": "宋元时期", "displayEn": "Song-Yuan period" } },
-        { "from": "china", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" }, "via": "中国移民", "viaEn": "Chinese immigrants" },
-        { "from": "china", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } }
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "宋元时期",
+            "displayEn": "Song-Yuan period"
+          }
+        },
+        {
+          "from": "china",
+          "to": "usa",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          },
+          "via": "中国移民",
+          "viaEn": "Chinese immigrants"
+        },
+        {
+          "from": "china",
+          "to": "europe",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
       ],
-      "currentRegions": ["china", "southeast-asia", "usa", "europe", "jiangsu", "guangdong"],
+      "currentRegions": [
+        "china",
+        "southeast-asia",
+        "usa",
+        "europe",
+        "jiangsu",
+        "guangdong"
+      ],
       "description": "扬州炒饭最为著名，各地发展出泰式炒饭、印尼炒饭等变体。",
       "descriptionEn": "Yangzhou fried rice is the most famous. Various regions developed Thai fried rice, nasi goreng, and other variants."
-    },
-    {
-      "id": "kimchi",
-      "name": "泡菜",
-      "nameEn": "Kimchi",
-      "alias": ["韩式泡菜"],
-      "category": "preserved",
-      "ingredients": ["cabbage", "chili", "garlic"],
-      "origin": {
-        "location": "korea",
-        "time": { "display": "三国时代（约公元前37年）", "displayEn": "Three Kingdoms period (around 37 BCE)" }
-      },
-      "spreads": [
-        { "from": "korea", "to": "japan", "time": { "display": "20世纪", "displayEn": "20th century" } },
-        { "from": "korea", "to": "usa", "time": { "display": "1980年代", "displayEn": "1980s" }, "via": "韩国移民", "viaEn": "Korean immigrants" },
-        { "from": "korea", "to": "china", "time": { "display": "古代", "displayEn": "Ancient times" } }
-      ],
-      "currentRegions": ["korea", "japan", "china", "usa"],
-      "description": "韩国的国民食品，辣白菜是16世纪辣椒传入后的产物，之前的泡菜不辣。",
-      "descriptionEn": "Korea's national food. Spicy kimchi emerged after chili peppers arrived in the 16th century; earlier versions were not spicy."
-    },
-    {
-      "id": "pho",
-      "name": "越南粉",
-      "nameEn": "Pho",
-      "alias": ["河粉"],
-      "category": "dish",
-      "ingredients": ["rice"],
-      "origin": {
-        "location": "vietnam",
-        "time": { "display": "19世纪末", "displayEn": "Late 19th century" }
-      },
-      "spreads": [
-        { "from": "vietnam", "to": "france", "time": { "display": "1950年代", "displayEn": "1950s" }, "via": "法国殖民", "viaEn": "French colonization" },
-        { "from": "vietnam", "to": "usa", "time": { "display": "1970年代", "displayEn": "1970s" }, "via": "越战后移民", "viaEn": "Post-Vietnam War immigrants" },
-        { "from": "vietnam", "to": "australia", "time": { "display": "1980年代", "displayEn": "1980s" } }
-      ],
-      "currentRegions": ["vietnam", "usa", "france", "australia"],
-      "description": "越南的国民汤粉，融合了中国和法国的烹饪元素。",
-      "descriptionEn": "Vietnam's national noodle soup, blending Chinese and French culinary elements."
     },
     {
       "id": "tacos",
       "name": "塔可",
       "nameEn": "Tacos",
       "category": "dish",
-      "ingredients": ["corn"],
+      "ingredients": [
+        "corn"
+      ],
       "origin": {
         "location": "mexico",
-        "time": { "display": "古代墨西哥", "displayEn": "Ancient Mexico" }
+        "time": {
+          "display": "古代墨西哥",
+          "displayEn": "Ancient Mexico"
+        }
       },
       "spreads": [
-        { "from": "mexico", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" } },
-        { "from": "usa", "to": "europe", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } },
-        { "from": "usa", "to": "asia", "time": { "display": "21世纪", "displayEn": "21st century" } }
+        {
+          "from": "mexico",
+          "to": "usa",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "usa",
+          "to": "europe",
+          "time": {
+            "display": "20世纪后期",
+            "displayEn": "Late 20th century"
+          }
+        },
+        {
+          "from": "usa",
+          "to": "asia",
+          "time": {
+            "display": "21世纪",
+            "displayEn": "21st century"
+          }
+        }
       ],
-      "currentRegions": ["mexico", "usa", "europe"],
+      "currentRegions": [
+        "mexico",
+        "usa",
+        "europe"
+      ],
       "description": "墨西哥传统食物，玉米饼包裹各种馅料，塔可贝尔将其快餐化推向全球。",
       "descriptionEn": "Traditional Mexican food, corn tortillas with various fillings. Taco Bell popularized it as fast food globally."
+    },
+    {
+      "id": "pho",
+      "name": "越南粉",
+      "nameEn": "Pho",
+      "alias": [
+        "河粉"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "vietnam",
+        "time": {
+          "display": "19世纪末",
+          "displayEn": "Late 19th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "vietnam",
+          "to": "france",
+          "time": {
+            "display": "1950年代",
+            "displayEn": "1950s"
+          },
+          "via": "法国殖民",
+          "viaEn": "French colonization"
+        },
+        {
+          "from": "vietnam",
+          "to": "usa",
+          "time": {
+            "display": "1970年代",
+            "displayEn": "1970s"
+          },
+          "via": "越战后移民",
+          "viaEn": "Post-Vietnam War immigrants"
+        },
+        {
+          "from": "vietnam",
+          "to": "australia",
+          "time": {
+            "display": "1980年代",
+            "displayEn": "1980s"
+          }
+        }
+      ],
+      "currentRegions": [
+        "vietnam",
+        "usa",
+        "france",
+        "australia"
+      ],
+      "description": "越南的国民汤粉，融合了中国和法国的烹饪元素。",
+      "descriptionEn": "Vietnam's national noodle soup, blending Chinese and French culinary elements."
     },
     {
       "id": "paella",
       "name": "西班牙海鲜饭",
       "nameEn": "Paella",
-      "alias": ["帕埃利亚"],
+      "alias": [
+        "帕埃利亚"
+      ],
       "category": "dish",
-      "ingredients": ["rice"],
+      "ingredients": [
+        "rice"
+      ],
       "origin": {
         "location": "spain",
-        "time": { "display": "19世纪中期", "displayEn": "Mid-19th century" }
+        "time": {
+          "display": "19世纪中期",
+          "displayEn": "Mid-19th century"
+        }
       },
       "spreads": [
-        { "from": "spain", "to": "south-america", "time": { "display": "19世纪", "displayEn": "19th century" } },
-        { "from": "spain", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } },
-        { "from": "spain", "to": "usa", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
+        {
+          "from": "spain",
+          "to": "south-america",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "spain",
+          "to": "europe",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        },
+        {
+          "from": "spain",
+          "to": "usa",
+          "time": {
+            "display": "20世纪后期",
+            "displayEn": "Late 20th century"
+          }
+        }
       ],
-      "currentRegions": ["spain", "south-america", "usa"],
+      "currentRegions": [
+        "spain",
+        "south-america",
+        "usa"
+      ],
       "description": "瓦伦西亚地区的经典菜肴，体现了阿拉伯人引入稻米对西班牙烹饪的影响。",
       "descriptionEn": "A classic dish from Valencia, reflecting the influence of Arab-introduced rice on Spanish cuisine."
+    },
+    {
+      "id": "tofu",
+      "name": "豆腐",
+      "nameEn": "Tofu",
+      "category": "dish",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "西汉（约公元前160年）",
+          "displayEn": "Western Han Dynasty (around 160 BCE)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "奈良时代（8世纪）",
+            "displayEn": "Nara period (8th century)"
+          }
+        },
+        {
+          "from": "china",
+          "to": "korea",
+          "time": {
+            "display": "唐代",
+            "displayEn": "Tang Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "宋代",
+            "displayEn": "Song Dynasty"
+          }
+        },
+        {
+          "from": "asia",
+          "to": "europe",
+          "time": {
+            "display": "18世纪",
+            "displayEn": "18th century"
+          }
+        },
+        {
+          "from": "asia",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "japan",
+        "korea",
+        "southeast-asia",
+        "usa",
+        "sichuan"
+      ],
+      "description": "相传淮南王刘安发明，东亚素食蛋白质的主要来源，如今成为全球健康食品。",
+      "descriptionEn": "Allegedly invented by Liu An, Prince of Huainan. The main vegetarian protein source in East Asia, now a global health food."
+    },
+    {
+      "id": "mapo-tofu",
+      "name": "麻婆豆腐",
+      "nameEn": "Mapo Tofu",
+      "category": "dish",
+      "ingredients": [
+        "soybean",
+        "chili",
+        "sichuan-pepper"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "year": 1862,
+          "display": "1862年",
+          "displayEn": "1862"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "japan"
+      ],
+      "description": "四川成都陈麻婆创制，川菜代表作，麻辣鲜香烫的典范。",
+      "descriptionEn": "Created by Chen Mapo in Chengdu, Sichuan. A signature Sichuan dish exemplifying the numbing, spicy, fresh, fragrant, and hot flavors."
+    },
+    {
+      "id": "kung-pao-chicken",
+      "name": "宫保鸡丁",
+      "nameEn": "Kung Pao Chicken",
+      "alias": [
+        "宫爆鸡丁"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "peanut",
+        "chili"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "清代（约1860年）",
+          "displayEn": "Qing Dynasty (around 1860)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          },
+          "via": "中餐馆",
+          "viaEn": "Chinese restaurants"
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "usa"
+      ],
+      "description": "以清代四川总督丁宝桢命名，美式中餐的代表菜，全球知名度最高的川菜。",
+      "descriptionEn": "Named after Ding Baozhen, a Qing Dynasty Sichuan governor. A signature American-Chinese dish and the most internationally recognized Sichuan dish."
+    },
+    {
+      "id": "peking-duck",
+      "name": "北京烤鸭",
+      "nameEn": "Peking Duck",
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "明代（约1400年）",
+          "displayEn": "Ming Dynasty (around 1400)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "usa",
+        "europe"
+      ],
+      "description": "中国国宴菜，全聚德和便宜坊两大流派，配薄饼、葱丝、甜面酱食用。",
+      "descriptionEn": "A Chinese state banquet dish. Two main styles: Quanjude and Bianyifang. Served with thin pancakes, scallions, and sweet bean sauce."
+    },
+    {
+      "id": "dim-sum",
+      "name": "点心",
+      "nameEn": "Dim Sum",
+      "alias": [
+        "粤式点心"
+      ],
+      "aliasEn": [
+        "Cantonese Dim Sum"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "rice"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "唐代（约700年）",
+          "displayEn": "Tang Dynasty (around 700 CE)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "china",
+          "to": "usa",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          },
+          "via": "粤籍移民",
+          "viaEn": "Cantonese immigrants"
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "hong kong",
+        "usa",
+        "singapore",
+        "malaysia"
+      ],
+      "description": "广东饮茶文化的精髓，虾饺、烧卖、叉烧包等小吃配茶点，遍布全球唐人街。",
+      "descriptionEn": "The essence of Cantonese tea culture. Includes har gow, siu mai, char siu bao, and other small dishes served with tea. Found in Chinatowns worldwide."
+    },
+    {
+      "id": "spring-roll",
+      "name": "春卷",
+      "nameEn": "Spring Roll",
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "东晋（约300年）",
+          "displayEn": "Eastern Jin Dynasty (around 300 CE)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "明清时期",
+            "displayEn": "Ming-Qing period"
+          }
+        },
+        {
+          "from": "southeast-asia",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "vietnam",
+        "thailand",
+        "usa"
+      ],
+      "description": "立春食俗的产物，越南春卷、泰国春卷各有特色，美式中餐必备。",
+      "descriptionEn": "Originated from the Beginning of Spring custom. Vietnamese and Thai spring rolls each have their own characteristics. A staple of American-Chinese cuisine."
+    },
+    {
+      "id": "hot-pot",
+      "name": "火锅",
+      "nameEn": "Hot Pot",
+      "category": "dish",
+      "ingredients": [
+        "chili",
+        "sichuan-pepper"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "三国时期",
+          "displayEn": "Three Kingdoms period"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "明代",
+            "displayEn": "Ming Dynasty"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "japan",
+        "korea",
+        "thailand"
+      ],
+      "description": "中国的共食文化代表，重庆麻辣火锅、潮汕牛肉火锅、日式涮涮锅各具特色。",
+      "descriptionEn": "Represents Chinese communal dining culture. Chongqing spicy hot pot, Teochew beef hot pot, and Japanese shabu-shabu each have distinct characteristics."
+    },
+    {
+      "id": "tempura",
+      "name": "天妇罗",
+      "nameEn": "Tempura",
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "16世纪",
+          "displayEn": "16th century"
+        }
+      },
+      "currentRegions": [
+        "japan",
+        "usa"
+      ],
+      "description": "葡萄牙传教士带来的油炸技法与日本料理结合，天妇罗海老是代表。",
+      "descriptionEn": "A fusion of Portuguese missionaries\\"
+    },
+    {
+      "id": "teriyaki",
+      "name": "照烧",
+      "nameEn": "Teriyaki",
+      "category": "dish",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "17世纪",
+          "displayEn": "17th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "usa",
+          "time": {
+            "display": "20世纪中期",
+            "displayEn": "Mid-20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "usa"
+      ],
+      "description": "酱油、味醂、糖制成照烧汁，是日式西餐化的代表，在美国广受欢迎。",
+      "descriptionEn": "Made with soy sauce, mirin, and sugar. Represents the westernization of Japanese cuisine and is very popular in America."
+    },
+    {
+      "id": "sashimi",
+      "name": "刺身",
+      "nameEn": "Sashimi",
+      "alias": [
+        "生鱼片"
+      ],
+      "aliasEn": [
+        "Raw Fish"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "平安时代（约800年）",
+          "displayEn": "Heian period (around 800 CE)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "usa",
+        "korea"
+      ],
+      "description": "日本料理的精髓，对食材新鲜度要求极高，金枪鱼、三文鱼为上品。",
+      "descriptionEn": "The essence of Japanese cuisine, requiring extremely fresh ingredients. Tuna and salmon are considered premium."
+    },
+    {
+      "id": "bibimbap",
+      "name": "拌饭",
+      "nameEn": "Bibimbap",
+      "alias": [
+        "石锅拌饭"
+      ],
+      "aliasEn": [
+        "Stone Pot Rice"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "sesame",
+        "chili"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "朝鲜时代",
+          "displayEn": "Joseon Dynasty"
+        }
+      },
+      "spreads": [
+        {
+          "from": "korea",
+          "to": "usa",
+          "time": {
+            "display": "2000年代",
+            "displayEn": "2000s"
+          }
+        }
+      ],
+      "currentRegions": [
+        "korea",
+        "usa"
+      ],
+      "description": "韩国代表性料理，米饭配各色蔬菜和辣酱拌匀食用，全州拌饭最有名。",
+      "descriptionEn": "A signature Korean dish with rice topped with assorted vegetables and gochujang, mixed before eating. Jeonju bibimbap is the most famous."
+    },
+    {
+      "id": "bulgogi",
+      "name": "烤肉",
+      "nameEn": "Bulgogi",
+      "alias": [
+        "韩式烤肉"
+      ],
+      "aliasEn": [
+        "Korean BBQ"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "soybean",
+        "sesame",
+        "pear"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "高句丽时期",
+          "displayEn": "Goguryeo period"
+        }
+      },
+      "spreads": [
+        {
+          "from": "korea",
+          "to": "usa",
+          "time": {
+            "display": "20世纪后期",
+            "displayEn": "Late 20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "korea",
+        "usa",
+        "japan"
+      ],
+      "description": "腌制牛肉烤制，韩国饮食文化象征，韩流带动全球韩国烤肉热潮。",
+      "descriptionEn": "Marinated grilled beef, a symbol of Korean food culture. The Korean Wave drove a global Korean BBQ boom."
+    },
+    {
+      "id": "tom-yum",
+      "name": "冬阴功汤",
+      "nameEn": "Tom Yum",
+      "alias": [
+        "酸辣虾汤"
+      ],
+      "aliasEn": [
+        "Spicy Sour Shrimp Soup"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "chili",
+        "lemon",
+        "ginger"
+      ],
+      "origin": {
+        "location": "thailand",
+        "time": {
+          "display": "近代",
+          "displayEn": "Modern era"
+        }
+      },
+      "spreads": [
+        {
+          "from": "thailand",
+          "to": "usa",
+          "time": {
+            "display": "1980年代",
+            "displayEn": "1980s"
+          }
+        }
+      ],
+      "currentRegions": [
+        "thailand",
+        "usa",
+        "europe"
+      ],
+      "description": "泰国国汤，酸辣鲜香，香茅、南姜、青柠叶是灵魂配料。",
+      "descriptionEn": "Thailand\\"
+    },
+    {
+      "id": "green-curry",
+      "name": "绿咖喱",
+      "nameEn": "Green Curry",
+      "alias": [
+        "泰式绿咖喱"
+      ],
+      "aliasEn": [
+        "Thai Green Curry"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "chili",
+        "coconut",
+        "ginger"
+      ],
+      "origin": {
+        "location": "thailand",
+        "time": {
+          "display": "20世纪初",
+          "displayEn": "Early 20th century"
+        }
+      },
+      "currentRegions": [
+        "thailand",
+        "usa",
+        "europe"
+      ],
+      "description": "泰国咖喱代表，用青辣椒制成，配椰浆烹制，比红咖喱更辣。",
+      "descriptionEn": "A signature Thai curry made with green chilies and cooked with coconut milk, spicier than red curry."
+    },
+    {
+      "id": "satay",
+      "name": "沙爹",
+      "nameEn": "Satay",
+      "alias": [
+        "沙嗲"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "peanut",
+        "turmeric",
+        "cumin"
+      ],
+      "origin": {
+        "location": "indonesia",
+        "time": {
+          "display": "19世纪",
+          "displayEn": "19th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "indonesia",
+          "to": "malaysia",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "indonesia",
+          "to": "singapore",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "indonesia",
+        "malaysia",
+        "singapore",
+        "thailand"
+      ],
+      "description": "东南亚烤串，花生酱蘸料是灵魂，爪哇商人沿街叫卖的产物。",
+      "descriptionEn": "Southeast Asian skewers with peanut sauce as the soul ingredient, originating from Javanese street vendors."
+    },
+    {
+      "id": "nasi-goreng",
+      "name": "印尼炒饭",
+      "nameEn": "Nasi Goreng",
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "indonesia",
+        "time": {
+          "display": "近代",
+          "displayEn": "Modern era"
+        }
+      },
+      "spreads": [
+        {
+          "from": "indonesia",
+          "to": "netherlands",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          },
+          "via": "殖民关系",
+          "viaEn": "Colonial ties"
+        }
+      ],
+      "currentRegions": [
+        "indonesia",
+        "malaysia",
+        "netherlands"
+      ],
+      "description": "印尼国菜，甜酱油调味是特色，被列入非物质文化遗产。",
+      "descriptionEn": "Indonesia\\"
+    },
+    {
+      "id": "laksa",
+      "name": "叻沙",
+      "nameEn": "Laksa",
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "coconut",
+        "chili"
+      ],
+      "origin": {
+        "location": "malaysia",
+        "time": {
+          "display": "娘惹文化时期",
+          "displayEn": "Peranakan period"
+        }
+      },
+      "spreads": [
+        {
+          "from": "malaysia",
+          "to": "singapore",
+          "time": {
+            "display": "近代",
+            "displayEn": "Modern era"
+          }
+        }
+      ],
+      "currentRegions": [
+        "malaysia",
+        "singapore"
+      ],
+      "description": "马来与华人文化融合的产物，椰浆咖喱汤底，槟城虾面叻沙与加东叻沙各有拥趸。",
+      "descriptionEn": "A fusion of Malay and Chinese cultures, featuring coconut curry broth. Penang prawn mee laksa and Katong laksa each have their devotees."
+    },
+    {
+      "id": "poke",
+      "name": "波奇碗",
+      "nameEn": "Poke Bowl",
+      "alias": [
+        "夏威夷鱼生饭"
+      ],
+      "aliasEn": [
+        "Hawaiian Raw Fish Bowl"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "sesame",
+        "soybean"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "传统夏威夷",
+          "displayEn": "Traditional Hawaiian"
+        }
+      },
+      "spreads": [
+        {
+          "from": "usa",
+          "to": "europe",
+          "time": {
+            "display": "2010年代",
+            "displayEn": "2010s"
+          }
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "europe",
+        "australia"
+      ],
+      "description": "夏威夷传统生鱼丁，融合日本影响，成为全球健康饮食潮流。",
+      "descriptionEn": "Traditional Hawaiian diced raw fish, blending Japanese influences. Became a global healthy eating trend."
+    },
+    {
+      "id": "fish-and-chips",
+      "name": "炸鱼薯条",
+      "nameEn": "Fish and Chips",
+      "category": "dish",
+      "ingredients": [
+        "potato",
+        "wheat"
+      ],
+      "origin": {
+        "location": "uk",
+        "time": {
+          "year": 1860,
+          "display": "1860年代",
+          "displayEn": "1860s"
+        }
+      },
+      "spreads": [
+        {
+          "from": "uk",
+          "to": "australia",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "uk",
+          "to": "new-zealand",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "uk",
+        "ireland",
+        "australia",
+        "new-zealand"
+      ],
+      "description": "英国国民美食，犹太移民带来的炸鱼与比利时/法国薯条的结合。",
+      "descriptionEn": "Britain\\"
+    },
+    {
+      "id": "shepherd-pie",
+      "name": "牧羊人派",
+      "nameEn": "Shepherd\\",
+      "alias": [
+        "农舍派"
+      ],
+      "aliasEn": [
+        "Cottage Pie"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "potato"
+      ],
+      "origin": {
+        "location": "uk",
+        "time": {
+          "display": "18世纪",
+          "displayEn": "18th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "uk",
+          "to": "ireland",
+          "time": {
+            "display": "18世纪",
+            "displayEn": "18th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "uk",
+        "ireland"
+      ],
+      "description": "英国传统菜，肉馅配土豆泥顶层烤制，羊肉版叫牧羊人派，牛肉版叫农舍派。",
+      "descriptionEn": "A traditional British dish with minced meat topped with mashed potato and baked. Lamb version is shepherd\\"
+    },
+    {
+      "id": "roast-beef",
+      "name": "烤牛肉",
+      "nameEn": "Roast Beef",
+      "alias": [
+        "英式烤肉"
+      ],
+      "aliasEn": [
+        "British Roast"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "uk",
+        "time": {
+          "display": "中世纪",
+          "displayEn": "Medieval period"
+        }
+      },
+      "currentRegions": [
+        "uk"
+      ],
+      "description": "英国周日烤肉传统的核心，配约克郡布丁和烤蔬菜。",
+      "descriptionEn": "The centerpiece of British Sunday roast tradition, served with Yorkshire pudding and roasted vegetables."
+    },
+    {
+      "id": "steak-frites",
+      "name": "牛排薯条",
+      "nameEn": "Steak Frites",
+      "category": "dish",
+      "ingredients": [
+        "potato"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "19世纪",
+          "displayEn": "19th century"
+        }
+      },
+      "currentRegions": [
+        "france",
+        "belgium"
+      ],
+      "description": "法国小酒馆经典，煎牛排配炸薯条，巴黎最受欢迎的平民美食。",
+      "descriptionEn": "A French bistro classic, pan-fried steak with fries. Paris\\"
+    },
+    {
+      "id": "coq-au-vin",
+      "name": "红酒炖鸡",
+      "nameEn": "Coq au Vin",
+      "category": "dish",
+      "ingredients": [
+        "grape"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "勃艮第地区传统",
+          "displayEn": "Burgundy tradition"
+        }
+      },
+      "currentRegions": [
+        "france"
+      ],
+      "description": "法国经典乡村菜，用勃艮第红酒慢炖，朱莉亚·柴尔德将其推广到美国。",
+      "descriptionEn": "A classic French country dish, slow-braised in Burgundy wine. Julia Child popularized it in America."
+    },
+    {
+      "id": "ratatouille",
+      "name": "普罗旺斯杂烩",
+      "nameEn": "Ratatouille",
+      "alias": [
+        "杂菜煲"
+      ],
+      "aliasEn": [
+        "Vegetable Stew"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "tomato",
+        "eggplant",
+        "zucchini",
+        "onion",
+        "garlic",
+        "olive"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "18世纪",
+          "displayEn": "18th century"
+        }
+      },
+      "currentRegions": [
+        "france"
+      ],
+      "description": "普罗旺斯农民菜，新世界蔬菜与地中海橄榄油的结合，皮克斯电影让其闻名全球。",
+      "descriptionEn": "A Provençal peasant dish combining New World vegetables with Mediterranean olive oil. The Pixar film made it famous worldwide."
+    },
+    {
+      "id": "croissant",
+      "name": "羊角面包",
+      "nameEn": "Croissant",
+      "alias": [
+        "可颂"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "austria",
+        "time": {
+          "year": 1683,
+          "display": "1683年",
+          "displayEn": "1683"
+        }
+      },
+      "spreads": [
+        {
+          "from": "austria",
+          "to": "france",
+          "time": {
+            "year": 1770,
+            "display": "1770年",
+            "displayEn": "1770"
+          },
+          "via": "玛丽·安托瓦内特",
+          "viaEn": "Marie Antoinette"
+        },
+        {
+          "from": "france",
+          "to": "europe",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "france",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "france",
+        "europe",
+        "usa",
+        "asia"
+      ],
+      "description": "维也纳起源的月牙面包，法国将其改良为层层酥皮的经典早餐。",
+      "descriptionEn": "Created to celebrate Vienna\\"
+    },
+    {
+      "id": "schnitzel",
+      "name": "炸肉排",
+      "nameEn": "Schnitzel",
+      "alias": [
+        "维也纳炸猪排"
+      ],
+      "aliasEn": [
+        "Wiener Schnitzel"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "austria",
+        "time": {
+          "display": "19世纪",
+          "displayEn": "19th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "austria",
+          "to": "germany",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "austria",
+        "germany"
+      ],
+      "description": "奥地利国菜，意大利米兰炸肉排的变体，裹面包屑油炸。",
+      "descriptionEn": "Austria\\"
+    },
+    {
+      "id": "bratwurst",
+      "name": "德国香肠",
+      "alias": [
+        "烤肠"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "germany",
+        "time": {
+          "display": "14世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "germany",
+          "to": "usa",
+          "time": {
+            "display": "19世纪"
+          },
+          "via": "德国移民"
+        }
+      ],
+      "currentRegions": [
+        "germany",
+        "usa"
+      ],
+      "description": "德国有数百种香肠，纽伦堡、图林根各有特色，啤酒节必备。"
+    },
+    {
+      "id": "pastrami",
+      "name": "烟熏牛肉",
+      "alias": [
+        "熏牛肉"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "pepper-black",
+        "coriander"
+      ],
+      "origin": {
+        "location": "romania",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "romania",
+          "to": "usa",
+          "time": {
+            "display": "19世纪末"
+          },
+          "via": "犹太移民"
+        }
+      ],
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "罗马尼亚犹太移民带到纽约，卡茨熟食店的招牌，纽约三明治文化代表。"
+    },
+    {
+      "id": "gyros",
+      "name": "希腊烤肉",
+      "alias": [
+        "旋转烤肉"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "tomato",
+        "onion"
+      ],
+      "origin": {
+        "location": "greece",
+        "time": {
+          "display": "20世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "greece",
+          "to": "usa",
+          "time": {
+            "display": "1970年代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "greece",
+        "usa"
+      ],
+      "description": "土耳其旋转烤肉的希腊版本，配皮塔饼和酸奶酱，是地中海快餐代表。"
+    },
+    {
+      "id": "falafel",
+      "name": "法拉费尔",
+      "alias": [
+        "炸豆丸子"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "chickpea",
+        "broad-bean"
+      ],
+      "origin": {
+        "location": "egypt",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "egypt",
+          "to": "middle-east",
+          "time": {
+            "display": "中世纪"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "usa",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "egypt",
+        "israel",
+        "lebanon",
+        "usa"
+      ],
+      "description": "中东素食代表，鹰嘴豆泥炸制，夹皮塔饼配酱汁，以色列国民美食。"
+    },
+    {
+      "id": "hummus",
+      "name": "鹰嘴豆泥",
+      "nameEn": "Hummus",
+      "category": "dish",
+      "ingredients": [
+        "chickpea",
+        "sesame",
+        "olive",
+        "garlic",
+        "lemon"
+      ],
+      "origin": {
+        "location": "middle-east",
+        "time": {
+          "display": "13世纪",
+          "displayEn": "13th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "middle-east",
+          "to": "mediterranean",
+          "time": {
+            "display": "中世纪",
+            "displayEn": "Medieval period"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "europe",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "usa",
+          "time": {
+            "display": "20世纪后期",
+            "displayEn": "Late 20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "middle-east",
+        "israel",
+        "europe",
+        "usa"
+      ],
+      "description": "中东的经典蘸酱，搭配皮塔饼食用，如今成为全球健康食品。",
+      "descriptionEn": "A classic Middle Eastern dip, eaten with pita bread. Now a global health food."
+    },
+    {
+      "id": "shawarma",
+      "name": "沙瓦尔玛",
+      "alias": [
+        "中东卷饼"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "turkey",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "turkey",
+          "to": "middle-east",
+          "time": {
+            "display": "20世纪"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "europe",
+          "time": {
+            "display": "20世纪后期"
+          }
+        }
+      ],
+      "currentRegions": [
+        "turkey",
+        "middle-east",
+        "germany",
+        "uk"
+      ],
+      "description": "土耳其发明的旋转烤肉，德国的土耳其烤肉（Döner）是其变体。"
+    },
+    {
+      "id": "kebab",
+      "name": "烤肉串",
+      "alias": [
+        "卡巴布"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "turkey",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "turkey",
+          "to": "middle-east",
+          "time": {
+            "display": "古代"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "india",
+          "time": {
+            "display": "中世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "turkey",
+        "iran",
+        "india",
+        "pakistan",
+        "uk"
+      ],
+      "description": "中东和中亚的烧烤传统，印度的坦都里烤鸡是其演变。"
+    },
+    {
+      "id": "tandoori-chicken",
+      "name": "坦都里烤鸡",
+      "category": "dish",
+      "ingredients": [
+        "chili",
+        "turmeric",
+        "cumin"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "1947年"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "uk",
+          "time": {
+            "display": "1960年代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "uk"
+      ],
+      "description": "旁遮普菜，泥炉高温烤制，英国最受欢迎的印度菜之一。"
+    },
+    {
+      "id": "butter-chicken",
+      "name": "黄油鸡",
+      "alias": [
+        "奶油咖喱鸡"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "tomato",
+        "chili",
+        "ginger",
+        "garlic"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "year": 1950,
+          "display": "1950年代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "uk",
+          "time": {
+            "display": "1970年代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "uk",
+        "usa",
+        "canada"
+      ],
+      "description": "德里Moti Mahal餐厅发明，番茄奶油咖喱汁，全球最受欢迎的印度菜。"
+    },
+    {
+      "id": "samosa",
+      "name": "萨摩萨",
+      "alias": [
+        "咖喱角"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "potato",
+        "cumin"
+      ],
+      "origin": {
+        "location": "central-asia",
+        "time": {
+          "display": "10世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "central-asia",
+          "to": "india",
+          "time": {
+            "display": "13世纪"
+          }
+        },
+        {
+          "from": "india",
+          "to": "africa",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "middle-east",
+        "africa",
+        "uk"
+      ],
+      "description": "中亚起源的三角炸饺，印度版配土豆馅，是最普及的印度小吃。"
+    },
+    {
+      "id": "dal",
+      "name": "豆咖喱",
+      "alias": [
+        "扁豆糊"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "lentil",
+        "turmeric",
+        "cumin"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "nepal",
+        "bangladesh"
+      ],
+      "description": "印度次大陆的日常主食，各种扁豆炖煮配米饭或烤饼，素食蛋白质来源。"
+    },
+    {
+      "id": "injera",
+      "name": "英吉拉",
+      "category": "dish",
+      "ingredients": [
+        "teff"
+      ],
+      "origin": {
+        "location": "ethiopia",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "currentRegions": [
+        "ethiopia",
+        "eritrea"
+      ],
+      "description": "埃塞俄比亚的海绵饼，苔麸发酵制成，用手撕饼蘸酱汁吃。"
+    },
+    {
+      "id": "tagine",
+      "name": "塔吉锅",
+      "category": "dish",
+      "ingredients": [
+        "cumin",
+        "cinnamon",
+        "ginger"
+      ],
+      "origin": {
+        "location": "morocco",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "currentRegions": [
+        "morocco",
+        "algeria",
+        "tunisia"
+      ],
+      "description": "北非传统炖菜，用圆锥形陶锅慢炖，甜咸结合是特色。"
+    },
+    {
+      "id": "jollof-rice",
+      "name": "朱洛夫饭",
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "tomato",
+        "chili"
+      ],
+      "origin": {
+        "location": "west-africa",
+        "time": {
+          "display": "14世纪"
+        }
+      },
+      "currentRegions": [
+        "nigeria",
+        "ghana",
+        "senegal"
+      ],
+      "description": "西非最著名的菜肴，番茄红油饭，尼日利亚和加纳争论谁的更正宗。"
+    },
+    {
+      "id": "ceviche",
+      "name": "柠汁腌鱼",
+      "alias": [
+        "酸橘汁腌鱼"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "lemon",
+        "chili",
+        "onion"
+      ],
+      "origin": {
+        "location": "peru",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "peru",
+          "to": "mexico",
+          "time": {
+            "display": "殖民时期"
+          }
+        }
+      ],
+      "currentRegions": [
+        "peru",
+        "ecuador",
+        "mexico"
+      ],
+      "description": "秘鲁国菜，新鲜鱼肉用柠檬汁"
+    },
+    {
+      "id": "empanada",
+      "name": "馅饼",
+      "alias": [
+        "恩潘纳达"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "spain",
+        "time": {
+          "display": "中世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "spain",
+          "to": "south-america",
+          "time": {
+            "display": "殖民时期"
+          }
+        }
+      ],
+      "currentRegions": [
+        "spain",
+        "argentina",
+        "chile",
+        "colombia"
+      ],
+      "description": "西班牙传入拉美的半月形馅饼，阿根廷版最有名，各地馅料不同。"
+    },
+    {
+      "id": "arepa",
+      "name": "玉米饼",
+      "alias": [
+        "阿雷帕"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "corn"
+      ],
+      "origin": {
+        "location": "colombia",
+        "time": {
+          "display": "前哥伦布时期"
+        }
+      },
+      "currentRegions": [
+        "venezuela",
+        "colombia"
+      ],
+      "description": "委内瑞拉和哥伦比亚的玉米饼，可夹馅或配菜，是当地早餐主食。"
+    },
+    {
+      "id": "feijoada",
+      "name": "黑豆炖肉",
+      "category": "dish",
+      "ingredients": [
+        "black-bean"
+      ],
+      "origin": {
+        "location": "brazil",
+        "time": {
+          "display": "殖民时期"
+        }
+      },
+      "currentRegions": [
+        "brazil",
+        "portugal"
+      ],
+      "description": "巴西国菜，黑豆炖各种猪肉部位，周六午餐传统。"
+    },
+    {
+      "id": "churrasco",
+      "name": "巴西烤肉",
+      "category": "dish",
+      "origin": {
+        "location": "brazil",
+        "time": {
+          "display": "18世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "brazil",
+          "to": "usa",
+          "time": {
+            "display": "1990年代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "brazil",
+        "argentina",
+        "usa"
+      ],
+      "description": "南美高乔牧人的烧烤传统，巴西烤肉店将各种肉串桌边服务推向全球。"
+    },
+    {
+      "id": "poutine",
+      "name": "肉汁奶酪薯条",
+      "alias": [
+        "普丁"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "potato"
+      ],
+      "origin": {
+        "location": "canada",
+        "time": {
+          "year": 1957,
+          "display": "1957年"
+        }
+      },
+      "currentRegions": [
+        "canada"
+      ],
+      "description": "魁北克发明的国民美食，薯条配奶酪凝块和肉汁，加拿大文化符号。"
+    },
+    {
+      "id": "jambalaya",
+      "name": "什锦饭",
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "tomato",
+        "chili"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "18世纪"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "路易斯安那克里奥尔菜，西班牙海鲜饭与非洲烹饪的融合，新奥尔良特色。"
+    },
+    {
+      "id": "gumbo",
+      "name": "秋葵浓汤",
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "okra"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "18世纪"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "路易斯安那代表菜，非洲、法国、西班牙文化融合的产物，秋葵或秋葵粉增稠。"
+    },
+    {
+      "id": "bbq-ribs",
+      "name": "烧烤肋排",
+      "alias": [
+        "美式烤肋排"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "tomato"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "17世纪"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "美国烧烤文化代表，德州、堪萨斯城、孟菲斯、卡罗来纳各有流派。"
+    },
+    {
+      "id": "fried-chicken",
+      "name": "炸鸡",
+      "alias": [
+        "美式炸鸡"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "usa",
+          "to": "asia",
+          "time": {
+            "display": "20世纪后期"
+          },
+          "via": "肯德基"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "korea",
+        "japan"
+      ],
+      "description": "美国南方菜，苏格兰移民与非裔美国人烹饪传统的结合，肯德基将其全球化。"
+    },
+    {
+      "id": "clam-chowder",
+      "name": "蛤蜊浓汤",
+      "category": "dish",
+      "ingredients": [
+        "potato"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "18世纪"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "新英格兰代表菜，奶油汤底配蛤蜊土豆，波士顿特色。"
+    },
+    {
+      "id": "hot-dog",
+      "name": "热狗",
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "19世纪末"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "德国移民带来的法兰克福香肠夹面包，成为美国棒球场和街头美食符号。"
+    },
+    {
+      "id": "buffalo-wings",
+      "name": "水牛城鸡翅",
+      "alias": [
+        "辣鸡翅"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "chili"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "year": 1964,
+          "display": "1964年"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "纽约州水牛城发明，炸鸡翅配辣酱和蓝纹奶酪，美国酒吧文化代表。"
+    },
+    {
+      "id": "blt-sandwich",
+      "name": "BLT三明治",
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "tomato"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "20世纪初"
+        }
+      },
+      "currentRegions": [
+        "usa",
+        "uk"
+      ],
+      "description": "培根、生菜、番茄三明治，美国经典，简单食材的完美组合。"
+    },
+    {
+      "id": "club-sandwich",
+      "name": "总会三明治",
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "tomato"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "19世纪末"
+        }
+      },
+      "currentRegions": [
+        "usa",
+        "europe"
+      ],
+      "description": "美国俱乐部的三层三明治，火鸡、培根、生菜、番茄、蛋黄酱的组合。"
+    },
+    {
+      "id": "mac-and-cheese",
+      "name": "芝士通心粉",
+      "alias": [
+        "奶酪意面"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "currentRegions": [
+        "usa",
+        "uk",
+        "canada"
+      ],
+      "description": "美国家庭经典，通心粉配奶酪酱，Kraft速食版成为美国文化符号。"
+    },
+    {
+      "id": "meat-pie",
+      "name": "肉馅饼",
+      "alias": [
+        "澳式肉派"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "australia",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "currentRegions": [
+        "australia",
+        "new-zealand"
+      ],
+      "description": "澳大利亚国民小吃，酥皮包裹肉馅，配番茄酱，球赛必备。"
+    },
+    {
+      "id": "vegemite-toast",
+      "name": "Vegemite吐司",
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "australia",
+        "time": {
+          "year": 1922,
+          "display": "1922年"
+        }
+      },
+      "currentRegions": [
+        "australia"
+      ],
+      "description": "澳大利亚特有的酵母酱抹吐司，爱恨分明的早餐，澳洲文化认同的一部分。"
+    },
+    {
+      "id": "zhajiangmian",
+      "name": "炸酱面",
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "soybean"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "清代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "korea",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "korea"
+      ],
+      "description": "北京传统面食，肉丁炸酱拌面，传入韩国后演变为韩式炸酱面。"
+    },
+    {
+      "id": "lanzhou-lamian",
+      "name": "兰州拉面",
+      "alias": [
+        "牛肉面"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "清代嘉庆年间"
+        }
+      },
+      "currentRegions": [
+        "china"
+      ],
+      "description": "甘肃兰州的传统面食，一清二白三红四绿五黄，中国面食的代表。"
+    },
+    {
+      "id": "xiaolongbao",
+      "name": "小笼包",
+      "alias": [
+        "汤包"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "清代同治年间"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "20世纪"
+          }
+        },
+        {
+          "from": "china",
+          "to": "usa",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "taiwan",
+        "japan",
+        "usa"
+      ],
+      "description": "上海南翔的传统点心，皮薄汁多，鼎泰丰使其闻名世界。"
+    },
+    {
+      "id": "char-siu",
+      "name": "叉烧",
+      "alias": [
+        "蜜汁叉烧"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "清代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "malaysia",
+        "singapore"
+      ],
+      "description": "广东烧腊的代表，蜜汁叉烧色泽红亮，是叉烧包的灵魂。"
+    },
+    {
+      "id": "zongzi",
+      "name": "粽子",
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "春秋战国"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "奈良时代"
+          }
+        },
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "宋代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "japan",
+        "vietnam",
+        "malaysia"
+      ],
+      "description": "端午节传统食物，相传纪念屈原，南北方口味迥异。"
+    },
+    {
+      "id": "malatang",
+      "name": "麻辣烫",
+      "category": "dish",
+      "ingredients": [
+        "chili",
+        "sichuan-pepper"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "korea",
+          "time": {
+            "display": "21世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "korea"
+      ],
+      "description": "四川街头小吃，源于船工的简易火锅，现已风靡亚洲。"
+    },
+    {
+      "id": "jianbing",
+      "name": "煎饼果子",
+      "alias": [
+        "煎饼"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "china"
+      ],
+      "description": "天津传统早点，薄饼卷油条配酱料，中国最受欢迎的街头早餐。"
+    },
+    {
+      "id": "youtiao",
+      "name": "油条",
+      "alias": [
+        "油炸鬼"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "宋代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "vietnam",
+        "malaysia",
+        "thailand"
+      ],
+      "description": "中国传统早点，相传为讽刺秦桧而作，配豆浆或粥食用。"
+    },
+    {
+      "id": "luosifen",
+      "name": "螺蛳粉",
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "1980年代"
+        }
+      },
+      "currentRegions": [
+        "china"
+      ],
+      "description": "广西柳州特色小吃，以独特的"
+    },
+    {
+      "id": "hot-dry-noodles",
+      "name": "热干面",
+      "alias": [
+        "芝麻酱面"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "sesame"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "20世纪30年代"
+        }
+      },
+      "currentRegions": [
+        "china"
+      ],
+      "description": "武汉传统早点，芝麻酱拌面，中国五大名面之一。"
+    },
+    {
+      "id": "biangbiang-noodles",
+      "name": "油泼面",
+      "alias": [
+        "BiangBiang面"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "chili"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "currentRegions": [
+        "china"
+      ],
+      "description": "陕西关中面食，宽如裤带的手工面，热油泼辣椒面。"
+    },
+    {
+      "id": "wonton",
+      "name": "馄饨",
+      "alias": [
+        "云吞",
+        "抄手"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "汉代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "malaysia",
+        "singapore",
+        "indonesia"
+      ],
+      "description": "中国传统面食，广东叫云吞，四川叫抄手，各地风味各异。"
+    },
+    {
+      "id": "tonkatsu",
+      "name": "炸猪排",
+      "alias": [
+        "豚カツ"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "明治时代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "korea",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "korea",
+        "taiwan"
+      ],
+      "description": "日式西洋料理的代表，裹面包糠油炸的猪排配卷心菜。"
+    },
+    {
+      "id": "okonomiyaki",
+      "name": "大阪烧",
+      "alias": [
+        "御好烧"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "cabbage"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "昭和时代"
+        }
+      },
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "大阪的代表性小吃，面糊混合蔬菜在铁板上煎烤。"
+    },
+    {
+      "id": "gyudon",
+      "name": "牛丼",
+      "alias": [
+        "牛肉饭"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "明治时代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "usa",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "usa",
+        "china"
+      ],
+      "description": "日本快餐的代表，吉野家使其风靡全球。"
+    },
+    {
+      "id": "oyakodon",
+      "name": "亲子丼",
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "chicken"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "明治时代"
+        }
+      },
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "鸡肉和鸡蛋盖饭，亲子之名来自鸡与蛋的关系。"
+    },
+    {
+      "id": "katsudon",
+      "name": "炸猪排饭",
+      "alias": [
+        "カツ丼"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "wheat"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "大正时代"
+        }
+      },
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "炸猪排配蛋汁盖饭，日本学生考试前的幸运食物。"
+    },
+    {
+      "id": "yakitori",
+      "name": "烤鸡串",
+      "alias": [
+        "焼き鳥"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "chicken"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "江户时代"
+        }
+      },
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日式烤鸡肉串，居酒屋的常见料理。"
+    },
+    {
+      "id": "unagi",
+      "name": "鳗鱼饭",
+      "alias": [
+        "蒲烧鳗鱼"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "江户时代"
+        }
+      },
+      "currentRegions": [
+        "japan",
+        "taiwan"
+      ],
+      "description": "日本夏季的传统美食，土用丑日必吃鳗鱼补体力。"
+    },
+    {
+      "id": "shabu-shabu",
+      "name": "涮涮锅",
+      "alias": [
+        "しゃぶしゃぶ"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "20世纪"
+        }
+      },
+      "currentRegions": [
+        "japan",
+        "taiwan"
+      ],
+      "description": "日式火锅，薄肉片在热汤中涮几下即食。"
+    },
+    {
+      "id": "sukiyaki",
+      "name": "寿喜烧",
+      "alias": [
+        "すき焼き"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "明治时代"
+        }
+      },
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日式牛肉锅，甜酱油底料，明治维新后牛肉解禁的产物。"
+    },
+    {
+      "id": "tamagoyaki",
+      "name": "玉子烧",
+      "alias": [
+        "日式蛋卷"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "chicken"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "江户时代"
+        }
+      },
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日式煎蛋卷，便当和寿司的常见配料。"
+    },
+    {
+      "id": "chawanmushi",
+      "name": "茶碗蒸",
+      "category": "dish",
+      "ingredients": [
+        "chicken"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "江户时代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "taiwan",
+          "time": {
+            "display": "日治时期"
+          }
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "taiwan"
+      ],
+      "description": "日式蒸蛋，滑嫩的蛋液中加入各种配料。"
+    },
+    {
+      "id": "ochazuke",
+      "name": "茶泡饭",
+      "alias": [
+        "お茶漬け"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "tea"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "江户时代"
+        }
+      },
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日本的简易餐食，热茶或高汤浇在米饭上，配腌菜或烤鱼。"
+    },
+    {
+      "id": "samgyeopsal",
+      "name": "五花肉",
+      "alias": [
+        "삼겹살"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "korea"
+      ],
+      "description": "韩国烤肉的代表，烤五花肉配生菜和蒜。"
+    },
+    {
+      "id": "japchae",
+      "name": "杂菜",
+      "alias": [
+        "잡채"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "sweet-potato"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "朝鲜时代"
+        }
+      },
+      "currentRegions": [
+        "korea"
+      ],
+      "description": "韩国宴席菜，红薯粉丝炒蔬菜和肉丝。"
+    },
+    {
+      "id": "sundubu-jjigae",
+      "name": "嫩豆腐汤",
+      "alias": [
+        "순두부찌개"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "soybean",
+        "chili"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "korea",
+          "to": "usa",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "korea",
+        "usa"
+      ],
+      "description": "韩国豆腐汤，嫩豆腐配辣酱和海鲜，美国韩餐厅的招牌。"
+    },
+    {
+      "id": "tteokbokki",
+      "name": "炒年糕",
+      "alias": [
+        "떡볶이"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "chili"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "朝鲜时代"
+        }
+      },
+      "currentRegions": [
+        "korea"
+      ],
+      "description": "韩国街头小吃，年糕条配辣酱，现代版加入面条和芝士。"
+    },
+    {
+      "id": "kimbap",
+      "name": "紫菜包饭",
+      "alias": [
+        "김밥"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "20世纪"
+        }
+      },
+      "currentRegions": [
+        "korea"
+      ],
+      "description": "韩式饭卷，与日本寿司相似但用麻油调味，是野餐和便当的常见食物。"
+    },
+    {
+      "id": "jjajangmyeon",
+      "name": "韩式炸酱面",
+      "alias": [
+        "짜장면"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "soybean"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "1905年"
+        }
+      },
+      "currentRegions": [
+        "korea"
+      ],
+      "description": "中国炸酱面的韩国变体，用黑酱炒制，韩国外卖的经典。"
+    },
+    {
+      "id": "chimaek",
+      "name": "炸鸡啤酒",
+      "alias": [
+        "치맥"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "chicken"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "1970年代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "korea",
+          "to": "china",
+          "time": {
+            "display": "21世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "korea",
+        "china"
+      ],
+      "description": "韩式炸鸡配啤酒，韩剧文化输出的标志性美食。"
+    },
+    {
+      "id": "naengmyeon",
+      "name": "冷面",
+      "alias": [
+        "냉면"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "buckwheat"
+      ],
+      "origin": {
+        "location": "korea",
+        "time": {
+          "display": "朝鲜时代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "korea",
+          "to": "china",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "korea",
+        "china"
+      ],
+      "description": "韩国冷面，分平壤冷面和咸兴冷面两派，延边冷面是中国变体。"
+    },
+    {
+      "id": "nasi-goreng",
+      "name": "印尼炒饭",
+      "alias": [
+        "椰香炒饭"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "chili"
+      ],
+      "origin": {
+        "location": "indonesia",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "indonesia",
+          "to": "netherlands",
+          "time": {
+            "display": "殖民时期"
+          }
+        }
+      ],
+      "currentRegions": [
+        "indonesia",
+        "malaysia",
+        "netherlands"
+      ],
+      "description": "印尼国菜，甜酱油炒饭配煎蛋，荷兰也很流行。"
+    },
+    {
+      "id": "satay",
+      "name": "沙爹",
+      "alias": [
+        "沙嗲"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "peanut",
+        "turmeric"
+      ],
+      "origin": {
+        "location": "indonesia",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "indonesia",
+          "to": "malaysia",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "indonesia",
+        "malaysia",
+        "singapore",
+        "thailand"
+      ],
+      "description": "东南亚烤肉串，配花生酱蘸料，可能受中东烤肉影响。"
+    },
+    {
+      "id": "rendang",
+      "name": "仁当",
+      "alias": [
+        "干咖喱"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "coconut",
+        "chili",
+        "turmeric"
+      ],
+      "origin": {
+        "location": "indonesia",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "indonesia",
+          "to": "malaysia",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "indonesia",
+        "malaysia"
+      ],
+      "description": "印尼苏门答腊的传统菜，慢炖至汁干的咖喱牛肉，曾被评为世界最美味的食物。"
+    },
+    {
+      "id": "bun-cha",
+      "name": "烤肉米粉",
+      "alias": [
+        "Bún chả"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "vietnam",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "vietnam"
+      ],
+      "description": "河内特色，烤肉配米粉和蘸料，奥巴马访越时品尝使其闻名。"
+    },
+    {
+      "id": "banh-xeo",
+      "name": "越南煎饼",
+      "alias": [
+        "Bánh xèo"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "turmeric"
+      ],
+      "origin": {
+        "location": "vietnam",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "vietnam"
+      ],
+      "description": "越南黄色脆饼，姜黄粉调色，包裹豆芽和肉类。"
+    },
+    {
+      "id": "gado-gado",
+      "name": "加多加多",
+      "category": "dish",
+      "ingredients": [
+        "peanut"
+      ],
+      "origin": {
+        "location": "indonesia",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "indonesia"
+      ],
+      "description": "印尼蔬菜沙拉，花生酱淋各种蔬菜和豆腐。"
+    },
+    {
+      "id": "mee-goreng",
+      "name": "马来炒面",
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "chili"
+      ],
+      "origin": {
+        "location": "malaysia",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "malaysia",
+        "singapore",
+        "indonesia"
+      ],
+      "description": "马来西亚炒面，印度穆斯林的创造，用辣酱和番茄酱调味。"
+    },
+    {
+      "id": "nasi-lemak",
+      "name": "椰浆饭",
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "coconut"
+      ],
+      "origin": {
+        "location": "malaysia",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "malaysia",
+        "singapore"
+      ],
+      "description": "马来西亚国菜，椰浆煮饭配江鱼仔、花生和参巴酱。"
+    },
+    {
+      "id": "char-kway-teow",
+      "name": "炒粿条",
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "malaysia",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "malaysia",
+        "singapore"
+      ],
+      "description": "槟城著名小吃，宽米粉配血蛤和腊肠大火快炒。"
+    },
+    {
+      "id": "hainanese-chicken-rice",
+      "name": "海南鸡饭",
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "chicken"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "singapore",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "singapore",
+        "malaysia",
+        "china"
+      ],
+      "description": "海南移民带到南洋的鸡饭，新加坡将其发扬光大成为国菜。"
+    },
+    {
+      "id": "chili-crab",
+      "name": "辣椒螃蟹",
+      "category": "dish",
+      "ingredients": [
+        "chili"
+      ],
+      "origin": {
+        "location": "singapore",
+        "time": {
+          "display": "1950年代"
+        }
+      },
+      "currentRegions": [
+        "singapore"
+      ],
+      "description": "新加坡国菜，番茄辣椒酱焖螃蟹，配馒头蘸酱汁。"
+    },
+    {
+      "id": "bak-kut-teh",
+      "name": "肉骨茶",
+      "category": "dish",
+      "ingredients": [
+        "garlic",
+        "sichuan-pepper"
+      ],
+      "origin": {
+        "location": "malaysia",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "currentRegions": [
+        "malaysia",
+        "singapore"
+      ],
+      "description": "福建移民创造的药材炖排骨汤，有新马两种流派。"
+    },
+    {
+      "id": "biryani",
+      "name": "印度香饭",
+      "alias": [
+        "比尔亚尼"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "turmeric",
+        "cumin"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "莫卧儿时期"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "middle-east",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "middle-east"
+      ],
+      "description": "印度最著名的米饭料理，莫卧儿宫廷美食，海得拉巴和勒克瑙风格最有名。"
+    },
+    {
+      "id": "butter-chicken",
+      "name": "黄油鸡",
+      "alias": [
+        "奶油鸡"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "tomato",
+        "ginger"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "1950年代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "uk",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "uk",
+        "usa"
+      ],
+      "description": "德里Moti Mahal餐厅发明，奶油番茄酱配坦杜里鸡，全球最受欢迎的印度菜。"
+    },
+    {
+      "id": "palak-paneer",
+      "name": "菠菜奶酪",
+      "category": "dish",
+      "ingredients": [
+        "spinach"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "india"
+      ],
+      "description": "北印度素食名菜，菠菜泥配印度奶酪块。"
+    },
+    {
+      "id": "dal",
+      "name": "豆泥糊",
+      "alias": [
+        "达尔"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "lentil",
+        "cumin",
+        "turmeric"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "nepal"
+      ],
+      "description": "印度日常主食，各种扁豆煮成的糊，是蛋白质的主要来源。"
+    },
+    {
+      "id": "sambar",
+      "name": "桑巴尔",
+      "category": "dish",
+      "ingredients": [
+        "lentil",
+        "tamarind"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "17世纪"
+        }
+      },
+      "currentRegions": [
+        "india",
+        "sri-lanka"
+      ],
+      "description": "南印度扁豆蔬菜汤，罗望子调味，配多萨和伊德利。"
+    },
+    {
+      "id": "korma",
+      "name": "科尔玛",
+      "category": "dish",
+      "ingredients": [
+        "coconut",
+        "almond"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "莫卧儿时期"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "uk",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "uk"
+      ],
+      "description": "莫卧儿宫廷菜，奶油坚果酱炖肉，口味温和适合初尝印度菜者。"
+    },
+    {
+      "id": "vindaloo",
+      "name": "温达卢",
+      "category": "dish",
+      "ingredients": [
+        "chili",
+        "vinegar"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "葡萄牙殖民时期"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "uk",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "uk"
+      ],
+      "description": "果阿的葡印融合菜，醋和辣椒腌肉，以极辣闻名。"
+    },
+    {
+      "id": "shawarma",
+      "name": "沙瓦尔玛",
+      "alias": [
+        "中东烤肉"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "turkey",
+        "time": {
+          "display": "奥斯曼时期"
+        }
+      },
+      "spreads": [
+        {
+          "from": "turkey",
+          "to": "middle-east",
+          "time": {
+            "display": "19世纪"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "europe",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "middle-east",
+        "europe",
+        "usa"
+      ],
+      "description": "旋转烤肉的中东变体，配皮塔饼和酱料，是街头快餐的代表。"
+    },
+    {
+      "id": "falafel",
+      "name": "法拉费尔",
+      "alias": [
+        "炸鹰嘴豆饼"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "chickpea",
+        "cumin"
+      ],
+      "origin": {
+        "location": "egypt",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "egypt",
+          "to": "middle-east",
+          "time": {
+            "display": "中世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "middle-east",
+        "israel",
+        "europe"
+      ],
+      "description": "中东素食经典，炸鹰嘴豆球配皮塔饼和塔希尼酱。"
+    },
+    {
+      "id": "baba-ganoush",
+      "name": "烤茄泥",
+      "alias": [
+        "巴巴甘努什"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "eggplant",
+        "sesame",
+        "garlic"
+      ],
+      "origin": {
+        "location": "lebanon",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "middle-east"
+      ],
+      "description": "黎巴嫩烤茄泥，配芝麻酱和橄榄油，与皮塔饼同食。"
+    },
+    {
+      "id": "tabbouleh",
+      "name": "塔布勒沙拉",
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "tomato",
+        "parsley"
+      ],
+      "origin": {
+        "location": "lebanon",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "middle-east"
+      ],
+      "description": "黎巴嫩碎小麦沙拉，大量欧芹配番茄和薄荷，清新健康。"
+    },
+    {
+      "id": "fattoush",
+      "name": "法图什沙拉",
+      "category": "dish",
+      "ingredients": [
+        "tomato",
+        "cucumber"
+      ],
+      "origin": {
+        "location": "lebanon",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "middle-east"
+      ],
+      "description": "黎巴嫩面包沙拉，烤皮塔饼碎配新鲜蔬菜和酸橙汁。"
+    },
+    {
+      "id": "kibbeh",
+      "name": "克贝",
+      "alias": [
+        "肉丸"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "lebanon",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "currentRegions": [
+        "lebanon",
+        "syria",
+        "iraq"
+      ],
+      "description": "黎凡特的碎小麦肉丸，生食、炸或烤各有风味。"
+    },
+    {
+      "id": "mansaf",
+      "name": "曼萨夫",
+      "category": "dish",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "middle-east",
+        "time": {
+          "display": "贝都因传统"
+        }
+      },
+      "currentRegions": [
+        "middle-east"
+      ],
+      "description": "约旦国菜，羊肉配酸奶酱和米饭，贝都因人的待客之道。"
+    },
+    {
+      "id": "moussaka",
+      "name": "穆萨卡",
+      "category": "dish",
+      "ingredients": [
+        "eggplant",
+        "tomato"
+      ],
+      "origin": {
+        "location": "greece",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "greece",
+        "turkey"
+      ],
+      "description": "希腊版千层面，茄子、肉末和白酱层层叠加烤制。"
+    },
+    {
+      "id": "souvlaki",
+      "name": "苏夫拉基",
+      "alias": [
+        "希腊烤肉串"
+      ],
+      "category": "dish",
+      "origin": {
+        "location": "greece",
+        "time": {
+          "display": "古代"
+        }
+      },
+      "currentRegions": [
+        "greece"
+      ],
+      "description": "希腊烤肉串，配皮塔饼和酸奶酱，街头快餐的代表。"
+    },
+    {
+      "id": "paella-valenciana",
+      "name": "瓦伦西亚海鲜饭",
+      "category": "dish",
+      "ingredients": [
+        "rice",
+        "saffron"
+      ],
+      "origin": {
+        "location": "spain",
+        "time": {
+          "display": "15世纪"
+        }
+      },
+      "currentRegions": [
+        "spain"
+      ],
+      "description": "西班牙最著名的米饭料理，用藏红花调色，传统版用兔肉和蜗牛。"
+    },
+    {
+      "id": "gazpacho",
+      "name": "西班牙冷汤",
+      "alias": [
+        "加斯帕乔"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "tomato",
+        "cucumber",
+        "garlic"
+      ],
+      "origin": {
+        "location": "spain",
+        "time": {
+          "display": "中世纪"
+        }
+      },
+      "currentRegions": [
+        "spain",
+        "portugal"
+      ],
+      "description": "安达卢西亚冷汤，番茄和蔬菜打成的冰凉浓汤，夏日消暑佳品。"
+    },
+    {
+      "id": "quiche",
+      "name": "法式咸派",
+      "alias": [
+        "洛林咸派"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "16世纪"
+        }
+      },
+      "currentRegions": [
+        "france",
+        "europe"
+      ],
+      "description": "洛林地区的蛋奶咸派，配培根和芝士，是法式料理的经典。"
+    },
+    {
+      "id": "ratatouille",
+      "name": "普罗旺斯炖菜",
+      "alias": [
+        "料理鼠王"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "tomato",
+        "eggplant",
+        "zucchini"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "18世纪"
+        }
+      },
+      "currentRegions": [
+        "france"
+      ],
+      "description": "普罗旺斯蔬菜炖菜，因皮克斯动画电影而闻名世界。"
+    },
+    {
+      "id": "coq-au-vin",
+      "name": "红酒炖鸡",
+      "category": "dish",
+      "ingredients": [
+        "grape",
+        "mushroom"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "france"
+      ],
+      "description": "法国经典家常菜，鸡肉用勃艮第红酒慢炖。"
+    },
+    {
+      "id": "beef-bourguignon",
+      "name": "勃艮第红酒炖牛肉",
+      "category": "dish",
+      "ingredients": [
+        "grape",
+        "carrot",
+        "onion"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "france"
+      ],
+      "description": "法国经典炖菜，牛肉用红酒慢炖数小时。"
+    },
+    {
+      "id": "escargot",
+      "name": "法式蜗牛",
+      "category": "dish",
+      "ingredients": [
+        "garlic",
+        "parsley"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "古罗马"
+        }
+      },
+      "currentRegions": [
+        "france"
+      ],
+      "description": "法国前菜经典，蜗牛配蒜香欧芹黄油烤制。"
+    },
+    {
+      "id": "schnitzel",
+      "name": "维也纳炸肉排",
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "austria",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "austria",
+          "to": "germany",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "austria",
+        "germany"
+      ],
+      "description": "奥地利国菜，薄牛肉裹面包糠油炸，德国版常用猪肉。"
+    },
+    {
+      "id": "bratwurst",
+      "name": "德国烤肠",
+      "category": "dish",
+      "origin": {
+        "location": "germany",
+        "time": {
+          "display": "14世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "germany",
+          "to": "usa",
+          "time": {
+            "display": "19世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "germany",
+        "usa"
+      ],
+      "description": "德国香肠的代表，纽伦堡和图林根各有特色。"
+    },
+    {
+      "id": "pierogi",
+      "name": "波兰饺子",
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "potato"
+      ],
+      "origin": {
+        "location": "poland",
+        "time": {
+          "display": "13世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "poland",
+          "to": "usa",
+          "time": {
+            "display": "19世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "poland",
+        "usa"
+      ],
+      "description": "东欧饺子，有甜咸两种馅料，圣诞节传统食物。"
+    },
+    {
+      "id": "borscht",
+      "name": "罗宋汤",
+      "alias": [
+        "甜菜汤"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "beet",
+        "cabbage"
+      ],
+      "origin": {
+        "location": "russia",
+        "time": {
+          "display": "中世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "russia",
+          "to": "usa",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "russia",
+        "ukraine",
+        "poland"
+      ],
+      "description": "东欧甜菜汤，鲜红色的酸甜汤品，配酸奶油。"
+    },
+    {
+      "id": "beef-stroganoff",
+      "name": "俄式牛柳",
+      "alias": [
+        "斯特罗加诺夫牛肉"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "mushroom"
+      ],
+      "origin": {
+        "location": "russia",
+        "time": {
+          "display": "19世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "russia",
+          "to": "usa",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "russia",
+        "usa"
+      ],
+      "description": "俄国贵族菜肴，牛肉条配酸奶油蘑菇酱。"
+    },
+    {
+      "id": "pelmeni",
+      "name": "俄罗斯饺子",
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "russia",
+        "time": {
+          "display": "中世纪"
+        }
+      },
+      "currentRegions": [
+        "russia"
+      ],
+      "description": "西伯利亚起源的肉饺，冬季可冷冻保存数月。"
+    },
+    {
+      "id": "burrito",
+      "name": "墨西哥卷",
+      "category": "dish",
+      "ingredients": [
+        "wheat",
+        "rice"
+      ],
+      "origin": {
+        "location": "mexico",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "spreads": [
+        {
+          "from": "mexico",
+          "to": "usa",
+          "time": {
+            "display": "20世纪"
+          }
+        }
+      ],
+      "currentRegions": [
+        "mexico",
+        "usa"
+      ],
+      "description": "墨西哥大卷饼，面粉饼包裹米饭、豆泥和肉类。"
+    },
+    {
+      "id": "pozole",
+      "name": "墨西哥玉米肉汤",
+      "category": "dish",
+      "ingredients": [
+        "corn",
+        "chili"
+      ],
+      "origin": {
+        "location": "mexico",
+        "time": {
+          "display": "阿兹特克时期"
+        }
+      },
+      "currentRegions": [
+        "mexico"
+      ],
+      "description": "墨西哥传统汤品，玉米粒配猪肉，节日必备菜肴。"
+    },
+    {
+      "id": "ceviche",
+      "name": "酸橘汁腌鱼",
+      "alias": [
+        "塞维切"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "lemon",
+        "chili"
+      ],
+      "origin": {
+        "location": "peru",
+        "time": {
+          "display": "西班牙殖民前"
+        }
+      },
+      "spreads": [
+        {
+          "from": "peru",
+          "to": "south-america",
+          "time": {
+            "display": "近代"
+          }
+        }
+      ],
+      "currentRegions": [
+        "peru",
+        "ecuador",
+        "mexico"
+      ],
+      "description": "秘鲁国菜，酸橘汁"
+    },
+    {
+      "id": "empanada",
+      "name": "馅饼",
+      "alias": [
+        "恩帕纳达"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "spain",
+        "time": {
+          "display": "中世纪"
+        }
+      },
+      "spreads": [
+        {
+          "from": "spain",
+          "to": "south-america",
+          "time": {
+            "display": "殖民时期"
+          }
+        }
+      ],
+      "currentRegions": [
+        "spain",
+        "argentina",
+        "chile"
+      ],
+      "description": "西班牙传到南美的馅饼，阿根廷和智利各有风格。"
+    },
+    {
+      "id": "asado",
+      "name": "阿根廷烤肉",
+      "category": "dish",
+      "origin": {
+        "location": "argentina",
+        "time": {
+          "display": "殖民时期"
+        }
+      },
+      "currentRegions": [
+        "argentina",
+        "uruguay"
+      ],
+      "description": "阿根廷烤肉传统，潘帕斯牛仔的文化遗产，周末家庭聚会必备。"
+    },
+    {
+      "id": "feijoada",
+      "name": "巴西黑豆饭",
+      "category": "dish",
+      "ingredients": [
+        "black-bean"
+      ],
+      "origin": {
+        "location": "brazil",
+        "time": {
+          "display": "殖民时期"
+        }
+      },
+      "currentRegions": [
+        "brazil"
+      ],
+      "description": "巴西国菜，黑豆炖猪肉配米饭，源自奴隶的食物。"
+    },
+    {
+      "id": "poutine",
+      "name": "肉汁奶酪薯条",
+      "category": "dish",
+      "ingredients": [
+        "potato"
+      ],
+      "origin": {
+        "location": "canada",
+        "time": {
+          "display": "1950年代"
+        }
+      },
+      "currentRegions": [
+        "canada"
+      ],
+      "description": "魁北克的发明，薯条配奶酪块和肉汁，加拿大国民美食。"
+    },
+    {
+      "id": "clam-chowder",
+      "name": "蛤蜊浓汤",
+      "alias": [
+        "新英格兰浓汤"
+      ],
+      "category": "dish",
+      "ingredients": [
+        "potato"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "18世纪"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "新英格兰奶油蛤蜊汤，旧金山酸面包碗盛装的版本最有名。"
+    },
+    {
+      "id": "bbq-ribs",
+      "name": "美式烤肋排",
+      "category": "dish",
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "近代"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "美国南方烧烤的代表，德州、堪萨斯城各有流派。"
+    },
+    {
+      "id": "buffalo-wings",
+      "name": "水牛城鸡翅",
+      "category": "dish",
+      "ingredients": [
+        "chicken",
+        "chili"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "1964年"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "纽约水牛城的发明，辣酱炸鸡翅配蓝纹芝士酱。"
+    },
+    {
+      "id": "mac-and-cheese",
+      "name": "芝士通心粉",
+      "category": "dish",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "display": "18世纪"
+        }
+      },
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "美国经典舒适食物，杰斐逊总统从欧洲带回的食谱。"
     }
   ]
 }

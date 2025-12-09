@@ -59,6 +59,20 @@ struct SearchResult {
 
   toggleLanguage(): void {
     this.currentLang = languageService.toggleLanguage();
+    // 语言切换后重新搜索以更新结果显示
+    this.doSearch();
+  }
+
+  // 获取翻译文本（依赖 currentLang 触发刷新）
+  private t(key: string): string {
+    const _lang = this.currentLang;
+    return languageService.t(key);
+  }
+
+  // 获取语言切换按钮文本
+  private getToggleText(): string {
+    const _lang = this.currentLang;
+    return languageService.getToggleButtonText();
   }
 
   goHome(): void {
@@ -99,7 +113,7 @@ struct SearchResult {
           .fontSize(Sizes.FONT_MD)
           .margin({ right: Sizes.SPACING_SM })
 
-        TextInput({ placeholder: languageService.t('placeholders.search'), text: this.keyword })
+        TextInput({ placeholder: this.t('placeholders.search'), text: this.keyword })
           .layoutWeight(1)
           .height(36)
           .backgroundColor('transparent')
@@ -126,7 +140,7 @@ struct SearchResult {
             this.goHome();
           })
 
-        Text(languageService.getToggleButtonText())
+        Text(this.getToggleText())
           .fontSize(Sizes.FONT_XS)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.PRIMARY)
@@ -225,7 +239,7 @@ struct SearchResult {
         .height(48)
         .color(Colors.PRIMARY)
 
-      Text(languageService.t('loading.searching'))
+      Text(this.t('loading.searching'))
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_SECONDARY)
         .margin({ top: Sizes.SPACING_MD })
@@ -249,7 +263,7 @@ struct SearchResult {
         .fontColor(Colors.TEXT_SECONDARY)
         .textAlign(TextAlign.Center)
 
-      Text(languageService.t('empty.tryAnotherKeyword'))
+      Text(this.t('empty.tryAnotherKeyword'))
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_HINT)
         .margin({ top: Sizes.SPACING_SM })
@@ -272,9 +286,9 @@ struct SearchResult {
 
   getTypeLabel(type: string): string {
     switch (type) {
-      case 'crop': return languageService.t('tabs.crops');
-      case 'food': return languageService.t('tabs.foods');
-      case 'location': return languageService.t('tabs.regions');
+      case 'crop': return this.t('tabs.crops');
+      case 'food': return this.t('tabs.foods');
+      case 'location': return this.t('tabs.regions');
       default: return '';
     }
   }

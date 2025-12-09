@@ -6,7 +6,7 @@
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
 import { languageService, Language } from '../services/LanguageService';
-import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getCropCategoryColor } from '../common/Constants';
+import { Colors, Sizes, NavIcons, getCropIcon, getCropIconById, getFoodIcon, getFoodIconById, getCropCategoryColor } from '../common/Constants';
 import { Crop, Food, SpreadEvent, getCropCategoryName } from '../models/DataModels';
 
 class CropDetailParams {
@@ -54,6 +54,61 @@ struct CropDetail {
 
   toggleLanguage(): void {
     this.currentLang = languageService.toggleLanguage();
+  }
+
+  // 获取翻译文本（依赖 currentLang 触发刷新）
+  private t(key: string): string {
+    const _lang = this.currentLang;
+    return languageService.t(key);
+  }
+
+  // 获取语言切换按钮文本
+  private getToggleText(): string {
+    const _lang = this.currentLang;
+    return languageService.getToggleButtonText();
+  }
+
+  // 获取实体名称
+  private getName(entity: object): string {
+    const _lang = this.currentLang;
+    return languageService.getName(entity);
+  }
+
+  // 获取实体描述
+  private getDescription(entity: object): string {
+    const _lang = this.currentLang;
+    return languageService.getDescription(entity);
+  }
+
+  // 获取实体别名
+  private getAlias(entity: object): string[] {
+    const _lang = this.currentLang;
+    return languageService.getAlias(entity);
+  }
+
+  // 获取时间显示
+  private getTimeDisplay(time: object): string {
+    const _lang = this.currentLang;
+    return languageService.getTimeDisplay(time);
+  }
+
+  // 获取传播途径
+  private getVia(spread: object): string | undefined {
+    const _lang = this.currentLang;
+    return languageService.getVia(spread);
+  }
+
+  // 获取地点名称（动态多语言）
+  private getLocationName(locationId: string): string {
+    const _lang = this.currentLang;
+    const location = dataService.getLocationById(locationId);
+    return languageService.getName(location as object);
+  }
+
+  // 获取作物类别名称
+  private getCropCategoryName(category: string): string {
+    const _lang = this.currentLang;
+    return languageService.getCropCategoryName(category);
   }
 
   goHome(): void {
@@ -117,7 +172,7 @@ struct CropDetail {
             router.back();
           })
 
-        Text(languageService.t('buttons.viewCropDetails'))
+        Text(this.t('buttons.viewCropDetails'))
           .fontSize(Sizes.FONT_LG)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.TEXT_PRIMARY)
@@ -135,7 +190,7 @@ struct CropDetail {
             this.goHome();
           })
 
-        Text(languageService.getToggleButtonText())
+        Text(this.getToggleText())
           .fontSize(Sizes.FONT_XS)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.PRIMARY)
@@ -160,28 +215,28 @@ struct CropDetail {
   HeaderCard() {
     Column() {
       Row() {
-        Text(getCropIcon(this.crop!.category))
+        Text(getCropIconById(this.crop!.id, this.crop!.category))
           .fontSize(48)
           .margin({ right: Sizes.SPACING_MD })
 
         Column() {
-          Text(languageService.getName(this.crop!))
+          Text(this.getName(this.crop!))
             .fontSize(Sizes.FONT_XXL)
             .fontWeight(FontWeight.Bold)
             .fontColor(Colors.TEXT_ON_PRIMARY)
 
-          if (languageService.getAlias(this.crop!).length > 0) {
-            Text(languageService.getAlias(this.crop!).join(this.currentLang === 'en' ? ', ' : '、'))
+          if (this.getAlias(this.crop!).length > 0) {
+            Text(this.getAlias(this.crop!).join(this.currentLang === 'en' ? ', ' : '、'))
               .fontSize(Sizes.FONT_SM)
               .fontColor(Colors.TEXT_ON_PRIMARY)
               .opacity(0.8)
               .margin({ top: Sizes.SPACING_XS })
           }
 
-          Text(languageService.getCropCategoryName(this.crop!.category))
+          Text(this.getCropCategoryName(this.crop!.category))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_ON_PRIMARY)
-            .backgroundColor('#FFFFFF30')
+            .backgroundColor('#30FFFFFF')
             .padding({ left: Sizes.SPACING_SM, right: Sizes.SPACING_SM, top: 2, bottom: 2 })
             .borderRadius(Sizes.RADIUS_SMALL)
             .margin({ top: Sizes.SPACING_SM })
@@ -191,7 +246,7 @@ struct CropDetail {
       .width('100%')
       .margin({ bottom: Sizes.SPACING_MD })
 
-      Text(languageService.getDescription(this.crop!))
+      Text(this.getDescription(this.crop!))
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_ON_PRIMARY)
         .opacity(0.95)
@@ -205,15 +260,15 @@ struct CropDetail {
   @Builder
   OriginSection() {
     Column() {
-      this.SectionTitle('🌱 ' + languageService.t('labels.origin'))
+      this.SectionTitle('🌱', 'labels.origin')
 
       Row() {
         Column() {
-          Text(languageService.t('labels.originLocation'))
+          Text(this.t('labels.originLocation'))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
 
-          Text(dataService.getLocationName(this.crop!.origin.location))
+          Text(this.getLocationName(this.crop!.origin.location))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
@@ -223,11 +278,11 @@ struct CropDetail {
         .alignItems(HorizontalAlign.Start)
 
         Column() {
-          Text(languageService.t('labels.originTime'))
+          Text(this.t('labels.originTime'))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
 
-          Text(languageService.getTimeDisplay(this.crop!.origin.time))
+          Text(this.getTimeDisplay(this.crop!.origin.time))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
@@ -248,7 +303,7 @@ struct CropDetail {
   @Builder
   SpreadSection() {
     Column() {
-      this.SectionTitle('🚢 ' + languageService.t('labels.spreadHistory'))
+      this.SectionTitle('🚢', 'labels.spreadHistory')
 
       ForEach(this.crop!.spreads, (spread: SpreadEvent, index: number) => {
         this.SpreadItem(spread, index)
@@ -281,13 +336,13 @@ struct CropDetail {
       .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(languageService.getTimeDisplay(spread.time))
+        Text(this.getTimeDisplay(spread.time))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.PRIMARY)
           .fontWeight(FontWeight.Medium)
 
         Row() {
-          Text(dataService.getLocationName(spread.from))
+          Text(this.getLocationName(spread.from))
             .fontSize(Sizes.FONT_SM)
             .fontColor(Colors.TEXT_PRIMARY)
 
@@ -295,15 +350,15 @@ struct CropDetail {
             .fontSize(Sizes.FONT_SM)
             .fontColor(Colors.TEXT_SECONDARY)
 
-          Text(dataService.getLocationName(spread.to))
+          Text(this.getLocationName(spread.to))
             .fontSize(Sizes.FONT_SM)
             .fontColor(Colors.TEXT_PRIMARY)
             .fontWeight(FontWeight.Medium)
         }
         .margin({ top: Sizes.SPACING_XS })
 
-        if (languageService.getVia(spread)) {
-          Text(languageService.getVia(spread) || '')
+        if (this.getVia(spread)) {
+          Text(this.getVia(spread) || '')
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
             .margin({ top: Sizes.SPACING_XS })
@@ -320,11 +375,11 @@ struct CropDetail {
   @Builder
   CurrentRegionsSection() {
     Column() {
-      this.SectionTitle('📍 ' + languageService.t('labels.currentRegions'))
+      this.SectionTitle('📍', 'labels.currentRegions')
 
       Flex({ wrap: FlexWrap.Wrap }) {
         ForEach(this.crop!.currentRegions, (regionId: string) => {
-          Text(dataService.getLocationName(regionId))
+          Text(this.getLocationName(regionId))
             .fontSize(Sizes.FONT_SM)
             .fontColor(Colors.PRIMARY)
             .backgroundColor(Colors.PRIMARY + '15')
@@ -351,7 +406,7 @@ struct CropDetail {
   @Builder
   RelatedFoodsSection() {
     Column() {
-      this.SectionTitle('🍽️ ' + languageService.t('labels.relatedFoods'))
+      this.SectionTitle('🍽️', 'labels.relatedFoods')
 
       ForEach(this.relatedFoods, (food: Food) => {
         this.FoodItem(food)
@@ -367,16 +422,16 @@ struct CropDetail {
   @Builder
   FoodItem(food: Food) {
     Row() {
-      Text(getFoodIcon(food.category))
+      Text(getFoodIconById(food.id, food.category))
         .fontSize(24)
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(languageService.getName(food))
+        Text(this.getName(food))
           .fontSize(Sizes.FONT_MD)
           .fontColor(Colors.TEXT_PRIMARY)
 
-        Text(languageService.t('labels.origin') + ': ' + dataService.getLocationName(food.origin.location))
+        Text(this.t('labels.origin') + ': ' + this.getLocationName(food.origin.location))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: 2 })
@@ -399,8 +454,8 @@ struct CropDetail {
   }
 
   @Builder
-  SectionTitle(title: string) {
-    Text(title)
+  SectionTitle(icon: string, labelKey: string) {
+    Text(icon + ' ' + this.t(labelKey))
       .fontSize(Sizes.FONT_MD)
       .fontWeight(FontWeight.Medium)
       .fontColor(Colors.TEXT_PRIMARY)

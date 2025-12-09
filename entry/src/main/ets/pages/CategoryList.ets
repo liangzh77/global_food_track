@@ -6,7 +6,7 @@
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
 import { languageService, Language } from '../services/LanguageService';
-import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getCropCategoryColor, getFoodCategoryColor } from '../common/Constants';
+import { Colors, Sizes, NavIcons, getCropIcon, getCropIconById, getFoodIcon, getCropCategoryColor, getFoodCategoryColor } from '../common/Constants';
 import { Crop, Food, CropCategory, FoodCategory, getCropCategoryName, getFoodCategoryName } from '../models/DataModels';
 
 class CategoryListParams {
@@ -57,6 +57,55 @@ struct CategoryList {
 
   toggleLanguage(): void {
     this.currentLang = languageService.toggleLanguage();
+  }
+
+  // 获取翻译文本（依赖 currentLang 触发刷新）
+  private t(key: string): string {
+    const _lang = this.currentLang;
+    return languageService.t(key);
+  }
+
+  // 获取语言切换按钮文本
+  private getToggleText(): string {
+    const _lang = this.currentLang;
+    return languageService.getToggleButtonText();
+  }
+
+  // 获取实体名称
+  private getName(entity: object): string {
+    const _lang = this.currentLang;
+    return languageService.getName(entity);
+  }
+
+  // 获取实体别名
+  private getAlias(entity: object): string[] {
+    const _lang = this.currentLang;
+    return languageService.getAlias(entity);
+  }
+
+  // 获取时间显示
+  private getTimeDisplay(time: object): string {
+    const _lang = this.currentLang;
+    return languageService.getTimeDisplay(time);
+  }
+
+  // 获取作物类别名称
+  private getCropCategoryName(category: string): string {
+    const _lang = this.currentLang;
+    return languageService.getCropCategoryName(category);
+  }
+
+  // 获取食物类别名称
+  private getFoodCategoryName(category: string): string {
+    const _lang = this.currentLang;
+    return languageService.getFoodCategoryName(category);
+  }
+
+  // 获取地点名称（动态多语言）
+  private getLocationName(locationId: string): string {
+    const _lang = this.currentLang;
+    const location = dataService.getLocationById(locationId);
+    return languageService.getName(location as object);
   }
 
   goHome(): void {
@@ -116,7 +165,7 @@ struct CategoryList {
               this.goHome();
             })
 
-          Text(languageService.getToggleButtonText())
+          Text(this.getToggleText())
             .fontSize(Sizes.FONT_XS)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_ON_PRIMARY)
@@ -167,26 +216,26 @@ struct CategoryList {
   @Builder
   CropItem(crop: Crop) {
     Row() {
-      Text(getCropIcon(crop.category))
+      Text(getCropIconById(crop.id, crop.category))
         .fontSize(28)
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
         Row() {
-          Text(languageService.getName(crop))
+          Text(this.getName(crop))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
 
-          if (languageService.getAlias(crop).length > 0) {
-            Text(`（${languageService.getAlias(crop)[0]}）`)
+          if (this.getAlias(crop).length > 0) {
+            Text(`（${this.getAlias(crop)[0]}）`)
               .fontSize(Sizes.FONT_SM)
               .fontColor(Colors.TEXT_SECONDARY)
               .margin({ left: Sizes.SPACING_XS })
           }
         }
 
-        Text(`${languageService.t('labels.origin')}: ${dataService.getLocationName(crop.origin.location)} · ${languageService.getTimeDisplay(crop.origin.time)}`)
+        Text(`${this.t('labels.origin')}: ${this.getLocationName(crop.origin.location)} · ${this.getTimeDisplay(crop.origin.time)}`)
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: Sizes.SPACING_XS })
@@ -222,20 +271,20 @@ struct CategoryList {
 
       Column() {
         Row() {
-          Text(languageService.getName(food))
+          Text(this.getName(food))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
 
-          if (languageService.getAlias(food).length > 0) {
-            Text(`（${languageService.getAlias(food)[0]}）`)
+          if (this.getAlias(food).length > 0) {
+            Text(`（${this.getAlias(food)[0]}）`)
               .fontSize(Sizes.FONT_SM)
               .fontColor(Colors.TEXT_SECONDARY)
               .margin({ left: Sizes.SPACING_XS })
           }
         }
 
-        Text(`${languageService.t('labels.origin')}: ${dataService.getLocationName(food.origin.location)} · ${languageService.getTimeDisplay(food.origin.time)}`)
+        Text(`${this.t('labels.origin')}: ${this.getLocationName(food.origin.location)} · ${this.getTimeDisplay(food.origin.time)}`)
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: Sizes.SPACING_XS })
@@ -264,9 +313,9 @@ struct CategoryList {
 
   getCategoryName(): string {
     if (this.type === 'crop') {
-      return languageService.getCropCategoryName(this.category);
+      return this.getCropCategoryName(this.category);
     } else {
-      return languageService.getFoodCategoryName(this.category);
+      return this.getFoodCategoryName(this.category);
     }
   }
 

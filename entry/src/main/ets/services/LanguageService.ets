@@ -9,176 +9,178 @@ export type Language = 'zh' | 'en';
 // 本地存储 key
 const LANGUAGE_KEY = 'global-food-history-language';
 
+// 翻译文本接口
+interface TranslationText {
+  zh: string;
+  en: string;
+}
+
+// 时代双语数据接口
+interface EraI18nData {
+  name: string;
+  nameEn: string;
+  description: string;
+  descriptionEn: string;
+}
+
+
+// 创建翻译文本的辅助函数
+function tr(zh: string, en: string): TranslationText {
+  const result: TranslationText = { zh: zh, en: en };
+  return result;
+}
+
+// 创建时代数据的辅助函数
+function eraData(name: string, nameEn: string, description: string, descriptionEn: string): EraI18nData {
+  const result: EraI18nData = {
+    name: name,
+    nameEn: nameEn,
+    description: description,
+    descriptionEn: descriptionEn
+  };
+  return result;
+}
+
 // UI 翻译数据
-const UI_TRANSLATIONS: Record<string, Record<string, string>> = {
+const UI_TRANSLATIONS: Map<string, TranslationText> = new Map([
   // App
-  'app.title': { zh: '食物全球史', en: 'Global Food History' },
-  'app.subtitle': { zh: '探索作物与食物的起源与传播', en: 'Explore the Origins and Spread of Crops and Foods' },
+  ['app.title', tr('食物全球史', 'Global Food History')],
+  ['app.subtitle', tr('探索作物与食物的起源与传播', 'Explore the Origins and Spread of Crops and Foods')],
 
   // Tabs
-  'tabs.crops': { zh: '作物', en: 'Crops' },
-  'tabs.foods': { zh: '食物', en: 'Foods' },
-  'tabs.regions': { zh: '地区', en: 'Regions' },
-  'tabs.timeline': { zh: '时间线', en: 'Timeline' },
+  ['tabs.crops', tr('作物', 'Crops')],
+  ['tabs.foods', tr('食物', 'Foods')],
+  ['tabs.regions', tr('地区', 'Regions')],
+  ['tabs.timeline', tr('时间线', 'Timeline')],
 
   // Crop Categories
-  'cropCategories.grain': { zh: '谷物', en: 'Grains' },
-  'cropCategories.vegetable': { zh: '蔬菜', en: 'Vegetables' },
-  'cropCategories.fruit': { zh: '水果', en: 'Fruits' },
-  'cropCategories.legume': { zh: '豆类', en: 'Legumes' },
-  'cropCategories.spice': { zh: '香料', en: 'Spices' },
-  'cropCategories.beverage': { zh: '饮料作物', en: 'Beverage Crops' },
-  'cropCategories.oil': { zh: '油料作物', en: 'Oil Crops' },
-  'cropCategories.sugar': { zh: '糖料作物', en: 'Sugar Crops' },
-  'cropCategories.nut': { zh: '坚果', en: 'Nuts' },
-  'cropCategories.other': { zh: '其他作物', en: 'Other Crops' },
+  ['cropCategories.grain', tr('谷物', 'Grains')],
+  ['cropCategories.vegetable', tr('蔬菜', 'Vegetables')],
+  ['cropCategories.fruit', tr('水果', 'Fruits')],
+  ['cropCategories.legume', tr('豆类', 'Legumes')],
+  ['cropCategories.spice', tr('香料', 'Spices')],
+  ['cropCategories.beverage', tr('饮料作物', 'Beverage Crops')],
+  ['cropCategories.oil', tr('油料作物', 'Oil Crops')],
+  ['cropCategories.sugar', tr('糖料作物', 'Sugar Crops')],
+  ['cropCategories.nut', tr('坚果', 'Nuts')],
+  ['cropCategories.other', tr('其他作物', 'Other Crops')],
 
   // Food Categories
-  'foodCategories.staple': { zh: '主食', en: 'Staples' },
-  'foodCategories.dish': { zh: '菜肴', en: 'Dishes' },
-  'foodCategories.beverage': { zh: '饮品', en: 'Beverages' },
-  'foodCategories.dessert': { zh: '甜点', en: 'Desserts' },
-  'foodCategories.snack': { zh: '小吃', en: 'Snacks' },
-  'foodCategories.condiment': { zh: '调味品', en: 'Condiments' },
-  'foodCategories.preserved': { zh: '腌制食品', en: 'Preserved Foods' },
+  ['foodCategories.staple', tr('主食', 'Staples')],
+  ['foodCategories.dish', tr('菜肴', 'Dishes')],
+  ['foodCategories.beverage', tr('饮品', 'Beverages')],
+  ['foodCategories.dessert', tr('甜点', 'Desserts')],
+  ['foodCategories.snack', tr('小吃', 'Snacks')],
+  ['foodCategories.condiment', tr('调味品', 'Condiments')],
+  ['foodCategories.preserved', tr('腌制食品', 'Preserved Foods')],
 
   // Sections
-  'sections.exploreByCropCategory': { zh: '按类别探索作物', en: 'Explore Crops by Category' },
-  'sections.exploreByFoodCategory': { zh: '按类别探索食物', en: 'Explore Foods by Category' },
-  'sections.exploreByRegion': { zh: '按地区探索', en: 'Explore by Region' },
-  'sections.exploreByEra': { zh: '按时代探索历史', en: 'Explore History by Era' },
-  'sections.timelineIntro': { zh: '追溯食物与作物从起源到全球传播的历史轨迹', en: 'Trace the historical journey of foods and crops from origin to global spread' },
+  ['sections.exploreByCropCategory', tr('按类别探索作物', 'Explore Crops by Category')],
+  ['sections.exploreByFoodCategory', tr('按类别探索食物', 'Explore Foods by Category')],
+  ['sections.exploreByRegion', tr('按地区探索', 'Explore by Region')],
+  ['sections.exploreByEra', tr('按时代探索历史', 'Explore History by Era')],
+  ['sections.timelineIntro', tr('追溯食物与作物从起源到全球传播的历史轨迹', 'Trace the historical journey of foods and crops from origin to global spread')],
 
   // Labels
-  'labels.origin': { zh: '起源', en: 'Origin' },
-  'labels.spread': { zh: '传播', en: 'Spread' },
-  'labels.originLocation': { zh: '起源地', en: 'Place of Origin' },
-  'labels.originTime': { zh: '起源时间', en: 'Time of Origin' },
-  'labels.spreadHistory': { zh: '传播历史', en: 'Spread History' },
-  'labels.spreadRoute': { zh: '传播路径', en: 'Spread Route' },
-  'labels.spreadMethod': { zh: '传播途径', en: 'Spread Method' },
-  'labels.spreadPath': { zh: '传播路径', en: 'Spread Path' },
-  'labels.spreadVia': { zh: '传播途径', en: 'Spread Via' },
-  'labels.currentRegions': { zh: '当前主产区', en: 'Current Main Regions' },
-  'labels.popularRegions': { zh: '流行地区', en: 'Popular Regions' },
-  'labels.basicInfo': { zh: '基本信息', en: 'Basic Information' },
-  'labels.description': { zh: '简介', en: 'Description' },
-  'labels.category': { zh: '类别', en: 'Category' },
-  'labels.alias': { zh: '别名', en: 'Also Known As' },
-  'labels.ingredients': { zh: '主要食材', en: 'Main Ingredients' },
-  'labels.relatedFoods': { zh: '相关食物', en: 'Related Foods' },
-  'labels.originCrops': { zh: '起源作物', en: 'Origin Crops' },
-  'labels.originFoods': { zh: '起源食物', en: 'Origin Foods' },
-  'labels.mainCrops': { zh: '主产作物', en: 'Main Crops' },
-  'labels.popularFoods': { zh: '流行食物', en: 'Popular Foods' },
-  'labels.countries': { zh: '国家', en: 'Countries' },
-  'labels.subRegions': { zh: '子地区', en: 'Sub-regions' },
-  'labels.searchResults': { zh: '搜索结果', en: 'Search Results' },
-  'labels.events': { zh: '事件', en: 'Events' },
+  ['labels.origin', tr('起源', 'Origin')],
+  ['labels.spread', tr('传播', 'Spread')],
+  ['labels.originLocation', tr('起源地', 'Place of Origin')],
+  ['labels.originTime', tr('起源时间', 'Time of Origin')],
+  ['labels.spreadHistory', tr('传播历史', 'Spread History')],
+  ['labels.spreadRoute', tr('传播路径', 'Spread Route')],
+  ['labels.spreadMethod', tr('传播途径', 'Spread Method')],
+  ['labels.spreadPath', tr('传播路径', 'Spread Path')],
+  ['labels.spreadVia', tr('传播途径', 'Spread Via')],
+  ['labels.currentRegions', tr('当前主产区', 'Current Main Regions')],
+  ['labels.popularRegions', tr('流行地区', 'Popular Regions')],
+  ['labels.basicInfo', tr('基本信息', 'Basic Information')],
+  ['labels.description', tr('简介', 'Description')],
+  ['labels.category', tr('类别', 'Category')],
+  ['labels.alias', tr('别名', 'Also Known As')],
+  ['labels.ingredients', tr('主要食材', 'Main Ingredients')],
+  ['labels.relatedFoods', tr('相关食物', 'Related Foods')],
+  ['labels.originCrops', tr('起源作物', 'Origin Crops')],
+  ['labels.originFoods', tr('起源食物', 'Origin Foods')],
+  ['labels.mainCrops', tr('主产作物', 'Main Crops')],
+  ['labels.popularFoods', tr('流行食物', 'Popular Foods')],
+  ['labels.countries', tr('国家', 'Countries')],
+  ['labels.subRegions', tr('子地区', 'Sub-regions')],
+  ['labels.searchResults', tr('搜索结果', 'Search Results')],
+  ['labels.events', tr('事件', 'Events')],
 
   // Filters
-  'filters.all': { zh: '全部', en: 'All' },
-  'filters.crop': { zh: '作物', en: 'Crop' },
-  'filters.food': { zh: '食物', en: 'Food' },
-  'filters.cropOrigin': { zh: '作物起源', en: 'Crop Origin' },
-  'filters.cropSpread': { zh: '作物传播', en: 'Crop Spread' },
-  'filters.foodOrigin': { zh: '食物起源', en: 'Food Origin' },
-  'filters.foodSpread': { zh: '食物传播', en: 'Food Spread' },
+  ['filters.all', tr('全部', 'All')],
+  ['filters.crop', tr('作物', 'Crop')],
+  ['filters.food', tr('食物', 'Food')],
+  ['filters.cropOrigin', tr('作物起源', 'Crop Origin')],
+  ['filters.cropSpread', tr('作物传播', 'Crop Spread')],
+  ['filters.foodOrigin', tr('食物起源', 'Food Origin')],
+  ['filters.foodSpread', tr('食物传播', 'Food Spread')],
 
   // Legend
-  'legend.cropOrigin': { zh: '作物起源', en: 'Crop Origin' },
-  'legend.cropSpread': { zh: '作物传播', en: 'Crop Spread' },
-  'legend.foodOrigin': { zh: '食物起源', en: 'Food Origin' },
-  'legend.foodSpread': { zh: '食物传播', en: 'Food Spread' },
+  ['legend.cropOrigin', tr('作物起源', 'Crop Origin')],
+  ['legend.cropSpread', tr('作物传播', 'Crop Spread')],
+  ['legend.foodOrigin', tr('食物起源', 'Food Origin')],
+  ['legend.foodSpread', tr('食物传播', 'Food Spread')],
 
   // Buttons
-  'buttons.back': { zh: '返回', en: 'Back' },
-  'buttons.home': { zh: '首页', en: 'Home' },
-  'buttons.search': { zh: '搜索', en: 'Search' },
-  'buttons.viewDetails': { zh: '查看详情', en: 'View Details' },
-  'buttons.viewCropDetails': { zh: '查看作物详情 →', en: 'View Crop Details →' },
-  'buttons.viewFoodDetails': { zh: '查看食物详情 →', en: 'View Food Details →' },
-  'buttons.viewFullTimeline': { zh: '查看完整时间线 →', en: 'View Full Timeline →' },
-  'buttons.backToHome': { zh: '← 返回首页', en: '← Back to Home' },
+  ['buttons.back', tr('返回', 'Back')],
+  ['buttons.home', tr('首页', 'Home')],
+  ['buttons.search', tr('搜索', 'Search')],
+  ['buttons.viewDetails', tr('查看详情', 'View Details')],
+  ['buttons.viewCropDetails', tr('查看作物详情', 'View Crop Details')],
+  ['buttons.viewFoodDetails', tr('查看食物详情', 'View Food Details')],
+  ['buttons.viewFullTimeline', tr('查看完整时间线 →', 'View Full Timeline →')],
+  ['buttons.backToHome', tr('← 返回首页', '← Back to Home')],
 
   // Placeholders
-  'placeholders.search': { zh: '搜索作物、食物或地点...', en: 'Search crops, foods, or places...' },
-  'placeholders.enterKeyword': { zh: '请输入关键词搜索', en: 'Enter a keyword to search' },
-  'placeholders.searchTimeline': { zh: '搜索作物、食物或地点...', en: 'Search crops, foods, or places...' },
+  ['placeholders.search', tr('搜索作物、食物或地点...', 'Search crops, foods, or places...')],
+  ['placeholders.enterKeyword', tr('请输入关键词搜索', 'Enter a keyword to search')],
+  ['placeholders.searchTimeline', tr('搜索作物、食物或地点...', 'Search crops, foods, or places...')],
 
   // Units
-  'units.events': { zh: '个事件', en: 'events' },
-  'units.countries': { zh: '个国家', en: 'countries' },
-  'units.originCrops': { zh: '种起源作物', en: 'origin crops' },
-  'units.originFoods': { zh: '种起源食物', en: 'origin foods' },
+  ['units.events', tr('个事件', 'events')],
+  ['units.countries', tr('个国家', 'countries')],
+  ['units.originCrops', tr('种起源作物', 'origin crops')],
+  ['units.originFoods', tr('种起源食物', 'origin foods')],
 
   // Loading states
-  'loading.searching': { zh: '搜索中...', en: 'Searching...' },
+  ['loading.searching', tr('搜索中...', 'Searching...')],
 
   // Empty states
-  'empty.noResults': { zh: '暂无结果', en: 'No results' },
-  'empty.noEvents': { zh: '暂无符合条件的事件', en: 'No matching events' },
-  'empty.clickToExplore': { zh: '点击探索', en: 'Click to explore' },
-  'empty.tryAnotherKeyword': { zh: '试试换个关键词？', en: 'Try a different keyword?' },
+  ['empty.noResults', tr('暂无结果', 'No results')],
+  ['empty.noEvents', tr('暂无符合条件的事件', 'No matching events')],
+  ['empty.clickToExplore', tr('点击探索', 'Click to explore')],
+  ['empty.tryAnotherKeyword', tr('试试换个关键词？', 'Try a different keyword?')],
 
   // Location types
-  'locationTypes.continent': { zh: '大洲', en: 'Continent' },
-  'locationTypes.country': { zh: '国家', en: 'Country' },
-  'locationTypes.region': { zh: '地区', en: 'Region' },
+  ['locationTypes.continent', tr('大洲', 'Continent')],
+  ['locationTypes.country', tr('国家', 'Country')],
+  ['locationTypes.region', tr('地区', 'Region')],
 
   // Event types
-  'eventTypes.origin': { zh: '起源', en: 'Origin' },
-  'eventTypes.spread': { zh: '传播', en: 'Spread' },
+  ['eventTypes.origin', tr('起源', 'Origin')],
+  ['eventTypes.spread', tr('传播', 'Spread')],
 
   // Entity types
-  'entityTypes.crop': { zh: '作物', en: 'Crop' },
-  'entityTypes.food': { zh: '食物', en: 'Food' },
-  'entityTypes.location': { zh: '地点', en: 'Location' },
+  ['entityTypes.crop', tr('作物', 'Crop')],
+  ['entityTypes.food', tr('食物', 'Food')],
+  ['entityTypes.location', tr('地点', 'Location')],
 
   // Language names
-  'language.zh': { zh: '中文', en: '中文' },
-  'language.en': { zh: 'EN', en: 'EN' }
-};
+  ['language.zh', tr('中文', '中文')],
+  ['language.en', tr('EN', 'EN')]
+]);
 
 // 时代数据（双语）
-const ERAS_I18N: Record<string, { name: string; nameEn: string; description: string; descriptionEn: string }> = {
-  'prehistoric': {
-    name: '史前时代',
-    nameEn: 'Prehistoric Era',
-    description: '农业革命的开端，人类开始驯化作物',
-    descriptionEn: 'The beginning of the agricultural revolution, humans started domesticating crops'
-  },
-  'ancient': {
-    name: '古代文明',
-    nameEn: 'Ancient Civilizations',
-    description: '四大文明古国时期，农业技术传播',
-    descriptionEn: 'Era of four ancient civilizations, agricultural technology spread'
-  },
-  'classical': {
-    name: '古典时期',
-    nameEn: 'Classical Period',
-    description: '希腊罗马时代，丝绸之路开通',
-    descriptionEn: 'Greco-Roman era, the Silk Road opened'
-  },
-  'medieval': {
-    name: '中世纪',
-    nameEn: 'Medieval Period',
-    description: '阿拉伯商人推动东西方交流',
-    descriptionEn: 'Arab merchants promoted East-West exchange'
-  },
-  'exploration': {
-    name: '大航海时代',
-    nameEn: 'Age of Exploration',
-    description: '哥伦布大交换，新旧大陆作物互通',
-    descriptionEn: 'Columbian Exchange, crops exchanged between Old and New World'
-  },
-  'modern': {
-    name: '近现代',
-    nameEn: 'Modern Era',
-    description: '工业革命后的全球化时代',
-    descriptionEn: 'Globalization era after the Industrial Revolution'
-  }
-};
+const ERAS_I18N: Map<string, EraI18nData> = new Map([
+  ['prehistoric', eraData('史前时代', 'Prehistoric Era', '农业革命的开端，人类开始驯化作物', 'The beginning of the agricultural revolution, humans started domesticating crops')],
+  ['ancient', eraData('古代文明', 'Ancient Civilizations', '四大文明古国时期，农业技术传播', 'Era of four ancient civilizations, agricultural technology spread')],
+  ['classical', eraData('古典时期', 'Classical Period', '希腊罗马时代，丝绸之路开通', 'Greco-Roman era, the Silk Road opened')],
+  ['medieval', eraData('中世纪', 'Medieval Period', '阿拉伯商人推动东西方交流', 'Arab merchants promoted East-West exchange')],
+  ['exploration', eraData('大航海时代', 'Age of Exploration', '哥伦布大交换，新旧大陆作物互通', 'Columbian Exchange, crops exchanged between Old and New World')],
+  ['modern', eraData('近现代', 'Modern Era', '工业革命后的全球化时代', 'Globalization era after the Industrial Revolution')]
+]);
 
 class LanguageServiceClass {
   private currentLanguage: Language = 'zh';
@@ -228,56 +230,62 @@ class LanguageServiceClass {
 
   // 获取翻译文本（通过 key）
   t(key: string): string {
-    const translations = UI_TRANSLATIONS[key];
+    const translations = UI_TRANSLATIONS.get(key);
     if (translations) {
-      return translations[this.currentLanguage] || translations['zh'] || key;
+      return this.currentLanguage === 'en' ? translations.en : translations.zh;
     }
     return key;
   }
 
   // 获取本地化名称（优先返回当前语言）
-  getName(entity: { name: string; nameEn?: string } | undefined): string {
+  getName(entity: object | undefined): string {
     if (!entity) return '';
-    if (this.currentLanguage === 'en' && entity.nameEn) {
-      return entity.nameEn;
+    const e = entity as Record<string, string>;
+    if (this.currentLanguage === 'en' && e['nameEn']) {
+      return e['nameEn'];
     }
-    return entity.name;
+    return e['name'] || '';
   }
 
   // 获取本地化描述
-  getDescription(entity: { description: string; descriptionEn?: string } | undefined): string {
+  getDescription(entity: object | undefined): string {
     if (!entity) return '';
-    if (this.currentLanguage === 'en' && entity.descriptionEn) {
-      return entity.descriptionEn;
+    const e = entity as Record<string, string>;
+    if (this.currentLanguage === 'en' && e['descriptionEn']) {
+      return e['descriptionEn'];
     }
-    return entity.description;
+    return e['description'] || '';
   }
 
   // 获取本地化别名
-  getAlias(entity: { alias?: string[]; aliasEn?: string[] } | undefined): string[] {
+  getAlias(entity: object | undefined): string[] {
     if (!entity) return [];
-    if (this.currentLanguage === 'en' && entity.aliasEn && entity.aliasEn.length > 0) {
-      return entity.aliasEn;
+    const e = entity as Record<string, string[]>;
+    if (this.currentLanguage === 'en') {
+      // 英文模式下，只返回英文别名，没有则返回空数组
+      return e['aliasEn'] || [];
     }
-    return entity.alias || [];
+    return e['alias'] || [];
   }
 
   // 获取本地化时间显示
-  getTimeDisplay(time: { display: string; displayEn?: string } | undefined): string {
+  getTimeDisplay(time: object | undefined): string {
     if (!time) return '';
-    if (this.currentLanguage === 'en' && time.displayEn) {
-      return time.displayEn;
+    const t = time as Record<string, string>;
+    if (this.currentLanguage === 'en' && t['displayEn']) {
+      return t['displayEn'];
     }
-    return time.display;
+    return t['display'] || '';
   }
 
   // 获取本地化传播途径
-  getVia(spread: { via?: string; viaEn?: string } | undefined): string | undefined {
+  getVia(spread: object | undefined): string | undefined {
     if (!spread) return undefined;
-    if (this.currentLanguage === 'en' && spread.viaEn) {
-      return spread.viaEn;
+    const s = spread as Record<string, string>;
+    if (this.currentLanguage === 'en' && s['viaEn']) {
+      return s['viaEn'];
     }
-    return spread.via;
+    return s['via'];
   }
 
   // 获取作物类别名称
@@ -312,14 +320,14 @@ class LanguageServiceClass {
 
   // 获取时代名称（双语）
   getEraName(eraId: string): string {
-    const era = ERAS_I18N[eraId];
+    const era = ERAS_I18N.get(eraId);
     if (!era) return eraId;
     return this.currentLanguage === 'en' ? era.nameEn : era.name;
   }
 
   // 获取时代描述（双语）
   getEraDescription(eraId: string): string {
-    const era = ERAS_I18N[eraId];
+    const era = ERAS_I18N.get(eraId);
     if (!era) return '';
     return this.currentLanguage === 'en' ? era.descriptionEn : era.description;
   }

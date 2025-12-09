@@ -5,17 +5,49 @@
       "name": "面包",
       "nameEn": "Bread",
       "category": "staple",
-      "ingredients": ["wheat"],
+      "ingredients": [
+        "wheat"
+      ],
       "origin": {
         "location": "egypt",
-        "time": { "year": -4000, "display": "公元前4000年左右", "displayEn": "Around 4000 BCE" }
+        "time": {
+          "year": -4000,
+          "display": "公元前4000年左右",
+          "displayEn": "Around 4000 BCE"
+        }
       },
       "spreads": [
-        { "from": "egypt", "to": "mediterranean", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
-        { "from": "mediterranean", "to": "europe", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "16世纪", "displayEn": "16th century" } }
+        {
+          "from": "egypt",
+          "to": "mediterranean",
+          "time": {
+            "display": "公元前2000年",
+            "displayEn": "2000 BCE"
+          }
+        },
+        {
+          "from": "mediterranean",
+          "to": "europe",
+          "time": {
+            "display": "公元前1000年",
+            "displayEn": "1000 BCE"
+          }
+        },
+        {
+          "from": "europe",
+          "to": "north-america",
+          "time": {
+            "display": "16世纪",
+            "displayEn": "16th century"
+          }
+        }
       ],
-      "currentRegions": ["europe", "north-america", "middle-east", "australia"],
+      "currentRegions": [
+        "europe",
+        "north-america",
+        "middle-east",
+        "australia"
+      ],
       "description": "西方文明的主食，古埃及人发明了发酵面包，不同地区发展出法棍、吐司等多种形式。",
       "descriptionEn": "The staple food of Western civilization. Ancient Egyptians invented leavened bread, which evolved into baguettes, toast, and many other forms."
     },
@@ -24,18 +56,64 @@
       "name": "面条",
       "nameEn": "Noodles",
       "category": "staple",
-      "ingredients": ["wheat"],
+      "ingredients": [
+        "wheat"
+      ],
       "origin": {
         "location": "china",
-        "time": { "year": -2000, "display": "公元前2000年左右", "displayEn": "Around 2000 BCE" }
+        "time": {
+          "year": -2000,
+          "display": "公元前2000年左右",
+          "displayEn": "Around 2000 BCE"
+        }
       },
       "spreads": [
-        { "from": "china", "to": "japan", "time": { "display": "9世纪", "displayEn": "9th century" }, "via": "遣唐使", "viaEn": "Japanese envoys to Tang China" },
-        { "from": "china", "to": "korea", "time": { "display": "唐代", "displayEn": "Tang Dynasty" } },
-        { "from": "china", "to": "southeast-asia", "time": { "display": "宋代", "displayEn": "Song Dynasty" } },
-        { "from": "asia", "to": "europe", "time": { "display": "13世纪", "displayEn": "13th century" }, "via": "丝绸之路/马可波罗", "viaEn": "Silk Road/Marco Polo" }
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "9世纪",
+            "displayEn": "9th century"
+          },
+          "via": "遣唐使",
+          "viaEn": "Japanese envoys to Tang China"
+        },
+        {
+          "from": "china",
+          "to": "korea",
+          "time": {
+            "display": "唐代",
+            "displayEn": "Tang Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "宋代",
+            "displayEn": "Song Dynasty"
+          }
+        },
+        {
+          "from": "asia",
+          "to": "europe",
+          "time": {
+            "display": "13世纪",
+            "displayEn": "13th century"
+          },
+          "via": "丝绸之路/马可波罗",
+          "viaEn": "Silk Road/Marco Polo"
+        }
       ],
-      "currentRegions": ["china", "japan", "italy", "korea", "vietnam", "shandong", "sichuan"],
+      "currentRegions": [
+        "china",
+        "japan",
+        "italy",
+        "korea",
+        "vietnam",
+        "shandong",
+        "sichuan"
+      ],
       "description": "中国发明的主食，青海喇家遗址发现4000年前的面条，传遍全球发展出拉面、乌冬、意面等。",
       "descriptionEn": "A staple invented in China. 4000-year-old noodles were found at Lajia site in Qinghai. Spread globally into ramen, udon, pasta, etc."
     },
@@ -43,60 +121,187 @@
       "id": "rice-cooked",
       "name": "米饭",
       "nameEn": "Cooked Rice",
-      "alias": ["白饭"],
+      "alias": [
+        "白饭"
+      ],
       "category": "staple",
-      "ingredients": ["rice"],
+      "ingredients": [
+        "rice"
+      ],
       "origin": {
         "location": "china",
-        "time": { "year": -7000, "display": "公元前7000年", "displayEn": "7000 BCE" }
+        "time": {
+          "year": -7000,
+          "display": "公元前7000年",
+          "displayEn": "7000 BCE"
+        }
       },
       "spreads": [
-        { "from": "china", "to": "southeast-asia", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
-        { "from": "china", "to": "japan", "time": { "display": "公元前300年", "displayEn": "300 BCE" } },
-        { "from": "china", "to": "india", "time": { "display": "公元前1500年", "displayEn": "1500 BCE" } }
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "公元前2000年",
+            "displayEn": "2000 BCE"
+          }
+        },
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "公元前300年",
+            "displayEn": "300 BCE"
+          }
+        },
+        {
+          "from": "china",
+          "to": "india",
+          "time": {
+            "display": "公元前1500年",
+            "displayEn": "1500 BCE"
+          }
+        }
       ],
-      "currentRegions": ["china", "japan", "korea", "southeast-asia", "india", "guangdong", "jiangsu", "zhejiang", "hunan", "hubei"],
+      "currentRegions": [
+        "china",
+        "japan",
+        "korea",
+        "southeast-asia",
+        "india",
+        "guangdong",
+        "jiangsu",
+        "zhejiang",
+        "hunan",
+        "hubei"
+      ],
       "description": "亚洲最基本的主食形式，养活全球一半以上人口。",
-      "descriptionEn": "The most fundamental staple in Asia, feeding more than half of the world's population."
+      "descriptionEn": "The most fundamental staple in Asia, feeding more than half of the world's population.",
+      "aliasEn": [
+        "White Rice"
+      ]
     },
     {
       "id": "tortilla",
       "name": "玉米饼",
       "nameEn": "Tortilla",
-      "alias": ["塔可饼"],
+      "alias": [
+        "塔可饼"
+      ],
       "category": "staple",
-      "ingredients": ["corn"],
+      "ingredients": [
+        "corn"
+      ],
       "origin": {
         "location": "mesoamerica",
-        "time": { "year": -3000, "display": "公元前3000年", "displayEn": "3000 BCE" }
+        "time": {
+          "year": -3000,
+          "display": "公元前3000年",
+          "displayEn": "3000 BCE"
+        }
       },
       "spreads": [
-        { "from": "mesoamerica", "to": "north-america", "time": { "display": "16世纪", "displayEn": "16th century" } },
-        { "from": "mexico", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" } },
-        { "from": "usa", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } }
+        {
+          "from": "mesoamerica",
+          "to": "north-america",
+          "time": {
+            "display": "16世纪",
+            "displayEn": "16th century"
+          }
+        },
+        {
+          "from": "mexico",
+          "to": "usa",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "usa",
+          "to": "europe",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
       ],
-      "currentRegions": ["mexico", "usa", "central-america"],
+      "currentRegions": [
+        "mexico",
+        "usa",
+        "central-america"
+      ],
       "description": "中美洲文明的主食，是墨西哥塔可、卷饼的基础。",
-      "descriptionEn": "The staple food of Mesoamerican civilization, the base for Mexican tacos and burritos."
+      "descriptionEn": "The staple food of Mesoamerican civilization, the base for Mexican tacos and burritos.",
+      "aliasEn": [
+        "Taco Shell"
+      ]
     },
     {
       "id": "dumpling",
       "name": "饺子",
       "nameEn": "Dumpling",
       "category": "staple",
-      "ingredients": ["wheat"],
+      "ingredients": [
+        "wheat"
+      ],
       "origin": {
         "location": "china",
-        "time": { "display": "东汉末年（约公元200年）", "displayEn": "Late Eastern Han Dynasty (around 200 CE)" }
+        "time": {
+          "display": "东汉末年（约公元200年）",
+          "displayEn": "Late Eastern Han Dynasty (around 200 CE)"
+        }
       },
       "spreads": [
-        { "from": "china", "to": "korea", "time": { "display": "唐代", "displayEn": "Tang Dynasty" } },
-        { "from": "china", "to": "japan", "time": { "display": "明代", "displayEn": "Ming Dynasty" } },
-        { "from": "china", "to": "central-asia", "time": { "display": "元代", "displayEn": "Yuan Dynasty" } },
-        { "from": "central-asia", "to": "russia", "time": { "display": "中世纪", "displayEn": "Medieval period" } },
-        { "from": "central-asia", "to": "europe", "time": { "display": "中世纪", "displayEn": "Medieval period" } }
+        {
+          "from": "china",
+          "to": "korea",
+          "time": {
+            "display": "唐代",
+            "displayEn": "Tang Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "明代",
+            "displayEn": "Ming Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "central-asia",
+          "time": {
+            "display": "元代",
+            "displayEn": "Yuan Dynasty"
+          }
+        },
+        {
+          "from": "central-asia",
+          "to": "russia",
+          "time": {
+            "display": "中世纪",
+            "displayEn": "Medieval period"
+          }
+        },
+        {
+          "from": "central-asia",
+          "to": "europe",
+          "time": {
+            "display": "中世纪",
+            "displayEn": "Medieval period"
+          }
+        }
       ],
-      "currentRegions": ["china", "korea", "japan", "russia", "poland", "dongbei", "shandong"],
+      "currentRegions": [
+        "china",
+        "korea",
+        "japan",
+        "russia",
+        "poland",
+        "dongbei",
+        "shandong"
+      ],
       "description": "张仲景发明的食物，中国春节传统美食，传播形成饺子、锅贴、俄罗斯饺子等变体。",
       "descriptionEn": "Invented by Zhang Zhongjing, a traditional Chinese New Year food. Spread to form variants like gyoza, potstickers, and pelmeni."
     },
@@ -105,18 +310,854 @@
       "name": "馒头",
       "nameEn": "Steamed Bun",
       "category": "staple",
-      "ingredients": ["wheat"],
+      "ingredients": [
+        "wheat"
+      ],
       "origin": {
         "location": "china",
-        "time": { "display": "三国时期（约公元220年）", "displayEn": "Three Kingdoms period (around 220 CE)" }
+        "time": {
+          "display": "三国时期（约公元220年）",
+          "displayEn": "Three Kingdoms period (around 220 CE)"
+        }
       },
       "spreads": [
-        { "from": "china", "to": "korea", "time": { "display": "唐代", "displayEn": "Tang Dynasty" } },
-        { "from": "china", "to": "japan", "time": { "display": "宋代", "displayEn": "Song Dynasty" } }
+        {
+          "from": "china",
+          "to": "korea",
+          "time": {
+            "display": "唐代",
+            "displayEn": "Tang Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "宋代",
+            "displayEn": "Song Dynasty"
+          }
+        }
       ],
-      "currentRegions": ["china", "korea", "japan", "shandong"],
+      "currentRegions": [
+        "china",
+        "korea",
+        "japan",
+        "shandong"
+      ],
       "description": "相传诸葛亮发明，中国北方重要主食，日本馒头发展为包馅甜点。",
       "descriptionEn": "Allegedly invented by Zhuge Liang, an important staple in northern China. Japanese manjū evolved into filled sweet desserts."
+    },
+    {
+      "id": "congee",
+      "name": "粥",
+      "nameEn": "Congee",
+      "alias": [
+        "稀饭",
+        "白粥"
+      ],
+      "aliasEn": [
+        "Rice Porridge",
+        "Plain Congee"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "year": -2500,
+          "display": "公元前2500年左右",
+          "displayEn": "Around 2500 BCE"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "唐代",
+            "displayEn": "Tang Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "宋代",
+            "displayEn": "Song Dynasty"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "japan",
+        "korea",
+        "vietnam",
+        "thailand"
+      ],
+      "description": "中国传统主食，煮至米粒糊化成粥状，广东皮蛋瘦肉粥、潮汕白粥各有特色。",
+      "descriptionEn": "A traditional Chinese staple made by boiling rice until it becomes a thick porridge. Famous varieties include Cantonese century egg and pork congee, and Teochew plain congee."
+    },
+    {
+      "id": "baozi",
+      "name": "包子",
+      "nameEn": "Steamed Bun (Baozi)",
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "宋代（约960年）",
+          "displayEn": "Song Dynasty (around 960 CE)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "明代",
+            "displayEn": "Ming Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "清代",
+            "displayEn": "Qing Dynasty"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "japan",
+        "taiwan",
+        "singapore"
+      ],
+      "description": "中国传统面点，有肉馅和甜馅之分，狗不理包子、南翔小笼包闻名遐迩。",
+      "descriptionEn": "Traditional Chinese steamed buns with either savory or sweet fillings. Famous varieties include Goubuli Baozi and Nanxiang Xiaolongbao."
+    },
+    {
+      "id": "roti",
+      "name": "印度烤饼",
+      "nameEn": "Roti",
+      "alias": [
+        "烙饼",
+        "薄饼"
+      ],
+      "aliasEn": [
+        "Flatbread",
+        "Chapati"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "year": -2500,
+          "display": "公元前2500年",
+          "displayEn": "2500 BCE"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "southeast-asia",
+          "time": {
+            "display": "中世纪",
+            "displayEn": "Medieval period"
+          }
+        },
+        {
+          "from": "india",
+          "to": "caribbean",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          },
+          "via": "印度移民",
+          "viaEn": "Indian immigrants"
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "malaysia",
+        "singapore",
+        "caribbean"
+      ],
+      "description": "南亚的基本主食，无发酵的全麦烤饼，搭配咖喱食用。",
+      "descriptionEn": "A basic staple in South Asia, made from unleavened whole wheat flour, typically served with curry."
+    },
+    {
+      "id": "naan",
+      "name": "馕",
+      "nameEn": "Naan",
+      "alias": [
+        "印度馕"
+      ],
+      "aliasEn": [
+        "Indian Naan"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "central-asia",
+        "time": {
+          "year": -1300,
+          "display": "公元前1300年",
+          "displayEn": "1300 BCE"
+        }
+      },
+      "spreads": [
+        {
+          "from": "central-asia",
+          "to": "india",
+          "time": {
+            "display": "莫卧儿时期",
+            "displayEn": "Mughal period"
+          }
+        },
+        {
+          "from": "india",
+          "to": "uk",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "iran",
+        "uk",
+        "china"
+      ],
+      "description": "泥炉烤制的发酵面饼，新疆馕和印度馕同源，是丝路文化交流的见证。",
+      "descriptionEn": "Leavened flatbread baked in a clay oven. Xinjiang nang and Indian naan share the same origin, testament to Silk Road cultural exchange."
+    },
+    {
+      "id": "pita",
+      "name": "皮塔饼",
+      "nameEn": "Pita",
+      "alias": [
+        "口袋饼"
+      ],
+      "aliasEn": [
+        "Pocket Bread"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "middle-east",
+        "time": {
+          "year": -2500,
+          "display": "公元前2500年",
+          "displayEn": "2500 BCE"
+        }
+      },
+      "spreads": [
+        {
+          "from": "middle-east",
+          "to": "mediterranean",
+          "time": {
+            "display": "古代",
+            "displayEn": "Ancient times"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "middle-east",
+        "greece",
+        "turkey",
+        "usa"
+      ],
+      "description": "中东传统面饼，烤制时形成空腔，可以填入各种馅料，是沙瓦尔玛和法拉费尔的载体。",
+      "descriptionEn": "Traditional Middle Eastern flatbread that forms a pocket when baked, perfect for filling with various ingredients. Commonly used with shawarma and falafel."
+    },
+    {
+      "id": "couscous",
+      "name": "古斯古斯",
+      "nameEn": "Couscous",
+      "alias": [
+        "北非小米"
+      ],
+      "aliasEn": [
+        "North African Semolina"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "morocco",
+        "time": {
+          "display": "公元7世纪",
+          "displayEn": "7th century CE"
+        }
+      },
+      "spreads": [
+        {
+          "from": "morocco",
+          "to": "france",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          },
+          "via": "移民",
+          "viaEn": "Immigration"
+        }
+      ],
+      "currentRegions": [
+        "morocco",
+        "algeria",
+        "tunisia",
+        "france"
+      ],
+      "description": "北非传统主食，蒸制的粗麦粉粒，联合国教科文组织非物质文化遗产。",
+      "descriptionEn": "Traditional North African staple made from steamed semolina granules. UNESCO Intangible Cultural Heritage."
+    },
+    {
+      "id": "polenta",
+      "name": "玉米糊",
+      "nameEn": "Polenta",
+      "alias": [
+        "波伦塔"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "corn"
+      ],
+      "origin": {
+        "location": "italy",
+        "time": {
+          "display": "16世纪后",
+          "displayEn": "After 16th century"
+        }
+      },
+      "spreads": [],
+      "currentRegions": [
+        "italy",
+        "austria",
+        "switzerland"
+      ],
+      "description": "意大利北部传统食物，玉米传入欧洲后取代了古罗马的谷物糊。",
+      "descriptionEn": "A traditional food from northern Italy. After corn was introduced to Europe, it replaced the ancient Roman grain porridge.",
+      "aliasEn": [
+        "Cornmeal Porridge"
+      ]
+    },
+    {
+      "id": "risotto",
+      "name": "意大利烩饭",
+      "nameEn": "Risotto",
+      "alias": [
+        "意式炖饭"
+      ],
+      "aliasEn": [
+        "Italian Rice"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "italy",
+        "time": {
+          "display": "14世纪",
+          "displayEn": "14th century"
+        }
+      },
+      "spreads": [],
+      "currentRegions": [
+        "italy",
+        "usa",
+        "europe"
+      ],
+      "description": "意大利北部的米食传统，用高汤慢煮至奶油状，米兰烩饭用藏红花调色。",
+      "descriptionEn": "A traditional rice dish from northern Italy, slow-cooked with broth to a creamy consistency. Milanese risotto is colored with saffron."
+    },
+    {
+      "id": "paella",
+      "name": "西班牙海鲜饭",
+      "nameEn": "Paella",
+      "alias": [
+        "帕埃利亚"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "spain",
+        "time": {
+          "display": "19世纪中期",
+          "displayEn": "Mid-19th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "spain",
+          "to": "south-america",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "spain",
+          "to": "europe",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        },
+        {
+          "from": "spain",
+          "to": "usa",
+          "time": {
+            "display": "20世纪后期",
+            "displayEn": "Late 20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "spain",
+        "south-america",
+        "usa"
+      ],
+      "description": "瓦伦西亚的传统菜肴，阿拉伯人带来的稻米与地中海海鲜结合的产物。",
+      "descriptionEn": "A classic dish from Valencia, reflecting the influence of Arab-introduced rice on Spanish cuisine.",
+      "aliasEn": [
+        "Valencian Rice"
+      ]
+    },
+    {
+      "id": "biryani",
+      "name": "印度香饭",
+      "nameEn": "Biryani",
+      "alias": [
+        "比尔亚尼"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice",
+        "cumin",
+        "cinnamon",
+        "cardamom"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "莫卧儿时期（16世纪）",
+          "displayEn": "Mughal period (16th century)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "middle-east",
+          "time": {
+            "display": "近代",
+            "displayEn": "Modern era"
+          }
+        },
+        {
+          "from": "india",
+          "to": "uk",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "middle-east",
+        "uk"
+      ],
+      "description": "波斯烹饪与印度香料的结合，海德拉巴、勒克瑙各有流派，印度节庆必备。",
+      "descriptionEn": "A fusion of Persian cooking and Indian spices. Hyderabad and Lucknow have their own distinct styles. Essential for Indian celebrations.",
+      "aliasEn": [
+        "Biriyani"
+      ]
+    },
+    {
+      "id": "soba",
+      "name": "荞麦面",
+      "nameEn": "Soba",
+      "alias": [
+        "日本荞麦面"
+      ],
+      "aliasEn": [
+        "Japanese Buckwheat Noodles"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "buckwheat"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "江户时代（约1700年）",
+          "displayEn": "Edo period (around 1700)"
+        }
+      },
+      "spreads": [],
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日本传统面食，荞麦粉制作，冷食热食皆宜，跨年吃荞麦面是日本习俗。",
+      "descriptionEn": "Traditional Japanese noodles made from buckwheat flour, served hot or cold. Eating soba on New Year's Eve is a Japanese tradition."
+    },
+    {
+      "id": "udon",
+      "name": "乌冬面",
+      "nameEn": "Udon",
+      "alias": [
+        "乌龙面"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "奈良时代（8世纪）",
+          "displayEn": "Nara period (8th century)"
+        }
+      },
+      "spreads": [],
+      "currentRegions": [
+        "japan",
+        "korea"
+      ],
+      "description": "由中国传入的粗面条，日本的赞岐乌冬最为著名，口感弹韧。",
+      "descriptionEn": "Thick wheat noodles introduced from China. Sanuki udon from Japan is the most famous, known for its chewy texture.",
+      "aliasEn": [
+        "Thick Wheat Noodles"
+      ]
+    },
+    {
+      "id": "pho",
+      "name": "越南河粉",
+      "nameEn": "Pho",
+      "alias": [
+        "河粉"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "vietnam",
+        "time": {
+          "display": "20世纪初",
+          "displayEn": "Late 19th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "vietnam",
+          "to": "usa",
+          "time": {
+            "display": "1970年代",
+            "displayEn": "1970s"
+          },
+          "via": "越南难民",
+          "viaEn": "Post-Vietnam War immigrants"
+        },
+        {
+          "from": "vietnam",
+          "to": "france",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "1950s"
+          },
+          "viaEn": "French colonization"
+        }
+      ],
+      "currentRegions": [
+        "vietnam",
+        "usa",
+        "france",
+        "australia"
+      ],
+      "description": "越南国民美食，米粉配牛肉汤，法国殖民与中国移民文化交融的产物。",
+      "descriptionEn": "Vietnam's national noodle soup, blending Chinese and French culinary elements.",
+      "aliasEn": [
+        "Vietnamese Rice Noodles"
+      ]
+    },
+    {
+      "id": "pad-thai",
+      "name": "泰式炒河粉",
+      "nameEn": "Pad Thai",
+      "alias": [
+        "泰式炒粿条"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice",
+        "peanut"
+      ],
+      "origin": {
+        "location": "thailand",
+        "time": {
+          "display": "1930年代",
+          "displayEn": "1930s"
+        }
+      },
+      "spreads": [
+        {
+          "from": "thailand",
+          "to": "usa",
+          "time": {
+            "display": "1970年代",
+            "displayEn": "1970s"
+          }
+        }
+      ],
+      "currentRegions": [
+        "thailand",
+        "usa",
+        "europe"
+      ],
+      "description": "泰国政府推广的国民料理，融合中式炒面与泰式风味，是泰国软实力代表。",
+      "descriptionEn": "A national dish promoted by the Thai government, blending Chinese stir-fried noodles with Thai flavors. A symbol of Thailand's soft power.",
+      "aliasEn": [
+        "Thai Fried Noodles"
+      ]
+    },
+    {
+      "id": "onigiri",
+      "name": "饭团",
+      "alias": [
+        "御握り"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "平安时代",
+          "displayEn": "Heian period"
+        }
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "usa",
+        "taiwan"
+      ],
+      "description": "日本便携主食，三角形饭团包裹各种馅料，便利店的热销商品。",
+      "nameEn": "Onigiri",
+      "aliasEn": [
+        "Rice Ball"
+      ],
+      "descriptionEn": "Japanese portable staple food, triangular rice balls wrapped with various fillings, a best-selling item in convenience stores."
+    },
+    {
+      "id": "roti-canai",
+      "name": "印度煎饼",
+      "alias": [
+        "印度飞饼"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "malaysia",
+        "time": {
+          "display": "19世纪",
+          "displayEn": "19th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "malaysia",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          },
+          "via": "印度移民",
+          "viaEn": "Indian immigrants"
+        }
+      ],
+      "currentRegions": [
+        "malaysia",
+        "singapore"
+      ],
+      "description": "马来西亚早餐，印度移民带来的扁平面饼，配咖喱蘸酱。",
+      "nameEn": "Roti Canai",
+      "aliasEn": [
+        "Flying Bread",
+        "Roti Prata"
+      ],
+      "descriptionEn": "Malaysian breakfast dish, a flaky flatbread brought by Indian immigrants, served with curry dipping sauce."
+    },
+    {
+      "id": "dosa",
+      "name": "印度薄饼",
+      "alias": [
+        "多萨"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice",
+        "lentil"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "古代",
+          "displayEn": "Ancient times"
+        }
+      },
+      "spreads": [],
+      "currentRegions": [
+        "india",
+        "malaysia",
+        "singapore"
+      ],
+      "description": "南印度发酵米饼，脆薄如纸，配椰子酱和三巴酱。",
+      "nameEn": "Dosa",
+      "aliasEn": [
+        "Dosai"
+      ],
+      "descriptionEn": "South Indian fermented rice pancake, crispy and paper-thin, served with coconut chutney and sambar."
+    },
+    {
+      "id": "idli",
+      "name": "蒸米糕",
+      "alias": [
+        "伊德利"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "rice",
+        "lentil"
+      ],
+      "origin": {
+        "location": "india",
+        "time": {
+          "display": "古代",
+          "displayEn": "Ancient times"
+        }
+      },
+      "spreads": [],
+      "currentRegions": [
+        "india",
+        "sri-lanka"
+      ],
+      "description": "南印度早餐，发酵米糊蒸成的白色软糕。",
+      "nameEn": "Idli",
+      "aliasEn": [
+        "Steamed Rice Cake"
+      ],
+      "descriptionEn": "South Indian breakfast dish, white soft cakes steamed from fermented rice batter."
+    },
+    {
+      "id": "croissant",
+      "name": "可颂",
+      "alias": [
+        "牛角包"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "austria",
+        "time": {
+          "display": "17世纪",
+          "displayEn": "17th century"
+        }
+      },
+      "spreads": [
+        {
+          "from": "austria",
+          "to": "france",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "france",
+        "europe",
+        "usa"
+      ],
+      "description": "起源于维也纳的新月形酥皮面包，在法国发扬光大成为早餐标配。",
+      "nameEn": "Croissant",
+      "aliasEn": [
+        "Crescent Roll"
+      ],
+      "descriptionEn": "Crescent-shaped puff pastry originated in Vienna, became a French breakfast staple."
+    },
+    {
+      "id": "baguette",
+      "name": "法棍",
+      "alias": [
+        "法式长棍面包"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "france",
+        "time": {
+          "display": "19世纪",
+          "displayEn": "19th century"
+        }
+      },
+      "spreads": [],
+      "currentRegions": [
+        "france",
+        "europe"
+      ],
+      "description": "法国的象征，长条形硬皮面包，联合国非物质文化遗产。",
+      "nameEn": "Baguette",
+      "aliasEn": [
+        "French Bread"
+      ],
+      "descriptionEn": "Symbol of France, long crusty bread, UNESCO Intangible Cultural Heritage."
     }
   ]
 }

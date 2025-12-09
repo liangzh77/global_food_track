@@ -5,7 +5,7 @@
       "name": "啤酒",
       "nameEn": "Beer",
       "category": "beverage",
-      "ingredients": ["barley", "wheat"],
+      "ingredients": ["barley", "hop"],
       "origin": {
         "location": "mesopotamia",
         "time": { "year": -4000, "display": "公元前4000年", "displayEn": "4000 BCE" }
@@ -25,6 +25,7 @@
       "name": "葡萄酒",
       "nameEn": "Wine",
       "alias": ["红酒"],
+      "aliasEn": ["Red wine"],
       "category": "beverage",
       "ingredients": ["grape"],
       "origin": {
@@ -42,102 +43,6 @@
       "currentRegions": ["france", "italy", "spain", "usa", "argentina", "australia"],
       "description": "与地中海文明紧密相连的饮料，法国波尔多和勃艮第是葡萄酒的圣地。",
       "descriptionEn": "A beverage closely connected to Mediterranean civilization. French Bordeaux and Burgundy are wine's holy lands."
-    },
-    {
-      "id": "sake",
-      "name": "清酒",
-      "nameEn": "Sake",
-      "alias": ["日本酒"],
-      "category": "beverage",
-      "ingredients": ["rice"],
-      "origin": {
-        "location": "japan",
-        "time": { "display": "约公元前300年", "displayEn": "Around 300 BCE" }
-      },
-      "spreads": [
-        { "from": "japan", "to": "usa", "time": { "display": "19世纪末", "displayEn": "Late 19th century" } },
-        { "from": "japan", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } },
-        { "from": "japan", "to": "asia", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
-      ],
-      "currentRegions": ["japan", "usa", "europe"],
-      "description": "日本传统米酒，酿造技术源于中国的酿酒方法，与日本神道文化紧密相连。",
-      "descriptionEn": "Traditional Japanese rice wine. Brewing techniques originated from Chinese methods, closely tied to Shinto culture."
-    },
-    {
-      "id": "baijiu",
-      "name": "白酒",
-      "nameEn": "Baijiu",
-      "alias": ["中国白酒"],
-      "category": "beverage",
-      "ingredients": ["sorghum", "wheat", "rice"],
-      "origin": {
-        "location": "china",
-        "time": { "display": "元代（约1300年）", "displayEn": "Yuan Dynasty (around 1300)" }
-      },
-      "spreads": [
-        { "from": "china", "to": "korea", "time": { "display": "明代", "displayEn": "Ming Dynasty" } },
-        { "from": "china", "to": "southeast-asia", "time": { "display": "近代", "displayEn": "Modern era" } }
-      ],
-      "currentRegions": ["china", "sichuan", "yunnan"],
-      "description": "中国传统蒸馏酒，世界销量最大的烈酒，茅台、五粮液是代表品牌。",
-      "descriptionEn": "Traditional Chinese distilled liquor, the world's best-selling spirit. Maotai and Wuliangye are representative brands."
-    },
-    {
-      "id": "whiskey",
-      "name": "威士忌",
-      "nameEn": "Whiskey",
-      "category": "beverage",
-      "ingredients": ["barley", "corn", "rye"],
-      "origin": {
-        "location": "ireland",
-        "time": { "display": "12世纪", "displayEn": "12th century" }
-      },
-      "spreads": [
-        { "from": "ireland", "to": "uk", "time": { "display": "15世纪", "displayEn": "15th century" } },
-        { "from": "uk", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "苏格兰/爱尔兰移民", "viaEn": "Scottish/Irish immigrants" },
-        { "from": "usa", "to": "japan", "time": { "display": "19世纪", "displayEn": "19th century" } }
-      ],
-      "currentRegions": ["uk", "ireland", "usa", "japan", "canada"],
-      "description": "源于爱尔兰的蒸馏酒，苏格兰威士忌、美国波本和日本威士忌各有特色。",
-      "descriptionEn": "Distilled spirit originating from Ireland. Scotch whisky, American bourbon, and Japanese whisky each have unique characteristics."
-    },
-    {
-      "id": "vodka",
-      "name": "伏特加",
-      "nameEn": "Vodka",
-      "category": "beverage",
-      "ingredients": ["potato", "wheat", "rye"],
-      "origin": {
-        "location": "russia",
-        "time": { "display": "14世纪", "displayEn": "14th century" }
-      },
-      "spreads": [
-        { "from": "russia", "to": "poland", "time": { "display": "15世纪", "displayEn": "15th century" } },
-        { "from": "russia", "to": "europe", "time": { "display": "19世纪", "displayEn": "19th century" } },
-        { "from": "russia", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" }, "via": "俄国移民", "viaEn": "Russian immigrants" }
-      ],
-      "currentRegions": ["russia", "poland", "usa", "sweden", "finland"],
-      "description": "俄罗斯的国酒，起源有俄波之争，是鸡尾酒的常用基酒。",
-      "descriptionEn": "Russia's national drink, with disputed origins between Russia and Poland. A common base spirit for cocktails."
-    },
-    {
-      "id": "tequila",
-      "name": "龙舌兰酒",
-      "nameEn": "Tequila",
-      "alias": ["特基拉"],
-      "category": "beverage",
-      "ingredients": [],
-      "origin": {
-        "location": "mexico",
-        "time": { "display": "16世纪", "displayEn": "16th century" }
-      },
-      "spreads": [
-        { "from": "mexico", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" } },
-        { "from": "usa", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } }
-      ],
-      "currentRegions": ["mexico", "usa", "europe"],
-      "description": "墨西哥特产烈酒，由蓝色龙舌兰酿造，玛格丽塔鸡尾酒的基酒。",
-      "descriptionEn": "Mexico's signature spirit, made from blue agave. The base spirit for margarita cocktails."
     },
     {
       "id": "tea-drink",
@@ -178,23 +83,432 @@
       "descriptionEn": "From Arabian coffeehouses to Italian espresso to Starbucks, coffee culture continues to evolve."
     },
     {
-      "id": "hot-chocolate",
-      "name": "热巧克力",
-      "nameEn": "Hot Chocolate",
-      "alias": ["热可可"],
+      "id": "espresso",
+      "name": "意式浓缩",
+      "nameEn": "Espresso",
+      "alias": ["浓缩咖啡"],
+      "aliasEn": ["Espresso coffee"],
       "category": "beverage",
-      "ingredients": ["cacao"],
+      "ingredients": ["coffee"],
       "origin": {
-        "location": "mesoamerica",
-        "time": { "display": "公元前1900年", "displayEn": "1900 BCE" }
+        "location": "italy",
+        "time": { "year": 1884, "display": "1884年", "displayEn": "1884" }
       },
       "spreads": [
-        { "from": "mexico", "to": "spain", "time": { "year": 1528, "display": "1528年", "displayEn": "1528" } },
+        { "from": "italy", "to": "usa", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
+      ],
+      "currentRegions": ["italy", "usa", "europe"],
+      "description": "意大利发明的高压萃取咖啡，是拿铁、卡布奇诺等的基础。",
+      "descriptionEn": "High-pressure extracted coffee invented in Italy, the foundation of lattes, cappuccinos and more."
+    },
+    {
+      "id": "cappuccino",
+      "name": "卡布奇诺",
+      "nameEn": "Cappuccino",
+      "category": "beverage",
+      "ingredients": ["coffee"],
+      "origin": {
+        "location": "italy",
+        "time": { "display": "20世纪初", "displayEn": "Early 20th century" }
+      },
+      "spreads": [
+        { "from": "italy", "to": "usa", "time": { "display": "1980年代", "displayEn": "1980s" } }
+      ],
+      "currentRegions": ["italy", "usa", "europe"],
+      "description": "浓缩咖啡配奶泡，名字来自嘉布遣会修士棕色袍子，意大利早餐的选择。",
+      "descriptionEn": "Espresso with milk foam, named after the brown robes of Capuchin monks, a popular Italian breakfast choice."
+    },
+    {
+      "id": "latte",
+      "name": "拿铁",
+      "nameEn": "Latte",
+      "alias": ["咖啡拿铁"],
+      "aliasEn": ["Caffe Latte"],
+      "category": "beverage",
+      "ingredients": ["coffee"],
+      "origin": {
+        "location": "italy",
+        "time": { "display": "20世纪", "displayEn": "20th century" }
+      },
+      "spreads": [
+        { "from": "italy", "to": "usa", "time": { "display": "1980年代", "displayEn": "1980s" }, "via": "星巴克", "viaEn": "Starbucks" }
+      ],
+      "currentRegions": ["usa", "europe", "asia"],
+      "description": "意大利语\"牛奶咖啡\"，浓缩咖啡加大量蒸奶，星巴克的主打产品。",
+      "descriptionEn": "Italian for \"milk coffee\", espresso with steamed milk, a flagship Starbucks product."
+    },
+    {
+      "id": "bubble-tea",
+      "name": "珍珠奶茶",
+      "nameEn": "Bubble Tea",
+      "alias": ["波霸奶茶"],
+      "aliasEn": ["Boba Tea", "Pearl Milk Tea"],
+      "category": "beverage",
+      "ingredients": ["tea", "tapioca"],
+      "origin": {
+        "location": "taiwan",
+        "time": { "year": 1980, "display": "1980年代", "displayEn": "1980s" }
+      },
+      "spreads": [
+        { "from": "taiwan", "to": "asia", "time": { "display": "1990年代", "displayEn": "1990s" } },
+        { "from": "asia", "to": "usa", "time": { "display": "2000年代", "displayEn": "2000s" } }
+      ],
+      "currentRegions": ["taiwan", "china", "japan", "usa", "europe"],
+      "description": "台湾发明的奶茶加粉圆，成为全球年轻人的时尚饮品，带动亚洲奶茶热潮。",
+      "descriptionEn": "Taiwanese invention of milk tea with tapioca pearls, became a trendy beverage among young people worldwide, driving the Asian milk tea craze."
+    },
+    {
+      "id": "matcha-latte",
+      "name": "抹茶拿铁",
+      "nameEn": "Matcha Latte",
+      "category": "beverage",
+      "ingredients": ["tea"],
+      "origin": {
+        "location": "japan",
+        "time": { "display": "现代", "displayEn": "Modern era" }
+      },
+      "spreads": [
+        { "from": "japan", "to": "usa", "time": { "display": "2000年代", "displayEn": "2000s" } }
+      ],
+      "currentRegions": ["japan", "usa", "europe"],
+      "description": "日本抹茶与西式拿铁的结合，星巴克将其推向全球。",
+      "descriptionEn": "A fusion of Japanese matcha and Western latte, popularized globally by Starbucks."
+    },
+    {
+      "id": "chai",
+      "name": "印度奶茶",
+      "nameEn": "Chai",
+      "alias": ["玛萨拉茶"],
+      "aliasEn": ["Masala Chai"],
+      "category": "beverage",
+      "ingredients": ["tea", "cinnamon", "cardamom", "ginger", "clove"],
+      "origin": {
+        "location": "india",
+        "time": { "display": "英国殖民时期", "displayEn": "British colonial period" }
+      },
+      "spreads": [
+        { "from": "india", "to": "uk", "time": { "display": "20世纪", "displayEn": "20th century" } },
+        { "from": "india", "to": "usa", "time": { "display": "1990年代", "displayEn": "1990s" } }
+      ],
+      "currentRegions": ["india", "uk", "usa"],
+      "description": "印度的香料奶茶，用红茶配多种香料煮制，街头茶摊的灵魂。",
+      "descriptionEn": "Indian spiced milk tea, brewed with black tea and various spices, the soul of street tea stalls."
+    },
+    {
+      "id": "sake",
+      "name": "清酒",
+      "nameEn": "Sake",
+      "alias": ["日本酒"],
+      "aliasEn": ["Japanese rice wine"],
+      "category": "beverage",
+      "ingredients": ["rice"],
+      "origin": {
+        "location": "japan",
+        "time": { "display": "奈良时代（约700年）", "displayEn": "Nara period (around 700 CE)" }
+      },
+      "spreads": [
+        { "from": "japan", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" } }
+      ],
+      "currentRegions": ["japan", "usa"],
+      "description": "日本的国酒，米酿造的酒，冷饮热饮皆宜，寿司的绝配。",
+      "descriptionEn": "Japan's national drink, rice-brewed alcohol, can be served cold or warm, perfect pairing with sushi."
+    },
+    {
+      "id": "soju",
+      "name": "烧酒",
+      "nameEn": "Soju",
+      "alias": ["韩国烧酒"],
+      "aliasEn": ["Korean soju"],
+      "category": "beverage",
+      "ingredients": ["rice"],
+      "origin": {
+        "location": "korea",
+        "time": { "display": "13世纪", "displayEn": "13th century" }
+      },
+      "spreads": [],
+      "currentRegions": ["korea"],
+      "description": "韩国国民酒，蒸馏酒，绿瓶真露是代表，韩国聚餐必备。",
+      "descriptionEn": "Korea's national drink, distilled spirit, green bottle Jinro is iconic, essential for Korean gatherings."
+    },
+    {
+      "id": "baijiu",
+      "name": "白酒",
+      "nameEn": "Baijiu",
+      "alias": ["中国白酒"],
+      "aliasEn": ["Chinese white liquor"],
+      "category": "beverage",
+      "ingredients": ["sorghum", "rice", "wheat"],
+      "origin": {
+        "location": "china",
+        "time": { "display": "元代（约1300年）", "displayEn": "Yuan Dynasty (around 1300)" }
+      },
+      "spreads": [
+        { "from": "china", "to": "korea", "time": { "display": "明代", "displayEn": "Ming Dynasty" } },
+        { "from": "china", "to": "southeast-asia", "time": { "display": "近代", "displayEn": "Modern era" } }
+      ],
+      "currentRegions": ["china", "sichuan", "yunnan"],
+      "description": "中国的国酒，高度蒸馏酒，茅台、五粮液是顶级品牌，中国宴席必备。",
+      "descriptionEn": "China's national drink, strong distilled liquor, Maotai and Wuliangye are top brands, essential for Chinese banquets."
+    },
+    {
+      "id": "whiskey",
+      "name": "威士忌",
+      "nameEn": "Whiskey",
+      "category": "beverage",
+      "ingredients": ["barley"],
+      "origin": {
+        "location": "ireland",
+        "time": { "display": "12世纪", "displayEn": "12th century" }
+      },
+      "spreads": [
+        { "from": "ireland", "to": "uk", "time": { "display": "15世纪", "displayEn": "15th century" } },
+        { "from": "uk", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "苏格兰/爱尔兰移民", "viaEn": "Scottish/Irish immigrants" },
+        { "from": "usa", "to": "japan", "time": { "display": "19世纪", "displayEn": "19th century" } }
+      ],
+      "currentRegions": ["uk", "ireland", "usa", "japan", "canada"],
+      "description": "蒸馏谷物酒，苏格兰威士忌、爱尔兰威士忌、波本各有特色，日本威士忌后起之秀。",
+      "descriptionEn": "Distilled grain spirit, Scotch whisky, Irish whiskey, and bourbon each have unique characteristics, with Japanese whisky as a rising star."
+    },
+    {
+      "id": "vodka",
+      "name": "伏特加",
+      "nameEn": "Vodka",
+      "category": "beverage",
+      "ingredients": ["potato", "wheat"],
+      "origin": {
+        "location": "russia",
+        "time": { "display": "14世纪", "displayEn": "14th century" }
+      },
+      "spreads": [
+        { "from": "russia", "to": "poland", "time": { "display": "15世纪", "displayEn": "15th century" } },
+        { "from": "russia", "to": "europe", "time": { "display": "19世纪", "displayEn": "19th century" } },
+        { "from": "russia", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" }, "via": "俄国移民", "viaEn": "Russian immigrants" }
+      ],
+      "currentRegions": ["russia", "poland", "usa", "sweden", "finland"],
+      "description": "东欧的烈酒，几乎无色无味，是鸡尾酒的基础。",
+      "descriptionEn": "Eastern European spirit, nearly colorless and tasteless, a common base for cocktails."
+    },
+    {
+      "id": "rum",
+      "name": "朗姆酒",
+      "nameEn": "Rum",
+      "category": "beverage",
+      "ingredients": ["sugarcane"],
+      "origin": {
+        "location": "caribbean",
+        "time": { "display": "17世纪", "displayEn": "17th century" }
+      },
+      "spreads": [
+        { "from": "caribbean", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" } }
+      ],
+      "currentRegions": ["caribbean", "usa"],
+      "description": "加勒比甘蔗蒸馏酒，海盗的传说饮品，莫吉托和朗姆可乐的基础。",
+      "descriptionEn": "Caribbean sugarcane distilled spirit, legendary pirate drink, the base for mojitos and rum and coke."
+    },
+    {
+      "id": "tequila",
+      "name": "龙舌兰酒",
+      "nameEn": "Tequila",
+      "alias": ["特基拉"],
+      "aliasEn": ["Tequila"],
+      "category": "beverage",
+      "ingredients": ["agave"],
+      "origin": {
+        "location": "mexico",
+        "time": { "display": "16世纪", "displayEn": "16th century" }
+      },
+      "spreads": [
+        { "from": "mexico", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" } },
+        { "from": "usa", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } }
+      ],
+      "currentRegions": ["mexico", "usa", "europe"],
+      "description": "墨西哥哈利斯科州特产，蓝色龙舌兰蒸馏，玛格丽塔的灵魂。",
+      "descriptionEn": "Specialty of Jalisco, Mexico, distilled from blue agave, the soul of margaritas."
+    },
+    {
+      "id": "champagne",
+      "name": "香槟",
+      "nameEn": "Champagne",
+      "alias": ["起泡酒"],
+      "aliasEn": ["Sparkling wine"],
+      "category": "beverage",
+      "ingredients": ["grape"],
+      "origin": {
+        "location": "france",
+        "time": { "display": "17世纪", "displayEn": "17th century" }
+      },
+      "spreads": [],
+      "currentRegions": ["france"],
+      "description": "法国香槟区的气泡酒，唐·培里侬修士改良，庆典的代名词。",
+      "descriptionEn": "Sparkling wine from France's Champagne region, refined by monk Dom Pérignon, synonymous with celebration."
+    },
+    {
+      "id": "sangria",
+      "name": "桑格利亚",
+      "nameEn": "Sangria",
+      "alias": ["水果酒"],
+      "aliasEn": ["Fruit wine"],
+      "category": "beverage",
+      "ingredients": ["grape", "orange"],
+      "origin": {
+        "location": "spain",
+        "time": { "display": "18世纪", "displayEn": "18th century" }
+      },
+      "spreads": [],
+      "currentRegions": ["spain", "portugal"],
+      "description": "西班牙的水果红酒，夏日清凉饮品，加入各种水果和香料。",
+      "descriptionEn": "Spanish fruity red wine, refreshing summer drink, made with various fruits and spices."
+    },
+    {
+      "id": "lassi",
+      "name": "拉西",
+      "nameEn": "Lassi",
+      "alias": ["印度酸奶饮"],
+      "aliasEn": ["Indian yogurt drink"],
+      "category": "beverage",
+      "ingredients": ["mango"],
+      "origin": {
+        "location": "india",
+        "time": { "display": "古代", "displayEn": "Ancient times" }
+      },
+      "spreads": [],
+      "currentRegions": ["india", "pakistan"],
+      "description": "印度的酸奶饮品，芒果拉西最受欢迎，消暑解辣的好帮手。",
+      "descriptionEn": "Indian yogurt beverage, mango lassi is most popular, great for cooling down and soothing spiciness."
+    },
+    {
+      "id": "horchata",
+      "name": "欧恰塔",
+      "nameEn": "Horchata",
+      "alias": ["米浆"],
+      "aliasEn": ["Rice milk"],
+      "category": "beverage",
+      "ingredients": ["rice", "cinnamon"],
+      "origin": {
+        "location": "spain",
+        "time": { "display": "中世纪", "displayEn": "Medieval period" }
+      },
+      "spreads": [
+        { "from": "spain", "to": "mexico", "time": { "display": "殖民时期", "displayEn": "Colonial period" } }
+      ],
+      "currentRegions": ["spain", "mexico"],
+      "description": "西班牙用杏仁做，墨西哥用大米做的甜饮，肉桂调味。",
+      "descriptionEn": "Sweet drink made with almonds in Spain, rice in Mexico, flavored with cinnamon."
+    },
+    {
+      "id": "kombucha",
+      "name": "康普茶",
+      "nameEn": "Kombucha",
+      "alias": ["红茶菌"],
+      "aliasEn": ["Tea fungus"],
+      "category": "beverage",
+      "ingredients": ["tea"],
+      "origin": {
+        "location": "china",
+        "time": { "display": "公元前220年左右", "displayEn": "Around 220 BCE" }
+      },
+      "spreads": [
+        { "from": "china", "to": "russia", "time": { "display": "20世纪初", "displayEn": "Early 20th century" } },
+        { "from": "russia", "to": "usa", "time": { "display": "1990年代", "displayEn": "1990s" } }
+      ],
+      "currentRegions": ["usa", "europe"],
+      "description": "发酵茶饮，据说秦始皇时期发明，如今是西方健康饮品潮流。",
+      "descriptionEn": "Fermented tea drink, allegedly invented during Qin Shi Huang's era, now a Western health beverage trend."
+    },
+    {
+      "id": "smoothie",
+      "name": "冰沙",
+      "nameEn": "Smoothie",
+      "alias": ["果昔"],
+      "aliasEn": ["Fruit smoothie"],
+      "category": "beverage",
+      "ingredients": ["banana", "strawberry"],
+      "origin": {
+        "location": "usa",
+        "time": { "display": "1960年代", "displayEn": "1960s" }
+      },
+      "spreads": [],
+      "currentRegions": ["usa", "europe", "asia"],
+      "description": "美国健康食品店发明的混合果饮，如今是全球健身人群的选择。",
+      "descriptionEn": "Blended fruit drink invented in American health food stores, now a choice for fitness enthusiasts worldwide."
+    },
+    {
+      "id": "hot-chocolate",
+      "nameEn": "Hot Chocolate",
+      "name": "热巧克力",
+      "alias": ["可可"],
+      "aliasEn": ["Cocoa"],
+      "category": "beverage",
+      "ingredients": ["cacao", "sugarcane"],
+      "origin": {
+        "location": "mesoamerica",
+        "time": { "display": "玛雅时期", "displayEn": "Mayan period" }
+      },
+      "spreads": [
+        { "from": "mesoamerica", "to": "spain", "time": { "year": 1528, "display": "1528年", "displayEn": "1528" } },
         { "from": "spain", "to": "europe", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["europe", "north-america", "south-america"],
-      "description": "阿兹特克贵族的饮品，西班牙人加入糖后传遍欧洲，冬季暖饮。",
-      "descriptionEn": "A drink of Aztec nobility. Spaniards added sugar and spread it across Europe. A warming winter beverage."
+      "description": "玛雅人的神圣饮料，西班牙人加糖改良，冬日暖身饮品。",
+      "descriptionEn": "Sacred drink of the Maya, improved with sugar by the Spanish, a warming winter beverage."
+    },
+    {
+      "id": "lemonade",
+      "name": "柠檬水",
+      "nameEn": "Lemonade",
+      "alias": ["柠檬汁"],
+      "aliasEn": ["Lemon juice"],
+      "category": "beverage",
+      "ingredients": ["lemon", "sugarcane"],
+      "origin": {
+        "location": "egypt",
+        "time": { "display": "中世纪", "displayEn": "Medieval period" }
+      },
+      "spreads": [
+        { "from": "egypt", "to": "europe", "time": { "display": "中世纪", "displayEn": "Medieval period" } },
+        { "from": "europe", "to": "usa", "time": { "display": "17世纪", "displayEn": "17th century" } }
+      ],
+      "currentRegions": ["usa", "europe", "middle-east"],
+      "description": "简单的柠檬糖水，美国孩子卖柠檬水是创业精神的象征。",
+      "descriptionEn": "Simple lemon sugar water, American kids selling lemonade is a symbol of entrepreneurial spirit."
+    },
+    {
+      "id": "cider",
+      "name": "苹果酒",
+      "nameEn": "Cider",
+      "alias": ["西打"],
+      "aliasEn": ["Apple cider"],
+      "category": "beverage",
+      "ingredients": ["apple"],
+      "origin": {
+        "location": "uk",
+        "time": { "display": "古代", "displayEn": "Ancient times" }
+      },
+      "spreads": [
+        { "from": "uk", "to": "usa", "time": { "display": "殖民时期", "displayEn": "Colonial period" } }
+      ],
+      "currentRegions": ["uk", "france", "usa"],
+      "description": "发酵苹果汁，英国和法国诺曼底是传统产区，美国有无酒精版。",
+      "descriptionEn": "Fermented apple juice, traditional production areas include UK and Normandy, France, with non-alcoholic versions in the US."
+    },
+    {
+      "id": "ginger-beer",
+      "name": "姜汁啤酒",
+      "nameEn": "Ginger Beer",
+      "alias": ["姜汁汽水"],
+      "aliasEn": ["Ginger ale"],
+      "category": "beverage",
+      "ingredients": ["ginger"],
+      "origin": {
+        "location": "uk",
+        "time": { "display": "18世纪", "displayEn": "18th century" }
+      },
+      "spreads": [
+        { "from": "uk", "to": "caribbean", "time": { "display": "18世纪", "displayEn": "18th century" } }
+      ],
+      "currentRegions": ["uk", "caribbean", "usa"],
+      "description": "英国发明的姜味发酵饮料，莫斯科骡子鸡尾酒的材料。",
+      "descriptionEn": "British invention of ginger-flavored fermented beverage, an ingredient in Moscow Mule cocktails."
     }
   ]
 }

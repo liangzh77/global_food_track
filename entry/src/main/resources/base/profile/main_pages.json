@@ -6,7 +6,6 @@
     "pages/LocationDetail",
     "pages/SearchResult",
     "pages/CategoryList",
-    "pages/Timeline",
     "pages/EraDetail"
   ]
 }

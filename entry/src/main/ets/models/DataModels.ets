@@ -6,6 +6,7 @@
 export interface TimePeriod {
   year?: number;
   display: string;
+  displayEn?: string;
 }
 
 // 地理位置类型
@@ -15,6 +16,7 @@ export type LocationType = 'continent' | 'country' | 'region';
 export interface Location {
   id: string;
   name: string;
+  nameEn?: string;
   type: LocationType;
   parent?: string;
 }
@@ -48,6 +50,7 @@ export interface SpreadEvent {
   to: string;
   time: TimePeriod;
   via?: string;
+  viaEn?: string;
 }
 
 // 起源信息
@@ -60,25 +63,31 @@ export interface OriginInfo {
 export interface Crop {
   id: string;
   name: string;
+  nameEn?: string;
   alias?: string[];
+  aliasEn?: string[];
   category: CropCategory;
   origin: OriginInfo;
   spreads: SpreadEvent[];
   currentRegions: string[];
   description: string;
+  descriptionEn?: string;
 }
 
 // 食物
 export interface Food {
   id: string;
   name: string;
+  nameEn?: string;
   alias?: string[];
+  aliasEn?: string[];
   category: FoodCategory;
   ingredients: string[];
   origin: OriginInfo;
   spreads: SpreadEvent[];
   currentRegions: string[];
   description: string;
+  descriptionEn?: string;
 }
 
 // 实体类型（用于统一处理）

@@ -1,199 +1,2391 @@
 {
   "foods": [
     {
-      "id": "soy-sauce",
-      "name": "酱油",
-      "nameEn": "Soy Sauce",
+      "id": "aioli",
+      "name": "蒜泥蛋黄酱",
+      "nameEn": "Aioli",
       "category": "condiment",
-      "ingredients": ["soybean", "wheat"],
-      "origin": {
-        "location": "china",
-        "time": { "display": "西汉（约公元前200年）", "displayEn": "Western Han Dynasty (around 200 BCE)" }
-      },
-      "spreads": [
-        { "from": "china", "to": "japan", "time": { "display": "7世纪", "displayEn": "7th century" }, "via": "遣唐使", "viaEn": "Japanese envoys to Tang China" },
-        { "from": "china", "to": "korea", "time": { "display": "唐代", "displayEn": "Tang Dynasty" } },
-        { "from": "china", "to": "southeast-asia", "time": { "display": "宋代", "displayEn": "Song Dynasty" } },
-        { "from": "japan", "to": "europe", "time": { "display": "17世纪", "displayEn": "17th century" }, "via": "荷兰商人", "viaEn": "Dutch merchants" }
+      "ingredients": [
+        "garlic",
+        "olive"
       ],
-      "currentRegions": ["china", "japan", "korea", "southeast-asia", "usa", "guangdong", "fujian"],
-      "description": "东亚烹饪的灵魂调味料，日本万字酱油和中国生抽老抽各有特色。",
-      "descriptionEn": "The soul of East Asian cooking. Japanese Kikkoman and Chinese light/dark soy sauce each have unique characteristics."
+      "origin": {
+        "location": "spain"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "spain",
+        "france"
+      ],
+      "description": "普罗旺斯和加泰罗尼亚的蒜味蛋黄酱，配海鲜和蔬菜。",
+      "descriptionEn": "Garlic aioli from Provence and Catalonia, served with seafood and vegetables."
     },
     {
-      "id": "ketchup",
-      "name": "番茄酱",
-      "nameEn": "Ketchup",
-      "alias": ["茄汁"],
-      "category": "condiment",
-      "ingredients": ["tomato"],
+      "id": "apple-pie",
+      "name": "苹果派",
+      "nameEn": "Apple Pie",
+      "category": "dessert",
+      "ingredients": [
+        "apple",
+        "wheat",
+        "cinnamon",
+        "sugarcane"
+      ],
       "origin": {
-        "location": "usa",
-        "time": { "year": 1876, "display": "1876年", "displayEn": "1876" }
+        "location": "uk"
       },
       "spreads": [
-        { "from": "usa", "to": "europe", "time": { "display": "19世纪末", "displayEn": "Late 19th century" } },
-        { "from": "usa", "to": "asia", "time": { "display": "20世纪", "displayEn": "20th century" } }
+        {
+          "from": "uk",
+          "to": "usa"
+        }
       ],
-      "currentRegions": ["usa", "europe", "asia", "south-america"],
-      "description": "亨氏番茄酱定义了现代番茄酱，薯条和汉堡的经典搭配。",
-      "descriptionEn": "Heinz ketchup defined modern ketchup. The classic pairing with fries and hamburgers."
+      "currentRegions": [
+        "usa",
+        "uk"
+      ],
+      "description": "英国传统甜点，",
+      "descriptionEn": "Traditional British dessert. The phrase \"American as apple pie\" made it an American cultural icon."
     },
     {
-      "id": "tofu",
-      "name": "豆腐",
-      "nameEn": "Tofu",
-      "category": "dish",
-      "ingredients": ["soybean"],
+      "id": "baklava",
+      "name": "果仁蜜饼",
+      "nameEn": "Baklava",
+      "category": "dessert",
+      "ingredients": [
+        "pistachio",
+        "walnut"
+      ],
       "origin": {
-        "location": "china",
-        "time": { "display": "西汉（约公元前160年）", "displayEn": "Western Han Dynasty (around 160 BCE)" }
+        "location": "turkey"
       },
       "spreads": [
-        { "from": "china", "to": "japan", "time": { "display": "奈良时代（8世纪）", "displayEn": "Nara period (8th century)" } },
-        { "from": "china", "to": "korea", "time": { "display": "唐代", "displayEn": "Tang Dynasty" } },
-        { "from": "china", "to": "southeast-asia", "time": { "display": "宋代", "displayEn": "Song Dynasty" } },
-        { "from": "asia", "to": "europe", "time": { "display": "18世纪", "displayEn": "18th century" } },
-        { "from": "asia", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" } }
+        {
+          "from": "turkey",
+          "to": "middle-east"
+        },
+        {
+          "from": "turkey",
+          "to": "greece"
+        }
       ],
-      "currentRegions": ["china", "japan", "korea", "southeast-asia", "usa", "sichuan"],
-      "description": "相传淮南王刘安发明，东亚素食蛋白质的主要来源，如今成为全球健康食品。",
-      "descriptionEn": "Allegedly invented by Liu An, Prince of Huainan. The main vegetarian protein source in East Asia, now a global health food."
+      "currentRegions": [
+        "turkey",
+        "greece",
+        "middle-east"
+      ],
+      "description": "层层酥皮夹坚果淋蜂蜜，土耳其和希腊都声称原创，中东各国皆有版本。",
+      "descriptionEn": "Layers of phyllo pastry filled with nuts and honey. Both Turkey and Greece claim its origin."
+    },
+    {
+      "id": "balsamic-vinegar",
+      "name": "香醋",
+      "nameEn": "Balsamic Vinegar",
+      "alias": [
+        "意大利香醋"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "grape"
+      ],
+      "origin": {
+        "location": "italy"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "italy"
+      ],
+      "description": "摩德纳和雷焦艾米利亚的特产，陈年香醋是意大利美食的瑰宝。",
+      "descriptionEn": "Specialty of Modena and Reggio Emilia. Aged balsamic vinegar is a treasure of Italian cuisine."
+    },
+    {
+      "id": "brownie",
+      "name": "布朗尼",
+      "nameEn": "Brownie",
+      "category": "dessert",
+      "ingredients": [
+        "cacao",
+        "wheat",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "usa",
+        "europe"
+      ],
+      "description": "芝加哥世博会发明的巧克力方块蛋糕，湿润浓郁是特点。",
+      "descriptionEn": "Chocolate square cake invented at the Chicago World's Fair. Known for its moist and rich texture."
+    },
+    {
+      "id": "cheese",
+      "name": "奶酪",
+      "nameEn": "Cheese",
+      "alias": [
+        "芝士",
+        "起司"
+      ],
+      "category": "preserved",
+      "ingredients": [],
+      "origin": {
+        "location": "middle-east",
+        "time": {
+          "year": -6000,
+          "display": "公元前6000年",
+          "displayEn": "6000 BCE"
+        }
+      },
+      "spreads": [
+        {
+          "from": "middle-east",
+          "to": "europe",
+          "time": {
+            "display": "公元前3000年",
+            "displayEn": "3000 BCE"
+          }
+        },
+        {
+          "from": "europe",
+          "to": "france",
+          "time": {
+            "display": "罗马时代",
+            "displayEn": "Roman Era"
+          }
+        },
+        {
+          "from": "europe",
+          "to": "north-america",
+          "time": {
+            "display": "17世纪",
+            "displayEn": "17th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "france",
+        "italy",
+        "netherlands",
+        "usa",
+        "germany"
+      ],
+      "description": "传说游牧民族无意间发现，法国有400多种奶酪，是西方饮食的重要组成。",
+      "descriptionEn": "Legend says nomads discovered it accidentally. France has over 400 cheese varieties, an important part of Western cuisine."
+    },
+    {
+      "id": "cheesecake",
+      "name": "芝士蛋糕",
+      "nameEn": "Cheesecake",
+      "alias": [
+        "奶酪蛋糕"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "greece"
+      },
+      "spreads": [
+        {
+          "from": "greece",
+          "to": "rome"
+        },
+        {
+          "from": "europe",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "japan",
+        "europe"
+      ],
+      "description": "古希腊奥运选手的食物，纽约芝士蛋糕和日式轻芝士各有风格。",
+      "descriptionEn": "Originated in ancient Greece. New York cheesecake and Japanese light cheesecake each have unique styles."
+    },
+    {
+      "id": "chimichurri",
+      "name": "阿根廷青酱",
+      "nameEn": "Chimichurri",
+      "category": "condiment",
+      "ingredients": [
+        "olive",
+        "garlic",
+        "chili"
+      ],
+      "origin": {
+        "location": "argentina"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "argentina",
+        "uruguay"
+      ],
+      "description": "阿根廷烤肉的绝配，香芹、大蒜、橄榄油的组合。",
+      "descriptionEn": "Perfect pairing for Argentine grilled meat. A combination of parsley, garlic, and olive oil."
+    },
+    {
+      "id": "chips",
+      "name": "薯片",
+      "nameEn": "Potato Chips",
+      "alias": [
+        "洋芋片"
+      ],
+      "category": "snack",
+      "ingredients": [
+        "potato"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [
+        {
+          "from": "usa",
+          "to": "europe"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "europe",
+        "asia"
+      ],
+      "description": "纽约萨拉托加泉发明，据说是为了报复抱怨薯条太厚的顾客。",
+      "descriptionEn": "Invented in Saratoga Springs, New York. Allegedly made to spite a customer complaining fries were too thick.",
+      "aliasEn": [
+        "Crisps"
+      ]
     },
     {
       "id": "chocolate",
       "name": "巧克力",
       "nameEn": "Chocolate",
       "category": "dessert",
-      "ingredients": ["cacao", "sugarcane"],
+      "ingredients": [
+        "cacao",
+        "sugarcane"
+      ],
       "origin": {
         "location": "switzerland",
-        "time": { "year": 1847, "display": "1847年", "displayEn": "1847" }
+        "time": {
+          "year": 1847,
+          "display": "1847年",
+          "displayEn": "1847"
+        }
       },
       "spreads": [
-        { "from": "europe", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" } },
-        { "from": "europe", "to": "asia", "time": { "display": "20世纪", "displayEn": "20th century" } }
+        {
+          "from": "europe",
+          "to": "usa",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "europe",
+          "to": "asia",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
       ],
-      "currentRegions": ["switzerland", "belgium", "usa", "germany", "japan"],
+      "currentRegions": [
+        "switzerland",
+        "belgium",
+        "usa",
+        "germany",
+        "japan"
+      ],
       "description": "瑞士人发明了现代固体巧克力，瑞士和比利时巧克力是高品质的代名词。",
       "descriptionEn": "The Swiss invented modern solid chocolate. Swiss and Belgian chocolates are synonymous with high quality."
     },
     {
-      "id": "ice-cream",
-      "name": "冰淇淋",
-      "nameEn": "Ice Cream",
-      "alias": ["冰激凌"],
+      "id": "churros",
+      "name": "吉事果",
+      "nameEn": "Churros",
+      "alias": [
+        "西班牙油条"
+      ],
       "category": "dessert",
-      "ingredients": ["sugarcane"],
+      "ingredients": [
+        "wheat",
+        "sugarcane"
+      ],
       "origin": {
-        "location": "china",
-        "time": { "display": "唐代（约公元700年）", "displayEn": "Tang Dynasty (around 700 CE)" }
+        "location": "spain"
       },
       "spreads": [
-        { "from": "china", "to": "middle-east", "time": { "display": "中世纪", "displayEn": "Medieval period" } },
-        { "from": "middle-east", "to": "italy", "time": { "display": "13世纪", "displayEn": "13th century" }, "via": "马可波罗传说", "viaEn": "Marco Polo legend" },
-        { "from": "italy", "to": "france", "time": { "display": "16世纪", "displayEn": "16th century" } },
-        { "from": "europe", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" } }
+        {
+          "from": "spain",
+          "to": "south-america"
+        }
       ],
-      "currentRegions": ["usa", "italy", "france", "japan", "china"],
-      "description": "从唐代的冰酪到意大利的Gelato到美国的商业冰淇淋，不断演变。",
-      "descriptionEn": "Evolved from Tang Dynasty frozen treats to Italian gelato to American commercial ice cream."
+      "currentRegions": [
+        "spain",
+        "mexico",
+        "south-america"
+      ],
+      "description": "西班牙的油炸条，配热巧克力蘸食，拉美各国也很流行。",
+      "descriptionEn": "Spanish fried dough sticks, served with hot chocolate for dipping. Popular throughout Latin America."
     },
     {
-      "id": "cheese",
-      "name": "奶酪",
-      "nameEn": "Cheese",
-      "alias": ["芝士", "起司"],
-      "category": "preserved",
+      "id": "chutney",
+      "name": "酸辣酱",
+      "nameEn": "Chutney",
+      "alias": [
+        "印度酱"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "mango",
+        "chili",
+        "ginger"
+      ],
+      "origin": {
+        "location": "india"
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "uk"
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "uk"
+      ],
+      "description": "印度的果酱/酱料，芒果酸辣酱最有名，配咖喱和萨摩萨。",
+      "descriptionEn": "Indian jam/sauce. Mango chutney is most famous, served with curry and samosas."
+    },
+    {
+      "id": "cookie",
+      "name": "曲奇",
+      "nameEn": "Cookie",
+      "alias": [
+        "饼干"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "usa",
+        "europe"
+      ],
+      "description": "荷兰语",
+      "descriptionEn": "Evolved from Dutch \"koekje\" (little cake). Chocolate chip cookies are an American invention.",
+      "aliasEn": [
+        "Biscuit"
+      ]
+    },
+    {
+      "id": "creme-brulee",
+      "name": "焦糖布丁",
+      "nameEn": "Crème Brûlée",
+      "alias": [
+        "法式焦糖布蕾"
+      ],
+      "category": "dessert",
       "ingredients": [],
       "origin": {
-        "location": "middle-east",
-        "time": { "year": -6000, "display": "公元前6000年", "displayEn": "6000 BCE" }
+        "location": "france"
       },
-      "spreads": [
-        { "from": "middle-east", "to": "europe", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
-        { "from": "europe", "to": "france", "time": { "display": "罗马时代", "displayEn": "Roman Era" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "17世纪", "displayEn": "17th century" } }
+      "spreads": [],
+      "currentRegions": [
+        "france",
+        "europe"
       ],
-      "currentRegions": ["france", "italy", "netherlands", "usa", "germany"],
-      "description": "传说游牧民族无意间发现，法国有400多种奶酪，是西方饮食的重要组成。",
-      "descriptionEn": "Legend says nomads discovered it accidentally. France has over 400 cheese varieties, an important part of Western cuisine."
+      "description": "法式经典甜点，香草蛋奶冻上覆焦糖脆层。",
+      "descriptionEn": "Classic French dessert. Vanilla custard topped with a layer of caramelized sugar.",
+      "aliasEn": [
+        "French Crème Brûlée"
+      ]
     },
     {
-      "id": "miso",
-      "name": "味噌",
-      "nameEn": "Miso",
-      "category": "condiment",
-      "ingredients": ["soybean", "rice"],
+      "id": "crepe",
+      "name": "可丽饼",
+      "nameEn": "Crepe",
+      "alias": [
+        "法式薄饼"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "wheat"
+      ],
       "origin": {
-        "location": "japan",
-        "time": { "display": "飞鸟时代（约公元700年）", "displayEn": "Asuka period (around 700 CE)" }
+        "location": "france"
       },
       "spreads": [
-        { "from": "japan", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" } },
-        { "from": "japan", "to": "europe", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
+        {
+          "from": "france",
+          "to": "japan"
+        }
       ],
-      "currentRegions": ["japan", "usa", "europe"],
-      "description": "日本对中国酱的改良，味噌汤是日本家庭的日常饮食。",
-      "descriptionEn": "Japan's adaptation of Chinese fermented paste. Miso soup is a daily staple in Japanese households."
+      "currentRegions": [
+        "france",
+        "japan"
+      ],
+      "description": "布列塔尼的荞麦咸薄饼演变出的小麦甜薄饼，巴黎街头和日本原宿的人气小吃。",
+      "descriptionEn": "Evolved from Brittany's buckwheat savory crepes. Popular street food in Paris and Harajuku, Japan.",
+      "aliasEn": [
+        "French Crepe"
+      ]
     },
     {
-      "id": "olive-oil",
-      "name": "橄榄油",
-      "nameEn": "Olive Oil",
-      "category": "condiment",
-      "ingredients": ["olive"],
+      "id": "croissant",
+      "name": "可颂",
+      "nameEn": "Croissant",
+      "alias": [
+        "羊角面包",
+        "牛角包"
+      ],
+      "category": "staple",
+      "ingredients": [
+        "wheat"
+      ],
       "origin": {
-        "location": "mediterranean",
-        "time": { "year": -4000, "display": "公元前4000年", "displayEn": "4000 BCE" }
+        "location": "austria",
+        "time": {
+          "year": 1683,
+          "display": "1683年",
+          "displayEn": "1683"
+        }
       },
       "spreads": [
-        { "from": "mediterranean", "to": "greece", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
-        { "from": "mediterranean", "to": "italy", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
-        { "from": "mediterranean", "to": "spain", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } }
+        {
+          "from": "austria",
+          "to": "france",
+          "time": {
+            "year": 1770,
+            "display": "1770年",
+            "displayEn": "1770"
+          },
+          "via": "玛丽·安托瓦内特",
+          "viaEn": "Marie Antoinette"
+        },
+        {
+          "from": "france",
+          "to": "europe",
+          "time": {
+            "display": "19世纪",
+            "displayEn": "19th century"
+          }
+        },
+        {
+          "from": "france",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
       ],
-      "currentRegions": ["spain", "italy", "greece", "turkey", "morocco"],
-      "description": "地中海饮食的基石，被称为液体黄金，现代健康饮食的明星。",
-      "descriptionEn": "The cornerstone of Mediterranean diet, called liquid gold. A star of modern healthy eating."
+      "currentRegions": [
+        "france",
+        "europe",
+        "usa",
+        "asia"
+      ],
+      "description": "为庆祝维也纳击败奥斯曼帝国而创造，法国人将其发扬光大成为早餐代表。",
+      "descriptionEn": "Created to celebrate Vienna's victory over the Ottoman Empire. The French perfected it as a breakfast icon."
+    },
+    {
+      "id": "dango",
+      "name": "团子",
+      "nameEn": "Dango",
+      "category": "dessert",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日本糯米丸子串，三色团子最有名，赏樱必备甜点。",
+      "descriptionEn": "Japanese rice dumpling skewers. Tri-color dango is most famous, essential for cherry blossom viewing."
+    },
+    {
+      "id": "donut",
+      "name": "甜甜圈",
+      "nameEn": "Donut",
+      "alias": [
+        "炸面圈"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [
+        {
+          "from": "usa",
+          "to": "asia"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "japan",
+        "korea"
+      ],
+      "description": "荷兰移民带来的油炸糕点演变，美国警察与甜甜圈的关联是文化梗。",
+      "descriptionEn": "Evolved from fried cakes brought by Dutch immigrants. The association between American police and donuts is a cultural meme.",
+      "aliasEn": [
+        "Doughnut"
+      ]
+    },
+    {
+      "id": "dorayaki",
+      "name": "铜锣烧",
+      "nameEn": "Dorayaki",
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "red-bean"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "japan",
+        "taiwan"
+      ],
+      "description": "红豆馅夹两片松饼，因哆啦A梦而闻名全球。",
+      "descriptionEn": "Red bean filling sandwiched between two pancakes. Famous worldwide thanks to Doraemon."
+    },
+    {
+      "id": "edamame",
+      "name": "毛豆",
+      "nameEn": "Edamame",
+      "category": "snack",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan"
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "china",
+        "usa"
+      ],
+      "description": "未成熟大豆，日式居酒屋标配，如今是全球健康零食。",
+      "descriptionEn": "Immature soybeans. Standard at Japanese izakayas, now a global healthy snack."
+    },
+    {
+      "id": "egg-tart",
+      "name": "蛋挞",
+      "nameEn": "Egg Tart",
+      "category": "dessert",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "portugal"
+      },
+      "spreads": [
+        {
+          "from": "portugal",
+          "to": "china"
+        },
+        {
+          "from": "china",
+          "to": "hong kong"
+        }
+      ],
+      "currentRegions": [
+        "portugal",
+        "china",
+        "hong kong",
+        "macau"
+      ],
+      "description": "葡萄牙修道院的发明，澳门葡挞和港式蛋挞是变体。",
+      "descriptionEn": "Invented by Portuguese monasteries. Macau Portuguese tarts and Hong Kong-style egg tarts are variants."
+    },
+    {
+      "id": "fish-sauce",
+      "name": "鱼露",
+      "nameEn": "Fish Sauce",
+      "alias": [
+        "鱼酱"
+      ],
+      "category": "condiment",
+      "ingredients": [],
+      "origin": {
+        "location": "vietnam"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "vietnam",
+        "thailand",
+        "philippines"
+      ],
+      "description": "东南亚的灵魂调味料，发酵鱼提取，是越南和泰国菜的基础。",
+      "descriptionEn": "Soul seasoning of Southeast Asia. Extracted from fermented fish. Base of Vietnamese and Thai cuisine."
+    },
+    {
+      "id": "flan",
+      "name": "焦糖布丁",
+      "nameEn": "Flan",
+      "alias": [
+        "烤布蕾"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "spain"
+      },
+      "spreads": [
+        {
+          "from": "spain",
+          "to": "south-america"
+        },
+        {
+          "from": "spain",
+          "to": "philippines"
+        }
+      ],
+      "currentRegions": [
+        "spain",
+        "mexico",
+        "philippines",
+        "south-america"
+      ],
+      "description": "罗马人发明的蛋奶布丁，西班牙和拉美的经典甜点。",
+      "descriptionEn": "Egg custard invented by Romans. A classic dessert in Spain and Latin America.",
+      "aliasEn": [
+        "Caramel Custard"
+      ]
+    },
+    {
+      "id": "french-fries",
+      "name": "薯条",
+      "nameEn": "French Fries",
+      "alias": [
+        "炸薯条"
+      ],
+      "category": "snack",
+      "ingredients": [
+        "potato"
+      ],
+      "origin": {
+        "location": "belgium"
+      },
+      "spreads": [
+        {
+          "from": "belgium",
+          "to": "france"
+        },
+        {
+          "from": "usa",
+          "to": "europe"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "europe",
+        "asia"
+      ],
+      "description": "起源有争议，比利时和法国都声称发明，美国快餐业使其风靡全球。",
+      "descriptionEn": "Origin disputed between Belgium and France. American fast food industry made it popular worldwide.",
+      "aliasEn": [
+        "Fries"
+      ]
+    },
+    {
+      "id": "gelato",
+      "name": "意式冰淇淋",
+      "nameEn": "Gelato",
+      "category": "dessert",
+      "ingredients": [],
+      "origin": {
+        "location": "italy"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "italy",
+        "europe"
+      ],
+      "description": "意大利冰淇淋，比美式冰淇淋更致密绵滑，脂肪含量更低。",
+      "descriptionEn": "Italian ice cream. Denser and smoother than American ice cream, with lower fat content."
+    },
+    {
+      "id": "gochujang",
+      "name": "辣椒酱",
+      "nameEn": "Gochujang",
+      "alias": [
+        "韩式辣酱"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "chili",
+        "rice",
+        "soybean"
+      ],
+      "origin": {
+        "location": "korea"
+      },
+      "spreads": [
+        {
+          "from": "korea",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "korea",
+        "usa"
+      ],
+      "description": "韩国的发酵辣椒酱，甜辣咸鲜，拌饭和烤肉必备，韩流带动全球流行。",
+      "descriptionEn": "Korean fermented chili paste. Sweet, spicy, salty, and savory. Essential for bibimbap and grilled meat. Popularized globally by Korean Wave.",
+      "aliasEn": [
+        "Korean Chili Paste"
+      ]
+    },
+    {
+      "id": "guacamole",
+      "name": "牛油果酱",
+      "nameEn": "Guacamole",
+      "alias": [
+        "鳄梨酱"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "avocado",
+        "tomato",
+        "chili"
+      ],
+      "origin": {
+        "location": "mexico"
+      },
+      "spreads": [
+        {
+          "from": "mexico",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "mexico",
+        "usa"
+      ],
+      "description": "墨西哥牛油果酱，阿兹特克人的发明，配玉米片食用。",
+      "descriptionEn": "Mexican avocado sauce. Aztec invention, served with tortilla chips.",
+      "aliasEn": [
+        "Avocado Sauce"
+      ]
+    },
+    {
+      "id": "gulab-jamun",
+      "name": "印度甜球",
+      "nameEn": "Gulab Jamun",
+      "category": "dessert",
+      "ingredients": [
+        "sugarcane",
+        "cardamom"
+      ],
+      "origin": {
+        "location": "india"
+      },
+      "spreads": [
+        {
+          "from": "india",
+          "to": "middle-east"
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "nepal",
+        "bangladesh"
+      ],
+      "description": "奶粉面团炸制后浸糖浆，印度最受欢迎的甜点，节日必备。",
+      "descriptionEn": "Milk powder dough balls fried and soaked in sugar syrup. India's most popular dessert, essential for festivals."
+    },
+    {
+      "id": "harissa",
+      "name": "哈里萨辣酱",
+      "nameEn": "Harissa",
+      "category": "condiment",
+      "ingredients": [
+        "chili",
+        "cumin",
+        "coriander",
+        "caraway"
+      ],
+      "origin": {
+        "location": "tunisia"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "tunisia",
+        "morocco",
+        "algeria"
+      ],
+      "description": "北非的辣椒酱，配古斯古斯和塔吉锅，是马格里布菜的标志。",
+      "descriptionEn": "North African chili paste. Served with couscous and tagine, a signature of Maghrebi cuisine."
+    },
+    {
+      "id": "hoisin-sauce",
+      "name": "海鲜酱",
+      "nameEn": "Hoisin Sauce",
+      "alias": [
+        "甜面酱"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "china",
+        "vietnam"
+      ],
+      "description": "甜咸的酱料，北京烤鸭和越南河粉的配料。",
+      "descriptionEn": "Sweet and savory sauce. Used with Peking duck and Vietnamese pho.",
+      "aliasEn": [
+        "Sweet Bean Sauce"
+      ]
     },
     {
       "id": "hummus",
       "name": "鹰嘴豆泥",
       "nameEn": "Hummus",
       "category": "dish",
-      "ingredients": ["chickpea", "sesame", "olive", "garlic", "lemon"],
+      "ingredients": [
+        "chickpea",
+        "sesame",
+        "olive",
+        "garlic",
+        "lemon"
+      ],
       "origin": {
         "location": "middle-east",
-        "time": { "display": "13世纪", "displayEn": "13th century" }
+        "time": {
+          "display": "13世纪",
+          "displayEn": "13th century"
+        }
       },
       "spreads": [
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "中世纪", "displayEn": "Medieval period" } },
-        { "from": "middle-east", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } },
-        { "from": "middle-east", "to": "usa", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
+        {
+          "from": "middle-east",
+          "to": "mediterranean",
+          "time": {
+            "display": "中世纪",
+            "displayEn": "Medieval period"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "europe",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "usa",
+          "time": {
+            "display": "20世纪后期",
+            "displayEn": "Late 20th century"
+          }
+        }
       ],
-      "currentRegions": ["middle-east", "israel", "europe", "usa"],
+      "currentRegions": [
+        "middle-east",
+        "israel",
+        "europe",
+        "usa"
+      ],
       "description": "中东的经典蘸酱，搭配皮塔饼食用，如今成为全球健康食品。",
       "descriptionEn": "A classic Middle Eastern dip, eaten with pita bread. Now a global health food."
     },
     {
-      "id": "croissant",
-      "name": "可颂",
-      "nameEn": "Croissant",
-      "alias": ["羊角面包", "牛角包"],
-      "category": "staple",
-      "ingredients": ["wheat"],
+      "id": "ice-cream",
+      "name": "冰淇淋",
+      "nameEn": "Ice Cream",
+      "alias": [
+        "冰激凌"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "sugarcane"
+      ],
       "origin": {
-        "location": "austria",
-        "time": { "year": 1683, "display": "1683年", "displayEn": "1683" }
+        "location": "china",
+        "time": {
+          "display": "唐代（约公元700年）",
+          "displayEn": "Tang Dynasty (around 700 CE)"
+        }
       },
       "spreads": [
-        { "from": "austria", "to": "france", "time": { "year": 1770, "display": "1770年", "displayEn": "1770" }, "via": "玛丽·安托瓦内特", "viaEn": "Marie Antoinette" },
-        { "from": "france", "to": "europe", "time": { "display": "19世纪", "displayEn": "19th century" } },
-        { "from": "france", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" } }
+        {
+          "from": "china",
+          "to": "middle-east",
+          "time": {
+            "display": "中世纪",
+            "displayEn": "Medieval period"
+          }
+        },
+        {
+          "from": "middle-east",
+          "to": "italy",
+          "time": {
+            "display": "13世纪",
+            "displayEn": "13th century"
+          },
+          "via": "马可波罗传说",
+          "viaEn": "Marco Polo legend"
+        },
+        {
+          "from": "italy",
+          "to": "france",
+          "time": {
+            "display": "16世纪",
+            "displayEn": "16th century"
+          }
+        },
+        {
+          "from": "europe",
+          "to": "usa",
+          "time": {
+            "display": "18世纪",
+            "displayEn": "18th century"
+          }
+        }
       ],
-      "currentRegions": ["france", "europe", "usa", "asia"],
-      "description": "为庆祝维也纳击败奥斯曼帝国而创造，法国人将其发扬光大成为早餐代表。",
-      "descriptionEn": "Created to celebrate Vienna's victory over the Ottoman Empire. The French perfected it as a breakfast icon."
+      "currentRegions": [
+        "usa",
+        "italy",
+        "france",
+        "japan",
+        "china"
+      ],
+      "description": "从唐代的冰酪到意大利的Gelato到美国的商业冰淇淋，不断演变。",
+      "descriptionEn": "Evolved from Tang Dynasty frozen treats to Italian gelato to American commercial ice cream."
+    },
+    {
+      "id": "jalebi",
+      "name": "印度甜卷",
+      "nameEn": "Jalebi",
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "middle-east"
+      },
+      "spreads": [
+        {
+          "from": "middle-east",
+          "to": "india"
+        }
+      ],
+      "currentRegions": [
+        "india",
+        "pakistan",
+        "middle-east"
+      ],
+      "description": "螺旋状炸面圈浸糖浆，来自波斯的甜点，印度街头常见。",
+      "descriptionEn": "Spiral-shaped fried dough soaked in sugar syrup. A Persian dessert, commonly seen on Indian streets."
+    },
+    {
+      "id": "ketchup",
+      "name": "番茄酱",
+      "nameEn": "Ketchup",
+      "alias": [
+        "茄汁"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "tomato"
+      ],
+      "origin": {
+        "location": "usa",
+        "time": {
+          "year": 1876,
+          "display": "1876年",
+          "displayEn": "1876"
+        }
+      },
+      "spreads": [
+        {
+          "from": "usa",
+          "to": "europe",
+          "time": {
+            "display": "19世纪末",
+            "displayEn": "Late 19th century"
+          }
+        },
+        {
+          "from": "usa",
+          "to": "asia",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "europe",
+        "asia",
+        "south-america"
+      ],
+      "description": "亨氏番茄酱定义了现代番茄酱，薯条和汉堡的经典搭配。",
+      "descriptionEn": "Heinz ketchup defined modern ketchup. The classic pairing with fries and hamburgers."
+    },
+    {
+      "id": "kheer",
+      "name": "印度米布丁",
+      "nameEn": "Kheer",
+      "alias": [
+        "克希尔"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "india"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "india",
+        "pakistan"
+      ],
+      "description": "印度传统甜品，牛奶煮米配豆蔻和坚果。",
+      "descriptionEn": "Traditional Indian dessert. Rice cooked in milk with cardamom and nuts.",
+      "aliasEn": [
+        "Indian Rice Pudding"
+      ]
+    },
+    {
+      "id": "kimchi",
+      "name": "泡菜",
+      "nameEn": "Kimchi",
+      "alias": [
+        "韩式泡菜"
+      ],
+      "category": "preserved",
+      "ingredients": [
+        "cabbage",
+        "chili",
+        "garlic",
+        "ginger"
+      ],
+      "origin": {
+        "location": "korea"
+      },
+      "spreads": [
+        {
+          "from": "korea",
+          "to": "japan"
+        },
+        {
+          "from": "korea",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "korea",
+        "japan",
+        "china",
+        "usa"
+      ],
+      "description": "韩国的国民食品，辣白菜是16世纪辣椒传入后的产物，之前的泡菜不辣。",
+      "descriptionEn": "Korea's national food. Spicy kimchi emerged after chili peppers arrived in the 16th century; earlier versions were not spicy.",
+      "aliasEn": [
+        "Korean Kimchi"
+      ]
+    },
+    {
+      "id": "kunafa",
+      "name": "库纳法",
+      "nameEn": "Kunafa",
+      "alias": [
+        "卡达伊夫"
+      ],
+      "category": "dessert",
+      "ingredients": [],
+      "origin": {
+        "location": "middle-east"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "middle-east",
+        "turkey"
+      ],
+      "description": "中东芝士甜点，面丝包裹芝士烤制后淋糖浆，纳布卢斯版最有名。",
+      "descriptionEn": "Middle Eastern cheese dessert. Shredded dough filled with cheese, baked, and drizzled with syrup. Nablus version is most famous.",
+      "aliasEn": [
+        "Knafeh"
+      ]
+    },
+    {
+      "id": "macaron",
+      "name": "马卡龙",
+      "nameEn": "Macaron",
+      "category": "dessert",
+      "ingredients": [
+        "almond",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "france"
+      },
+      "spreads": [
+        {
+          "from": "france",
+          "to": "japan"
+        }
+      ],
+      "currentRegions": [
+        "france",
+        "japan",
+        "usa"
+      ],
+      "description": "意大利传入法国，Ladurée将其改良为夹心版，成为巴黎甜点的象征。",
+      "descriptionEn": "French sandwich cookie. Ladurée and Pierre Hermé made it a luxury item."
+    },
+    {
+      "id": "mayonnaise",
+      "name": "蛋黄酱",
+      "nameEn": "Mayonnaise",
+      "alias": [
+        "美乃滋"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "olive"
+      ],
+      "origin": {
+        "location": "spain"
+      },
+      "spreads": [
+        {
+          "from": "spain",
+          "to": "france"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "europe",
+        "japan"
+      ],
+      "description": "法国厨师在梅诺卡岛发明，日本丘比蛋黄酱是独特变体。",
+      "descriptionEn": "Invented by a French chef in Menorca. Japanese Kewpie mayonnaise is a unique variant.",
+      "aliasEn": [
+        "Mayo"
+      ]
+    },
+    {
+      "id": "mirin",
+      "name": "味醂",
+      "nameEn": "Mirin",
+      "alias": [
+        "米霖"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日本的甜味料酒，照烧酱和各种日式调味的基础。",
+      "descriptionEn": "Japanese sweet cooking wine. Base for teriyaki sauce and various Japanese seasonings.",
+      "aliasEn": [
+        "Rice Wine"
+      ]
+    },
+    {
+      "id": "miso",
+      "name": "味噌",
+      "nameEn": "Miso",
+      "category": "condiment",
+      "ingredients": [
+        "soybean",
+        "rice"
+      ],
+      "origin": {
+        "location": "japan",
+        "time": {
+          "display": "飞鸟时代（约公元700年）",
+          "displayEn": "Asuka period (around 700 CE)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        },
+        {
+          "from": "japan",
+          "to": "europe",
+          "time": {
+            "display": "20世纪后期",
+            "displayEn": "Late 20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "usa",
+        "europe"
+      ],
+      "description": "日本对中国酱的改良，味噌汤是日本家庭的日常饮食。",
+      "descriptionEn": "Japan's adaptation of Chinese fermented paste. Miso soup is a daily staple in Japanese households."
+    },
+    {
+      "id": "mochi",
+      "name": "麻糬",
+      "nameEn": "Mochi",
+      "alias": [
+        "糯米糍"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "usa",
+        "taiwan"
+      ],
+      "description": "日本传统糯米点心，新年必吃镜饼，冰淇淋麻糬是现代变体。",
+      "descriptionEn": "Traditional Japanese rice cake. Kagami mochi is essential for New Year. Mochi ice cream is a modern variant.",
+      "aliasEn": [
+        "Rice Cake"
+      ]
+    },
+    {
+      "id": "mole",
+      "name": "墨西哥酱",
+      "nameEn": "Mole",
+      "alias": [
+        "莫莱酱"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "chili",
+        "chocolate"
+      ],
+      "origin": {
+        "location": "mexico"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "mexico"
+      ],
+      "description": "墨西哥复合酱料，混合辣椒、巧克力等20多种食材，瓦哈卡黑酱最著名。",
+      "descriptionEn": "Mexican compound sauce mixing chili, chocolate, and 20+ ingredients. Oaxacan black mole is most famous.",
+      "aliasEn": [
+        "Mole Sauce"
+      ]
+    },
+    {
+      "id": "mooncake",
+      "name": "月饼",
+      "nameEn": "Mooncake",
+      "category": "dessert",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "southeast-asia"
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "vietnam",
+        "singapore",
+        "malaysia"
+      ],
+      "description": "中秋节传统食品，广式、苏式、潮式各有特色，五仁和蛋黄莲蓉是经典口味。",
+      "descriptionEn": "Traditional Mid-Autumn Festival food. Cantonese, Suzhou, and Teochew styles each have characteristics. Five kernel and lotus seed paste with egg yolk are classic flavors."
+    },
+    {
+      "id": "mustard",
+      "name": "芥末酱",
+      "nameEn": "Mustard",
+      "alias": [
+        "黄芥末"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "mustard"
+      ],
+      "origin": {
+        "location": "france"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "france",
+        "germany",
+        "usa"
+      ],
+      "description": "第戎芥末最有名，美国黄芥末配热狗，德国芥末配香肠。",
+      "descriptionEn": "Dijon mustard is most famous. American yellow mustard with hot dogs, German mustard with sausages.",
+      "aliasEn": [
+        "Yellow Mustard"
+      ]
+    },
+    {
+      "id": "nachos",
+      "name": "墨西哥玉米片",
+      "nameEn": "Nachos",
+      "alias": [
+        "纳乔"
+      ],
+      "category": "snack",
+      "ingredients": [
+        "corn",
+        "chili"
+      ],
+      "origin": {
+        "location": "mexico"
+      },
+      "spreads": [
+        {
+          "from": "mexico",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "mexico",
+        "usa"
+      ],
+      "description": "墨西哥边境小镇发明，炸玉米片配奶酪和辣椒，美国体育赛事小吃。",
+      "descriptionEn": "Invented in a Mexican border town. Fried corn chips with cheese and chili. American sports event snack."
+    },
+    {
+      "id": "natto",
+      "name": "纳豆",
+      "nameEn": "Natto",
+      "category": "preserved",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日本的发酵大豆，粘稠拉丝、气味强烈，爱恨分明的健康食品。",
+      "descriptionEn": "Japanese fermented soybeans. Sticky and stringy with strong smell. A polarizing health food."
+    },
+    {
+      "id": "olive-oil",
+      "name": "橄榄油",
+      "nameEn": "Olive Oil",
+      "category": "condiment",
+      "ingredients": [
+        "olive"
+      ],
+      "origin": {
+        "location": "mediterranean",
+        "time": {
+          "year": -4000,
+          "display": "公元前4000年",
+          "displayEn": "4000 BCE"
+        }
+      },
+      "spreads": [
+        {
+          "from": "mediterranean",
+          "to": "greece",
+          "time": {
+            "display": "公元前3000年",
+            "displayEn": "3000 BCE"
+          }
+        },
+        {
+          "from": "mediterranean",
+          "to": "italy",
+          "time": {
+            "display": "公元前1000年",
+            "displayEn": "1000 BCE"
+          }
+        },
+        {
+          "from": "mediterranean",
+          "to": "spain",
+          "time": {
+            "display": "公元前1000年",
+            "displayEn": "1000 BCE"
+          }
+        }
+      ],
+      "currentRegions": [
+        "spain",
+        "italy",
+        "greece",
+        "turkey",
+        "morocco"
+      ],
+      "description": "地中海饮食的基石，被称为液体黄金，现代健康饮食的明星。",
+      "descriptionEn": "The cornerstone of Mediterranean diet, called liquid gold. A star of modern healthy eating."
+    },
+    {
+      "id": "onion-rings",
+      "name": "洋葱圈",
+      "nameEn": "Onion Rings",
+      "category": "snack",
+      "ingredients": [
+        "onion",
+        "wheat"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "usa",
+        "uk"
+      ],
+      "description": "美国发明的油炸小吃，是汉堡薯条之外的快餐配菜选择。",
+      "descriptionEn": "American fried snack. An alternative side dish to fries and burgers."
+    },
+    {
+      "id": "oyster-sauce",
+      "name": "蚝油",
+      "nameEn": "Oyster Sauce",
+      "category": "condiment",
+      "ingredients": [],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "china",
+        "southeast-asia"
+      ],
+      "description": "广东李锦记创始人李锦裳发明，粤菜和东南亚菜的常用调味料。",
+      "descriptionEn": "Invented by Lee Kum Sheung, founder of Lee Kum Kee in Guangdong. Common seasoning in Cantonese and Southeast Asian cuisine."
+    },
+    {
+      "id": "pancake",
+      "name": "煎饼",
+      "nameEn": "Pancake",
+      "alias": [
+        "薄烤饼"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "maple"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "usa",
+        "canada"
+      ],
+      "description": "美式早餐的代表，配枫糖浆和黄油，是美国家庭周末早餐传统。",
+      "descriptionEn": "Symbol of American breakfast. Served with maple syrup and butter. An American family weekend breakfast tradition.",
+      "aliasEn": [
+        "Hotcake"
+      ]
+    },
+    {
+      "id": "panna-cotta",
+      "name": "意式奶冻",
+      "nameEn": "Panna Cotta",
+      "alias": [
+        "奶油布丁"
+      ],
+      "category": "dessert",
+      "ingredients": [],
+      "origin": {
+        "location": "italy"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "italy"
+      ],
+      "description": "皮埃蒙特的甜点，奶油凝冻配水果酱或焦糖。",
+      "descriptionEn": "Piedmont dessert. Cream custard served with fruit sauce or caramel.",
+      "aliasEn": [
+        "Italian Cream Pudding"
+      ]
+    },
+    {
+      "id": "pavlova",
+      "name": "帕夫洛娃",
+      "nameEn": "Pavlova",
+      "category": "dessert",
+      "ingredients": [
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "new-zealand"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "australia",
+        "new-zealand"
+      ],
+      "description": "以俄罗斯芭蕾舞者命名的蛋白霜甜点，澳新两国争论发源地。",
+      "descriptionEn": "Meringue dessert named after Russian ballerina. Australia and New Zealand dispute its origin."
+    },
+    {
+      "id": "pecan-pie",
+      "name": "山核桃派",
+      "nameEn": "Pecan Pie",
+      "category": "dessert",
+      "ingredients": [
+        "pecan",
+        "wheat",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "usa"
+      ],
+      "description": "美国南方的传统甜点，糖浆和山核桃的甜蜜组合。",
+      "descriptionEn": "Traditional Southern American dessert. Sweet combination of syrup and pecans."
+    },
+    {
+      "id": "pesto",
+      "name": "青酱",
+      "nameEn": "Pesto",
+      "alias": [
+        "罗勒酱"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "olive",
+        "pine-nut",
+        "garlic"
+      ],
+      "origin": {
+        "location": "italy"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "italy",
+        "usa"
+      ],
+      "description": "热那亚的特产，罗勒、松子、帕尔马干酪、橄榄油的组合。",
+      "descriptionEn": "Specialty of Genoa. Combination of basil, pine nuts, Parmesan cheese, and olive oil.",
+      "aliasEn": [
+        "Basil Sauce"
+      ]
+    },
+    {
+      "id": "pickles",
+      "name": "腌黄瓜",
+      "nameEn": "Pickles",
+      "alias": [
+        "酸黄瓜"
+      ],
+      "category": "preserved",
+      "ingredients": [
+        "cucumber"
+      ],
+      "origin": {
+        "location": "mesopotamia"
+      },
+      "spreads": [
+        {
+          "from": "mesopotamia",
+          "to": "europe"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "germany",
+        "russia",
+        "poland"
+      ],
+      "description": "人类最古老的保存食品之一，美国汉堡三明治的标配。",
+      "descriptionEn": "One of humanity's oldest preserved foods. Standard for American hamburgers and sandwiches.",
+      "aliasEn": [
+        "Pickled Cucumber"
+      ]
+    },
+    {
+      "id": "ponzu",
+      "name": "柚子醋",
+      "nameEn": "Ponzu",
+      "category": "condiment",
+      "ingredients": [
+        "soybean",
+        "lemon"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "柑橘汁加酱油的组合，配刺身、火锅的蘸料。",
+      "descriptionEn": "Combination of citrus juice and soy sauce. Dipping sauce for sashimi and hot pot."
+    },
+    {
+      "id": "popcorn",
+      "name": "爆米花",
+      "nameEn": "Popcorn",
+      "category": "snack",
+      "ingredients": [
+        "corn"
+      ],
+      "origin": {
+        "location": "mesoamerica"
+      },
+      "spreads": [
+        {
+          "from": "mesoamerica",
+          "to": "north-america"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "europe",
+        "asia"
+      ],
+      "description": "美洲原住民的传统，美国将其与电影院绑定，成为观影标配。",
+      "descriptionEn": "Native American tradition. America paired it with movie theaters, making it a cinema staple."
+    },
+    {
+      "id": "pretzel",
+      "name": "椒盐卷饼",
+      "nameEn": "Pretzel",
+      "alias": [
+        "普雷结"
+      ],
+      "category": "snack",
+      "ingredients": [
+        "wheat"
+      ],
+      "origin": {
+        "location": "germany"
+      },
+      "spreads": [
+        {
+          "from": "germany",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "germany",
+        "usa"
+      ],
+      "description": "德国修道院发明的面包，美国版是软的大号版，德国版是脆的小型版。",
+      "descriptionEn": "Bread invented by German monasteries. American version is soft and large, German version is crispy and small."
+    },
+    {
+      "id": "pumpkin-pie",
+      "name": "南瓜派",
+      "nameEn": "Pumpkin Pie",
+      "category": "dessert",
+      "ingredients": [
+        "pumpkin",
+        "wheat",
+        "cinnamon",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "usa",
+        "canada"
+      ],
+      "description": "美国感恩节传统甜点，南瓜泥配香料的经典组合。",
+      "descriptionEn": "Traditional American Thanksgiving dessert. Classic combination of pumpkin puree with spices."
+    },
+    {
+      "id": "sambal",
+      "name": "参巴酱",
+      "nameEn": "Sambal",
+      "alias": [
+        "叁巴酱"
+      ],
+      "category": "condiment",
+      "ingredients": [
+        "chili",
+        "garlic"
+      ],
+      "origin": {
+        "location": "indonesia"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "indonesia",
+        "malaysia",
+        "singapore"
+      ],
+      "description": "东南亚的辣椒酱，种类繁多，马来和印尼菜的基础调味。",
+      "descriptionEn": "Southeast Asian chili sauce. Many varieties. Base seasoning for Malay and Indonesian cuisine."
+    },
+    {
+      "id": "sauerkraut",
+      "name": "酸菜",
+      "nameEn": "Sauerkraut",
+      "alias": [
+        "德国酸菜"
+      ],
+      "category": "preserved",
+      "ingredients": [
+        "cabbage"
+      ],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "europe"
+        }
+      ],
+      "currentRegions": [
+        "germany",
+        "austria",
+        "poland",
+        "france"
+      ],
+      "description": "发酵白菜，可能由蒙古人传入欧洲，德国版配香肠，法国阿尔萨斯版是名菜。",
+      "descriptionEn": "Fermented cabbage. Possibly brought to Europe by Mongols. German version with sausages, French Alsatian version is a famous dish.",
+      "aliasEn": [
+        "German Sauerkraut"
+      ]
+    },
+    {
+      "id": "shaved-ice",
+      "name": "刨冰",
+      "nameEn": "Shaved Ice",
+      "alias": [
+        "绵绵冰"
+      ],
+      "category": "dessert",
+      "ingredients": [],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan"
+        }
+      ],
+      "currentRegions": [
+        "taiwan",
+        "japan",
+        "korea"
+      ],
+      "description": "亚洲夏季甜品，台湾芒果冰、日本刨冰、韩国红豆冰各有特色。",
+      "descriptionEn": "Asian summer dessert. Taiwan mango ice, Japanese kakigori, and Korean patbingsu each have unique styles.",
+      "aliasEn": [
+        "Bingsu"
+      ]
+    },
+    {
+      "id": "soy-sauce",
+      "name": "酱油",
+      "nameEn": "Soy Sauce",
+      "category": "condiment",
+      "ingredients": [
+        "soybean",
+        "wheat"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "西汉（约公元前200年）",
+          "displayEn": "Western Han Dynasty (around 200 BCE)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "7世纪",
+            "displayEn": "7th century"
+          },
+          "via": "遣唐使",
+          "viaEn": "Japanese envoys to Tang China"
+        },
+        {
+          "from": "china",
+          "to": "korea",
+          "time": {
+            "display": "唐代",
+            "displayEn": "Tang Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "宋代",
+            "displayEn": "Song Dynasty"
+          }
+        },
+        {
+          "from": "japan",
+          "to": "europe",
+          "time": {
+            "display": "17世纪",
+            "displayEn": "17th century"
+          },
+          "via": "荷兰商人",
+          "viaEn": "Dutch merchants"
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "japan",
+        "korea",
+        "southeast-asia",
+        "usa",
+        "guangdong",
+        "fujian"
+      ],
+      "description": "东亚烹饪的灵魂调味料，日本万字酱油和中国生抽老抽各有特色。",
+      "descriptionEn": "The soul of East Asian cooking. Japanese Kikkoman and Chinese light/dark soy sauce each have unique characteristics."
+    },
+    {
+      "id": "sriracha",
+      "name": "是拉差辣酱",
+      "nameEn": "Sriracha",
+      "category": "condiment",
+      "ingredients": [
+        "chili",
+        "garlic"
+      ],
+      "origin": {
+        "location": "thailand"
+      },
+      "spreads": [
+        {
+          "from": "thailand",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "usa",
+        "thailand"
+      ],
+      "description": "泰国发明，越南华裔在美国生产的汇丰公司版本风靡全球。",
+      "descriptionEn": "Invented in Thailand. Vietnamese-Chinese produced version by Huy Fong Foods in America became globally popular."
+    },
+    {
+      "id": "stinky-tofu",
+      "name": "臭豆腐",
+      "nameEn": "Stinky Tofu",
+      "category": "snack",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "taiwan"
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "taiwan"
+      ],
+      "description": "长沙和台湾的特色小吃，闻着臭吃着香的发酵豆制品。",
+      "descriptionEn": "Specialty snack from Changsha and Taiwan. Fermented tofu that smells bad but tastes good."
+    },
+    {
+      "id": "tabasco",
+      "name": "塔巴斯科辣酱",
+      "nameEn": "Tabasco",
+      "category": "condiment",
+      "ingredients": [
+        "chili"
+      ],
+      "origin": {
+        "location": "usa"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "usa",
+        "europe"
+      ],
+      "description": "路易斯安那州发明的发酵辣酱，小瓶装的全球辣酱标准。",
+      "descriptionEn": "Fermented hot sauce invented in Louisiana. Small bottle global hot sauce standard."
+    },
+    {
+      "id": "tahini",
+      "name": "芝麻酱",
+      "nameEn": "Tahini",
+      "category": "condiment",
+      "ingredients": [
+        "sesame"
+      ],
+      "origin": {
+        "location": "middle-east"
+      },
+      "spreads": [
+        {
+          "from": "middle-east",
+          "to": "china"
+        }
+      ],
+      "currentRegions": [
+        "middle-east",
+        "china",
+        "greece"
+      ],
+      "description": "中东的芝麻酱是鹰嘴豆泥的成分，中国的芝麻酱配麻酱面。",
+      "descriptionEn": "Middle Eastern sesame paste is an ingredient in hummus. Chinese sesame paste is served with sesame noodles."
+    },
+    {
+      "id": "taiyaki",
+      "name": "鲷鱼烧",
+      "nameEn": "Taiyaki",
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "red-bean"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "korea"
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "korea"
+      ],
+      "description": "鱼形红豆饼，日本街头小吃代表，韩国版叫붕어빵。",
+      "descriptionEn": "Fish-shaped red bean cake. Representative Japanese street snack. Korean version is called Bungeoppang."
+    },
+    {
+      "id": "takoyaki",
+      "name": "章鱼烧",
+      "nameEn": "Takoyaki",
+      "alias": [
+        "たこ焼き"
+      ],
+      "category": "snack",
+      "ingredients": [
+        "wheat",
+        "octopus"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "taiwan"
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "taiwan"
+      ],
+      "description": "大阪发明的街头小吃，圆形面糊球包裹章鱼块。",
+      "descriptionEn": "Osaka street food invented in 1935. Round batter balls filled with octopus pieces.",
+      "aliasEn": [
+        "Octopus Balls"
+      ]
+    },
+    {
+      "id": "tanghulu",
+      "name": "糖葫芦",
+      "nameEn": "Tanghulu",
+      "alias": [
+        "冰糖葫芦"
+      ],
+      "category": "snack",
+      "ingredients": [
+        "hawthorn"
+      ],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "china"
+      ],
+      "description": "北方传统小吃，山楂裹糖，是中国冬季街头的标志性食物。",
+      "descriptionEn": "Traditional northern snack. Hawthorn coated in sugar. Iconic winter street food in China.",
+      "aliasEn": [
+        "Candied Hawthorn"
+      ]
+    },
+    {
+      "id": "tangyuan",
+      "name": "汤圆",
+      "nameEn": "Tangyuan",
+      "alias": [
+        "元宵"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "rice"
+      ],
+      "origin": {
+        "location": "china"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "china",
+        "taiwan"
+      ],
+      "description": "元宵节传统食品，糯米团子包甜馅，象征团圆。",
+      "descriptionEn": "Traditional Lantern Festival food. Glutinous rice balls with sweet filling, symbolizing reunion.",
+      "aliasEn": [
+        "Sweet Rice Balls"
+      ]
+    },
+    {
+      "id": "tempeh",
+      "name": "天贝",
+      "nameEn": "Tempeh",
+      "category": "preserved",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "indonesia"
+      },
+      "spreads": [
+        {
+          "from": "indonesia",
+          "to": "netherlands"
+        },
+        {
+          "from": "indonesia",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "indonesia",
+        "netherlands",
+        "usa"
+      ],
+      "description": "印尼的发酵大豆饼，菌丝将豆子绑在一起，比豆腐更有嚼劲的植物蛋白。",
+      "descriptionEn": "Indonesian fermented soybean cake. Fungal mycelium binds beans together. Plant protein chewier than tofu."
+    },
+    {
+      "id": "teriyaki-sauce",
+      "name": "照烧酱",
+      "nameEn": "Teriyaki Sauce",
+      "category": "condiment",
+      "ingredients": [
+        "soybean",
+        "ginger"
+      ],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [
+        {
+          "from": "japan",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "japan",
+        "usa"
+      ],
+      "description": "酱油、味醂、糖的组合，是日式西餐化的调味基础。",
+      "descriptionEn": "Combination of soy sauce, mirin, and sugar. Base for Japanese-Western fusion seasoning."
+    },
+    {
+      "id": "tiramisu",
+      "name": "提拉米苏",
+      "nameEn": "Tiramisu",
+      "category": "dessert",
+      "ingredients": [
+        "coffee",
+        "cacao"
+      ],
+      "origin": {
+        "location": "italy"
+      },
+      "spreads": [
+        {
+          "from": "italy",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "italy",
+        "usa",
+        "europe",
+        "asia"
+      ],
+      "description": "威尼托大区发明的咖啡甜点，意大利语意为",
+      "descriptionEn": "Italian dessert star. Coffee-soaked ladyfingers with mascarpone cheese."
+    },
+    {
+      "id": "tofu",
+      "name": "豆腐",
+      "nameEn": "Tofu",
+      "category": "dish",
+      "ingredients": [
+        "soybean"
+      ],
+      "origin": {
+        "location": "china",
+        "time": {
+          "display": "西汉（约公元前160年）",
+          "displayEn": "Western Han Dynasty (around 160 BCE)"
+        }
+      },
+      "spreads": [
+        {
+          "from": "china",
+          "to": "japan",
+          "time": {
+            "display": "奈良时代（8世纪）",
+            "displayEn": "Nara period (8th century)"
+          }
+        },
+        {
+          "from": "china",
+          "to": "korea",
+          "time": {
+            "display": "唐代",
+            "displayEn": "Tang Dynasty"
+          }
+        },
+        {
+          "from": "china",
+          "to": "southeast-asia",
+          "time": {
+            "display": "宋代",
+            "displayEn": "Song Dynasty"
+          }
+        },
+        {
+          "from": "asia",
+          "to": "europe",
+          "time": {
+            "display": "18世纪",
+            "displayEn": "18th century"
+          }
+        },
+        {
+          "from": "asia",
+          "to": "usa",
+          "time": {
+            "display": "20世纪",
+            "displayEn": "20th century"
+          }
+        }
+      ],
+      "currentRegions": [
+        "china",
+        "japan",
+        "korea",
+        "southeast-asia",
+        "usa",
+        "sichuan"
+      ],
+      "description": "相传淮南王刘安发明，东亚素食蛋白质的主要来源，如今成为全球健康食品。",
+      "descriptionEn": "Allegedly invented by Liu An, Prince of Huainan. The main vegetarian protein source in East Asia, now a global health food."
+    },
+    {
+      "id": "tres-leches",
+      "name": "三奶蛋糕",
+      "nameEn": "Tres Leches Cake",
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "mexico"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "mexico",
+        "nicaragua",
+        "south-america"
+      ],
+      "description": "用三种奶（炼乳、淡奶、鲜奶油）浸透的湿润蛋糕，拉美甜点代表。",
+      "descriptionEn": "Moist cake soaked in three types of milk (condensed milk, evaporated milk, heavy cream). Representative Latin American dessert."
+    },
+    {
+      "id": "tzatziki",
+      "name": "酸奶黄瓜酱",
+      "nameEn": "Tzatziki",
+      "category": "condiment",
+      "ingredients": [
+        "cucumber",
+        "garlic"
+      ],
+      "origin": {
+        "location": "greece"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "greece",
+        "turkey"
+      ],
+      "description": "希腊的酸奶酱，配希腊烤肉和皮塔饼，土耳其版叫cacık。",
+      "descriptionEn": "Greek yogurt sauce. Served with Greek grilled meat and pita bread. Turkish version is called cacık."
+    },
+    {
+      "id": "vinegar",
+      "name": "醋",
+      "nameEn": "Vinegar",
+      "category": "condiment",
+      "ingredients": [],
+      "origin": {
+        "location": "mesopotamia"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "china",
+        "italy",
+        "france",
+        "japan"
+      ],
+      "description": "人类最古老的调味料之一，山西陈醋、意大利香醋、日本米醋各有特色。",
+      "descriptionEn": "One of humanity's oldest seasonings. Shanxi aged vinegar, Italian balsamic vinegar, and Japanese rice vinegar each have characteristics."
+    },
+    {
+      "id": "waffle",
+      "name": "华夫饼",
+      "nameEn": "Waffle",
+      "alias": [
+        "格子饼"
+      ],
+      "category": "dessert",
+      "ingredients": [
+        "wheat",
+        "sugarcane"
+      ],
+      "origin": {
+        "location": "belgium"
+      },
+      "spreads": [
+        {
+          "from": "belgium",
+          "to": "usa"
+        }
+      ],
+      "currentRegions": [
+        "belgium",
+        "usa"
+      ],
+      "description": "比利时的两种华夫（布鲁塞尔和列日）都很有名，美国发展出早餐华夫。",
+      "descriptionEn": "Both Belgian types (Brussels and Liège) are famous. America developed breakfast waffles.",
+      "aliasEn": [
+        "Belgian Waffle"
+      ]
+    },
+    {
+      "id": "wasabi",
+      "name": "山葵",
+      "nameEn": "Wasabi",
+      "alias": [
+        "日本芥末"
+      ],
+      "category": "condiment",
+      "ingredients": [],
+      "origin": {
+        "location": "japan"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "japan"
+      ],
+      "description": "日本特有的调味料，新鲜山葵价格昂贵，大部分是辣根染色的替代品。",
+      "descriptionEn": "Japanese unique seasoning. Fresh wasabi is expensive. Most is dyed horseradish substitute.",
+      "aliasEn": [
+        "Japanese Horseradish"
+      ]
+    },
+    {
+      "id": "worcestershire-sauce",
+      "name": "伍斯特酱",
+      "nameEn": "Worcestershire Sauce",
+      "alias": [
+        "辣酱油"
+      ],
+      "category": "condiment",
+      "ingredients": [],
+      "origin": {
+        "location": "uk"
+      },
+      "spreads": [],
+      "currentRegions": [
+        "uk",
+        "usa"
+      ],
+      "description": "英国伍斯特郡发明的发酵酱汁，血腥玛丽鸡尾酒的成分。",
+      "descriptionEn": "Fermented sauce invented in Worcestershire, England. Ingredient in Bloody Mary cocktails.",
+      "aliasEn": [
+        "Worcester Sauce"
+      ]
     }
   ]
 }

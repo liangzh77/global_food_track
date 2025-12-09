@@ -4,8 +4,8 @@
 
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
-import { timelineService } from '../services/TimelineService';
 import { languageService, Language } from '../services/LanguageService';
+import { timelineService } from '../services/TimelineService';
 import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getLocationIcon } from '../common/Constants';
 import { Location, CropCategory, FoodCategory, getCropCategoryName, getFoodCategoryName, Era, ERAS } from '../models/DataModels';
 
@@ -62,27 +62,27 @@ struct Index {
 
   private getCropCategories(): CategoryItem[] {
     return [
-      new CategoryItem('grain', languageService.t('cropCategories.grain')),
-      new CategoryItem('vegetable', languageService.t('cropCategories.vegetable')),
-      new CategoryItem('fruit', languageService.t('cropCategories.fruit')),
-      new CategoryItem('legume', languageService.t('cropCategories.legume')),
-      new CategoryItem('spice', languageService.t('cropCategories.spice')),
-      new CategoryItem('beverage', languageService.t('cropCategories.beverage')),
-      new CategoryItem('oil', languageService.t('cropCategories.oil')),
-      new CategoryItem('sugar', languageService.t('cropCategories.sugar')),
-      new CategoryItem('nut', languageService.t('cropCategories.nut'))
+      new CategoryItem('grain', this.t('cropCategories.grain')),
+      new CategoryItem('vegetable', this.t('cropCategories.vegetable')),
+      new CategoryItem('fruit', this.t('cropCategories.fruit')),
+      new CategoryItem('legume', this.t('cropCategories.legume')),
+      new CategoryItem('spice', this.t('cropCategories.spice')),
+      new CategoryItem('beverage', this.t('cropCategories.beverage')),
+      new CategoryItem('oil', this.t('cropCategories.oil')),
+      new CategoryItem('sugar', this.t('cropCategories.sugar')),
+      new CategoryItem('nut', this.t('cropCategories.nut'))
     ];
   }
 
   private getFoodCategories(): CategoryItem[] {
     return [
-      new CategoryItem('staple', languageService.t('foodCategories.staple')),
-      new CategoryItem('dish', languageService.t('foodCategories.dish')),
-      new CategoryItem('beverage', languageService.t('foodCategories.beverage')),
-      new CategoryItem('dessert', languageService.t('foodCategories.dessert')),
-      new CategoryItem('snack', languageService.t('foodCategories.snack')),
-      new CategoryItem('condiment', languageService.t('foodCategories.condiment')),
-      new CategoryItem('preserved', languageService.t('foodCategories.preserved'))
+      new CategoryItem('staple', this.t('foodCategories.staple')),
+      new CategoryItem('dish', this.t('foodCategories.dish')),
+      new CategoryItem('beverage', this.t('foodCategories.beverage')),
+      new CategoryItem('dessert', this.t('foodCategories.dessert')),
+      new CategoryItem('snack', this.t('foodCategories.snack')),
+      new CategoryItem('condiment', this.t('foodCategories.condiment')),
+      new CategoryItem('preserved', this.t('foodCategories.preserved'))
     ];
   }
 
@@ -93,6 +93,43 @@ struct Index {
 
   toggleLanguage(): void {
     this.currentLang = languageService.toggleLanguage();
+  }
+
+  // 获取翻译文本（依赖 currentLang 触发刷新）
+  private t(key: string): string {
+    // 使用 currentLang 确保状态变化时触发更新
+    const _lang = this.currentLang;
+    return languageService.t(key);
+  }
+
+  // 获取语言切换按钮文本
+  private getToggleText(): string {
+    const _lang = this.currentLang;
+    return languageService.getToggleButtonText();
+  }
+
+  // 获取时代名称
+  private getEraName(eraId: string): string {
+    const _lang = this.currentLang;
+    return languageService.getEraName(eraId);
+  }
+
+  // 获取时代描述
+  private getEraDesc(eraId: string): string {
+    const _lang = this.currentLang;
+    return languageService.getEraDescription(eraId);
+  }
+
+  // 获取实体名称
+  private getName(entity: object): string {
+    const _lang = this.currentLang;
+    return languageService.getName(entity);
+  }
+
+  // 获取时代年份范围（动态多语言）
+  private getEraYearRangeText(era: Era): string {
+    const _lang = this.currentLang;
+    return timelineService.getEraYearRange(era);
   }
 
   build() {
@@ -128,12 +165,12 @@ struct Index {
   Header() {
     Row() {
       Column() {
-        Text(languageService.t('app.title'))
+        Text(this.t('app.title'))
           .fontSize(Sizes.FONT_TITLE)
           .fontWeight(FontWeight.Bold)
           .fontColor(Colors.TEXT_ON_PRIMARY)
 
-        Text(languageService.t('app.subtitle'))
+        Text(this.t('app.subtitle'))
           .fontSize(Sizes.FONT_SM)
           .fontColor(Colors.TEXT_ON_PRIMARY)
           .opacity(0.9)
@@ -143,7 +180,7 @@ struct Index {
       .layoutWeight(1)
 
       // 语言切换按钮
-      Text(languageService.getToggleButtonText())
+      Text(this.getToggleText())
         .fontSize(Sizes.FONT_XS)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_ON_PRIMARY)
@@ -173,7 +210,7 @@ struct Index {
         .fontSize(Sizes.FONT_LG)
         .margin({ right: Sizes.SPACING_SM })
 
-      TextInput({ placeholder: languageService.t('placeholders.search'), text: this.searchText })
+      TextInput({ placeholder: this.t('placeholders.search'), text: this.searchText })
         .layoutWeight(1)
         .height(40)
         .backgroundColor('transparent')
@@ -210,10 +247,10 @@ struct Index {
   @Builder
   TabBar() {
     Row() {
-      this.TabItem(languageService.t('tabs.crops'), 0)
-      this.TabItem(languageService.t('tabs.foods'), 1)
-      this.TabItem(languageService.t('tabs.regions'), 2)
-      this.TabItem(languageService.t('tabs.timeline'), 3)
+      this.TabItem('tabs.crops', 0)
+      this.TabItem('tabs.foods', 1)
+      this.TabItem('tabs.regions', 2)
+      this.TabItem('tabs.timeline', 3)
     }
     .width('100%')
     .justifyContent(FlexAlign.SpaceEvenly)
@@ -221,8 +258,8 @@ struct Index {
   }
 
   @Builder
-  TabItem(title: string, index: number) {
-    Text(title)
+  TabItem(titleKey: string, index: number) {
+    Text(this.t(titleKey))
       .fontSize(Sizes.FONT_MD)
       .fontWeight(this.activeTab === index ? FontWeight.Bold : FontWeight.Normal)
       .fontColor(this.activeTab === index ? Colors.PRIMARY : Colors.TEXT_SECONDARY)
@@ -242,7 +279,7 @@ struct Index {
   @Builder
   CropCategories() {
     Column() {
-      Text(languageService.t('sections.exploreByCropCategory'))
+      Text(this.t('sections.exploreByCropCategory'))
         .fontSize(Sizes.FONT_LG)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_PRIMARY)
@@ -263,7 +300,7 @@ struct Index {
   @Builder
   FoodCategories() {
     Column() {
-      Text(languageService.t('sections.exploreByFoodCategory'))
+      Text(this.t('sections.exploreByFoodCategory'))
         .fontSize(Sizes.FONT_LG)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_PRIMARY)
@@ -315,7 +352,7 @@ struct Index {
   @Builder
   LocationExplorer() {
     Column() {
-      Text(languageService.t('sections.exploreByRegion'))
+      Text(this.t('sections.exploreByRegion'))
         .fontSize(Sizes.FONT_LG)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_PRIMARY)
@@ -338,7 +375,7 @@ struct Index {
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(continent.name)
+        Text(this.getName(continent))
           .fontSize(Sizes.FONT_MD)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.TEXT_PRIMARY)
@@ -374,50 +411,27 @@ struct Index {
     const parts: string[] = [];
 
     if (countries.length > 0) {
-      parts.push(countries.length.toString() + languageService.t('units.countries'));
+      parts.push(countries.length.toString() + this.t('units.countries'));
     }
     if (origins.crops.length > 0) {
-      parts.push(origins.crops.length.toString() + languageService.t('units.originCrops'));
+      parts.push(origins.crops.length.toString() + this.t('units.originCrops'));
     }
     if (origins.foods.length > 0) {
-      parts.push(origins.foods.length.toString() + languageService.t('units.originFoods'));
+      parts.push(origins.foods.length.toString() + this.t('units.originFoods'));
     }
 
-    return parts.length > 0 ? parts.join(' · ') : languageService.t('empty.clickToExplore');
+    return parts.length > 0 ? parts.join(' · ') : this.t('empty.clickToExplore');
   }
 
   @Builder
   TimelineExplorer() {
     Column() {
-      Text(languageService.t('sections.exploreByEra'))
+      Text(this.t('sections.exploreByEra'))
         .fontSize(Sizes.FONT_LG)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_PRIMARY)
         .margin({ bottom: Sizes.SPACING_MD })
         .alignSelf(ItemAlign.Start)
-
-      // 时间线入口卡片
-      Column() {
-        Text(languageService.t('sections.timelineIntro'))
-          .fontSize(Sizes.FONT_SM)
-          .fontColor(Colors.TEXT_SECONDARY)
-          .margin({ bottom: Sizes.SPACING_MD })
-
-        Button(languageService.t('buttons.viewFullTimeline'))
-          .fontSize(Sizes.FONT_SM)
-          .fontWeight(FontWeight.Medium)
-          .backgroundColor(Colors.PRIMARY)
-          .padding({ left: Sizes.SPACING_LG, right: Sizes.SPACING_LG })
-          .onClick(() => {
-            router.pushUrl({ url: 'pages/Timeline' });
-          })
-      }
-      .width('100%')
-      .padding(Sizes.SPACING_MD)
-      .backgroundColor(Colors.CARD_BACKGROUND)
-      .borderRadius(Sizes.RADIUS_MEDIUM)
-      .alignItems(HorizontalAlign.Center)
-      .margin({ bottom: Sizes.SPACING_MD })
 
       // 时代列表
       ForEach(ERAS, (era: Era) => {
@@ -438,17 +452,17 @@ struct Index {
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(languageService.getEraName(era.id))
+        Text(this.getEraName(era.id))
           .fontSize(Sizes.FONT_MD)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.TEXT_PRIMARY)
 
-        Text(timelineService.getEraYearRange(era))
+        Text(this.getEraYearRangeText(era))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: 2 })
 
-        Text(languageService.getEraDescription(era.id))
+        Text(this.getEraDesc(era.id))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_HINT)
           .margin({ top: 4 })
@@ -462,7 +476,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .fontColor(Colors.PRIMARY)
 
-        Text(languageService.t('labels.events'))
+        Text(this.t('labels.events'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.PRIMARY)
       }

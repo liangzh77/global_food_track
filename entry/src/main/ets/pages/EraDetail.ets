@@ -5,6 +5,7 @@
 import router from '@ohos.router';
 import { Colors, Sizes, NavIcons } from '../common/Constants';
 import { timelineService } from '../services/TimelineService';
+import { dataService } from '../services/DataService';
 import { languageService, Language } from '../services/LanguageService';
 import {
   Era,
@@ -12,7 +13,9 @@ import {
   TimelineFilter,
   getEventColor,
   getEventTypeName,
-  getTimelineEntityTypeName
+  getTimelineEntityTypeName,
+  Crop,
+  Food
 } from '../models/DataModels';
 
 interface RouteParams {
@@ -77,13 +80,145 @@ struct EraDetail {
     this.currentLang = languageService.toggleLanguage();
   }
 
+  // 获取翻译文本（依赖 currentLang 触发刷新）
+  private t(key: string): string {
+    const _lang = this.currentLang;
+    return languageService.t(key);
+  }
+
+  // 获取语言切换按钮文本
+  private getToggleText(): string {
+    const _lang = this.currentLang;
+    return languageService.getToggleButtonText();
+  }
+
+  // 获取时代名称
+  private getEraName(eraId: string): string {
+    const _lang = this.currentLang;
+    return languageService.getEraName(eraId);
+  }
+
+  // 获取时代描述
+  private getEraDescription(eraId: string): string {
+    const _lang = this.currentLang;
+    return languageService.getEraDescription(eraId);
+  }
+
+  // 获取时代年份范围（动态多语言）
+  private getEraYearRangeText(): string {
+    const _lang = this.currentLang;
+    if (this.era) {
+      return timelineService.getEraYearRange(this.era);
+    }
+    return '';
+  }
+
+  // 获取时间线实体类型名称
+  private getTimelineEntityTypeName(entityType: string): string {
+    const _lang = this.currentLang;
+    return languageService.getTimelineEntityTypeName(entityType);
+  }
+
+  // 获取事件类型名称
+  private getEventTypeName(eventType: string): string {
+    const _lang = this.currentLang;
+    return languageService.getEventTypeName(eventType);
+  }
+
+  // 获取事件的实体名称（动态多语言）
+  private getEventName(event: TimelineEvent): string {
+    const _lang = this.currentLang;
+    if (event.entityType === 'crop') {
+      const crop = dataService.getCropById(event.entityId);
+      return languageService.getName(crop as object);
+    } else {
+      const food = dataService.getFoodById(event.entityId);
+      return languageService.getName(food as object);
+    }
+  }
+
+  // 获取事件的实体描述（动态多语言）
+  private getEventDescription(event: TimelineEvent): string {
+    const _lang = this.currentLang;
+    if (event.entityType === 'crop') {
+      const crop = dataService.getCropById(event.entityId);
+      return languageService.getDescription(crop as object);
+    } else {
+      const food = dataService.getFoodById(event.entityId);
+      return languageService.getDescription(food as object);
+    }
+  }
+
+  // 获取事件的时间显示（动态多语言）
+  private getEventDisplayTime(event: TimelineEvent): string {
+    const _lang = this.currentLang;
+    if (event.entityType === 'crop') {
+      const crop = dataService.getCropById(event.entityId);
+      if (crop) {
+        if (event.eventType === 'origin') {
+          return languageService.getTimeDisplay(crop.origin.time as object);
+        } else {
+          // 传播事件，需要找到对应的传播记录
+          const spread = crop.spreads.find(s => s.time.year === event.year);
+          if (spread) {
+            return languageService.getTimeDisplay(spread.time as object);
+          }
+        }
+      }
+    } else {
+      const food = dataService.getFoodById(event.entityId);
+      if (food) {
+        if (event.eventType === 'origin') {
+          return languageService.getTimeDisplay(food.origin.time as object);
+        } else {
+          const spread = food.spreads.find(s => s.time.year === event.year);
+          if (spread) {
+            return languageService.getTimeDisplay(spread.time as object);
+          }
+        }
+      }
+    }
+    return event.displayTime; // 备用
+  }
+
+  // 获取地点名称（动态多语言）
+  private getLocationName(locationId: string): string {
+    const _lang = this.currentLang;
+    const location = dataService.getLocationById(locationId);
+    return languageService.getName(location as object);
+  }
+
+  // 获取传播途径（动态多语言）
+  private getEventVia(event: TimelineEvent): string {
+    const _lang = this.currentLang;
+    if (event.eventType !== 'spread') return '';
+    if (event.entityType === 'crop') {
+      const crop = dataService.getCropById(event.entityId);
+      if (crop) {
+        const spread = crop.spreads.find(s => s.time.year === event.year && s.to === event.toLocationId);
+        if (spread) {
+          return languageService.getVia(spread as object) || '';
+        }
+      }
+    } else {
+      const food = dataService.getFoodById(event.entityId);
+      if (food) {
+        const spread = food.spreads.find(s => s.time.year === event.year && s.to === event.toLocationId);
+        if (spread) {
+          return languageService.getVia(spread as object) || '';
+        }
+      }
+    }
+    return event.via || '';
+  }
+
   goHome(): void {
     router.clear();
     router.pushUrl({ url: 'pages/Index' });
   }
 
   getEventTypeLabel(event: TimelineEvent): string {
-    return languageService.getTimelineEntityTypeName(event.entityType) + languageService.getEventTypeName(event.eventType);
+    return this.getTimelineEntityTypeName(event.entityType) + this.getEventTypeName(event.eventType);
   }
 
   build() {
@@ -140,7 +275,7 @@ struct EraDetail {
               this.goHome();
             })
 
-          Text(languageService.getToggleButtonText())
+          Text(this.getToggleText())
             .fontSize(Sizes.FONT_XS)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_ON_PRIMARY)
@@ -162,12 +297,12 @@ struct EraDetail {
           .margin({ right: Sizes.SPACING_MD })
 
         Column() {
-          Text(languageService.getEraName(this.era?.id || ''))
+          Text(this.getEraName(this.era?.id || ''))
             .fontSize(Sizes.FONT_XXL)
             .fontWeight(FontWeight.Bold)
             .fontColor(Colors.TEXT_ON_PRIMARY)
 
-          Text(this.eraYearRange)
+          Text(this.getEraYearRangeText())
             .fontSize(Sizes.FONT_SM)
             .fontColor(Colors.TEXT_ON_PRIMARY)
             .opacity(0.9)
@@ -188,7 +323,7 @@ struct EraDetail {
     Column() {
       // 实体类型筛选
       Row() {
-        Text(languageService.t('filters.all'))
+        Text(this.t('filters.all'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.entityType === 'all' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.entityType === 'all' ? Colors.PRIMARY : 'transparent')
@@ -201,7 +336,7 @@ struct EraDetail {
             this.applyFilter();
           })
 
-        Text(languageService.t('tabs.crops'))
+        Text(this.t('tabs.crops'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.entityType === 'crop' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.entityType === 'crop' ? Colors.PRIMARY : 'transparent')
@@ -214,7 +349,7 @@ struct EraDetail {
             this.applyFilter();
           })
 
-        Text(languageService.t('tabs.foods'))
+        Text(this.t('tabs.foods'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.entityType === 'food' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.entityType === 'food' ? Colors.PRIMARY : 'transparent')
@@ -231,7 +366,7 @@ struct EraDetail {
 
       // 事件类型筛选
       Row() {
-        Text(languageService.t('filters.all'))
+        Text(this.t('filters.all'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.eventType === 'all' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.eventType === 'all' ? Colors.PRIMARY : 'transparent')
@@ -244,7 +379,7 @@ struct EraDetail {
             this.applyFilter();
           })
 
-        Text(languageService.t('eventTypes.origin'))
+        Text(this.t('eventTypes.origin'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.eventType === 'origin' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.eventType === 'origin' ? Colors.PRIMARY : 'transparent')
@@ -257,7 +392,7 @@ struct EraDetail {
             this.applyFilter();
           })
 
-        Text(languageService.t('eventTypes.spread'))
+        Text(this.t('eventTypes.spread'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.eventType === 'spread' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.eventType === 'spread' ? Colors.PRIMARY : 'transparent')
@@ -279,7 +414,7 @@ struct EraDetail {
   @Builder
   SearchBar() {
     Row() {
-      TextInput({ placeholder: languageService.t('placeholders.searchTimeline'), text: this.filter.keyword })
+      TextInput({ placeholder: this.t('placeholders.searchTimeline'), text: this.filter.keyword })
         .layoutWeight(1)
         .height(40)
         .backgroundColor('#F5F5F5')
@@ -314,7 +449,7 @@ struct EraDetail {
   TimelineList() {
     if (this.filteredEvents.length === 0) {
       Column() {
-        Text(languageService.t('empty.noEvents'))
+        Text(this.t('empty.noEvents'))
           .fontSize(Sizes.FONT_MD)
           .fontColor(Colors.TEXT_HINT)
       }
@@ -375,7 +510,7 @@ struct EraDetail {
       // 事件内容
       Column() {
         Row() {
-          Text(event.name)
+          Text(this.getEventName(event))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
@@ -392,18 +527,18 @@ struct EraDetail {
 
         // 地点信息
         if (event.eventType === 'origin') {
-          Text(`📍 ${event.location || ''}`)
+          Text(`📍 ${this.getLocationName(event.locationId)}`)
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
             .margin({ top: 4 })
         } else {
           Row() {
-            Text(`${event.fromLocation || ''} → ${event.toLocation || ''}`)
+            Text(`${this.getLocationName(event.fromLocationId)} → ${this.getLocationName(event.toLocationId)}`)
               .fontSize(Sizes.FONT_XS)
               .fontColor(Colors.TEXT_SECONDARY)
 
-            if (event.via) {
-              Text(`（${event.via}）`)
+            if (this.getEventVia(event)) {
+              Text(`（${this.getEventVia(event)}）`)
                 .fontSize(Sizes.FONT_XS)
                 .fontColor(Colors.TEXT_HINT)
                 .margin({ left: 4 })
@@ -460,20 +595,46 @@ struct EraDetail {
 
     // 弹窗内容
     Column() {
-      // 关闭按钮
+      // 顶部工具栏：语言切换居中，关闭按钮靠右
       Row() {
-        Blank()
+        // 占位保持布局平衡
+        Text('')
+          .width(32)
+          .height(32)
+
+        // 语言切换按钮
+        Text(this.getToggleText())
+          .fontSize(Sizes.FONT_SM)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.PRIMARY)
+          .padding({ left: 14, right: 14, top: 6, bottom: 6 })
+          .borderRadius(16)
+          .backgroundColor(Colors.CARD_BACKGROUND)
+          .border({ width: 1, color: Colors.PRIMARY })
+          .onClick(() => {
+            this.toggleLanguage();
+          })
+
+        // 关闭按钮
         Text('×')
-          .fontSize(24)
-          .fontColor('#FFFFFF')
-          .opacity(0.8)
+          .fontSize(20)
+          .fontColor('#666666')
+          .width(32)
+          .height(32)
+          .textAlign(TextAlign.Center)
+          .backgroundColor('#E0E0E0')
+          .borderRadius(16)
           .onClick(() => {
             this.showModal = false;
             this.selectedEvent = null;
           })
       }
       .width('100%')
-      .padding({ right: Sizes.SPACING_MD, top: Sizes.SPACING_SM })
+      .padding({ left: Sizes.SPACING_MD, right: Sizes.SPACING_MD, top: Sizes.SPACING_SM, bottom: Sizes.SPACING_SM })
+      .justifyContent(FlexAlign.SpaceBetween)
+      .alignItems(VerticalAlign.Center)
+      .backgroundColor('#F5F5F5')
+      .borderRadius({ topLeft: Sizes.RADIUS_MEDIUM, topRight: Sizes.RADIUS_MEDIUM })
 
       // 头部
       Column() {
@@ -485,12 +646,12 @@ struct EraDetail {
           .borderRadius(12)
           .margin({ bottom: Sizes.SPACING_SM })
 
-        Text(this.selectedEvent?.name || '')
+        Text(this.getEventName(this.selectedEvent!))
           .fontSize(Sizes.FONT_XXL)
           .fontWeight(FontWeight.Bold)
           .fontColor('#FFFFFF')
 
-        Text(this.selectedEvent?.displayTime || '')
+        Text(this.getEventDisplayTime(this.selectedEvent!))
           .fontSize(Sizes.FONT_SM)
           .fontColor('#FFFFFF')
           .opacity(0.9)
@@ -499,29 +660,28 @@ struct EraDetail {
       .width('100%')
       .padding(Sizes.SPACING_LG)
       .backgroundColor(getEventColor(this.selectedEvent!.entityType, this.selectedEvent!.eventType))
-      .borderRadius({ topLeft: Sizes.RADIUS_MEDIUM, topRight: Sizes.RADIUS_MEDIUM })
 
       // 内容
       Column() {
         if (this.selectedEvent?.eventType === 'origin') {
-          this.DetailRow(languageService.t('labels.originLocation'), `📍 ${this.selectedEvent?.location || ''}`, this.selectedEvent?.locationId)
+          this.DetailRow(this.t('labels.originLocation'), `📍 ${this.getLocationName(this.selectedEvent?.locationId || '')}`, this.selectedEvent?.locationId)
         } else {
-          this.DetailRow(languageService.t('labels.spreadPath'),
-            `${this.selectedEvent?.fromLocation || ''} → ${this.selectedEvent?.toLocation || ''}`,
+          this.DetailRow(this.t('labels.spreadPath'),
+            `${this.getLocationName(this.selectedEvent?.fromLocationId || '')} → ${this.getLocationName(this.selectedEvent?.toLocationId || '')}`,
             undefined)
 
-          if (this.selectedEvent?.via) {
-            this.DetailRow(languageService.t('labels.spreadVia'), this.selectedEvent.via, undefined)
+          if (this.getEventVia(this.selectedEvent!)) {
+            this.DetailRow(this.t('labels.spreadVia'), this.getEventVia(this.selectedEvent!), undefined)
           }
         }
 
         // 简介
         Column() {
-          Text(languageService.t('labels.description'))
+          Text(this.t('labels.description'))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_HINT)
 
-          Text(this.selectedEvent?.description || '')
+          Text(this.getEventDescription(this.selectedEvent!))
             .fontSize(Sizes.FONT_SM)
             .fontColor(Colors.TEXT_SECONDARY)
             .margin({ top: Sizes.SPACING_XS })
@@ -536,8 +696,8 @@ struct EraDetail {
 
       // 底部按钮
       Button(this.selectedEvent?.entityType === 'crop'
-        ? languageService.t('buttons.viewCropDetails')
-        : languageService.t('buttons.viewFoodDetails'))
+        ? this.t('buttons.viewCropDetails')
+        : this.t('buttons.viewFoodDetails'))
         .width('90%')
         .height(44)
         .fontSize(Sizes.FONT_MD)
