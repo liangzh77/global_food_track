@@ -2,20 +2,25 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
-import { foodIcons, cropCategoryNames, foodCategoryNames, getCropIcon } from '@/types'
+import { languageService, currentLang } from '@/services/languageService'
+import { foodIcons, getCropIcon } from '@/types'
 import type { CropCategory, FoodCategory } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
+
+// UI 文本
+const ui = computed(() => languageService.ui)
+const t = (textObj: any) => languageService.t(textObj)
 
 const type = computed(() => route.params.type as string)
 const category = computed(() => route.params.category as string)
 
 const categoryName = computed(() => {
   if (type.value === 'crop') {
-    return cropCategoryNames[category.value as CropCategory] || category.value
+    return languageService.getCropCategoryName(category.value)
   } else {
-    return foodCategoryNames[category.value as FoodCategory] || category.value
+    return languageService.getFoodCategoryName(category.value)
   }
 })
 
@@ -43,6 +48,10 @@ function goHome() {
   router.push({ name: 'Home' })
 }
 
+function toggleLanguage() {
+  languageService.toggleLanguage()
+}
+
 function goToDetail(id: string) {
   if (type.value === 'crop') {
     router.push({ name: 'CropDetail', params: { id } })
@@ -51,9 +60,16 @@ function goToDetail(id: string) {
   }
 }
 
+function getItemName(item: any): string {
+  return languageService.getName(item)
+}
+
 function getItemSubtitle(item: any): string {
-  const locationName = dataService.getLocationName(item.origin.location)
-  return `起源: ${locationName} · ${item.origin.time.display}`
+  const location = dataService.getLocationById(item.origin.location)
+  const locationName = location ? languageService.getName(location) : dataService.getLocationName(item.origin.location)
+  const timeDisplay = languageService.getTimeDisplay(item.origin.time)
+  const originLabel = t(ui.value.labels.origin)
+  return `${originLabel}: ${locationName} · ${timeDisplay}`
 }
 </script>
 
@@ -66,7 +82,12 @@ function getItemSubtitle(item: any): string {
           <button class="back-btn" @click="goBack">←</button>
           <div class="header-title">{{ categoryName }}</div>
         </div>
-        <button class="home-btn" @click="goHome">⌂</button>
+        <div class="header-right">
+          <button class="home-btn" @click="goHome">⌂</button>
+          <button class="lang-toggle-header" @click="toggleLanguage">
+            {{ currentLang === 'zh' ? 'EN' : '中文' }}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -74,7 +95,7 @@ function getItemSubtitle(item: any): string {
     <div class="content">
       <div v-if="items.length === 0" class="empty-state">
         <div class="empty-icon">📭</div>
-        <div>暂无数据</div>
+        <div>{{ t(ui.empty.noResults) }}</div>
       </div>
 
       <div
@@ -85,7 +106,7 @@ function getItemSubtitle(item: any): string {
       >
         <div class="list-card-icon">{{ getItemIcon(item) }}</div>
         <div class="list-card-content">
-          <div class="list-card-title">{{ item.name }}</div>
+          <div class="list-card-title">{{ getItemName(item) }}</div>
           <div class="list-card-subtitle">{{ getItemSubtitle(item) }}</div>
         </div>
         <div class="list-card-arrow">›</div>

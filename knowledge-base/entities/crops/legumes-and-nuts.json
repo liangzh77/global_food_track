@@ -3,129 +3,143 @@
     {
       "id": "soybean",
       "name": "大豆",
+      "nameEn": "Soybean",
       "alias": ["黄豆"],
       "category": "legume",
       "origin": {
         "location": "china",
-        "time": { "year": -7000, "display": "公元前7000年" }
+        "time": { "year": -7000, "display": "公元前7000年", "displayEn": "7000 BCE" }
       },
       "spreads": [
-        { "from": "china", "to": "korea", "time": { "display": "公元前1000年" } },
-        { "from": "china", "to": "japan", "time": { "display": "公元前500年" } },
-        { "from": "china", "to": "southeast-asia", "time": { "display": "公元1世纪" } },
-        { "from": "asia", "to": "europe", "time": { "display": "18世纪" } },
-        { "from": "asia", "to": "usa", "time": { "year": 1765, "display": "1765年" } },
-        { "from": "usa", "to": "brazil", "time": { "display": "20世纪初" } }
+        { "from": "china", "to": "korea", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "china", "to": "japan", "time": { "display": "公元前500年", "displayEn": "500 BCE" } },
+        { "from": "china", "to": "southeast-asia", "time": { "display": "公元1世纪", "displayEn": "1st century CE" } },
+        { "from": "asia", "to": "europe", "time": { "display": "18世纪", "displayEn": "18th century" } },
+        { "from": "asia", "to": "usa", "time": { "year": 1765, "display": "1765年", "displayEn": "1765" } },
+        { "from": "usa", "to": "brazil", "time": { "display": "20世纪初", "displayEn": "Early 20th century" } }
       ],
       "currentRegions": ["brazil", "usa", "argentina", "china", "india", "dongbei", "shandong"],
-      "description": "东亚文明的蛋白质来源，豆腐、酱油、豆浆的原料，现为全球最重要的油料和饲料作物。"
+      "description": "东亚文明的蛋白质来源，豆腐、酱油、豆浆的原料，现为全球最重要的油料和饲料作物。",
+      "descriptionEn": "The protein source of East Asian civilization, the raw material for tofu, soy sauce, and soy milk. Now the world's most important oil and feed crop."
     },
     {
       "id": "peanut",
       "name": "花生",
+      "nameEn": "Peanut",
       "alias": ["落花生", "长生果"],
       "category": "legume",
       "origin": {
         "location": "south-america",
-        "time": { "year": -3500, "display": "公元前3500年" }
+        "time": { "year": -3500, "display": "公元前3500年", "displayEn": "3500 BCE" }
       },
       "spreads": [
-        { "from": "south-america", "to": "caribbean", "time": { "display": "公元前2000年" } },
-        { "from": "south-america", "to": "spain", "time": { "display": "16世纪初" }, "via": "西班牙征服者" },
-        { "from": "spain", "to": "africa", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
-        { "from": "africa", "to": "china", "time": { "display": "16世纪" } },
-        { "from": "africa", "to": "usa", "time": { "display": "18世纪" }, "via": "奴隶贸易" }
+        { "from": "south-america", "to": "caribbean", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "south-america", "to": "spain", "time": { "display": "16世纪初", "displayEn": "Early 16th century" }, "via": "西班牙征服者", "viaEn": "Spanish conquistadors" },
+        { "from": "spain", "to": "africa", "time": { "display": "16世纪", "displayEn": "16th century" }, "via": "葡萄牙商人", "viaEn": "Portuguese merchants" },
+        { "from": "africa", "to": "china", "time": { "display": "16世纪", "displayEn": "16th century" } },
+        { "from": "africa", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "奴隶贸易", "viaEn": "Slave trade" }
       ],
       "currentRegions": ["china", "india", "nigeria", "usa", "argentina", "shandong"],
-      "description": "南美原产的重要油料作物，花生酱是美国文化的标志性食品。"
+      "description": "南美原产的重要油料作物，花生酱是美国文化的标志性食品。",
+      "descriptionEn": "An important oil crop from South America. Peanut butter is an iconic American food."
     },
     {
       "id": "lentil",
       "name": "扁豆",
+      "nameEn": "Lentil",
       "alias": ["兵豆"],
       "category": "legume",
       "origin": {
         "location": "fertile-crescent",
-        "time": { "year": -8000, "display": "公元前8000年" }
+        "time": { "year": -8000, "display": "公元前8000年", "displayEn": "8000 BCE" }
       },
       "spreads": [
-        { "from": "fertile-crescent", "to": "egypt", "time": { "display": "公元前4000年" } },
-        { "from": "fertile-crescent", "to": "india", "time": { "display": "公元前3000年" } },
-        { "from": "fertile-crescent", "to": "mediterranean", "time": { "display": "公元前2000年" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "18世纪" } }
+        { "from": "fertile-crescent", "to": "egypt", "time": { "display": "公元前4000年", "displayEn": "4000 BCE" } },
+        { "from": "fertile-crescent", "to": "india", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "fertile-crescent", "to": "mediterranean", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "18世纪", "displayEn": "18th century" } }
       ],
       "currentRegions": ["canada", "india", "turkey", "usa", "australia"],
-      "description": "人类最早驯化的豆类之一，印度菜中的重要食材（dhal）。"
+      "description": "人类最早驯化的豆类之一，印度菜中的重要食材（dhal）。",
+      "descriptionEn": "One of the earliest legumes domesticated by humans, an important ingredient in Indian cuisine (dhal)."
     },
     {
       "id": "chickpea",
       "name": "鹰嘴豆",
+      "nameEn": "Chickpea",
       "alias": ["鸡豆"],
       "category": "legume",
       "origin": {
         "location": "turkey",
-        "time": { "year": -7500, "display": "公元前7500年" }
+        "time": { "year": -7500, "display": "公元前7500年", "displayEn": "7500 BCE" }
       },
       "spreads": [
-        { "from": "turkey", "to": "middle-east", "time": { "display": "公元前6000年" } },
-        { "from": "middle-east", "to": "india", "time": { "display": "公元前4000年" } },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前3000年" } },
-        { "from": "mediterranean", "to": "africa", "time": { "display": "公元前1000年" } }
+        { "from": "turkey", "to": "middle-east", "time": { "display": "公元前6000年", "displayEn": "6000 BCE" } },
+        { "from": "middle-east", "to": "india", "time": { "display": "公元前4000年", "displayEn": "4000 BCE" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "mediterranean", "to": "africa", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } }
       ],
       "currentRegions": ["india", "australia", "turkey", "pakistan", "myanmar"],
-      "description": "鹰嘴豆泥（hummus）的原料，中东和南亚的重要蛋白质来源。"
+      "description": "鹰嘴豆泥（hummus）的原料，中东和南亚的重要蛋白质来源。",
+      "descriptionEn": "The raw material for hummus, an important protein source in the Middle East and South Asia."
     },
     {
       "id": "almond",
       "name": "杏仁",
+      "nameEn": "Almond",
       "alias": ["巴旦木"],
       "category": "nut",
       "origin": {
         "location": "iran",
-        "time": { "year": -3000, "display": "公元前3000年" }
+        "time": { "year": -3000, "display": "公元前3000年", "displayEn": "3000 BCE" }
       },
       "spreads": [
-        { "from": "iran", "to": "middle-east", "time": { "display": "公元前2500年" } },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前2000年" } },
-        { "from": "mediterranean", "to": "spain", "time": { "display": "中世纪" }, "via": "阿拉伯人" },
-        { "from": "spain", "to": "usa", "time": { "display": "18世纪" }, "via": "西班牙传教士" }
+        { "from": "iran", "to": "middle-east", "time": { "display": "公元前2500年", "displayEn": "2500 BCE" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "mediterranean", "to": "spain", "time": { "display": "中世纪", "displayEn": "Medieval period" }, "via": "阿拉伯人", "viaEn": "Arabs" },
+        { "from": "spain", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "西班牙传教士", "viaEn": "Spanish missionaries" }
       ],
       "currentRegions": ["usa", "spain", "iran", "morocco", "australia"],
-      "description": "地中海地区的古老坚果，加州是世界最大产地，杏仁奶成为流行替代乳品。"
+      "description": "地中海地区的古老坚果，加州是世界最大产地，杏仁奶成为流行替代乳品。",
+      "descriptionEn": "An ancient nut from the Mediterranean. California is the world's largest producer. Almond milk has become a popular dairy alternative."
     },
     {
       "id": "walnut",
       "name": "核桃",
+      "nameEn": "Walnut",
       "alias": ["胡桃"],
       "category": "nut",
       "origin": {
         "location": "central-asia",
-        "time": { "year": -7000, "display": "公元前7000年" }
+        "time": { "year": -7000, "display": "公元前7000年", "displayEn": "7000 BCE" }
       },
       "spreads": [
-        { "from": "central-asia", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" },
-        { "from": "central-asia", "to": "mediterranean", "time": { "display": "公元前2000年" } },
-        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "17世纪" } }
+        { "from": "central-asia", "to": "china", "time": { "display": "汉代", "displayEn": "Han Dynasty" }, "via": "丝绸之路", "viaEn": "Silk Road" },
+        { "from": "central-asia", "to": "mediterranean", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代", "displayEn": "Roman Era" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["china", "usa", "iran", "turkey", "mexico", "yunnan", "xinjiang"],
-      "description": "中亚原产的健脑坚果，中国是世界最大生产国。"
+      "description": "中亚原产的健脑坚果，中国是世界最大生产国。",
+      "descriptionEn": "A brain-boosting nut from Central Asia. China is the world's largest producer."
     },
     {
       "id": "cashew",
       "name": "腰果",
+      "nameEn": "Cashew",
       "category": "nut",
       "origin": {
         "location": "brazil",
-        "time": { "display": "原产时间不明" }
+        "time": { "display": "原产时间不明", "displayEn": "Origin time unknown" }
       },
       "spreads": [
-        { "from": "brazil", "to": "india", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
-        { "from": "india", "to": "southeast-asia", "time": { "display": "17世纪" } },
-        { "from": "india", "to": "east-africa", "time": { "display": "17世纪" } }
+        { "from": "brazil", "to": "india", "time": { "display": "16世纪", "displayEn": "16th century" }, "via": "葡萄牙商人", "viaEn": "Portuguese merchants" },
+        { "from": "india", "to": "southeast-asia", "time": { "display": "17世纪", "displayEn": "17th century" } },
+        { "from": "india", "to": "east-africa", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["vietnam", "india", "ivory-coast", "brazil", "philippines"],
-      "description": "巴西原产坚果，越南是世界最大加工出口国，常用于亚洲烹饪。"
+      "description": "巴西原产坚果，越南是世界最大加工出口国，常用于亚洲烹饪。",
+      "descriptionEn": "A nut from Brazil. Vietnam is the world's largest processor and exporter, commonly used in Asian cooking."
     }
   ]
 }

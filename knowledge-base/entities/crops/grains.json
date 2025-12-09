@@ -3,139 +3,158 @@
     {
       "id": "wheat",
       "name": "小麦",
+      "nameEn": "Wheat",
       "category": "grain",
       "origin": {
         "location": "fertile-crescent",
-        "time": { "year": -9500, "display": "公元前9500年左右" }
+        "time": { "year": -9500, "display": "公元前9500年左右", "displayEn": "Around 9500 BCE" }
       },
       "spreads": [
-        { "from": "fertile-crescent", "to": "egypt", "time": { "year": -6000, "display": "公元前6000年" } },
-        { "from": "fertile-crescent", "to": "india", "time": { "year": -5000, "display": "公元前5000年" } },
-        { "from": "fertile-crescent", "to": "china", "time": { "year": -3000, "display": "公元前3000年" }, "via": "丝绸之路前身" },
-        { "from": "europe", "to": "north-america", "time": { "year": 1500, "display": "16世纪" }, "via": "欧洲殖民者" }
+        { "from": "fertile-crescent", "to": "egypt", "time": { "year": -6000, "display": "公元前6000年", "displayEn": "6000 BCE" } },
+        { "from": "fertile-crescent", "to": "india", "time": { "year": -5000, "display": "公元前5000年", "displayEn": "5000 BCE" } },
+        { "from": "fertile-crescent", "to": "china", "time": { "year": -3000, "display": "公元前3000年", "displayEn": "3000 BCE" }, "via": "丝绸之路前身", "viaEn": "Proto-Silk Road" },
+        { "from": "europe", "to": "north-america", "time": { "year": 1500, "display": "16世纪", "displayEn": "16th century" }, "via": "欧洲殖民者", "viaEn": "European colonizers" }
       ],
       "currentRegions": ["china", "india", "russia", "usa", "france", "shandong", "yellow-river", "xinjiang", "dongbei"],
-      "description": "人类最早驯化的作物之一，是全球最重要的粮食作物，面包、面条、馒头等主食的核心原料。"
+      "description": "人类最早驯化的作物之一，是全球最重要的粮食作物，面包、面条、馒头等主食的核心原料。",
+      "descriptionEn": "One of the earliest domesticated crops, it is the world's most important cereal, the core ingredient for bread, noodles, and steamed buns."
     },
     {
       "id": "rice",
       "name": "水稻",
+      "nameEn": "Rice",
       "alias": ["大米", "稻米"],
+      "aliasEn": ["Paddy"],
       "category": "grain",
       "origin": {
         "location": "yangtze-river",
-        "time": { "year": -9000, "display": "公元前9000年左右" }
+        "time": { "year": -9000, "display": "公元前9000年左右", "displayEn": "Around 9000 BCE" }
       },
       "spreads": [
-        { "from": "china", "to": "southeast-asia", "time": { "year": -2000, "display": "公元前2000年" } },
-        { "from": "china", "to": "india", "time": { "year": -1500, "display": "公元前1500年" } },
-        { "from": "china", "to": "japan", "time": { "year": -300, "display": "公元前300年" }, "via": "弥生时代移民" },
-        { "from": "china", "to": "korea", "time": { "year": -1000, "display": "公元前1000年" } },
-        { "from": "asia", "to": "europe", "time": { "display": "8世纪" }, "via": "阿拉伯商人" },
-        { "from": "europe", "to": "south-america", "time": { "year": 1500, "display": "16世纪" }, "via": "西班牙/葡萄牙殖民者" }
+        { "from": "china", "to": "southeast-asia", "time": { "year": -2000, "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "china", "to": "india", "time": { "year": -1500, "display": "公元前1500年", "displayEn": "1500 BCE" } },
+        { "from": "china", "to": "japan", "time": { "year": -300, "display": "公元前300年", "displayEn": "300 BCE" }, "via": "弥生时代移民", "viaEn": "Yayoi migration" },
+        { "from": "china", "to": "korea", "time": { "year": -1000, "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "asia", "to": "europe", "time": { "display": "8世纪", "displayEn": "8th century" }, "via": "阿拉伯商人", "viaEn": "Arab merchants" },
+        { "from": "europe", "to": "south-america", "time": { "year": 1500, "display": "16世纪", "displayEn": "16th century" }, "via": "西班牙/葡萄牙殖民者", "viaEn": "Spanish/Portuguese colonizers" }
       ],
       "currentRegions": ["china", "india", "indonesia", "vietnam", "thailand", "japan", "yangtze-river", "guangdong", "jiangsu", "zhejiang", "hunan", "hubei"],
-      "description": "养活全球一半以上人口的主粮，尤其在亚洲地区具有核心地位。"
+      "description": "养活全球一半以上人口的主粮，尤其在亚洲地区具有核心地位。",
+      "descriptionEn": "The staple food that feeds more than half of the world's population, especially central to Asian cuisines."
     },
     {
       "id": "corn",
       "name": "玉米",
+      "nameEn": "Corn",
       "alias": ["包谷", "苞米"],
+      "aliasEn": ["Maize"],
       "category": "grain",
       "origin": {
         "location": "mesoamerica",
-        "time": { "year": -7000, "display": "公元前7000年" }
+        "time": { "year": -7000, "display": "公元前7000年", "displayEn": "7000 BCE" }
       },
       "spreads": [
-        { "from": "mesoamerica", "to": "south-america", "time": { "year": -4000, "display": "公元前4000年" } },
-        { "from": "mesoamerica", "to": "north-america", "time": { "year": -2000, "display": "公元前2000年" } },
-        { "from": "mexico", "to": "spain", "time": { "year": 1493, "display": "1493年" }, "via": "哥伦布第二次航行" },
-        { "from": "spain", "to": "europe", "time": { "display": "16世纪" } },
-        { "from": "europe", "to": "africa", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
-        { "from": "europe", "to": "china", "time": { "display": "16世纪中期" }, "via": "海上丝绸之路" }
+        { "from": "mesoamerica", "to": "south-america", "time": { "year": -4000, "display": "公元前4000年", "displayEn": "4000 BCE" } },
+        { "from": "mesoamerica", "to": "north-america", "time": { "year": -2000, "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "mexico", "to": "spain", "time": { "year": 1493, "display": "1493年", "displayEn": "1493" }, "via": "哥伦布第二次航行", "viaEn": "Columbus's second voyage" },
+        { "from": "spain", "to": "europe", "time": { "display": "16世纪", "displayEn": "16th century" } },
+        { "from": "europe", "to": "africa", "time": { "display": "16世纪", "displayEn": "16th century" }, "via": "葡萄牙商人", "viaEn": "Portuguese merchants" },
+        { "from": "europe", "to": "china", "time": { "display": "16世纪中期", "displayEn": "Mid-16th century" }, "via": "海上丝绸之路", "viaEn": "Maritime Silk Road" }
       ],
       "currentRegions": ["usa", "china", "brazil", "argentina", "mexico", "dongbei", "shandong", "inner-mongolia"],
-      "description": "美洲原住民的神圣作物，现为全球产量最高的谷物，广泛用于食品和饲料。"
+      "description": "美洲原住民的神圣作物，现为全球产量最高的谷物，广泛用于食品和饲料。",
+      "descriptionEn": "Sacred crop of Native Americans, now the world's highest-yielding cereal, widely used for food and feed."
     },
     {
       "id": "millet",
       "name": "小米",
+      "nameEn": "Millet",
       "alias": ["粟", "谷子"],
+      "aliasEn": ["Foxtail millet"],
       "category": "grain",
       "origin": {
         "location": "yellow-river",
-        "time": { "year": -8000, "display": "公元前8000年" }
+        "time": { "year": -8000, "display": "公元前8000年", "displayEn": "8000 BCE" }
       },
       "spreads": [
-        { "from": "china", "to": "central-asia", "time": { "display": "公元前3000年" } },
-        { "from": "china", "to": "india", "time": { "display": "公元前2000年" } },
-        { "from": "asia", "to": "europe", "time": { "display": "公元前1500年" } }
+        { "from": "china", "to": "central-asia", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "china", "to": "india", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "asia", "to": "europe", "time": { "display": "公元前1500年", "displayEn": "1500 BCE" } }
       ],
       "currentRegions": ["china", "india", "nigeria", "russia", "yellow-river", "inner-mongolia", "shandong", "dongbei"],
-      "description": "中国北方最古老的粮食作物，曾是华夏文明的主粮，耐旱性极强。"
+      "description": "中国北方最古老的粮食作物，曾是华夏文明的主粮，耐旱性极强。",
+      "descriptionEn": "The oldest grain crop in northern China, once the staple of Chinese civilization, extremely drought-resistant."
     },
     {
       "id": "sorghum",
       "name": "高粱",
+      "nameEn": "Sorghum",
       "category": "grain",
       "origin": {
         "location": "horn-of-africa",
-        "time": { "year": -6000, "display": "公元前6000年" }
+        "time": { "year": -6000, "display": "公元前6000年", "displayEn": "6000 BCE" }
       },
       "spreads": [
-        { "from": "africa", "to": "india", "time": { "display": "公元前2000年" } },
-        { "from": "india", "to": "china", "time": { "display": "公元前1000年" } },
-        { "from": "africa", "to": "south-america", "time": { "display": "16世纪" }, "via": "奴隶贸易" }
+        { "from": "africa", "to": "india", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "india", "to": "china", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "africa", "to": "south-america", "time": { "display": "16世纪", "displayEn": "16th century" }, "via": "奴隶贸易", "viaEn": "Slave trade" }
       ],
       "currentRegions": ["usa", "nigeria", "india", "china", "mexico", "dongbei", "sichuan"],
-      "description": "非洲起源的重要谷物，耐旱耐热，是酿造白酒的重要原料。"
+      "description": "非洲起源的重要谷物，耐旱耐热，是酿造白酒的重要原料。",
+      "descriptionEn": "An important grain originating from Africa, drought and heat resistant, a key ingredient in Chinese baijiu."
     },
     {
       "id": "barley",
       "name": "大麦",
+      "nameEn": "Barley",
       "category": "grain",
       "origin": {
         "location": "fertile-crescent",
-        "time": { "year": -9000, "display": "公元前9000年" }
+        "time": { "year": -9000, "display": "公元前9000年", "displayEn": "9000 BCE" }
       },
       "spreads": [
-        { "from": "fertile-crescent", "to": "egypt", "time": { "display": "公元前6000年" } },
-        { "from": "fertile-crescent", "to": "europe", "time": { "display": "公元前5000年" } },
-        { "from": "fertile-crescent", "to": "india", "time": { "display": "公元前4000年" } },
-        { "from": "fertile-crescent", "to": "china", "time": { "display": "公元前2000年" } }
+        { "from": "fertile-crescent", "to": "egypt", "time": { "display": "公元前6000年", "displayEn": "6000 BCE" } },
+        { "from": "fertile-crescent", "to": "europe", "time": { "display": "公元前5000年", "displayEn": "5000 BCE" } },
+        { "from": "fertile-crescent", "to": "india", "time": { "display": "公元前4000年", "displayEn": "4000 BCE" } },
+        { "from": "fertile-crescent", "to": "china", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } }
       ],
       "currentRegions": ["russia", "germany", "france", "canada", "australia"],
-      "description": "与小麦同时被驯化，是啤酒酿造的核心原料，也用于饲料和健康食品。"
+      "description": "与小麦同时被驯化，是啤酒酿造的核心原料，也用于饲料和健康食品。",
+      "descriptionEn": "Domesticated alongside wheat, the core ingredient for beer brewing, also used for feed and health foods."
     },
     {
       "id": "oat",
       "name": "燕麦",
+      "nameEn": "Oat",
       "category": "grain",
       "origin": {
         "location": "anatolia",
-        "time": { "year": -2000, "display": "公元前2000年" }
+        "time": { "year": -2000, "display": "公元前2000年", "displayEn": "2000 BCE" }
       },
       "spreads": [
-        { "from": "anatolia", "to": "europe", "time": { "display": "公元前1500年" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "17世纪" }, "via": "欧洲移民" }
+        { "from": "anatolia", "to": "europe", "time": { "display": "公元前1500年", "displayEn": "1500 BCE" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "17世纪", "displayEn": "17th century" }, "via": "欧洲移民", "viaEn": "European immigrants" }
       ],
       "currentRegions": ["russia", "canada", "usa", "australia", "poland"],
-      "description": "起初被视为杂草，后成为重要的健康谷物，燕麦片是现代流行早餐。"
+      "description": "起初被视为杂草，后成为重要的健康谷物，燕麦片是现代流行早餐。",
+      "descriptionEn": "Initially considered a weed, later became an important health grain, oatmeal is a popular modern breakfast."
     },
     {
       "id": "rye",
       "name": "黑麦",
+      "nameEn": "Rye",
       "category": "grain",
       "origin": {
         "location": "anatolia",
-        "time": { "year": -3000, "display": "公元前3000年左右" }
+        "time": { "year": -3000, "display": "公元前3000年左右", "displayEn": "Around 3000 BCE" }
       },
       "spreads": [
-        { "from": "anatolia", "to": "europe", "time": { "display": "公元前2000年" } },
-        { "from": "europe", "to": "russia", "time": { "display": "公元前1000年" } }
+        { "from": "anatolia", "to": "europe", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "europe", "to": "russia", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } }
       ],
       "currentRegions": ["russia", "germany", "poland", "belarus"],
-      "description": "耐寒耐贫瘠的谷物，是黑面包和伏特加的原料，在北欧和东欧很重要。"
+      "description": "耐寒耐贫瘠的谷物，是黑面包和伏特加的原料，在北欧和东欧很重要。",
+      "descriptionEn": "A cold and poor soil resistant grain, ingredient for rye bread and vodka, important in Northern and Eastern Europe."
     }
   ]
 }

@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, onMounted, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { dataService } from '@/services/dataService'
 import { timelineService } from '@/services/timelineService'
-import { cropCategoryIcons, foodIcons, getLocationIcon, ERAS } from '@/types'
+import { languageService, currentLang } from '@/services/languageService'
+import { cropCategoryIcons, foodIcons, getLocationIcon } from '@/types'
 
 const router = useRouter()
 const route = useRoute()
@@ -23,27 +24,33 @@ watch(activeTab, (newTab) => {
   router.replace({ query: { ...route.query, tab: newTab.toString() } })
 })
 
-const cropCategories = [
-  { key: 'grain', name: '谷物' },
-  { key: 'vegetable', name: '蔬菜' },
-  { key: 'fruit', name: '水果' },
-  { key: 'legume', name: '豆类' },
-  { key: 'spice', name: '香料' },
-  { key: 'beverage', name: '饮料作物' },
-  { key: 'oil', name: '油料作物' },
-  { key: 'sugar', name: '糖料作物' },
-  { key: 'nut', name: '坚果' }
-]
+// 语言切换
+function toggleLanguage() {
+  languageService.toggleLanguage()
+}
 
-const foodCategories = [
-  { key: 'staple', name: '主食' },
-  { key: 'dish', name: '菜肴' },
-  { key: 'beverage', name: '饮品' },
-  { key: 'dessert', name: '甜点' },
-  { key: 'snack', name: '小吃' },
-  { key: 'condiment', name: '调味品' },
-  { key: 'preserved', name: '腌制食品' }
-]
+// UI 文本
+const ui = computed(() => languageService.ui)
+const t = (textObj: any) => languageService.t(textObj)
+
+// 时代数据（本地化）
+const eras = computed(() => languageService.getEras())
+
+// 作物类别
+const cropCategories = computed(() => [
+  'grain', 'vegetable', 'fruit', 'legume', 'spice', 'beverage', 'oil', 'sugar', 'nut'
+].map(key => ({
+  key,
+  name: languageService.getCropCategoryName(key)
+})))
+
+// 食物类别
+const foodCategories = computed(() => [
+  'staple', 'dish', 'beverage', 'dessert', 'snack', 'condiment', 'preserved'
+].map(key => ({
+  key,
+  name: languageService.getFoodCategoryName(key)
+})))
 
 const continents = dataService.getContinents()
 
@@ -65,18 +72,19 @@ function getContinentSummary(continentId: string): string {
   const origins = dataService.getOriginsByLocation(continentId)
   const countries = dataService.getCountriesByContinent(continentId)
   const parts: string[] = []
+  const isEn = languageService.isEnglish
 
   if (countries.length > 0) {
-    parts.push(`${countries.length}个国家`)
+    parts.push(isEn ? `${countries.length} countries` : `${countries.length}个国家`)
   }
   if (origins.crops.length > 0) {
-    parts.push(`${origins.crops.length}种起源作物`)
+    parts.push(isEn ? `${origins.crops.length} origin crops` : `${origins.crops.length}种起源作物`)
   }
   if (origins.foods.length > 0) {
-    parts.push(`${origins.foods.length}种起源食物`)
+    parts.push(isEn ? `${origins.foods.length} origin foods` : `${origins.foods.length}种起源食物`)
   }
 
-  return parts.length > 0 ? parts.join(' · ') : '点击探索'
+  return parts.length > 0 ? parts.join(' · ') : t(ui.value.empty.clickToExplore)
 }
 
 function goToEra(eraId: string) {
@@ -87,8 +95,13 @@ function getEraEventCount(eraId: string): number {
   return timelineService.getEventCountByEra(eraId)
 }
 
-function getEraYearRange(era: typeof ERAS[0]): string {
-  return timelineService.getEraYearRange(era)
+function getEraYearRange(era: { startYear: number, endYear: number }): string {
+  return timelineService.getEraYearRange(era as any)
+}
+
+// 获取大洲名称（本地化）
+function getContinentName(continent: any): string {
+  return languageService.getName(continent)
 }
 </script>
 
@@ -96,8 +109,15 @@ function getEraYearRange(era: typeof ERAS[0]): string {
   <div class="container">
     <!-- 头部 -->
     <div class="header">
-      <div class="header-title">食物全球史</div>
-      <div class="header-subtitle">探索作物与食物的起源与传播</div>
+      <div class="header-nav">
+        <div class="header-main">
+          <div class="header-title">{{ t(ui.app.title) }}</div>
+          <div class="header-subtitle">{{ t(ui.app.subtitle) }}</div>
+        </div>
+        <button class="lang-toggle-header" @click="toggleLanguage">
+          {{ currentLang === 'zh' ? 'EN' : '中文' }}
+        </button>
+      </div>
     </div>
 
     <!-- 搜索栏 -->
@@ -106,7 +126,7 @@ function getEraYearRange(era: typeof ERAS[0]): string {
       <input
         v-model="searchText"
         type="text"
-        placeholder="搜索作物、食物或地点..."
+        :placeholder="t(ui.placeholders.searchCropsFoodsPlaces)"
         @keyup.enter="handleSearch"
       />
     </div>
@@ -117,29 +137,29 @@ function getEraYearRange(era: typeof ERAS[0]): string {
         class="tab-item"
         :class="{ active: activeTab === 0 }"
         @click="activeTab = 0"
-      >作物</div>
+      >{{ t(ui.tabs.crops) }}</div>
       <div
         class="tab-item"
         :class="{ active: activeTab === 1 }"
         @click="activeTab = 1"
-      >食物</div>
+      >{{ t(ui.tabs.foods) }}</div>
       <div
         class="tab-item"
         :class="{ active: activeTab === 2 }"
         @click="activeTab = 2"
-      >地区</div>
+      >{{ t(ui.tabs.regions) }}</div>
       <div
         class="tab-item"
         :class="{ active: activeTab === 3 }"
         @click="activeTab = 3"
-      >时间线</div>
+      >{{ t(ui.tabs.timeline) }}</div>
     </div>
 
     <!-- 内容区域 -->
     <div class="content">
       <!-- 作物分类 -->
       <template v-if="activeTab === 0">
-        <div class="section-title">按类别探索作物</div>
+        <div class="section-title">{{ t(ui.sections.exploreByCropCategory) }}</div>
         <div class="category-grid">
           <div
             v-for="item in cropCategories"
@@ -155,7 +175,7 @@ function getEraYearRange(era: typeof ERAS[0]): string {
 
       <!-- 食物分类 -->
       <template v-else-if="activeTab === 1">
-        <div class="section-title">按类别探索食物</div>
+        <div class="section-title">{{ t(ui.sections.exploreByFoodCategory) }}</div>
         <div class="category-grid">
           <div
             v-for="item in foodCategories"
@@ -171,7 +191,7 @@ function getEraYearRange(era: typeof ERAS[0]): string {
 
       <!-- 地区 -->
       <template v-else-if="activeTab === 2">
-        <div class="section-title">按地区探索</div>
+        <div class="section-title">{{ t(ui.sections.exploreByRegion) }}</div>
         <div
           v-for="continent in continents"
           :key="continent.id"
@@ -180,7 +200,7 @@ function getEraYearRange(era: typeof ERAS[0]): string {
         >
           <div class="list-card-icon">{{ getLocationIcon(continent.id, 'continent') }}</div>
           <div class="list-card-content">
-            <div class="list-card-title">{{ continent.name }}</div>
+            <div class="list-card-title">{{ getContinentName(continent) }}</div>
             <div class="list-card-subtitle">{{ getContinentSummary(continent.id) }}</div>
           </div>
           <div class="list-card-arrow">›</div>
@@ -189,9 +209,9 @@ function getEraYearRange(era: typeof ERAS[0]): string {
 
       <!-- 时间线 -->
       <template v-else>
-        <div class="section-title">按时代探索历史</div>
+        <div class="section-title">{{ t(ui.sections.exploreByEra) }}</div>
         <div
-          v-for="era in ERAS"
+          v-for="era in eras"
           :key="era.id"
           class="era-card"
           @click="goToEra(era.id)"
@@ -204,7 +224,7 @@ function getEraYearRange(era: typeof ERAS[0]): string {
           </div>
           <div class="era-card-stats">
             <span class="event-count">{{ getEraEventCount(era.id) }}</span>
-            <span class="event-label">事件</span>
+            <span class="event-label">{{ t(ui.units.events) }}</span>
           </div>
         </div>
       </template>

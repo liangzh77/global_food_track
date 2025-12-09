@@ -3,177 +3,197 @@
     {
       "id": "soy-sauce",
       "name": "酱油",
+      "nameEn": "Soy Sauce",
       "category": "condiment",
       "ingredients": ["soybean", "wheat"],
       "origin": {
         "location": "china",
-        "time": { "display": "西汉（约公元前200年）" }
+        "time": { "display": "西汉（约公元前200年）", "displayEn": "Western Han Dynasty (around 200 BCE)" }
       },
       "spreads": [
-        { "from": "china", "to": "japan", "time": { "display": "7世纪" }, "via": "遣唐使" },
-        { "from": "china", "to": "korea", "time": { "display": "唐代" } },
-        { "from": "china", "to": "southeast-asia", "time": { "display": "宋代" } },
-        { "from": "japan", "to": "europe", "time": { "display": "17世纪" }, "via": "荷兰商人" }
+        { "from": "china", "to": "japan", "time": { "display": "7世纪", "displayEn": "7th century" }, "via": "遣唐使", "viaEn": "Japanese envoys to Tang China" },
+        { "from": "china", "to": "korea", "time": { "display": "唐代", "displayEn": "Tang Dynasty" } },
+        { "from": "china", "to": "southeast-asia", "time": { "display": "宋代", "displayEn": "Song Dynasty" } },
+        { "from": "japan", "to": "europe", "time": { "display": "17世纪", "displayEn": "17th century" }, "via": "荷兰商人", "viaEn": "Dutch merchants" }
       ],
       "currentRegions": ["china", "japan", "korea", "southeast-asia", "usa", "guangdong", "fujian"],
-      "description": "东亚烹饪的灵魂调味料，日本万字酱油和中国生抽老抽各有特色。"
+      "description": "东亚烹饪的灵魂调味料，日本万字酱油和中国生抽老抽各有特色。",
+      "descriptionEn": "The soul of East Asian cooking. Japanese Kikkoman and Chinese light/dark soy sauce each have unique characteristics."
     },
     {
       "id": "ketchup",
       "name": "番茄酱",
+      "nameEn": "Ketchup",
       "alias": ["茄汁"],
       "category": "condiment",
       "ingredients": ["tomato"],
       "origin": {
         "location": "usa",
-        "time": { "year": 1876, "display": "1876年" }
+        "time": { "year": 1876, "display": "1876年", "displayEn": "1876" }
       },
       "spreads": [
-        { "from": "usa", "to": "europe", "time": { "display": "19世纪末" } },
-        { "from": "usa", "to": "asia", "time": { "display": "20世纪" } }
+        { "from": "usa", "to": "europe", "time": { "display": "19世纪末", "displayEn": "Late 19th century" } },
+        { "from": "usa", "to": "asia", "time": { "display": "20世纪", "displayEn": "20th century" } }
       ],
       "currentRegions": ["usa", "europe", "asia", "south-america"],
-      "description": "亨氏番茄酱定义了现代番茄酱，薯条和汉堡的经典搭配。"
+      "description": "亨氏番茄酱定义了现代番茄酱，薯条和汉堡的经典搭配。",
+      "descriptionEn": "Heinz ketchup defined modern ketchup. The classic pairing with fries and hamburgers."
     },
     {
       "id": "tofu",
       "name": "豆腐",
+      "nameEn": "Tofu",
       "category": "dish",
       "ingredients": ["soybean"],
       "origin": {
         "location": "china",
-        "time": { "display": "西汉（约公元前160年）" }
+        "time": { "display": "西汉（约公元前160年）", "displayEn": "Western Han Dynasty (around 160 BCE)" }
       },
       "spreads": [
-        { "from": "china", "to": "japan", "time": { "display": "奈良时代（8世纪）" } },
-        { "from": "china", "to": "korea", "time": { "display": "唐代" } },
-        { "from": "china", "to": "southeast-asia", "time": { "display": "宋代" } },
-        { "from": "asia", "to": "europe", "time": { "display": "18世纪" } },
-        { "from": "asia", "to": "usa", "time": { "display": "20世纪" } }
+        { "from": "china", "to": "japan", "time": { "display": "奈良时代（8世纪）", "displayEn": "Nara period (8th century)" } },
+        { "from": "china", "to": "korea", "time": { "display": "唐代", "displayEn": "Tang Dynasty" } },
+        { "from": "china", "to": "southeast-asia", "time": { "display": "宋代", "displayEn": "Song Dynasty" } },
+        { "from": "asia", "to": "europe", "time": { "display": "18世纪", "displayEn": "18th century" } },
+        { "from": "asia", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" } }
       ],
       "currentRegions": ["china", "japan", "korea", "southeast-asia", "usa", "sichuan"],
-      "description": "相传淮南王刘安发明，东亚素食蛋白质的主要来源，如今成为全球健康食品。"
+      "description": "相传淮南王刘安发明，东亚素食蛋白质的主要来源，如今成为全球健康食品。",
+      "descriptionEn": "Allegedly invented by Liu An, Prince of Huainan. The main vegetarian protein source in East Asia, now a global health food."
     },
     {
       "id": "chocolate",
       "name": "巧克力",
+      "nameEn": "Chocolate",
       "category": "dessert",
       "ingredients": ["cacao", "sugarcane"],
       "origin": {
         "location": "switzerland",
-        "time": { "year": 1847, "display": "1847年" }
+        "time": { "year": 1847, "display": "1847年", "displayEn": "1847" }
       },
       "spreads": [
-        { "from": "europe", "to": "usa", "time": { "display": "19世纪" } },
-        { "from": "europe", "to": "asia", "time": { "display": "20世纪" } }
+        { "from": "europe", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" } },
+        { "from": "europe", "to": "asia", "time": { "display": "20世纪", "displayEn": "20th century" } }
       ],
       "currentRegions": ["switzerland", "belgium", "usa", "germany", "japan"],
-      "description": "瑞士人发明了现代固体巧克力，瑞士和比利时巧克力是高品质的代名词。"
+      "description": "瑞士人发明了现代固体巧克力，瑞士和比利时巧克力是高品质的代名词。",
+      "descriptionEn": "The Swiss invented modern solid chocolate. Swiss and Belgian chocolates are synonymous with high quality."
     },
     {
       "id": "ice-cream",
       "name": "冰淇淋",
+      "nameEn": "Ice Cream",
       "alias": ["冰激凌"],
       "category": "dessert",
       "ingredients": ["sugarcane"],
       "origin": {
         "location": "china",
-        "time": { "display": "唐代（约公元700年）" }
+        "time": { "display": "唐代（约公元700年）", "displayEn": "Tang Dynasty (around 700 CE)" }
       },
       "spreads": [
-        { "from": "china", "to": "middle-east", "time": { "display": "中世纪" } },
-        { "from": "middle-east", "to": "italy", "time": { "display": "13世纪" }, "via": "马可波罗传说" },
-        { "from": "italy", "to": "france", "time": { "display": "16世纪" } },
-        { "from": "europe", "to": "usa", "time": { "display": "18世纪" } }
+        { "from": "china", "to": "middle-east", "time": { "display": "中世纪", "displayEn": "Medieval period" } },
+        { "from": "middle-east", "to": "italy", "time": { "display": "13世纪", "displayEn": "13th century" }, "via": "马可波罗传说", "viaEn": "Marco Polo legend" },
+        { "from": "italy", "to": "france", "time": { "display": "16世纪", "displayEn": "16th century" } },
+        { "from": "europe", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" } }
       ],
       "currentRegions": ["usa", "italy", "france", "japan", "china"],
-      "description": "从唐代的冰酪到意大利的Gelato到美国的商业冰淇淋，不断演变。"
+      "description": "从唐代的冰酪到意大利的Gelato到美国的商业冰淇淋，不断演变。",
+      "descriptionEn": "Evolved from Tang Dynasty frozen treats to Italian gelato to American commercial ice cream."
     },
     {
       "id": "cheese",
       "name": "奶酪",
+      "nameEn": "Cheese",
       "alias": ["芝士", "起司"],
       "category": "preserved",
       "ingredients": [],
       "origin": {
         "location": "middle-east",
-        "time": { "year": -6000, "display": "公元前6000年" }
+        "time": { "year": -6000, "display": "公元前6000年", "displayEn": "6000 BCE" }
       },
       "spreads": [
-        { "from": "middle-east", "to": "europe", "time": { "display": "公元前3000年" } },
-        { "from": "europe", "to": "france", "time": { "display": "罗马时代" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "17世纪" } }
+        { "from": "middle-east", "to": "europe", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "europe", "to": "france", "time": { "display": "罗马时代", "displayEn": "Roman Era" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["france", "italy", "netherlands", "usa", "germany"],
-      "description": "传说游牧民族无意间发现，法国有400多种奶酪，是西方饮食的重要组成。"
+      "description": "传说游牧民族无意间发现，法国有400多种奶酪，是西方饮食的重要组成。",
+      "descriptionEn": "Legend says nomads discovered it accidentally. France has over 400 cheese varieties, an important part of Western cuisine."
     },
     {
       "id": "miso",
       "name": "味噌",
+      "nameEn": "Miso",
       "category": "condiment",
       "ingredients": ["soybean", "rice"],
       "origin": {
         "location": "japan",
-        "time": { "display": "飞鸟时代（约公元700年）" }
+        "time": { "display": "飞鸟时代（约公元700年）", "displayEn": "Asuka period (around 700 CE)" }
       },
       "spreads": [
-        { "from": "japan", "to": "usa", "time": { "display": "20世纪" } },
-        { "from": "japan", "to": "europe", "time": { "display": "20世纪后期" } }
+        { "from": "japan", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" } },
+        { "from": "japan", "to": "europe", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
       ],
       "currentRegions": ["japan", "usa", "europe"],
-      "description": "日本对中国酱的改良，味噌汤是日本家庭的日常饮食。"
+      "description": "日本对中国酱的改良，味噌汤是日本家庭的日常饮食。",
+      "descriptionEn": "Japan's adaptation of Chinese fermented paste. Miso soup is a daily staple in Japanese households."
     },
     {
       "id": "olive-oil",
       "name": "橄榄油",
+      "nameEn": "Olive Oil",
       "category": "condiment",
       "ingredients": ["olive"],
       "origin": {
         "location": "mediterranean",
-        "time": { "year": -4000, "display": "公元前4000年" }
+        "time": { "year": -4000, "display": "公元前4000年", "displayEn": "4000 BCE" }
       },
       "spreads": [
-        { "from": "mediterranean", "to": "greece", "time": { "display": "公元前3000年" } },
-        { "from": "mediterranean", "to": "italy", "time": { "display": "公元前1000年" } },
-        { "from": "mediterranean", "to": "spain", "time": { "display": "公元前1000年" } }
+        { "from": "mediterranean", "to": "greece", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "mediterranean", "to": "italy", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "mediterranean", "to": "spain", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } }
       ],
       "currentRegions": ["spain", "italy", "greece", "turkey", "morocco"],
-      "description": "地中海饮食的基石，被称为液体黄金，现代健康饮食的明星。"
+      "description": "地中海饮食的基石，被称为液体黄金，现代健康饮食的明星。",
+      "descriptionEn": "The cornerstone of Mediterranean diet, called liquid gold. A star of modern healthy eating."
     },
     {
       "id": "hummus",
       "name": "鹰嘴豆泥",
+      "nameEn": "Hummus",
       "category": "dish",
       "ingredients": ["chickpea", "sesame", "olive", "garlic", "lemon"],
       "origin": {
         "location": "middle-east",
-        "time": { "display": "13世纪" }
+        "time": { "display": "13世纪", "displayEn": "13th century" }
       },
       "spreads": [
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "中世纪" } },
-        { "from": "middle-east", "to": "europe", "time": { "display": "20世纪" } },
-        { "from": "middle-east", "to": "usa", "time": { "display": "20世纪后期" } }
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "中世纪", "displayEn": "Medieval period" } },
+        { "from": "middle-east", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } },
+        { "from": "middle-east", "to": "usa", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
       ],
       "currentRegions": ["middle-east", "israel", "europe", "usa"],
-      "description": "中东的经典蘸酱，搭配皮塔饼食用，如今成为全球健康食品。"
+      "description": "中东的经典蘸酱，搭配皮塔饼食用，如今成为全球健康食品。",
+      "descriptionEn": "A classic Middle Eastern dip, eaten with pita bread. Now a global health food."
     },
     {
       "id": "croissant",
       "name": "可颂",
+      "nameEn": "Croissant",
       "alias": ["羊角面包", "牛角包"],
       "category": "staple",
       "ingredients": ["wheat"],
       "origin": {
         "location": "austria",
-        "time": { "year": 1683, "display": "1683年" }
+        "time": { "year": 1683, "display": "1683年", "displayEn": "1683" }
       },
       "spreads": [
-        { "from": "austria", "to": "france", "time": { "year": 1770, "display": "1770年" }, "via": "玛丽·安托瓦内特" },
-        { "from": "france", "to": "europe", "time": { "display": "19世纪" } },
-        { "from": "france", "to": "usa", "time": { "display": "20世纪" } }
+        { "from": "austria", "to": "france", "time": { "year": 1770, "display": "1770年", "displayEn": "1770" }, "via": "玛丽·安托瓦内特", "viaEn": "Marie Antoinette" },
+        { "from": "france", "to": "europe", "time": { "display": "19世纪", "displayEn": "19th century" } },
+        { "from": "france", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" } }
       ],
       "currentRegions": ["france", "europe", "usa", "asia"],
-      "description": "为庆祝维也纳击败奥斯曼帝国而创造，法国人将其发扬光大成为早餐代表。"
+      "description": "为庆祝维也纳击败奥斯曼帝国而创造，法国人将其发扬光大成为早餐代表。",
+      "descriptionEn": "Created to celebrate Vienna's victory over the Ottoman Empire. The French perfected it as a breakfast icon."
     }
   ]
 }

@@ -53,6 +53,11 @@ body {
   background-color: var(--color-primary);
   padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
   color: var(--color-text-on-primary);
+  position: relative;
+}
+
+.header-main {
+  flex: 1;
 }
 
 .header-title {
@@ -66,6 +71,47 @@ body {
   opacity: 0.9;
 }
 
+/* 语言切换按钮 */
+.lang-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 居中语言切换按钮 */
+.lang-toggle-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 10;
+}
+
+.lang-toggle-center:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .header-back {
   display: flex;
   align-items: center;
@@ -75,22 +121,59 @@ body {
 
 .header-nav {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
 .back-btn,
 .home-btn {
-  background: none;
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: var(--color-text-on-primary);
   font-size: var(--font-xl);
   cursor: pointer;
   padding: var(--spacing-xs);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.back-btn:hover,
+.home-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .home-btn {
-  font-size: 32px;
+  font-size: 24px;
+}
+
+/* 头部右上角语言切换按钮（在home按钮下方） */
+.lang-toggle-header {
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: var(--font-xs);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-toggle-header:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 /* 搜索栏 */

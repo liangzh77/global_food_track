@@ -5,9 +5,14 @@
       <div class="header-nav">
         <div class="header-back">
           <button class="back-btn" @click="goBack">←</button>
-          <div class="header-title">{{ era?.name || '时代详情' }}</div>
+          <div class="header-title">{{ era?.name || t(ui.tabs.timeline) }}</div>
         </div>
-        <button class="home-btn" @click="goHome">⌂</button>
+        <div class="header-right">
+          <button class="home-btn" @click="goHome">⌂</button>
+          <button class="lang-toggle-header" @click="toggleLanguage">
+            {{ currentLang === 'zh' ? 'EN' : '中文' }}
+          </button>
+        </div>
       </div>
       <div class="header-content">
         <span class="era-icon">{{ era?.icon }}</span>
@@ -24,29 +29,29 @@
         <button
           :class="['filter-btn', { active: filter.entityType === 'all' }]"
           @click="filter.entityType = 'all'"
-        >全部</button>
+        >{{ t(ui.filters.all) }}</button>
         <button
           :class="['filter-btn', { active: filter.entityType === 'crop' }]"
           @click="filter.entityType = 'crop'"
-        >作物</button>
+        >{{ t(ui.filters.crop) }}</button>
         <button
           :class="['filter-btn', { active: filter.entityType === 'food' }]"
           @click="filter.entityType = 'food'"
-        >食物</button>
+        >{{ t(ui.filters.food) }}</button>
       </div>
       <div class="filter-group">
         <button
           :class="['filter-btn', { active: filter.eventType === 'all' }]"
           @click="filter.eventType = 'all'"
-        >全部</button>
+        >{{ t(ui.filters.all) }}</button>
         <button
           :class="['filter-btn', { active: filter.eventType === 'origin' }]"
           @click="filter.eventType = 'origin'"
-        >起源</button>
+        >{{ t(ui.labels.origin) }}</button>
         <button
           :class="['filter-btn', { active: filter.eventType === 'spread' }]"
           @click="filter.eventType = 'spread'"
-        >传播</button>
+        >{{ t(ui.labels.spread) }}</button>
       </div>
     </div>
 
@@ -55,19 +60,19 @@
       <input
         v-model="filter.keyword"
         type="text"
-        placeholder="搜索作物、食物或地点..."
+        :placeholder="t(ui.placeholders.searchCropsFoodsPlaces)"
         class="search-input"
       />
     </div>
 
     <!-- 统计信息 -->
     <div class="stats-bar">
-      <span>共 {{ filteredEvents.length }} 个事件</span>
+      <span>{{ currentLang === 'en' ? `Total ${filteredEvents.length} events` : `共 ${filteredEvents.length} 个事件` }}</span>
       <div class="stats-detail">
-        <span v-if="stats.cropOrigin" class="stat crop-origin">{{ stats.cropOrigin }}作物起源</span>
-        <span v-if="stats.cropSpread" class="stat crop-spread">{{ stats.cropSpread }}作物传播</span>
-        <span v-if="stats.foodOrigin" class="stat food-origin">{{ stats.foodOrigin }}食物起源</span>
-        <span v-if="stats.foodSpread" class="stat food-spread">{{ stats.foodSpread }}食物传播</span>
+        <span v-if="stats.cropOrigin" class="stat crop-origin">{{ stats.cropOrigin }}{{ currentLang === 'en' ? ' Crop Origins' : '作物起源' }}</span>
+        <span v-if="stats.cropSpread" class="stat crop-spread">{{ stats.cropSpread }}{{ currentLang === 'en' ? ' Crop Spreads' : '作物传播' }}</span>
+        <span v-if="stats.foodOrigin" class="stat food-origin">{{ stats.foodOrigin }}{{ currentLang === 'en' ? ' Food Origins' : '食物起源' }}</span>
+        <span v-if="stats.foodSpread" class="stat food-spread">{{ stats.foodSpread }}{{ currentLang === 'en' ? ' Food Spreads' : '食物传播' }}</span>
       </div>
     </div>
 
@@ -88,16 +93,16 @@
             <div class="event-dot"></div>
             <div class="event-content">
               <div class="event-header">
-                <span class="event-name">{{ event.name }}</span>
+                <span class="event-name">{{ getEventName(event) }}</span>
                 <span class="event-type-badge">{{ getEventTypeLabel(event) }}</span>
               </div>
               <div class="event-location">
                 <template v-if="event.eventType === 'origin'">
-                  📍 {{ event.location }}
+                  📍 {{ getEventLocation(event) }}
                 </template>
                 <template v-else>
-                  {{ event.fromLocation }} → {{ event.toLocation }}
-                  <span v-if="event.via" class="event-via">（{{ event.via }}）</span>
+                  {{ getEventFromLocation(event) }} → {{ getEventToLocation(event) }}
+                  <span v-if="getEventVia(event)" class="event-via">（{{ getEventVia(event) }}）</span>
                 </template>
               </div>
             </div>
@@ -105,7 +110,7 @@
         </template>
 
         <div v-if="filteredEvents.length === 0" class="empty-state">
-          <p>暂无符合条件的事件</p>
+          <p>{{ t(ui.empty.noEvents) }}</p>
         </div>
       </div>
     </div>
@@ -113,24 +118,31 @@
     <!-- 事件详情弹窗 -->
     <div v-if="selectedEvent" class="modal-overlay" @click="closeEventDetail">
       <div class="modal-content" @click.stop>
-        <button class="modal-close" @click="closeEventDetail">×</button>
+        <!-- 顶部操作栏：语言切换居中，关闭按钮靠右 -->
+        <div class="modal-toolbar">
+          <div class="toolbar-spacer"></div>
+          <button class="modal-lang-toggle" @click="toggleLanguage">
+            {{ currentLang === 'zh' ? 'EN' : '中文' }}
+          </button>
+          <button class="modal-close-btn" @click="closeEventDetail">×</button>
+        </div>
 
         <div class="modal-header" :class="`${selectedEvent.entityType}-${selectedEvent.eventType}`">
           <span class="modal-badge">{{ getEventTypeLabel(selectedEvent) }}</span>
-          <h2>{{ selectedEvent.name }}</h2>
-          <p class="modal-time">{{ selectedEvent.displayTime }}</p>
+          <h2>{{ getEventName(selectedEvent) }}</h2>
+          <p class="modal-time">{{ getEventDisplayTime(selectedEvent) }}</p>
         </div>
 
         <div class="modal-body">
           <!-- 起源事件 -->
           <template v-if="selectedEvent.eventType === 'origin'">
             <div class="detail-row">
-              <span class="detail-label">起源地</span>
+              <span class="detail-label">{{ t(ui.labels.originLocation) }}</span>
               <span
                 class="detail-value clickable"
                 @click="goToLocation(selectedEvent.locationId)"
               >
-                📍 {{ selectedEvent.location }}
+                📍 {{ getEventLocation(selectedEvent) }}
               </span>
             </div>
           </template>
@@ -138,32 +150,32 @@
           <!-- 传播事件 -->
           <template v-else>
             <div class="detail-row">
-              <span class="detail-label">传播路径</span>
+              <span class="detail-label">{{ t(ui.labels.spreadRoute) }}</span>
               <span class="detail-value">
                 <span class="clickable" @click="goToLocation(selectedEvent.fromLocationId)">
-                  {{ selectedEvent.fromLocation }}
+                  {{ getEventFromLocation(selectedEvent) }}
                 </span>
                 →
                 <span class="clickable" @click="goToLocation(selectedEvent.toLocationId)">
-                  {{ selectedEvent.toLocation }}
+                  {{ getEventToLocation(selectedEvent) }}
                 </span>
               </span>
             </div>
-            <div v-if="selectedEvent.via" class="detail-row">
-              <span class="detail-label">传播途径</span>
-              <span class="detail-value">{{ selectedEvent.via }}</span>
+            <div v-if="getEventVia(selectedEvent)" class="detail-row">
+              <span class="detail-label">{{ t(ui.labels.spreadMethod) }}</span>
+              <span class="detail-value">{{ getEventVia(selectedEvent) }}</span>
             </div>
           </template>
 
           <div class="detail-row">
-            <span class="detail-label">简介</span>
-            <p class="detail-description">{{ selectedEvent.description }}</p>
+            <span class="detail-label">{{ t(ui.labels.description) }}</span>
+            <p class="detail-description">{{ getEventDescription(selectedEvent) }}</p>
           </div>
         </div>
 
         <div class="modal-footer">
           <button class="detail-btn" @click="goToEntityDetail">
-            查看{{ selectedEvent.entityType === 'crop' ? '作物' : '食物' }}详情 →
+            {{ getDetailButtonText() }}
           </button>
         </div>
       </div>
@@ -172,20 +184,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, reactive, watch } from 'vue'
+import { ref, computed, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { timelineService } from '@/services/timelineService'
+import { languageService, currentLang } from '@/services/languageService'
 import type { TimelineEvent, TimelineFilter } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
 
+// UI 文本
+const ui = computed(() => languageService.ui)
+const t = (textObj: any) => languageService.t(textObj)
+
 // 获取时代ID
 const eraId = computed(() => route.params.eraId as string)
 
-// 获取时代信息
-const era = computed(() => timelineService.getEraById(eraId.value))
-const eraYearRange = computed(() => era.value ? timelineService.getEraYearRange(era.value) : '')
+// 获取时代信息（本地化）
+const eras = computed(() => languageService.getEras())
+const era = computed(() => eras.value.find(e => e.id === eraId.value))
+const eraYearRange = computed(() => era.value ? timelineService.getEraYearRange(era.value as any) : '')
 
 // 筛选条件
 const filter = reactive<TimelineFilter>({
@@ -227,8 +245,13 @@ function formatYear(year: number): string {
 
 // 获取事件类型标签
 function getEventTypeLabel(event: TimelineEvent): string {
-  const entityName = event.entityType === 'crop' ? '作物' : '食物'
-  const eventName = event.eventType === 'origin' ? '起源' : '传播'
+  const isEn = currentLang.value === 'en'
+  const entityName = event.entityType === 'crop'
+    ? (isEn ? 'Crop' : '作物')
+    : (isEn ? 'Food' : '食物')
+  const eventName = event.eventType === 'origin'
+    ? (isEn ? ' Origin' : '起源')
+    : (isEn ? ' Spread' : '传播')
   return `${entityName}${eventName}`
 }
 
@@ -266,6 +289,50 @@ function goBack() {
 function goHome() {
   router.push({ name: 'Home' })
 }
+
+// 切换语言
+function toggleLanguage() {
+  languageService.toggleLanguage()
+}
+
+// 获取详情按钮文本
+function getDetailButtonText(): string {
+  if (!selectedEvent.value) return ''
+  const isEn = currentLang.value === 'en'
+  const entityType = selectedEvent.value.entityType === 'crop'
+    ? (isEn ? 'Crop' : '作物')
+    : (isEn ? 'Food' : '食物')
+  return isEn ? `View ${entityType} Details →` : `查看${entityType}详情 →`
+}
+
+// 本地化事件数据的辅助函数
+function getEventName(event: any): string {
+  return timelineService.getEventName(event)
+}
+
+function getEventDescription(event: any): string {
+  return timelineService.getEventDescription(event)
+}
+
+function getEventDisplayTime(event: any): string {
+  return timelineService.getEventDisplayTime(event)
+}
+
+function getEventLocation(event: any): string {
+  return timelineService.getEventLocation(event)
+}
+
+function getEventFromLocation(event: any): string {
+  return timelineService.getEventFromLocation(event)
+}
+
+function getEventToLocation(event: any): string {
+  return timelineService.getEventToLocation(event)
+}
+
+function getEventVia(event: any): string | undefined {
+  return timelineService.getEventVia(event)
+}
 </script>
 
 <style scoped>
@@ -282,6 +349,8 @@ function goHome() {
   color: white;
   padding: 32px 16px 24px;
 }
+
+/* 使用全局样式: .header-nav, .header-back, .back-btn, .header-right, .home-btn, .lang-toggle-header */
 
 .header-content {
   display: flex;
@@ -518,25 +587,59 @@ function goHome() {
   position: relative;
 }
 
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+/* 弹窗顶部工具栏 */
+.modal-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-radius: 16px 16px 0 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-lang-toggle {
+  padding: 6px 14px;
+  border: 1px solid #2E7D32;
+  border-radius: 16px;
+  background: white;
+  color: #2E7D32;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-lang-toggle:hover {
+  background: #2E7D32;
+  color: white;
+}
+
+.toolbar-spacer {
+  width: 32px;
+  height: 32px;
+}
+
+.modal-close-btn {
   width: 32px;
   height: 32px;
   border: none;
-  background: rgba(255,255,255,0.3);
+  background: #e0e0e0;
   border-radius: 50%;
   font-size: 20px;
-  color: white;
+  color: #666;
   cursor: pointer;
-  z-index: 1;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: #d0d0d0;
+  color: #333;
 }
 
 .modal-header {
   padding: 24px 20px;
   color: white;
-  border-radius: 16px 16px 0 0;
 }
 
 .modal-header.crop-origin { background: linear-gradient(135deg, #388E3C, #4CAF50); }

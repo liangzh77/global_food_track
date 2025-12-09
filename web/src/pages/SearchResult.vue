@@ -2,11 +2,16 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
+import { languageService, currentLang } from '@/services/languageService'
 import { cropIcons, foodIcons, locationIcons } from '@/types'
 import type { SearchResultItem } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
+
+// UI 文本
+const ui = computed(() => languageService.ui)
+const t = (textObj: any) => languageService.t(textObj)
 
 const keyword = computed(() => (route.query.keyword as string) || '')
 const searchText = ref(keyword.value)
@@ -28,6 +33,10 @@ function goBack() {
 
 function goHome() {
   router.push({ name: 'Home' })
+}
+
+function toggleLanguage() {
+  languageService.toggleLanguage()
 }
 
 function handleSearch() {
@@ -57,10 +66,11 @@ function goToDetail(item: SearchResultItem) {
 }
 
 function getTypeName(type: string): string {
+  const isEn = currentLang.value === 'en'
   switch (type) {
-    case 'crop': return '作物'
-    case 'food': return '食物'
-    case 'location': return '地点'
+    case 'crop': return isEn ? 'Crop' : '作物'
+    case 'food': return isEn ? 'Food' : '食物'
+    case 'location': return isEn ? 'Location' : '地点'
     default: return ''
   }
 }
@@ -73,9 +83,14 @@ function getTypeName(type: string): string {
       <div class="header-nav">
         <div class="header-back">
           <button class="back-btn" @click="goBack">←</button>
-          <div class="header-title">搜索结果</div>
+          <div class="header-title">{{ t(ui.labels.searchResults) }}</div>
         </div>
-        <button class="home-btn" @click="goHome">⌂</button>
+        <div class="header-right">
+          <button class="home-btn" @click="goHome">⌂</button>
+          <button class="lang-toggle-header" @click="toggleLanguage">
+            {{ currentLang === 'zh' ? 'EN' : '中文' }}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -85,7 +100,7 @@ function getTypeName(type: string): string {
       <input
         v-model="searchText"
         type="text"
-        placeholder="搜索作物、食物或地点..."
+        :placeholder="t(ui.placeholders.searchCropsFoodsPlaces)"
         @keyup.enter="handleSearch"
       />
     </div>
@@ -93,12 +108,12 @@ function getTypeName(type: string): string {
     <!-- 内容 -->
     <div class="content">
       <div v-if="keyword" class="section-title">
-        "{{ keyword }}" 的搜索结果 ({{ results.length }})
+        {{ currentLang === 'en' ? `"${keyword}" - ${results.length} results` : `"${keyword}" 的搜索结果 (${results.length})` }}
       </div>
 
       <div v-if="results.length === 0" class="empty-state">
         <div class="empty-icon">🔍</div>
-        <div>{{ keyword ? '未找到相关结果' : '请输入关键词搜索' }}</div>
+        <div>{{ keyword ? t(ui.empty.noResults) : t(ui.placeholders.enterKeyword) }}</div>
       </div>
 
       <div

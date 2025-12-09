@@ -3,178 +3,198 @@
     {
       "id": "beer",
       "name": "啤酒",
+      "nameEn": "Beer",
       "category": "beverage",
       "ingredients": ["barley", "wheat"],
       "origin": {
         "location": "mesopotamia",
-        "time": { "year": -4000, "display": "公元前4000年" }
+        "time": { "year": -4000, "display": "公元前4000年", "displayEn": "4000 BCE" }
       },
       "spreads": [
-        { "from": "mesopotamia", "to": "egypt", "time": { "display": "公元前3000年" } },
-        { "from": "middle-east", "to": "europe", "time": { "display": "公元前1000年" } },
-        { "from": "europe", "to": "germany", "time": { "display": "中世纪" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "17世纪" } }
+        { "from": "mesopotamia", "to": "egypt", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "middle-east", "to": "europe", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "europe", "to": "germany", "time": { "display": "中世纪", "displayEn": "Medieval period" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["germany", "usa", "china", "brazil", "uk"],
-      "description": "人类最古老的酒精饮料之一，苏美尔人留下了最早的啤酒配方，德国啤酒纯净法影响深远。"
+      "description": "人类最古老的酒精饮料之一，苏美尔人留下了最早的啤酒配方，德国啤酒纯净法影响深远。",
+      "descriptionEn": "One of humanity's oldest alcoholic beverages. Sumerians left the earliest beer recipes. German beer purity laws have lasting influence."
     },
     {
       "id": "wine",
       "name": "葡萄酒",
+      "nameEn": "Wine",
       "alias": ["红酒"],
       "category": "beverage",
       "ingredients": ["grape"],
       "origin": {
         "location": "fertile-crescent",
-        "time": { "year": -6000, "display": "公元前6000年" }
+        "time": { "year": -6000, "display": "公元前6000年", "displayEn": "6000 BCE" }
       },
       "spreads": [
-        { "from": "fertile-crescent", "to": "egypt", "time": { "display": "公元前3000年" } },
-        { "from": "fertile-crescent", "to": "greece", "time": { "display": "公元前2000年" } },
-        { "from": "greece", "to": "italy", "time": { "display": "公元前1000年" } },
-        { "from": "italy", "to": "france", "time": { "display": "公元前600年" } },
-        { "from": "europe", "to": "south-america", "time": { "display": "16世纪" } },
-        { "from": "europe", "to": "south-africa", "time": { "display": "17世纪" } }
+        { "from": "fertile-crescent", "to": "egypt", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "fertile-crescent", "to": "greece", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "greece", "to": "italy", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "italy", "to": "france", "time": { "display": "公元前600年", "displayEn": "600 BCE" } },
+        { "from": "europe", "to": "south-america", "time": { "display": "16世纪", "displayEn": "16th century" } },
+        { "from": "europe", "to": "south-africa", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["france", "italy", "spain", "usa", "argentina", "australia"],
-      "description": "与地中海文明紧密相连的饮料，法国波尔多和勃艮第是葡萄酒的圣地。"
+      "description": "与地中海文明紧密相连的饮料，法国波尔多和勃艮第是葡萄酒的圣地。",
+      "descriptionEn": "A beverage closely connected to Mediterranean civilization. French Bordeaux and Burgundy are wine's holy lands."
     },
     {
       "id": "sake",
       "name": "清酒",
+      "nameEn": "Sake",
       "alias": ["日本酒"],
       "category": "beverage",
       "ingredients": ["rice"],
       "origin": {
         "location": "japan",
-        "time": { "display": "约公元前300年" }
+        "time": { "display": "约公元前300年", "displayEn": "Around 300 BCE" }
       },
       "spreads": [
-        { "from": "japan", "to": "usa", "time": { "display": "19世纪末" } },
-        { "from": "japan", "to": "europe", "time": { "display": "20世纪" } },
-        { "from": "japan", "to": "asia", "time": { "display": "20世纪后期" } }
+        { "from": "japan", "to": "usa", "time": { "display": "19世纪末", "displayEn": "Late 19th century" } },
+        { "from": "japan", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } },
+        { "from": "japan", "to": "asia", "time": { "display": "20世纪后期", "displayEn": "Late 20th century" } }
       ],
       "currentRegions": ["japan", "usa", "europe"],
-      "description": "日本传统米酒，酿造技术源于中国的酿酒方法，与日本神道文化紧密相连。"
+      "description": "日本传统米酒，酿造技术源于中国的酿酒方法，与日本神道文化紧密相连。",
+      "descriptionEn": "Traditional Japanese rice wine. Brewing techniques originated from Chinese methods, closely tied to Shinto culture."
     },
     {
       "id": "baijiu",
       "name": "白酒",
+      "nameEn": "Baijiu",
       "alias": ["中国白酒"],
       "category": "beverage",
       "ingredients": ["sorghum", "wheat", "rice"],
       "origin": {
         "location": "china",
-        "time": { "display": "元代（约1300年）" }
+        "time": { "display": "元代（约1300年）", "displayEn": "Yuan Dynasty (around 1300)" }
       },
       "spreads": [
-        { "from": "china", "to": "korea", "time": { "display": "明代" } },
-        { "from": "china", "to": "southeast-asia", "time": { "display": "近代" } }
+        { "from": "china", "to": "korea", "time": { "display": "明代", "displayEn": "Ming Dynasty" } },
+        { "from": "china", "to": "southeast-asia", "time": { "display": "近代", "displayEn": "Modern era" } }
       ],
       "currentRegions": ["china", "sichuan", "yunnan"],
-      "description": "中国传统蒸馏酒，世界销量最大的烈酒，茅台、五粮液是代表品牌。"
+      "description": "中国传统蒸馏酒，世界销量最大的烈酒，茅台、五粮液是代表品牌。",
+      "descriptionEn": "Traditional Chinese distilled liquor, the world's best-selling spirit. Maotai and Wuliangye are representative brands."
     },
     {
       "id": "whiskey",
       "name": "威士忌",
+      "nameEn": "Whiskey",
       "category": "beverage",
       "ingredients": ["barley", "corn", "rye"],
       "origin": {
         "location": "ireland",
-        "time": { "display": "12世纪" }
+        "time": { "display": "12世纪", "displayEn": "12th century" }
       },
       "spreads": [
-        { "from": "ireland", "to": "uk", "time": { "display": "15世纪" } },
-        { "from": "uk", "to": "usa", "time": { "display": "18世纪" }, "via": "苏格兰/爱尔兰移民" },
-        { "from": "usa", "to": "japan", "time": { "display": "19世纪" } }
+        { "from": "ireland", "to": "uk", "time": { "display": "15世纪", "displayEn": "15th century" } },
+        { "from": "uk", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "苏格兰/爱尔兰移民", "viaEn": "Scottish/Irish immigrants" },
+        { "from": "usa", "to": "japan", "time": { "display": "19世纪", "displayEn": "19th century" } }
       ],
       "currentRegions": ["uk", "ireland", "usa", "japan", "canada"],
-      "description": "源于爱尔兰的蒸馏酒，苏格兰威士忌、美国波本和日本威士忌各有特色。"
+      "description": "源于爱尔兰的蒸馏酒，苏格兰威士忌、美国波本和日本威士忌各有特色。",
+      "descriptionEn": "Distilled spirit originating from Ireland. Scotch whisky, American bourbon, and Japanese whisky each have unique characteristics."
     },
     {
       "id": "vodka",
       "name": "伏特加",
+      "nameEn": "Vodka",
       "category": "beverage",
       "ingredients": ["potato", "wheat", "rye"],
       "origin": {
         "location": "russia",
-        "time": { "display": "14世纪" }
+        "time": { "display": "14世纪", "displayEn": "14th century" }
       },
       "spreads": [
-        { "from": "russia", "to": "poland", "time": { "display": "15世纪" } },
-        { "from": "russia", "to": "europe", "time": { "display": "19世纪" } },
-        { "from": "russia", "to": "usa", "time": { "display": "20世纪" }, "via": "俄国移民" }
+        { "from": "russia", "to": "poland", "time": { "display": "15世纪", "displayEn": "15th century" } },
+        { "from": "russia", "to": "europe", "time": { "display": "19世纪", "displayEn": "19th century" } },
+        { "from": "russia", "to": "usa", "time": { "display": "20世纪", "displayEn": "20th century" }, "via": "俄国移民", "viaEn": "Russian immigrants" }
       ],
       "currentRegions": ["russia", "poland", "usa", "sweden", "finland"],
-      "description": "俄罗斯的国酒，起源有俄波之争，是鸡尾酒的常用基酒。"
+      "description": "俄罗斯的国酒，起源有俄波之争，是鸡尾酒的常用基酒。",
+      "descriptionEn": "Russia's national drink, with disputed origins between Russia and Poland. A common base spirit for cocktails."
     },
     {
       "id": "tequila",
       "name": "龙舌兰酒",
+      "nameEn": "Tequila",
       "alias": ["特基拉"],
       "category": "beverage",
       "ingredients": [],
       "origin": {
         "location": "mexico",
-        "time": { "display": "16世纪" }
+        "time": { "display": "16世纪", "displayEn": "16th century" }
       },
       "spreads": [
-        { "from": "mexico", "to": "usa", "time": { "display": "19世纪" } },
-        { "from": "usa", "to": "europe", "time": { "display": "20世纪" } }
+        { "from": "mexico", "to": "usa", "time": { "display": "19世纪", "displayEn": "19th century" } },
+        { "from": "usa", "to": "europe", "time": { "display": "20世纪", "displayEn": "20th century" } }
       ],
       "currentRegions": ["mexico", "usa", "europe"],
-      "description": "墨西哥特产烈酒，由蓝色龙舌兰酿造，玛格丽塔鸡尾酒的基酒。"
+      "description": "墨西哥特产烈酒，由蓝色龙舌兰酿造，玛格丽塔鸡尾酒的基酒。",
+      "descriptionEn": "Mexico's signature spirit, made from blue agave. The base spirit for margarita cocktails."
     },
     {
       "id": "tea-drink",
       "name": "茶饮",
+      "nameEn": "Tea Beverage",
       "category": "beverage",
       "ingredients": ["tea"],
       "origin": {
         "location": "china",
-        "time": { "year": -2700, "display": "公元前2700年左右" }
+        "time": { "year": -2700, "display": "公元前2700年左右", "displayEn": "Around 2700 BCE" }
       },
       "spreads": [
-        { "from": "china", "to": "japan", "time": { "year": 805, "display": "805年" } },
-        { "from": "china", "to": "uk", "time": { "year": 1662, "display": "1662年" } },
-        { "from": "china", "to": "india", "time": { "year": 1836, "display": "1836年" } }
+        { "from": "china", "to": "japan", "time": { "year": 805, "display": "805年", "displayEn": "805 CE" } },
+        { "from": "china", "to": "uk", "time": { "year": 1662, "display": "1662年", "displayEn": "1662" } },
+        { "from": "china", "to": "india", "time": { "year": 1836, "display": "1836年", "displayEn": "1836" } }
       ],
       "currentRegions": ["china", "india", "uk", "japan", "turkey", "fujian", "zhejiang", "yunnan"],
-      "description": "中国神农发现茶叶，发展出绿茶、红茶、乌龙茶等，英国下午茶和日本茶道是文化高峰。"
+      "description": "中国神农发现茶叶，发展出绿茶、红茶、乌龙茶等，英国下午茶和日本茶道是文化高峰。",
+      "descriptionEn": "Shen Nong discovered tea in China. Evolved into green tea, black tea, oolong, etc. British afternoon tea and Japanese tea ceremony are cultural peaks."
     },
     {
       "id": "coffee-drink",
       "name": "咖啡饮品",
+      "nameEn": "Coffee Beverage",
       "category": "beverage",
       "ingredients": ["coffee"],
       "origin": {
         "location": "ethiopia",
-        "time": { "display": "15世纪" }
+        "time": { "display": "15世纪", "displayEn": "15th century" }
       },
       "spreads": [
-        { "from": "ethiopia", "to": "middle-east", "time": { "display": "15世纪" } },
-        { "from": "middle-east", "to": "europe", "time": { "year": 1615, "display": "1615年" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "17世纪" } }
+        { "from": "ethiopia", "to": "middle-east", "time": { "display": "15世纪", "displayEn": "15th century" } },
+        { "from": "middle-east", "to": "europe", "time": { "year": 1615, "display": "1615年", "displayEn": "1615" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["usa", "europe", "brazil", "japan", "korea"],
-      "description": "从阿拉伯咖啡馆到意式浓缩咖啡再到星巴克，咖啡文化不断演变。"
+      "description": "从阿拉伯咖啡馆到意式浓缩咖啡再到星巴克，咖啡文化不断演变。",
+      "descriptionEn": "From Arabian coffeehouses to Italian espresso to Starbucks, coffee culture continues to evolve."
     },
     {
       "id": "hot-chocolate",
       "name": "热巧克力",
+      "nameEn": "Hot Chocolate",
       "alias": ["热可可"],
       "category": "beverage",
       "ingredients": ["cacao"],
       "origin": {
         "location": "mesoamerica",
-        "time": { "display": "公元前1900年" }
+        "time": { "display": "公元前1900年", "displayEn": "1900 BCE" }
       },
       "spreads": [
-        { "from": "mexico", "to": "spain", "time": { "year": 1528, "display": "1528年" } },
-        { "from": "spain", "to": "europe", "time": { "display": "17世纪" } }
+        { "from": "mexico", "to": "spain", "time": { "year": 1528, "display": "1528年", "displayEn": "1528" } },
+        { "from": "spain", "to": "europe", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["europe", "north-america", "south-america"],
-      "description": "阿兹特克贵族的饮品，西班牙人加入糖后传遍欧洲，冬季暖饮。"
+      "description": "阿兹特克贵族的饮品，西班牙人加入糖后传遍欧洲，冬季暖饮。",
+      "descriptionEn": "A drink of Aztec nobility. Spaniards added sugar and spread it across Europe. A warming winter beverage."
     }
   ]
 }

@@ -2,13 +2,21 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { dataService } from '@/services/dataService'
+import { languageService, currentLang } from '@/services/languageService'
 import { foodIcons, getLocationIcon, getCropIcon, getCountryCode, isCountry } from '@/types'
 
 const route = useRoute()
 const router = useRouter()
 
+// UI 文本
+const ui = computed(() => languageService.ui)
+const t = (textObj: any) => languageService.t(textObj)
+
 const locationId = computed(() => route.params.id as string)
 const location = computed(() => dataService.getLocationById(locationId.value))
+
+// 本地化地点名称
+const locationName = computed(() => languageService.getName(location.value))
 
 const icon = computed(() => {
   if (!location.value) return '📍'
@@ -62,6 +70,10 @@ function goHome() {
   router.push({ name: 'Home' })
 }
 
+function toggleLanguage() {
+  languageService.toggleLanguage()
+}
+
 function goToLocation(id: string) {
   router.push({ name: 'LocationDetail', params: { id } })
 }
@@ -75,19 +87,28 @@ function goToFood(foodId: string) {
 }
 
 function getLocationTypeName(type: string): string {
-  switch (type) {
-    case 'continent': return '大洲'
-    case 'country': return '国家'
-    case 'region': return '地区'
-    default: return '地点'
-  }
+  return languageService.getLocationTypeName(type)
 }
 
 function getSubLocationTypeName(): string {
   if (!location.value) return ''
-  if (location.value.type === 'continent') return '国家'
-  if (location.value.type === 'country') return '地区'
+  if (location.value.type === 'continent') {
+    return t(ui.value.labels.countries)
+  }
+  if (location.value.type === 'country') {
+    return t(ui.value.labels.subRegions)
+  }
   return ''
+}
+
+// 获取本地化名称
+function getName(entity: any): string {
+  return languageService.getName(entity)
+}
+
+// 获取时间显示
+function getTimeDisplay(time: any): string {
+  return languageService.getTimeDisplay(time)
 }
 </script>
 
@@ -98,9 +119,14 @@ function getSubLocationTypeName(): string {
       <div class="header-nav">
         <div class="header-back">
           <button class="back-btn" @click="goBack">←</button>
-          <div class="header-title">{{ location?.name || '地区详情' }}</div>
+          <div class="header-title">{{ locationName || t(ui.tabs.regions) }}</div>
         </div>
-        <button class="home-btn" @click="goHome">⌂</button>
+        <div class="header-right">
+          <button class="home-btn" @click="goHome">⌂</button>
+          <button class="lang-toggle-header" @click="toggleLanguage">
+            {{ currentLang === 'zh' ? 'EN' : '中文' }}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -111,17 +137,17 @@ function getSubLocationTypeName(): string {
           <span v-if="isCountryType && countryCode" :class="['fi', 'fi-' + countryCode]" style="font-size: 64px;"></span>
           <span v-else style="font-size: 64px;">{{ icon }}</span>
         </div>
-        <div class="detail-section-title">基本信息</div>
+        <div class="detail-section-title">{{ t(ui.labels.basicInfo) }}</div>
         <div class="detail-text">
-          <p><strong>类型:</strong> {{ getLocationTypeName(location.type) }}</p>
+          <p><strong>{{ t(ui.labels.category) }}:</strong> {{ getLocationTypeName(location.type) }}</p>
           <p v-if="parentLocation">
-            <strong>所属:</strong>
+            <strong>{{ currentLang === 'en' ? 'Parent' : '所属' }}:</strong>
             <span
               class="tag"
               style="cursor: pointer;"
               @click="goToLocation(parentLocation.id)"
             >
-              {{ parentLocation.name }}
+              {{ getName(parentLocation) }}
             </span>
           </p>
         </div>
@@ -141,7 +167,7 @@ function getSubLocationTypeName(): string {
             <span v-else>{{ getLocationIcon(sub.id, sub.type) }}</span>
           </div>
           <div class="list-card-content">
-            <div class="list-card-title">{{ sub.name }}</div>
+            <div class="list-card-title">{{ getName(sub) }}</div>
           </div>
           <div class="list-card-arrow">›</div>
         </div>
@@ -149,7 +175,7 @@ function getSubLocationTypeName(): string {
 
       <!-- 起源作物 -->
       <div class="detail-section" v-if="origins.crops.length > 0">
-        <div class="detail-section-title">起源作物 ({{ origins.crops.length }})</div>
+        <div class="detail-section-title">{{ t(ui.labels.originCrops) }} ({{ origins.crops.length }})</div>
         <div
           v-for="crop in origins.crops"
           :key="crop.id"
@@ -158,8 +184,8 @@ function getSubLocationTypeName(): string {
         >
           <div class="list-card-icon">{{ getCropIcon(crop.id, crop.category) }}</div>
           <div class="list-card-content">
-            <div class="list-card-title">{{ crop.name }}</div>
-            <div class="list-card-subtitle">{{ crop.origin.time.display }}</div>
+            <div class="list-card-title">{{ getName(crop) }}</div>
+            <div class="list-card-subtitle">{{ getTimeDisplay(crop.origin.time) }}</div>
           </div>
           <div class="list-card-arrow">›</div>
         </div>
@@ -167,7 +193,7 @@ function getSubLocationTypeName(): string {
 
       <!-- 起源食物 -->
       <div class="detail-section" v-if="origins.foods.length > 0">
-        <div class="detail-section-title">起源食物 ({{ origins.foods.length }})</div>
+        <div class="detail-section-title">{{ t(ui.labels.originFoods) }} ({{ origins.foods.length }})</div>
         <div
           v-for="food in origins.foods"
           :key="food.id"
@@ -176,8 +202,8 @@ function getSubLocationTypeName(): string {
         >
           <div class="list-card-icon">{{ foodIcons[food.category] || '🍽️' }}</div>
           <div class="list-card-content">
-            <div class="list-card-title">{{ food.name }}</div>
-            <div class="list-card-subtitle">{{ food.origin.time.display }}</div>
+            <div class="list-card-title">{{ getName(food) }}</div>
+            <div class="list-card-subtitle">{{ getTimeDisplay(food.origin.time) }}</div>
           </div>
           <div class="list-card-arrow">›</div>
         </div>
@@ -185,7 +211,7 @@ function getSubLocationTypeName(): string {
 
       <!-- 当前主产区作物 -->
       <div class="detail-section" v-if="currentRegionCrops.length > 0">
-        <div class="detail-section-title">主产作物 ({{ currentRegionCrops.length }})</div>
+        <div class="detail-section-title">{{ t(ui.labels.mainCrops) }} ({{ currentRegionCrops.length }})</div>
         <div
           v-for="crop in currentRegionCrops"
           :key="crop.id"
@@ -194,7 +220,7 @@ function getSubLocationTypeName(): string {
         >
           <div class="list-card-icon">{{ getCropIcon(crop.id, crop.category) }}</div>
           <div class="list-card-content">
-            <div class="list-card-title">{{ crop.name }}</div>
+            <div class="list-card-title">{{ getName(crop) }}</div>
           </div>
           <div class="list-card-arrow">›</div>
         </div>
@@ -202,7 +228,7 @@ function getSubLocationTypeName(): string {
 
       <!-- 当前流行食物 -->
       <div class="detail-section" v-if="currentRegionFoods.length > 0">
-        <div class="detail-section-title">流行食物 ({{ currentRegionFoods.length }})</div>
+        <div class="detail-section-title">{{ t(ui.labels.popularFoods) }} ({{ currentRegionFoods.length }})</div>
         <div
           v-for="food in currentRegionFoods"
           :key="food.id"
@@ -211,7 +237,7 @@ function getSubLocationTypeName(): string {
         >
           <div class="list-card-icon">{{ foodIcons[food.category] || '🍽️' }}</div>
           <div class="list-card-content">
-            <div class="list-card-title">{{ food.name }}</div>
+            <div class="list-card-title">{{ getName(food) }}</div>
           </div>
           <div class="list-card-arrow">›</div>
         </div>
@@ -223,14 +249,14 @@ function getSubLocationTypeName(): string {
         class="empty-state"
       >
         <div class="empty-icon">📭</div>
-        <div>暂无相关数据</div>
+        <div>{{ t(ui.empty.noResults) }}</div>
       </div>
     </div>
 
     <div v-else class="content">
       <div class="empty-state">
         <div class="empty-icon">❓</div>
-        <div>未找到该地区</div>
+        <div>{{ t(ui.empty.noResults) }}</div>
       </div>
     </div>
   </div>

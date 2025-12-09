@@ -3,188 +3,208 @@
     {
       "id": "tea",
       "name": "茶",
+      "nameEn": "Tea",
       "alias": ["茶叶"],
       "category": "beverage",
       "origin": {
         "location": "yunnan",
-        "time": { "year": -2700, "display": "公元前2700年左右" }
+        "time": { "year": -2700, "display": "公元前2700年左右", "displayEn": "Around 2700 BCE" }
       },
       "spreads": [
-        { "from": "china", "to": "japan", "time": { "year": 805, "display": "805年" }, "via": "日本僧人从中国带回" },
-        { "from": "china", "to": "korea", "time": { "display": "7世纪" } },
-        { "from": "china", "to": "central-asia", "time": { "display": "唐代" }, "via": "茶马古道" },
-        { "from": "china", "to": "europe", "time": { "year": 1610, "display": "1610年" }, "via": "荷兰商人" },
-        { "from": "china", "to": "india", "time": { "year": 1836, "display": "1836年" }, "via": "英国东印度公司引种" },
-        { "from": "china", "to": "uk", "time": { "year": 1662, "display": "1662年" }, "via": "葡萄牙公主凯瑟琳" }
+        { "from": "china", "to": "japan", "time": { "year": 805, "display": "805年", "displayEn": "805 CE" }, "via": "日本僧人从中国带回", "viaEn": "Japanese monks brought it from China" },
+        { "from": "china", "to": "korea", "time": { "display": "7世纪", "displayEn": "7th century" } },
+        { "from": "china", "to": "central-asia", "time": { "display": "唐代", "displayEn": "Tang Dynasty" }, "via": "茶马古道", "viaEn": "Tea Horse Road" },
+        { "from": "china", "to": "europe", "time": { "year": 1610, "display": "1610年", "displayEn": "1610" }, "via": "荷兰商人", "viaEn": "Dutch merchants" },
+        { "from": "china", "to": "india", "time": { "year": 1836, "display": "1836年", "displayEn": "1836" }, "via": "英国东印度公司引种", "viaEn": "Introduced by British East India Company" },
+        { "from": "china", "to": "uk", "time": { "year": 1662, "display": "1662年", "displayEn": "1662" }, "via": "葡萄牙公主凯瑟琳", "viaEn": "Portuguese Princess Catherine" }
       ],
       "currentRegions": ["china", "india", "kenya", "sri-lanka", "turkey", "fujian", "zhejiang", "yunnan"],
-      "description": "中国对世界的伟大贡献，全球饮用人数最多的饮料之一，深刻影响了英国和日本文化。"
+      "description": "中国对世界的伟大贡献，全球饮用人数最多的饮料之一，深刻影响了英国和日本文化。",
+      "descriptionEn": "China's great contribution to the world, one of the most consumed beverages globally, profoundly influencing British and Japanese culture."
     },
     {
       "id": "coffee",
       "name": "咖啡",
+      "nameEn": "Coffee",
       "category": "beverage",
       "origin": {
         "location": "ethiopia",
-        "time": { "year": 850, "display": "9世纪左右" }
+        "time": { "year": 850, "display": "9世纪左右", "displayEn": "Around 9th century" }
       },
       "spreads": [
-        { "from": "ethiopia", "to": "saudi-arabia", "time": { "display": "15世纪" }, "via": "阿拉伯商人" },
-        { "from": "saudi-arabia", "to": "turkey", "time": { "display": "16世纪" } },
-        { "from": "turkey", "to": "europe", "time": { "year": 1615, "display": "1615年" }, "via": "威尼斯商人" },
-        { "from": "europe", "to": "indonesia", "time": { "display": "17世纪" }, "via": "荷兰东印度公司" },
-        { "from": "europe", "to": "caribbean", "time": { "display": "18世纪" }, "via": "法国殖民者" },
-        { "from": "caribbean", "to": "brazil", "time": { "year": 1727, "display": "1727年" } }
+        { "from": "ethiopia", "to": "saudi-arabia", "time": { "display": "15世纪", "displayEn": "15th century" }, "via": "阿拉伯商人", "viaEn": "Arab merchants" },
+        { "from": "saudi-arabia", "to": "turkey", "time": { "display": "16世纪", "displayEn": "16th century" } },
+        { "from": "turkey", "to": "europe", "time": { "year": 1615, "display": "1615年", "displayEn": "1615" }, "via": "威尼斯商人", "viaEn": "Venetian merchants" },
+        { "from": "europe", "to": "indonesia", "time": { "display": "17世纪", "displayEn": "17th century" }, "via": "荷兰东印度公司", "viaEn": "Dutch East India Company" },
+        { "from": "europe", "to": "caribbean", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "法国殖民者", "viaEn": "French colonists" },
+        { "from": "caribbean", "to": "brazil", "time": { "year": 1727, "display": "1727年", "displayEn": "1727" } }
       ],
       "currentRegions": ["brazil", "vietnam", "colombia", "indonesia", "ethiopia"],
-      "description": "埃塞俄比亚发现的神奇饮料，咖啡馆文化深刻影响欧洲启蒙运动和现代都市生活。"
+      "description": "埃塞俄比亚发现的神奇饮料，咖啡馆文化深刻影响欧洲启蒙运动和现代都市生活。",
+      "descriptionEn": "A magical beverage discovered in Ethiopia. Coffee house culture profoundly influenced the European Enlightenment and modern urban life."
     },
     {
       "id": "cacao",
       "name": "可可",
+      "nameEn": "Cacao",
       "category": "beverage",
       "origin": {
         "location": "amazon",
-        "time": { "year": -1900, "display": "公元前1900年" }
+        "time": { "year": -1900, "display": "公元前1900年", "displayEn": "1900 BCE" }
       },
       "spreads": [
-        { "from": "amazon", "to": "mesoamerica", "time": { "display": "公元前1500年" } },
-        { "from": "mesoamerica", "to": "spain", "time": { "year": 1528, "display": "1528年" }, "via": "西班牙征服者" },
-        { "from": "spain", "to": "europe", "time": { "display": "17世纪" } },
-        { "from": "europe", "to": "west-africa", "time": { "display": "19世纪" }, "via": "殖民种植园" },
-        { "from": "europe", "to": "southeast-asia", "time": { "display": "19世纪" } }
+        { "from": "amazon", "to": "mesoamerica", "time": { "display": "公元前1500年", "displayEn": "1500 BCE" } },
+        { "from": "mesoamerica", "to": "spain", "time": { "year": 1528, "display": "1528年", "displayEn": "1528" }, "via": "西班牙征服者", "viaEn": "Spanish conquistadors" },
+        { "from": "spain", "to": "europe", "time": { "display": "17世纪", "displayEn": "17th century" } },
+        { "from": "europe", "to": "west-africa", "time": { "display": "19世纪", "displayEn": "19th century" }, "via": "殖民种植园", "viaEn": "Colonial plantations" },
+        { "from": "europe", "to": "southeast-asia", "time": { "display": "19世纪", "displayEn": "19th century" } }
       ],
       "currentRegions": ["ivory-coast", "ghana", "indonesia", "nigeria", "brazil"],
-      "description": "阿兹特克人的神圣饮料，巧克力的原料，西非现为世界最大产地。"
+      "description": "阿兹特克人的神圣饮料，巧克力的原料，西非现为世界最大产地。",
+      "descriptionEn": "A sacred drink of the Aztecs, the raw material for chocolate. West Africa is now the world's largest producer."
     },
     {
       "id": "sugarcane",
       "name": "甘蔗",
+      "nameEn": "Sugarcane",
       "category": "sugar",
       "origin": {
         "location": "papua-new-guinea",
-        "time": { "year": -8000, "display": "公元前8000年" }
+        "time": { "year": -8000, "display": "公元前8000年", "displayEn": "8000 BCE" }
       },
       "spreads": [
-        { "from": "papua-new-guinea", "to": "southeast-asia", "time": { "display": "公元前6000年" } },
-        { "from": "southeast-asia", "to": "india", "time": { "display": "公元前4000年" } },
-        { "from": "india", "to": "middle-east", "time": { "display": "公元前500年" } },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "8世纪" }, "via": "阿拉伯扩张" },
-        { "from": "mediterranean", "to": "caribbean", "time": { "year": 1493, "display": "1493年" }, "via": "哥伦布第二次航行" },
-        { "from": "caribbean", "to": "brazil", "time": { "display": "16世纪" } }
+        { "from": "papua-new-guinea", "to": "southeast-asia", "time": { "display": "公元前6000年", "displayEn": "6000 BCE" } },
+        { "from": "southeast-asia", "to": "india", "time": { "display": "公元前4000年", "displayEn": "4000 BCE" } },
+        { "from": "india", "to": "middle-east", "time": { "display": "公元前500年", "displayEn": "500 BCE" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "8世纪", "displayEn": "8th century" }, "via": "阿拉伯扩张", "viaEn": "Arab expansion" },
+        { "from": "mediterranean", "to": "caribbean", "time": { "year": 1493, "display": "1493年", "displayEn": "1493" }, "via": "哥伦布第二次航行", "viaEn": "Columbus's second voyage" },
+        { "from": "caribbean", "to": "brazil", "time": { "display": "16世纪", "displayEn": "16th century" } }
       ],
       "currentRegions": ["brazil", "india", "china", "thailand", "pakistan", "guangdong", "yunnan"],
-      "description": "糖的主要来源，加勒比甘蔗种植园与奴隶贸易历史紧密相连。"
+      "description": "糖的主要来源，加勒比甘蔗种植园与奴隶贸易历史紧密相连。",
+      "descriptionEn": "The main source of sugar. Caribbean sugarcane plantations are closely linked to the history of the slave trade."
     },
     {
       "id": "pepper-black",
       "name": "黑胡椒",
+      "nameEn": "Black Pepper",
       "alias": ["胡椒"],
       "category": "spice",
       "origin": {
         "location": "south-india",
-        "time": { "year": -2000, "display": "公元前2000年" }
+        "time": { "year": -2000, "display": "公元前2000年", "displayEn": "2000 BCE" }
       },
       "spreads": [
-        { "from": "india", "to": "middle-east", "time": { "display": "公元前1000年" }, "via": "香料贸易" },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前500年" } },
-        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
-        { "from": "india", "to": "southeast-asia", "time": { "display": "中世纪" } }
+        { "from": "india", "to": "middle-east", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" }, "via": "香料贸易", "viaEn": "Spice trade" },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前500年", "displayEn": "500 BCE" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代", "displayEn": "Roman Era" } },
+        { "from": "india", "to": "southeast-asia", "time": { "display": "中世纪", "displayEn": "Medieval period" } }
       ],
       "currentRegions": ["vietnam", "india", "brazil", "indonesia", "china"],
-      "description": "曾与黄金等价的香料之王，推动了大航海时代的探索，现为世界最常用香料。"
+      "description": "曾与黄金等价的香料之王，推动了大航海时代的探索，现为世界最常用香料。",
+      "descriptionEn": "Once worth its weight in gold, the king of spices drove the Age of Exploration. Now the world's most commonly used spice."
     },
     {
       "id": "cinnamon",
       "name": "肉桂",
+      "nameEn": "Cinnamon",
       "alias": ["桂皮"],
       "category": "spice",
       "origin": {
         "location": "sri-lanka",
-        "time": { "display": "原产时间不明" }
+        "time": { "display": "原产时间不明", "displayEn": "Origin time unknown" }
       },
       "spreads": [
-        { "from": "sri-lanka", "to": "egypt", "time": { "display": "公元前2000年" } },
-        { "from": "sri-lanka", "to": "middle-east", "time": { "display": "公元前1500年" } },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前1000年" } },
-        { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪" } }
+        { "from": "sri-lanka", "to": "egypt", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "sri-lanka", "to": "middle-east", "time": { "display": "公元前1500年", "displayEn": "1500 BCE" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪", "displayEn": "Medieval period" } }
       ],
       "currentRegions": ["indonesia", "china", "vietnam", "sri-lanka", "madagascar"],
-      "description": "古老的珍贵香料，用于烘焙和咖喱，中国肉桂与锡兰肉桂是两个主要品种。"
+      "description": "古老的珍贵香料，用于烘焙和咖喱，中国肉桂与锡兰肉桂是两个主要品种。",
+      "descriptionEn": "An ancient precious spice used in baking and curries. Chinese cinnamon and Ceylon cinnamon are the two main varieties."
     },
     {
       "id": "ginger",
       "name": "生姜",
+      "nameEn": "Ginger",
       "alias": ["姜"],
       "category": "spice",
       "origin": {
         "location": "southeast-asia",
-        "time": { "year": -3000, "display": "公元前3000年" }
+        "time": { "year": -3000, "display": "公元前3000年", "displayEn": "3000 BCE" }
       },
       "spreads": [
-        { "from": "southeast-asia", "to": "india", "time": { "display": "公元前2000年" } },
-        { "from": "india", "to": "middle-east", "time": { "display": "公元前500年" } },
-        { "from": "india", "to": "china", "time": { "display": "公元前500年" } },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元1世纪" } },
-        { "from": "spain", "to": "caribbean", "time": { "display": "16世纪" } }
+        { "from": "southeast-asia", "to": "india", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "india", "to": "middle-east", "time": { "display": "公元前500年", "displayEn": "500 BCE" } },
+        { "from": "india", "to": "china", "time": { "display": "公元前500年", "displayEn": "500 BCE" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元1世纪", "displayEn": "1st century CE" } },
+        { "from": "spain", "to": "caribbean", "time": { "display": "16世纪", "displayEn": "16th century" } }
       ],
       "currentRegions": ["india", "china", "nigeria", "indonesia", "nepal", "shandong"],
-      "description": "亚洲烹饪的灵魂调料，也是重要的药用植物，姜茶、姜饼广受欢迎。"
+      "description": "亚洲烹饪的灵魂调料，也是重要的药用植物，姜茶、姜饼广受欢迎。",
+      "descriptionEn": "The soul of Asian cooking, also an important medicinal plant. Ginger tea and gingerbread are widely popular."
     },
     {
       "id": "vanilla",
       "name": "香草",
+      "nameEn": "Vanilla",
       "alias": ["香荚兰"],
       "category": "spice",
       "origin": {
         "location": "mesoamerica",
-        "time": { "display": "原产时间不明" }
+        "time": { "display": "原产时间不明", "displayEn": "Origin time unknown" }
       },
       "spreads": [
-        { "from": "mexico", "to": "spain", "time": { "year": 1520, "display": "1520年" }, "via": "西班牙征服者" },
-        { "from": "spain", "to": "europe", "time": { "display": "16世纪" } },
-        { "from": "europe", "to": "madagascar", "time": { "display": "19世纪" }, "via": "法国殖民者" },
-        { "from": "europe", "to": "indonesia", "time": { "display": "19世纪" } }
+        { "from": "mexico", "to": "spain", "time": { "year": 1520, "display": "1520年", "displayEn": "1520" }, "via": "西班牙征服者", "viaEn": "Spanish conquistadors" },
+        { "from": "spain", "to": "europe", "time": { "display": "16世纪", "displayEn": "16th century" } },
+        { "from": "europe", "to": "madagascar", "time": { "display": "19世纪", "displayEn": "19th century" }, "via": "法国殖民者", "viaEn": "French colonists" },
+        { "from": "europe", "to": "indonesia", "time": { "display": "19世纪", "displayEn": "19th century" } }
       ],
       "currentRegions": ["madagascar", "indonesia", "mexico", "tahiti", "uganda"],
-      "description": "仅次于藏红花的第二昂贵香料，冰淇淋和甜点的经典风味。"
+      "description": "仅次于藏红花的第二昂贵香料，冰淇淋和甜点的经典风味。",
+      "descriptionEn": "The second most expensive spice after saffron, a classic flavor in ice cream and desserts."
     },
     {
       "id": "olive",
       "name": "橄榄",
+      "nameEn": "Olive",
       "category": "oil",
       "origin": {
         "location": "mediterranean",
-        "time": { "year": -6000, "display": "公元前6000年" }
+        "time": { "year": -6000, "display": "公元前6000年", "displayEn": "6000 BCE" }
       },
       "spreads": [
-        { "from": "mediterranean", "to": "egypt", "time": { "display": "公元前3000年" } },
-        { "from": "mediterranean", "to": "greece", "time": { "display": "公元前3000年" } },
-        { "from": "mediterranean", "to": "italy", "time": { "display": "公元前1000年" } },
-        { "from": "mediterranean", "to": "spain", "time": { "display": "公元前1000年" }, "via": "腓尼基人" },
-        { "from": "spain", "to": "south-america", "time": { "display": "16世纪" } },
-        { "from": "spain", "to": "usa", "time": { "display": "18世纪" }, "via": "西班牙传教士" }
+        { "from": "mediterranean", "to": "egypt", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "mediterranean", "to": "greece", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "mediterranean", "to": "italy", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "mediterranean", "to": "spain", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" }, "via": "腓尼基人", "viaEn": "Phoenicians" },
+        { "from": "spain", "to": "south-america", "time": { "display": "16世纪", "displayEn": "16th century" } },
+        { "from": "spain", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "西班牙传教士", "viaEn": "Spanish missionaries" }
       ],
       "currentRegions": ["spain", "italy", "greece", "turkey", "morocco"],
-      "description": "地中海文明的象征，橄榄油是地中海饮食的基石，与和平、智慧的象征意义。"
+      "description": "地中海文明的象征，橄榄油是地中海饮食的基石，与和平、智慧的象征意义。",
+      "descriptionEn": "A symbol of Mediterranean civilization. Olive oil is the cornerstone of the Mediterranean diet, symbolizing peace and wisdom."
     },
     {
       "id": "sesame",
       "name": "芝麻",
+      "nameEn": "Sesame",
       "alias": ["胡麻"],
       "category": "oil",
       "origin": {
         "location": "india",
-        "time": { "year": -3000, "display": "公元前3000年" }
+        "time": { "year": -3000, "display": "公元前3000年", "displayEn": "3000 BCE" }
       },
       "spreads": [
-        { "from": "india", "to": "mesopotamia", "time": { "display": "公元前2000年" } },
-        { "from": "mesopotamia", "to": "egypt", "time": { "display": "公元前1500年" } },
-        { "from": "middle-east", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" },
-        { "from": "africa", "to": "north-america", "time": { "display": "17世纪" }, "via": "奴隶贸易" }
+        { "from": "india", "to": "mesopotamia", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "mesopotamia", "to": "egypt", "time": { "display": "公元前1500年", "displayEn": "1500 BCE" } },
+        { "from": "middle-east", "to": "china", "time": { "display": "汉代", "displayEn": "Han Dynasty" }, "via": "丝绸之路", "viaEn": "Silk Road" },
+        { "from": "africa", "to": "north-america", "time": { "display": "17世纪", "displayEn": "17th century" }, "via": "奴隶贸易", "viaEn": "Slave trade" }
       ],
       "currentRegions": ["sudan", "india", "myanmar", "tanzania", "china", "hubei"],
-      "description": "最古老的油料作物之一，芝麻油和芝麻酱是中东和亚洲烹饪的重要调味品。"
+      "description": "最古老的油料作物之一，芝麻油和芝麻酱是中东和亚洲烹饪的重要调味品。",
+      "descriptionEn": "One of the oldest oil crops. Sesame oil and tahini are important condiments in Middle Eastern and Asian cooking."
     }
   ]
 }

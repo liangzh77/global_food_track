@@ -2,6 +2,7 @@
 export interface TimePeriod {
   year?: number
   display: string
+  displayEn?: string
 }
 
 // 地理位置类型
@@ -11,6 +12,7 @@ export type LocationType = 'continent' | 'country' | 'region'
 export interface Location {
   id: string
   name: string
+  nameEn?: string
   type: LocationType
   parent?: string
 }
@@ -44,6 +46,7 @@ export interface SpreadEvent {
   to: string
   time: TimePeriod
   via?: string
+  viaEn?: string
 }
 
 // 起源信息
@@ -56,25 +59,31 @@ export interface OriginInfo {
 export interface Crop {
   id: string
   name: string
+  nameEn?: string
   alias?: string[]
+  aliasEn?: string[]
   category: CropCategory
   origin: OriginInfo
   spreads: SpreadEvent[]
   currentRegions: string[]
   description: string
+  descriptionEn?: string
 }
 
 // 食物
 export interface Food {
   id: string
   name: string
+  nameEn?: string
   alias?: string[]
+  aliasEn?: string[]
   category: FoodCategory
   ingredients: string[]
   origin: OriginInfo
   spreads: SpreadEvent[]
   currentRegions: string[]
   description: string
+  descriptionEn?: string
 }
 
 // 实体类型
@@ -166,10 +175,12 @@ export function getCropIcon(cropId: string, category?: string): string {
 export interface Era {
   id: string
   name: string
+  nameEn?: string
   icon: string
   startYear: number    // 负数表示公元前
   endYear: number
   description: string
+  descriptionEn?: string
 }
 
 // 时间线事件类型
@@ -186,17 +197,24 @@ export interface TimelineEvent {
   eventType: TimelineEventType
   year: number
   displayTime: string
+  displayTimeEn?: string
   name: string               // 作物/食物名称
+  nameEn?: string
   description: string        // 简介
+  descriptionEn?: string
   // 起源事件
   location?: string          // 地点名称
+  locationEn?: string
   locationId?: string        // 地点ID
   // 传播事件
   fromLocation?: string
+  fromLocationEn?: string
   fromLocationId?: string
   toLocation?: string
+  toLocationEn?: string
   toLocationId?: string
   via?: string               // 传播途径
+  viaEn?: string
 }
 
 // 时间线筛选条件

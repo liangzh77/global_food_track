@@ -239,6 +239,15 @@ class DataService {
     return this.locationNameFallback[locationId] || locationId
   }
 
+  // 获取地点英文名称
+  getLocationNameEn(locationId: string): string | undefined {
+    const location = this.getLocationById(locationId)
+    if (location) {
+      return location.nameEn
+    }
+    return undefined
+  }
+
   // 根据作物ID获取使用该作物的食物
   getFoodsByCropId(cropId: string): Food[] {
     return this.foods.filter(f => f.ingredients.includes(cropId))

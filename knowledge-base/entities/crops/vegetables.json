@@ -3,202 +3,224 @@
     {
       "id": "potato",
       "name": "土豆",
+      "nameEn": "Potato",
       "alias": ["马铃薯", "洋芋"],
       "category": "vegetable",
       "origin": {
         "location": "andes",
-        "time": { "year": -8000, "display": "公元前8000年" }
+        "time": { "year": -8000, "display": "公元前8000年", "displayEn": "8000 BCE" }
       },
       "spreads": [
-        { "from": "peru", "to": "spain", "time": { "year": 1570, "display": "1570年左右" }, "via": "西班牙征服者" },
-        { "from": "spain", "to": "europe", "time": { "display": "16世纪末" } },
-        { "from": "europe", "to": "ireland", "time": { "display": "17世纪" } },
-        { "from": "europe", "to": "russia", "time": { "display": "18世纪" }, "via": "彼得大帝推广" },
-        { "from": "europe", "to": "china", "time": { "display": "17世纪" } }
+        { "from": "peru", "to": "spain", "time": { "year": 1570, "display": "1570年左右", "displayEn": "Around 1570" }, "via": "西班牙征服者", "viaEn": "Spanish conquistadors" },
+        { "from": "spain", "to": "europe", "time": { "display": "16世纪末", "displayEn": "Late 16th century" } },
+        { "from": "europe", "to": "ireland", "time": { "display": "17世纪", "displayEn": "17th century" } },
+        { "from": "europe", "to": "russia", "time": { "display": "18世纪", "displayEn": "18th century" }, "via": "彼得大帝推广", "viaEn": "Promoted by Peter the Great" },
+        { "from": "europe", "to": "china", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["china", "india", "russia", "usa", "germany", "dongbei", "inner-mongolia"],
-      "description": "改变世界人口格局的作物，曾帮助欧洲人口爆发式增长，薯条、薯片的原料。"
+      "description": "改变世界人口格局的作物，曾帮助欧洲人口爆发式增长，薯条、薯片的原料。",
+      "descriptionEn": "A crop that changed world demographics, helped fuel Europe's population explosion. The source of french fries and potato chips."
     },
     {
       "id": "tomato",
       "name": "番茄",
+      "nameEn": "Tomato",
       "alias": ["西红柿"],
       "category": "vegetable",
       "origin": {
         "location": "andes",
-        "time": { "year": -700, "display": "公元前700年" }
+        "time": { "year": -700, "display": "公元前700年", "displayEn": "700 BCE" }
       },
       "spreads": [
-        { "from": "peru", "to": "mesoamerica", "time": { "display": "公元前500年" } },
-        { "from": "mexico", "to": "spain", "time": { "year": 1521, "display": "1521年" }, "via": "西班牙征服者" },
-        { "from": "spain", "to": "italy", "time": { "display": "16世纪中期" } },
-        { "from": "europe", "to": "china", "time": { "display": "17世纪" } },
-        { "from": "europe", "to": "usa", "time": { "display": "18世纪" } }
+        { "from": "peru", "to": "mesoamerica", "time": { "display": "公元前500年", "displayEn": "500 BCE" } },
+        { "from": "mexico", "to": "spain", "time": { "year": 1521, "display": "1521年", "displayEn": "1521" }, "via": "西班牙征服者", "viaEn": "Spanish conquistadors" },
+        { "from": "spain", "to": "italy", "time": { "display": "16世纪中期", "displayEn": "Mid-16th century" } },
+        { "from": "europe", "to": "china", "time": { "display": "17世纪", "displayEn": "17th century" } },
+        { "from": "europe", "to": "usa", "time": { "display": "18世纪", "displayEn": "18th century" } }
       ],
       "currentRegions": ["china", "india", "usa", "turkey", "italy", "shandong", "xinjiang"],
-      "description": "曾被欧洲人认为有毒的观赏植物，后成为意大利菜和全球烹饪的核心食材。"
+      "description": "曾被欧洲人认为有毒的观赏植物，后成为意大利菜和全球烹饪的核心食材。",
+      "descriptionEn": "Once considered poisonous by Europeans and grown as an ornamental plant, it later became a core ingredient in Italian and global cuisine."
     },
     {
       "id": "chili",
       "name": "辣椒",
+      "nameEn": "Chili Pepper",
       "alias": ["辣子", "海椒"],
       "category": "spice",
       "origin": {
         "location": "mesoamerica",
-        "time": { "year": -7500, "display": "公元前7500年" }
+        "time": { "year": -7500, "display": "公元前7500年", "displayEn": "7500 BCE" }
       },
       "spreads": [
-        { "from": "mexico", "to": "spain", "time": { "year": 1493, "display": "1493年" }, "via": "哥伦布" },
-        { "from": "spain", "to": "portugal", "time": { "display": "16世纪初" } },
-        { "from": "portugal", "to": "india", "time": { "display": "16世纪" }, "via": "葡萄牙商人" },
-        { "from": "portugal", "to": "china", "time": { "display": "16世纪末" }, "via": "海上丝绸之路" },
-        { "from": "india", "to": "thailand", "time": { "display": "17世纪" } },
-        { "from": "india", "to": "korea", "time": { "display": "17世纪" } }
+        { "from": "mexico", "to": "spain", "time": { "year": 1493, "display": "1493年", "displayEn": "1493" }, "via": "哥伦布", "viaEn": "Christopher Columbus" },
+        { "from": "spain", "to": "portugal", "time": { "display": "16世纪初", "displayEn": "Early 16th century" } },
+        { "from": "portugal", "to": "india", "time": { "display": "16世纪", "displayEn": "16th century" }, "via": "葡萄牙商人", "viaEn": "Portuguese merchants" },
+        { "from": "portugal", "to": "china", "time": { "display": "16世纪末", "displayEn": "Late 16th century" }, "via": "海上丝绸之路", "viaEn": "Maritime Silk Road" },
+        { "from": "india", "to": "thailand", "time": { "display": "17世纪", "displayEn": "17th century" } },
+        { "from": "india", "to": "korea", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["china", "india", "mexico", "thailand", "korea", "sichuan", "hunan", "yunnan"],
-      "description": "彻底改变亚洲饮食的美洲作物，川菜、湘菜、泰国菜、韩国菜的灵魂。"
+      "description": "彻底改变亚洲饮食的美洲作物，川菜、湘菜、泰国菜、韩国菜的灵魂。",
+      "descriptionEn": "An American crop that revolutionized Asian cuisine, the soul of Sichuan, Hunan, Thai, and Korean cooking."
     },
     {
       "id": "onion",
       "name": "洋葱",
+      "nameEn": "Onion",
       "alias": ["葱头"],
       "category": "vegetable",
       "origin": {
         "location": "central-asia",
-        "time": { "year": -5000, "display": "公元前5000年" }
+        "time": { "year": -5000, "display": "公元前5000年", "displayEn": "5000 BCE" }
       },
       "spreads": [
-        { "from": "central-asia", "to": "mesopotamia", "time": { "display": "公元前3000年" } },
-        { "from": "mesopotamia", "to": "egypt", "time": { "display": "公元前2500年" } },
-        { "from": "middle-east", "to": "europe", "time": { "display": "公元前1000年" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "16世纪" } }
+        { "from": "central-asia", "to": "mesopotamia", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "mesopotamia", "to": "egypt", "time": { "display": "公元前2500年", "displayEn": "2500 BCE" } },
+        { "from": "middle-east", "to": "europe", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "16世纪", "displayEn": "16th century" } }
       ],
       "currentRegions": ["china", "india", "usa", "egypt", "iran", "shandong"],
-      "description": "人类最早驯化的蔬菜之一，几乎所有烹饪传统的基础食材。"
+      "description": "人类最早驯化的蔬菜之一，几乎所有烹饪传统的基础食材。",
+      "descriptionEn": "One of the earliest vegetables domesticated by humans, a fundamental ingredient in nearly all culinary traditions."
     },
     {
       "id": "garlic",
       "name": "大蒜",
+      "nameEn": "Garlic",
       "alias": ["蒜"],
       "category": "vegetable",
       "origin": {
         "location": "central-asia",
-        "time": { "year": -4000, "display": "公元前4000年" }
+        "time": { "year": -4000, "display": "公元前4000年", "displayEn": "4000 BCE" }
       },
       "spreads": [
-        { "from": "central-asia", "to": "middle-east", "time": { "display": "公元前3000年" } },
-        { "from": "middle-east", "to": "egypt", "time": { "display": "公元前2500年" } },
-        { "from": "egypt", "to": "mediterranean", "time": { "display": "公元前2000年" } },
-        { "from": "mediterranean", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" }
+        { "from": "central-asia", "to": "middle-east", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "middle-east", "to": "egypt", "time": { "display": "公元前2500年", "displayEn": "2500 BCE" } },
+        { "from": "egypt", "to": "mediterranean", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "mediterranean", "to": "china", "time": { "display": "汉代", "displayEn": "Han Dynasty" }, "via": "丝绸之路", "viaEn": "Silk Road" }
       ],
       "currentRegions": ["china", "india", "korea", "spain", "usa", "shandong", "jiangsu"],
-      "description": "自古被视为有药用价值的调味品，中国是世界最大生产国。"
+      "description": "自古被视为有药用价值的调味品，中国是世界最大生产国。",
+      "descriptionEn": "A seasoning valued for its medicinal properties since ancient times. China is the world's largest producer."
     },
     {
       "id": "cabbage",
       "name": "卷心菜",
+      "nameEn": "Cabbage",
       "alias": ["甘蓝", "包菜", "洋白菜"],
       "category": "vegetable",
       "origin": {
         "location": "mediterranean",
-        "time": { "year": -1000, "display": "公元前1000年" }
+        "time": { "year": -1000, "display": "公元前1000年", "displayEn": "1000 BCE" }
       },
       "spreads": [
-        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代" } },
-        { "from": "europe", "to": "asia", "time": { "display": "16世纪" } },
-        { "from": "europe", "to": "north-america", "time": { "display": "17世纪" } }
+        { "from": "mediterranean", "to": "europe", "time": { "display": "罗马时代", "displayEn": "Roman Era" } },
+        { "from": "europe", "to": "asia", "time": { "display": "16世纪", "displayEn": "16th century" } },
+        { "from": "europe", "to": "north-america", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["china", "india", "russia", "germany", "japan", "shandong", "dongbei"],
-      "description": "欧洲古老蔬菜，酸菜、泡菜的主要原料，耐储存的重要特性使其流行全球。"
+      "description": "欧洲古老蔬菜，酸菜、泡菜的主要原料，耐储存的重要特性使其流行全球。",
+      "descriptionEn": "An ancient European vegetable, the main ingredient for sauerkraut and kimchi. Its excellent storage qualities made it popular worldwide."
     },
     {
       "id": "carrot",
       "name": "胡萝卜",
+      "nameEn": "Carrot",
       "alias": ["红萝卜"],
       "category": "vegetable",
       "origin": {
         "location": "iran",
-        "time": { "year": -3000, "display": "公元前3000年" }
+        "time": { "year": -3000, "display": "公元前3000年", "displayEn": "3000 BCE" }
       },
       "spreads": [
-        { "from": "iran", "to": "middle-east", "time": { "display": "公元前2000年" } },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前1000年" } },
-        { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪" } },
-        { "from": "netherlands", "to": "europe", "time": { "display": "17世纪" }, "via": "荷兰培育出橙色品种" }
+        { "from": "iran", "to": "middle-east", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪", "displayEn": "Medieval period" } },
+        { "from": "netherlands", "to": "europe", "time": { "display": "17世纪", "displayEn": "17th century" }, "via": "荷兰培育出橙色品种", "viaEn": "Dutch bred orange variety" }
       ],
       "currentRegions": ["china", "usa", "russia", "germany", "uk", "shandong", "inner-mongolia"],
-      "description": "最初是紫色或白色的，橙色胡萝卜是17世纪荷兰人培育的品种。"
+      "description": "最初是紫色或白色的，橙色胡萝卜是17世纪荷兰人培育的品种。",
+      "descriptionEn": "Originally purple or white; the orange carrot was bred by the Dutch in the 17th century."
     },
     {
       "id": "cucumber",
       "name": "黄瓜",
+      "nameEn": "Cucumber",
       "alias": ["青瓜"],
       "category": "vegetable",
       "origin": {
         "location": "india",
-        "time": { "year": -3000, "display": "公元前3000年" }
+        "time": { "year": -3000, "display": "公元前3000年", "displayEn": "3000 BCE" }
       },
       "spreads": [
-        { "from": "india", "to": "middle-east", "time": { "display": "公元前2000年" } },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前1000年" } },
-        { "from": "mediterranean", "to": "china", "time": { "display": "汉代" }, "via": "丝绸之路" },
-        { "from": "europe", "to": "north-america", "time": { "display": "16世纪" } }
+        { "from": "india", "to": "middle-east", "time": { "display": "公元前2000年", "displayEn": "2000 BCE" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "公元前1000年", "displayEn": "1000 BCE" } },
+        { "from": "mediterranean", "to": "china", "time": { "display": "汉代", "displayEn": "Han Dynasty" }, "via": "丝绸之路", "viaEn": "Silk Road" },
+        { "from": "europe", "to": "north-america", "time": { "display": "16世纪", "displayEn": "16th century" } }
       ],
       "currentRegions": ["china", "russia", "turkey", "iran", "usa", "shandong"],
-      "description": "清爽的夏季蔬菜，腌制黄瓜是世界各地流行的做法。"
+      "description": "清爽的夏季蔬菜，腌制黄瓜是世界各地流行的做法。",
+      "descriptionEn": "A refreshing summer vegetable; pickling cucumbers is popular practice around the world."
     },
     {
       "id": "eggplant",
       "name": "茄子",
+      "nameEn": "Eggplant",
       "alias": ["矮瓜"],
       "category": "vegetable",
       "origin": {
         "location": "india",
-        "time": { "year": -2000, "display": "公元前2000年" }
+        "time": { "year": -2000, "display": "公元前2000年", "displayEn": "2000 BCE" }
       },
       "spreads": [
-        { "from": "india", "to": "china", "time": { "display": "汉代" } },
-        { "from": "india", "to": "middle-east", "time": { "display": "公元后500年" } },
-        { "from": "middle-east", "to": "mediterranean", "time": { "display": "8世纪" }, "via": "阿拉伯商人" },
-        { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪" } }
+        { "from": "india", "to": "china", "time": { "display": "汉代", "displayEn": "Han Dynasty" } },
+        { "from": "india", "to": "middle-east", "time": { "display": "公元后500年", "displayEn": "500 CE" } },
+        { "from": "middle-east", "to": "mediterranean", "time": { "display": "8世纪", "displayEn": "8th century" }, "via": "阿拉伯商人", "viaEn": "Arab merchants" },
+        { "from": "mediterranean", "to": "europe", "time": { "display": "中世纪", "displayEn": "Medieval period" } }
       ],
       "currentRegions": ["china", "india", "egypt", "turkey", "japan", "shandong", "guangdong"],
-      "description": "印度起源的蔬菜，在中国、中东、地中海地区都有独特的烹饪传统。"
+      "description": "印度起源的蔬菜，在中国、中东、地中海地区都有独特的烹饪传统。",
+      "descriptionEn": "A vegetable originating from India with unique culinary traditions in China, the Middle East, and Mediterranean regions."
     },
     {
       "id": "sweet-potato",
       "name": "红薯",
+      "nameEn": "Sweet Potato",
       "alias": ["番薯", "地瓜", "山芋"],
       "category": "vegetable",
       "origin": {
         "location": "south-america",
-        "time": { "year": -3000, "display": "公元前3000年" }
+        "time": { "year": -3000, "display": "公元前3000年", "displayEn": "3000 BCE" }
       },
       "spreads": [
-        { "from": "south-america", "to": "oceania", "time": { "display": "公元1000年" }, "via": "波利尼西亚航海者" },
-        { "from": "south-america", "to": "spain", "time": { "year": 1492, "display": "1492年" }, "via": "哥伦布" },
-        { "from": "spain", "to": "philippines", "time": { "display": "16世纪" }, "via": "西班牙殖民" },
-        { "from": "philippines", "to": "china", "time": { "display": "16世纪末" } }
+        { "from": "south-america", "to": "oceania", "time": { "display": "公元1000年", "displayEn": "1000 CE" }, "via": "波利尼西亚航海者", "viaEn": "Polynesian seafarers" },
+        { "from": "south-america", "to": "spain", "time": { "year": 1492, "display": "1492年", "displayEn": "1492" }, "via": "哥伦布", "viaEn": "Christopher Columbus" },
+        { "from": "spain", "to": "philippines", "time": { "display": "16世纪", "displayEn": "16th century" }, "via": "西班牙殖民", "viaEn": "Spanish colonization" },
+        { "from": "philippines", "to": "china", "time": { "display": "16世纪末", "displayEn": "Late 16th century" } }
       ],
       "currentRegions": ["china", "nigeria", "tanzania", "indonesia", "japan", "shandong", "fujian"],
-      "description": "救荒作物，曾帮助中国人口快速增长，现为健康食品代表。"
+      "description": "救荒作物，曾帮助中国人口快速增长，现为健康食品代表。",
+      "descriptionEn": "A famine relief crop that helped China's rapid population growth, now a symbol of healthy eating."
     },
     {
       "id": "pumpkin",
       "name": "南瓜",
+      "nameEn": "Pumpkin",
       "alias": ["倭瓜", "番瓜"],
       "category": "vegetable",
       "origin": {
         "location": "mesoamerica",
-        "time": { "year": -7500, "display": "公元前7500年" }
+        "time": { "year": -7500, "display": "公元前7500年", "displayEn": "7500 BCE" }
       },
       "spreads": [
-        { "from": "mesoamerica", "to": "north-america", "time": { "display": "公元前3000年" } },
-        { "from": "north-america", "to": "europe", "time": { "display": "16世纪" }, "via": "西班牙征服者" },
-        { "from": "europe", "to": "asia", "time": { "display": "17世纪" } }
+        { "from": "mesoamerica", "to": "north-america", "time": { "display": "公元前3000年", "displayEn": "3000 BCE" } },
+        { "from": "north-america", "to": "europe", "time": { "display": "16世纪", "displayEn": "16th century" }, "via": "西班牙征服者", "viaEn": "Spanish conquistadors" },
+        { "from": "europe", "to": "asia", "time": { "display": "17世纪", "displayEn": "17th century" } }
       ],
       "currentRegions": ["china", "india", "russia", "usa", "mexico", "shandong"],
-      "description": "美洲三姐妹之一（与玉米、豆类），万圣节的标志性元素。"
+      "description": "美洲三姐妹之一（与玉米、豆类），万圣节的标志性元素。",
+      "descriptionEn": "One of the 'Three Sisters' (with corn and beans), an iconic element of Halloween."
     }
   ]
 }

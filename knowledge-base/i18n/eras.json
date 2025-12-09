@@ -1,0 +1,62 @@
+[
+  {
+    "id": "prehistoric",
+    "name": "史前时代",
+    "nameEn": "Prehistoric Era",
+    "icon": "🌾",
+    "startYear": -10000,
+    "endYear": -3000,
+    "description": "农业革命的开端，人类开始驯化作物",
+    "descriptionEn": "The dawn of agricultural revolution, humans began domesticating crops"
+  },
+  {
+    "id": "ancient",
+    "name": "古代文明",
+    "nameEn": "Ancient Civilizations",
+    "icon": "🏛️",
+    "startYear": -3000,
+    "endYear": 500,
+    "description": "四大文明古国时期，农业技术快速发展",
+    "descriptionEn": "Era of ancient civilizations, rapid development of agricultural techniques"
+  },
+  {
+    "id": "medieval",
+    "name": "中世纪",
+    "nameEn": "Medieval Period",
+    "icon": "⚔️",
+    "startYear": 500,
+    "endYear": 1500,
+    "description": "丝绸之路繁荣，东西方食物交流",
+    "descriptionEn": "Flourishing Silk Road, food exchange between East and West"
+  },
+  {
+    "id": "exploration",
+    "name": "大航海时代",
+    "nameEn": "Age of Exploration",
+    "icon": "⛵",
+    "startYear": 1500,
+    "endYear": 1800,
+    "description": "哥伦布大交换，全球食物大迁徙",
+    "descriptionEn": "Columbian Exchange, global migration of foods"
+  },
+  {
+    "id": "modern",
+    "name": "近代",
+    "nameEn": "Modern Era",
+    "icon": "🏭",
+    "startYear": 1800,
+    "endYear": 1950,
+    "description": "工业革命推动食品加工业发展",
+    "descriptionEn": "Industrial Revolution drove food processing industry development"
+  },
+  {
+    "id": "contemporary",
+    "name": "现代",
+    "nameEn": "Contemporary",
+    "icon": "🌐",
+    "startYear": 1950,
+    "endYear": 2100,
+    "description": "全球化时代，世界美食融合",
+    "descriptionEn": "Era of globalization, fusion of world cuisines"
+  }
+]

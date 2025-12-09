@@ -1,11 +1,11 @@
 {
   "locations": [
-    { "id": "asia", "name": "亚洲", "type": "continent" },
-    { "id": "europe", "name": "欧洲", "type": "continent" },
-    { "id": "africa", "name": "非洲", "type": "continent" },
-    { "id": "north-america", "name": "北美洲", "type": "continent" },
-    { "id": "south-america", "name": "南美洲", "type": "continent" },
-    { "id": "oceania", "name": "大洋洲", "type": "continent" },
-    { "id": "middle-east", "name": "中东", "type": "continent" }
+    { "id": "asia", "name": "亚洲", "nameEn": "Asia", "type": "continent" },
+    { "id": "europe", "name": "欧洲", "nameEn": "Europe", "type": "continent" },
+    { "id": "africa", "name": "非洲", "nameEn": "Africa", "type": "continent" },
+    { "id": "north-america", "name": "北美洲", "nameEn": "North America", "type": "continent" },
+    { "id": "south-america", "name": "南美洲", "nameEn": "South America", "type": "continent" },
+    { "id": "oceania", "name": "大洋洲", "nameEn": "Oceania", "type": "continent" },
+    { "id": "middle-east", "name": "中东", "nameEn": "Middle East", "type": "continent" }
   ]
 }

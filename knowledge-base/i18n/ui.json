@@ -1,0 +1,98 @@
+{
+  "app": {
+    "title": { "zh": "食物全球史", "en": "Global Food History" },
+    "subtitle": { "zh": "探索作物与食物的起源与传播", "en": "Explore the Origins and Spread of Crops and Foods" }
+  },
+  "tabs": {
+    "crops": { "zh": "作物", "en": "Crops" },
+    "foods": { "zh": "食物", "en": "Foods" },
+    "regions": { "zh": "地区", "en": "Regions" },
+    "timeline": { "zh": "时间线", "en": "Timeline" }
+  },
+  "cropCategories": {
+    "grain": { "zh": "谷物", "en": "Grains" },
+    "vegetable": { "zh": "蔬菜", "en": "Vegetables" },
+    "fruit": { "zh": "水果", "en": "Fruits" },
+    "legume": { "zh": "豆类", "en": "Legumes" },
+    "spice": { "zh": "香料", "en": "Spices" },
+    "beverage": { "zh": "饮料作物", "en": "Beverage Crops" },
+    "oil": { "zh": "油料作物", "en": "Oil Crops" },
+    "sugar": { "zh": "糖料作物", "en": "Sugar Crops" },
+    "nut": { "zh": "坚果", "en": "Nuts" }
+  },
+  "foodCategories": {
+    "staple": { "zh": "主食", "en": "Staples" },
+    "dish": { "zh": "菜肴", "en": "Dishes" },
+    "beverage": { "zh": "饮品", "en": "Beverages" },
+    "dessert": { "zh": "甜点", "en": "Desserts" },
+    "snack": { "zh": "小吃", "en": "Snacks" },
+    "condiment": { "zh": "调味品", "en": "Condiments" },
+    "preserved": { "zh": "腌制食品", "en": "Preserved Foods" }
+  },
+  "sections": {
+    "exploreByCropCategory": { "zh": "按类别探索作物", "en": "Explore Crops by Category" },
+    "exploreByFoodCategory": { "zh": "按类别探索食物", "en": "Explore Foods by Category" },
+    "exploreByRegion": { "zh": "按地区探索", "en": "Explore by Region" },
+    "exploreByEra": { "zh": "按时代探索历史", "en": "Explore History by Era" }
+  },
+  "labels": {
+    "origin": { "zh": "起源", "en": "Origin" },
+    "spread": { "zh": "传播", "en": "Spread" },
+    "originLocation": { "zh": "起源地", "en": "Place of Origin" },
+    "originTime": { "zh": "起源时间", "en": "Time of Origin" },
+    "spreadHistory": { "zh": "传播历史", "en": "Spread History" },
+    "spreadRoute": { "zh": "传播路径", "en": "Spread Route" },
+    "spreadMethod": { "zh": "传播途径", "en": "Spread Method" },
+    "currentRegions": { "zh": "当前主产区", "en": "Current Main Regions" },
+    "popularRegions": { "zh": "流行地区", "en": "Popular Regions" },
+    "basicInfo": { "zh": "基本信息", "en": "Basic Information" },
+    "description": { "zh": "简介", "en": "Description" },
+    "category": { "zh": "类别", "en": "Category" },
+    "alias": { "zh": "别名", "en": "Also Known As" },
+    "ingredients": { "zh": "主要食材", "en": "Main Ingredients" },
+    "relatedFoods": { "zh": "相关食物", "en": "Related Foods" },
+    "originCrops": { "zh": "起源作物", "en": "Origin Crops" },
+    "originFoods": { "zh": "起源食物", "en": "Origin Foods" },
+    "mainCrops": { "zh": "主产作物", "en": "Main Crops" },
+    "popularFoods": { "zh": "流行食物", "en": "Popular Foods" },
+    "countries": { "zh": "国家", "en": "Countries" },
+    "subRegions": { "zh": "子地区", "en": "Sub-regions" },
+    "searchResults": { "zh": "搜索结果", "en": "Search Results" }
+  },
+  "filters": {
+    "all": { "zh": "全部", "en": "All" },
+    "crop": { "zh": "作物", "en": "Crop" },
+    "food": { "zh": "食物", "en": "Food" },
+    "cropOrigin": { "zh": "作物起源", "en": "Crop Origin" },
+    "cropSpread": { "zh": "作物传播", "en": "Crop Spread" },
+    "foodOrigin": { "zh": "食物起源", "en": "Food Origin" },
+    "foodSpread": { "zh": "食物传播", "en": "Food Spread" }
+  },
+  "buttons": {
+    "back": { "zh": "返回", "en": "Back" },
+    "home": { "zh": "首页", "en": "Home" },
+    "search": { "zh": "搜索", "en": "Search" },
+    "viewDetails": { "zh": "查看详情", "en": "View Details" },
+    "viewCropDetails": { "zh": "查看作物详情", "en": "View Crop Details" },
+    "viewFoodDetails": { "zh": "查看食物详情", "en": "View Food Details" }
+  },
+  "placeholders": {
+    "searchCropsFoodsPlaces": { "zh": "搜索作物、食物或地点...", "en": "Search crops, foods, or places..." },
+    "enterKeyword": { "zh": "请输入关键词搜索", "en": "Enter a keyword to search" }
+  },
+  "units": {
+    "events": { "zh": "个事件", "en": "events" },
+    "countries": { "zh": "个国家", "en": "countries" },
+    "originCrops": { "zh": "种起源作物", "en": "origin crops" },
+    "originFoods": { "zh": "种起源食物", "en": "origin foods" }
+  },
+  "empty": {
+    "noResults": { "zh": "暂无结果", "en": "No results" },
+    "noEvents": { "zh": "暂无符合条件的事件", "en": "No matching events" },
+    "clickToExplore": { "zh": "点击探索", "en": "Click to explore" }
+  },
+  "language": {
+    "zh": { "zh": "中文", "en": "中文" },
+    "en": { "zh": "English", "en": "English" }
+  }
+}
