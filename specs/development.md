@@ -45,7 +45,15 @@
    ```
    entry/src/main/ets/
    ├── pages/           # 页面组件
+   │   ├── Index.ets         # 首页（四Tab布局）
+   │   ├── CropDetail.ets    # 作物详情
+   │   ├── FoodDetail.ets    # 食物详情
+   │   ├── LocationDetail.ets # 地区详情
+   │   ├── EraDetail.ets     # 时代详情（时间线）
+   │   └── ...
    ├── services/        # 数据服务
+   │   ├── DataService.ets      # 作物/食物/地点数据服务
+   │   └── TimelineService.ets  # 时间线服务
    ├── models/          # 数据模型
    ├── data/            # 内嵌数据
    └── common/          # 常量和工具

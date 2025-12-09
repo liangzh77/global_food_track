@@ -165,6 +165,61 @@ interface SpreadEvent {
 }
 ```
 
+### Era（时代）
+
+```typescript
+interface Era {
+  id: string;           // 唯一标识
+  name: string;         // 时代名称
+  icon: string;         // 图标（emoji）
+  startYear: number;    // 开始年份（负数表示公元前）
+  endYear: number;      // 结束年份
+  description: string;  // 时代描述
+}
+```
+
+**预定义时代**:
+| ID | 名称 | 时间范围 |
+|----|------|----------|
+| prehistoric | 史前时代 | 公元前10000年 - 公元前5000年 |
+| ancient | 古代文明 | 公元前5000年 - 公元500年 |
+| medieval | 中世纪 | 500年 - 1500年 |
+| exploration | 大航海时代 | 1500年 - 1800年 |
+| modern | 近代 | 1800年 - 1950年 |
+| contemporary | 现代 | 1950年 - 至今 |
+
+### TimelineEvent（时间线事件）
+
+```typescript
+interface TimelineEvent {
+  id: string;                          // 唯一标识
+  entityId: string;                    // 关联的作物/食物 ID
+  entityType: 'crop' | 'food';         // 实体类型
+  eventType: 'origin' | 'spread';      // 事件类型
+  year: number;                        // 年份（用于排序）
+  displayTime: string;                 // 显示时间文本
+  name: string;                        // 作物/食物名称
+  description: string;                 // 描述
+  location?: string;                   // 起源地名称（起源事件）
+  locationId?: string;                 // 起源地 ID
+  fromLocation?: string;               // 起始地名称（传播事件）
+  fromLocationId?: string;             // 起始地 ID
+  toLocation?: string;                 // 目标地名称（传播事件）
+  toLocationId?: string;               // 目标地 ID
+  via?: string;                        // 传播途径
+}
+```
+
+### TimelineFilter（时间线筛选）
+
+```typescript
+interface TimelineFilter {
+  entityType: 'all' | 'crop' | 'food'; // 实体类型筛选
+  eventType: 'all' | 'origin' | 'spread'; // 事件类型筛选
+  keyword: string;                     // 关键词搜索
+}
+```
+
 ## 索引数据
 
 ### origin-by-location（按地点索引的起源）

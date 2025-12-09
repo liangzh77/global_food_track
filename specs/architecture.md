@@ -39,16 +39,18 @@ global_food_track/
 ┌─────────────────────────────────────┐
 │            Pages (页面层)            │
 │  Index / CategoryList / CropDetail  │
-│  FoodDetail / LocationDetail / ...  │
+│  FoodDetail / LocationDetail /      │
+│  SearchResult / EraDetail           │
 ├─────────────────────────────────────┤
 │          Services (服务层)           │
-│            DataService              │
+│    DataService / TimelineService    │
 ├─────────────────────────────────────┤
 │           Models (模型层)            │
-│     Crop / Food / Location / ...    │
+│  Crop / Food / Location / Era /     │
+│  TimelineEvent / TimelineFilter     │
 ├─────────────────────────────────────┤
 │            Data (数据层)             │
-│   CropsData / FoodsData / ...       │
+│   CropsData / FoodsData / ERAS      │
 └─────────────────────────────────────┘
 ```
 
@@ -56,12 +58,13 @@ global_food_track/
 
 | 页面 | 路径 | 说明 |
 |------|------|------|
-| Index | pages/Index | 首页，三 Tab 布局 |
+| Index | pages/Index | 首页，四 Tab 布局（作物/食物/地区/时间线） |
 | CategoryList | pages/CategoryList | 类别列表页 |
 | CropDetail | pages/CropDetail | 作物详情页 |
 | FoodDetail | pages/FoodDetail | 食物详情页 |
 | LocationDetail | pages/LocationDetail | 地区详情页 |
 | SearchResult | pages/SearchResult | 搜索结果页 |
+| EraDetail | pages/EraDetail | 时代详情页（时间线事件列表） |
 
 ### 数据流
 
@@ -86,6 +89,13 @@ global_food_track/
 - 提供各类查询方法
 - 处理数据关联（如作物-食物关系）
 
+#### TimelineService（时间线服务）
+单例模式，负责：
+- 从作物和食物数据构建时间线事件
+- 解析显示文本中的年份（如"16世纪"→1550年，"唐代"→700年）
+- 按时代分组事件
+- 提供事件筛选和统计功能
+
 #### 页面组件
 - 使用 ArkUI 声明式 UI
 - `@State` 管理页面状态
@@ -109,6 +119,7 @@ global_food_track/
 | pages/FoodDetail.ets | pages/FoodDetail.vue |
 | pages/LocationDetail.ets | pages/LocationDetail.vue |
 | pages/SearchResult.ets | pages/SearchResult.vue |
+| pages/EraDetail.ets | pages/EraDetail.vue |
 
 ### 数据共享
 
