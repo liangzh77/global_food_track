@@ -4,6 +4,7 @@
 
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
+import { languageService, Language } from '../services/LanguageService';
 import { Colors, Sizes, NavIcons } from '../common/Constants';
 import { SearchResultItem } from '../models/DataModels';
 
@@ -41,6 +42,7 @@ struct SearchResult {
   @State keyword: string = '';
   @State results: SearchResultItem[] = [];
   @State isLoading: boolean = true;
+  @State currentLang: Language = languageService.getLanguage();
 
   aboutToAppear(): void {
     dataService.init();
@@ -53,6 +55,15 @@ struct SearchResult {
     this.isLoading = true;
     this.results = dataService.search(this.keyword);
     this.isLoading = false;
+  }
+
+  toggleLanguage(): void {
+    this.currentLang = languageService.toggleLanguage();
+  }
+
+  goHome(): void {
+    router.clear();
+    router.pushUrl({ url: 'pages/Index' });
   }
 
   build() {
@@ -88,7 +99,7 @@ struct SearchResult {
           .fontSize(Sizes.FONT_MD)
           .margin({ right: Sizes.SPACING_SM })
 
-        TextInput({ text: this.keyword })
+        TextInput({ placeholder: languageService.t('placeholders.search'), text: this.keyword })
           .layoutWeight(1)
           .height(36)
           .backgroundColor('transparent')
@@ -105,17 +116,44 @@ struct SearchResult {
       .backgroundColor(Colors.SURFACE)
       .borderRadius(Sizes.RADIUS_LARGE)
       .margin({ left: Sizes.SPACING_SM })
+
+      Column() {
+        Text(NavIcons.HOME)
+          .fontSize(Sizes.FONT_LG)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .padding(Sizes.SPACING_SM)
+          .onClick(() => {
+            this.goHome();
+          })
+
+        Text(languageService.getToggleButtonText())
+          .fontSize(Sizes.FONT_XS)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.PRIMARY)
+          .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+          .borderRadius(Sizes.RADIUS_MEDIUM)
+          .backgroundColor(Colors.PRIMARY + '15')
+          .margin({ top: 4 })
+          .onClick(() => {
+            this.toggleLanguage();
+          })
+      }
+      .alignItems(HorizontalAlign.Center)
+      .margin({ left: Sizes.SPACING_SM })
     }
     .width('100%')
-    .height(56)
+    .height(72)
     .padding({ left: Sizes.SPACING_SM, right: Sizes.SPACING_MD })
     .backgroundColor(Colors.CARD_BACKGROUND)
+    .alignItems(VerticalAlign.Top)
   }
 
   @Builder
   ResultsList() {
     Column() {
-      Text('找到 ' + this.results.length.toString() + ' 个结果')
+      Text(this.currentLang === 'en'
+        ? `Found ${this.results.length} results`
+        : `找到 ${this.results.length} 个结果`)
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_SECONDARY)
         .margin({ top: Sizes.SPACING_MD, bottom: Sizes.SPACING_MD })
@@ -187,7 +225,7 @@ struct SearchResult {
         .height(48)
         .color(Colors.PRIMARY)
 
-      Text('搜索中...')
+      Text(languageService.t('loading.searching'))
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_SECONDARY)
         .margin({ top: Sizes.SPACING_MD })
@@ -204,12 +242,14 @@ struct SearchResult {
         .fontSize(64)
         .margin({ bottom: Sizes.SPACING_MD })
 
-      Text('没有找到与"' + this.keyword + '"相关的结果')
+      Text(this.currentLang === 'en'
+        ? `No results found for "${this.keyword}"`
+        : `没有找到与"${this.keyword}"相关的结果`)
         .fontSize(Sizes.FONT_MD)
         .fontColor(Colors.TEXT_SECONDARY)
         .textAlign(TextAlign.Center)
 
-      Text('试试换个关键词？')
+      Text(languageService.t('empty.tryAnotherKeyword'))
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_HINT)
         .margin({ top: Sizes.SPACING_SM })
@@ -232,9 +272,9 @@ struct SearchResult {
 
   getTypeLabel(type: string): string {
     switch (type) {
-      case 'crop': return '作物';
-      case 'food': return '食物';
-      case 'location': return '地点';
+      case 'crop': return languageService.t('tabs.crops');
+      case 'food': return languageService.t('tabs.foods');
+      case 'location': return languageService.t('tabs.regions');
       default: return '';
     }
   }

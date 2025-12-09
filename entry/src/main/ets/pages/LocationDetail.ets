@@ -5,6 +5,7 @@
 
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
+import { languageService, Language } from '../services/LanguageService';
 import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getLocationIcon } from '../common/Constants';
 import { Location, Crop, Food, getCropCategoryName, getFoodCategoryName } from '../models/DataModels';
 
@@ -44,6 +45,7 @@ struct LocationDetail {
   @State originFoods: Food[] = [];
   @State subLocations: Location[] = [];
   @State activeTab: number = 0;
+  @State currentLang: Language = languageService.getLanguage();
   private locationId: string = '';
 
   aboutToAppear(): void {
@@ -70,6 +72,15 @@ struct LocationDetail {
         this.subLocations = dataService.getSubRegions(this.locationId);
       }
     }
+  }
+
+  toggleLanguage(): void {
+    this.currentLang = languageService.toggleLanguage();
+  }
+
+  goHome(): void {
+    router.clear();
+    router.pushUrl({ url: 'pages/Index' });
   }
 
   build() {
@@ -114,26 +125,51 @@ struct LocationDetail {
   @Builder
   NavBar() {
     Row() {
-      Text(NavIcons.BACK)
-        .fontSize(Sizes.FONT_XL)
-        .fontColor(Colors.TEXT_PRIMARY)
-        .padding(Sizes.SPACING_SM)
-        .onClick(() => {
-          router.back();
-        })
+      Row() {
+        Text(NavIcons.BACK)
+          .fontSize(Sizes.FONT_XL)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .padding(Sizes.SPACING_SM)
+          .onClick(() => {
+            router.back();
+          })
 
-      Text('地区详情')
-        .fontSize(Sizes.FONT_LG)
-        .fontWeight(FontWeight.Medium)
-        .fontColor(Colors.TEXT_PRIMARY)
-        .margin({ left: Sizes.SPACING_SM })
+        Text(languageService.getName(this.location!) || languageService.t('tabs.regions'))
+          .fontSize(Sizes.FONT_LG)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .margin({ left: Sizes.SPACING_SM })
+      }
+      .layoutWeight(1)
 
-      Blank()
+      Column() {
+        Text(NavIcons.HOME)
+          .fontSize(Sizes.FONT_LG)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .padding(Sizes.SPACING_SM)
+          .onClick(() => {
+            this.goHome();
+          })
+
+        Text(languageService.getToggleButtonText())
+          .fontSize(Sizes.FONT_XS)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.PRIMARY)
+          .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+          .borderRadius(Sizes.RADIUS_MEDIUM)
+          .backgroundColor(Colors.PRIMARY + '15')
+          .margin({ top: 4 })
+          .onClick(() => {
+            this.toggleLanguage();
+          })
+      }
+      .alignItems(HorizontalAlign.Center)
     }
     .width('100%')
-    .height(56)
+    .height(72)
     .padding({ left: Sizes.SPACING_SM, right: Sizes.SPACING_MD })
     .backgroundColor(Colors.CARD_BACKGROUND)
+    .alignItems(VerticalAlign.Top)
   }
 
   @Builder
@@ -145,7 +181,7 @@ struct LocationDetail {
           .margin({ right: Sizes.SPACING_MD })
 
         Column() {
-          Text(this.location!.name)
+          Text(languageService.getName(this.location!))
             .fontSize(Sizes.FONT_XXL)
             .fontWeight(FontWeight.Bold)
             .fontColor(Colors.TEXT_ON_PRIMARY)
@@ -162,8 +198,8 @@ struct LocationDetail {
 
       // 统计信息
       Row() {
-        this.StatItem(`${this.originCrops.length}`, '起源作物')
-        this.StatItem(`${this.originFoods.length}`, '起源食物')
+        this.StatItem(`${this.originCrops.length}`, languageService.t('labels.originCrops'))
+        this.StatItem(`${this.originFoods.length}`, languageService.t('labels.originFoods'))
         this.StatItem(`${this.subLocations.length}`, this.getSubLocationLabel())
       }
       .width('100%')
@@ -194,7 +230,7 @@ struct LocationDetail {
   @Builder
   TabBar() {
     Row() {
-      ForEach(['起源作物', '起源食物', this.getSubLocationLabel()], (tab: string, index: number) => {
+      ForEach([languageService.t('labels.originCrops'), languageService.t('labels.originFoods'), this.getSubLocationLabel()], (tab: string, index: number) => {
         Column() {
           Text(tab)
             .fontSize(Sizes.FONT_SM)
@@ -229,7 +265,7 @@ struct LocationDetail {
   OriginCropsSection() {
     Column() {
       if (this.originCrops.length === 0) {
-        this.EmptyState('暂无起源于此地的作物记录')
+        this.EmptyState(languageService.t('empty.noResults'))
       } else {
         ForEach(this.originCrops, (crop: Crop) => {
           this.CropListItem(crop)
@@ -244,7 +280,7 @@ struct LocationDetail {
   OriginFoodsSection() {
     Column() {
       if (this.originFoods.length === 0) {
-        this.EmptyState('暂无起源于此地的食物记录')
+        this.EmptyState(languageService.t('empty.noResults'))
       } else {
         ForEach(this.originFoods, (food: Food) => {
           this.FoodListItem(food)
@@ -259,7 +295,7 @@ struct LocationDetail {
   SubLocationsSection() {
     Column() {
       if (this.subLocations.length === 0) {
-        this.EmptyState('暂无子地区')
+        this.EmptyState(languageService.t('empty.noResults'))
       } else {
         ForEach(this.subLocations, (loc: Location) => {
           this.LocationListItem(loc)
@@ -278,12 +314,12 @@ struct LocationDetail {
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(crop.name)
+        Text(languageService.getName(crop))
           .fontSize(Sizes.FONT_MD)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.TEXT_PRIMARY)
 
-        Text(getCropCategoryName(crop.category) + ' · ' + crop.origin.time.display)
+        Text(languageService.getCropCategoryName(crop.category) + ' · ' + languageService.getTimeDisplay(crop.origin.time))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: 2 })
@@ -316,12 +352,12 @@ struct LocationDetail {
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(food.name)
+        Text(languageService.getName(food))
           .fontSize(Sizes.FONT_MD)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.TEXT_PRIMARY)
 
-        Text(getFoodCategoryName(food.category) + ' · ' + food.origin.time.display)
+        Text(languageService.getFoodCategoryName(food.category) + ' · ' + languageService.getTimeDisplay(food.origin.time))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: 2 })
@@ -354,7 +390,7 @@ struct LocationDetail {
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(loc.name)
+        Text(languageService.getName(loc))
           .fontSize(Sizes.FONT_MD)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.TEXT_PRIMARY)
@@ -401,19 +437,14 @@ struct LocationDetail {
   }
 
   getLocationTypeText(): string {
-    switch (this.location?.type) {
-      case 'continent': return '大洲';
-      case 'country': return '国家';
-      case 'region': return '地区';
-      default: return '地点';
-    }
+    return languageService.getLocationTypeName(this.location?.type || '');
   }
 
   getSubLocationLabel(): string {
     switch (this.location?.type) {
-      case 'continent': return '国家';
-      case 'country': return '地区';
-      default: return '子地区';
+      case 'continent': return languageService.t('labels.countries');
+      case 'country': return languageService.t('labels.subRegions');
+      default: return languageService.t('labels.subRegions');
     }
   }
 
@@ -422,12 +453,12 @@ struct LocationDetail {
     const parts: string[] = [];
 
     if (origins.crops.length > 0) {
-      parts.push(`${origins.crops.length}种作物`);
+      parts.push(`${origins.crops.length}${languageService.t('units.originCrops')}`);
     }
     if (origins.foods.length > 0) {
-      parts.push(`${origins.foods.length}种食物`);
+      parts.push(`${origins.foods.length}${languageService.t('units.originFoods')}`);
     }
 
-    return parts.join(' · ') || '点击查看详情';
+    return parts.join(' · ') || languageService.t('empty.clickToExplore');
   }
 }

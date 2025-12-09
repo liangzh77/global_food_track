@@ -5,6 +5,7 @@
 
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
+import { languageService, Language } from '../services/LanguageService';
 import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getCropCategoryColor } from '../common/Constants';
 import { Crop, Food, SpreadEvent, getCropCategoryName } from '../models/DataModels';
 
@@ -33,6 +34,7 @@ class LocationParams {
 struct CropDetail {
   @State crop: Crop | null = null;
   @State relatedFoods: Food[] = [];
+  @State currentLang: Language = languageService.getLanguage();
   private cropId: string = '';
 
   aboutToAppear(): void {
@@ -48,6 +50,15 @@ struct CropDetail {
       this.crop = crop;
       this.relatedFoods = dataService.getFoodsByCrop(this.cropId);
     }
+  }
+
+  toggleLanguage(): void {
+    this.currentLang = languageService.toggleLanguage();
+  }
+
+  goHome(): void {
+    router.clear();
+    router.pushUrl({ url: 'pages/Index' });
   }
 
   build() {
@@ -97,26 +108,52 @@ struct CropDetail {
   @Builder
   NavBar() {
     Row() {
-      Text(NavIcons.BACK)
-        .fontSize(Sizes.FONT_XL)
-        .fontColor(Colors.TEXT_PRIMARY)
-        .padding(Sizes.SPACING_SM)
-        .onClick(() => {
-          router.back();
-        })
+      Row() {
+        Text(NavIcons.BACK)
+          .fontSize(Sizes.FONT_XL)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .padding(Sizes.SPACING_SM)
+          .onClick(() => {
+            router.back();
+          })
 
-      Text('作物详情')
-        .fontSize(Sizes.FONT_LG)
-        .fontWeight(FontWeight.Medium)
-        .fontColor(Colors.TEXT_PRIMARY)
-        .margin({ left: Sizes.SPACING_SM })
+        Text(languageService.t('buttons.viewCropDetails'))
+          .fontSize(Sizes.FONT_LG)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .margin({ left: Sizes.SPACING_SM })
+      }
+      .layoutWeight(1)
 
-      Blank()
+      // 右侧按钮区
+      Column() {
+        Text(NavIcons.HOME)
+          .fontSize(Sizes.FONT_LG)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .padding(Sizes.SPACING_SM)
+          .onClick(() => {
+            this.goHome();
+          })
+
+        Text(languageService.getToggleButtonText())
+          .fontSize(Sizes.FONT_XS)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.PRIMARY)
+          .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+          .borderRadius(Sizes.RADIUS_MEDIUM)
+          .backgroundColor(Colors.PRIMARY + '15')
+          .margin({ top: 4 })
+          .onClick(() => {
+            this.toggleLanguage();
+          })
+      }
+      .alignItems(HorizontalAlign.Center)
     }
     .width('100%')
-    .height(56)
+    .height(72)
     .padding({ left: Sizes.SPACING_SM, right: Sizes.SPACING_MD })
     .backgroundColor(Colors.CARD_BACKGROUND)
+    .alignItems(VerticalAlign.Top)
   }
 
   @Builder
@@ -128,20 +165,20 @@ struct CropDetail {
           .margin({ right: Sizes.SPACING_MD })
 
         Column() {
-          Text(this.crop!.name)
+          Text(languageService.getName(this.crop!))
             .fontSize(Sizes.FONT_XXL)
             .fontWeight(FontWeight.Bold)
             .fontColor(Colors.TEXT_ON_PRIMARY)
 
-          if (this.crop!.alias && this.crop!.alias.length > 0) {
-            Text(this.crop!.alias.join('、'))
+          if (languageService.getAlias(this.crop!).length > 0) {
+            Text(languageService.getAlias(this.crop!).join(this.currentLang === 'en' ? ', ' : '、'))
               .fontSize(Sizes.FONT_SM)
               .fontColor(Colors.TEXT_ON_PRIMARY)
               .opacity(0.8)
               .margin({ top: Sizes.SPACING_XS })
           }
 
-          Text(getCropCategoryName(this.crop!.category))
+          Text(languageService.getCropCategoryName(this.crop!.category))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_ON_PRIMARY)
             .backgroundColor('#FFFFFF30')
@@ -154,7 +191,7 @@ struct CropDetail {
       .width('100%')
       .margin({ bottom: Sizes.SPACING_MD })
 
-      Text(this.crop!.description)
+      Text(languageService.getDescription(this.crop!))
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_ON_PRIMARY)
         .opacity(0.95)
@@ -168,11 +205,11 @@ struct CropDetail {
   @Builder
   OriginSection() {
     Column() {
-      this.SectionTitle('🌱 起源')
+      this.SectionTitle('🌱 ' + languageService.t('labels.origin'))
 
       Row() {
         Column() {
-          Text('起源地')
+          Text(languageService.t('labels.originLocation'))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
 
@@ -186,11 +223,11 @@ struct CropDetail {
         .alignItems(HorizontalAlign.Start)
 
         Column() {
-          Text('起源时间')
+          Text(languageService.t('labels.originTime'))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
 
-          Text(this.crop!.origin.time.display)
+          Text(languageService.getTimeDisplay(this.crop!.origin.time))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
@@ -211,7 +248,7 @@ struct CropDetail {
   @Builder
   SpreadSection() {
     Column() {
-      this.SectionTitle('🚢 传播历史')
+      this.SectionTitle('🚢 ' + languageService.t('labels.spreadHistory'))
 
       ForEach(this.crop!.spreads, (spread: SpreadEvent, index: number) => {
         this.SpreadItem(spread, index)
@@ -244,7 +281,7 @@ struct CropDetail {
       .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(spread.time.display)
+        Text(languageService.getTimeDisplay(spread.time))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.PRIMARY)
           .fontWeight(FontWeight.Medium)
@@ -265,8 +302,8 @@ struct CropDetail {
         }
         .margin({ top: Sizes.SPACING_XS })
 
-        if (spread.via) {
-          Text(spread.via)
+        if (languageService.getVia(spread)) {
+          Text(languageService.getVia(spread) || '')
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
             .margin({ top: Sizes.SPACING_XS })
@@ -283,7 +320,7 @@ struct CropDetail {
   @Builder
   CurrentRegionsSection() {
     Column() {
-      this.SectionTitle('📍 当前主产区')
+      this.SectionTitle('📍 ' + languageService.t('labels.currentRegions'))
 
       Flex({ wrap: FlexWrap.Wrap }) {
         ForEach(this.crop!.currentRegions, (regionId: string) => {
@@ -314,7 +351,7 @@ struct CropDetail {
   @Builder
   RelatedFoodsSection() {
     Column() {
-      this.SectionTitle('🍽️ 可制作的食物')
+      this.SectionTitle('🍽️ ' + languageService.t('labels.relatedFoods'))
 
       ForEach(this.relatedFoods, (food: Food) => {
         this.FoodItem(food)
@@ -335,11 +372,11 @@ struct CropDetail {
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(food.name)
+        Text(languageService.getName(food))
           .fontSize(Sizes.FONT_MD)
           .fontColor(Colors.TEXT_PRIMARY)
 
-        Text(`起源于${dataService.getLocationName(food.origin.location)}`)
+        Text(languageService.t('labels.origin') + ': ' + dataService.getLocationName(food.origin.location))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: 2 })

@@ -5,6 +5,7 @@
 
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
+import { languageService, Language } from '../services/LanguageService';
 import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getFoodCategoryColor } from '../common/Constants';
 import { Food, Crop, SpreadEvent, getFoodCategoryName } from '../models/DataModels';
 
@@ -33,6 +34,7 @@ class LocationParams {
 struct FoodDetail {
   @State food: Food | null = null;
   @State ingredients: Crop[] = [];
+  @State currentLang: Language = languageService.getLanguage();
   private foodId: string = '';
 
   aboutToAppear(): void {
@@ -48,6 +50,15 @@ struct FoodDetail {
       this.food = food;
       this.ingredients = dataService.getIngredientCrops(food);
     }
+  }
+
+  toggleLanguage(): void {
+    this.currentLang = languageService.toggleLanguage();
+  }
+
+  goHome(): void {
+    router.clear();
+    router.pushUrl({ url: 'pages/Index' });
   }
 
   build() {
@@ -97,26 +108,51 @@ struct FoodDetail {
   @Builder
   NavBar() {
     Row() {
-      Text(NavIcons.BACK)
-        .fontSize(Sizes.FONT_XL)
-        .fontColor(Colors.TEXT_PRIMARY)
-        .padding(Sizes.SPACING_SM)
-        .onClick(() => {
-          router.back();
-        })
+      Row() {
+        Text(NavIcons.BACK)
+          .fontSize(Sizes.FONT_XL)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .padding(Sizes.SPACING_SM)
+          .onClick(() => {
+            router.back();
+          })
 
-      Text('食物详情')
-        .fontSize(Sizes.FONT_LG)
-        .fontWeight(FontWeight.Medium)
-        .fontColor(Colors.TEXT_PRIMARY)
-        .margin({ left: Sizes.SPACING_SM })
+        Text(languageService.t('buttons.viewFoodDetails'))
+          .fontSize(Sizes.FONT_LG)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .margin({ left: Sizes.SPACING_SM })
+      }
+      .layoutWeight(1)
 
-      Blank()
+      Column() {
+        Text(NavIcons.HOME)
+          .fontSize(Sizes.FONT_LG)
+          .fontColor(Colors.TEXT_PRIMARY)
+          .padding(Sizes.SPACING_SM)
+          .onClick(() => {
+            this.goHome();
+          })
+
+        Text(languageService.getToggleButtonText())
+          .fontSize(Sizes.FONT_XS)
+          .fontWeight(FontWeight.Medium)
+          .fontColor(Colors.PRIMARY)
+          .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+          .borderRadius(Sizes.RADIUS_MEDIUM)
+          .backgroundColor(Colors.PRIMARY + '15')
+          .margin({ top: 4 })
+          .onClick(() => {
+            this.toggleLanguage();
+          })
+      }
+      .alignItems(HorizontalAlign.Center)
     }
     .width('100%')
-    .height(56)
+    .height(72)
     .padding({ left: Sizes.SPACING_SM, right: Sizes.SPACING_MD })
     .backgroundColor(Colors.CARD_BACKGROUND)
+    .alignItems(VerticalAlign.Top)
   }
 
   @Builder
@@ -128,20 +164,20 @@ struct FoodDetail {
           .margin({ right: Sizes.SPACING_MD })
 
         Column() {
-          Text(this.food!.name)
+          Text(languageService.getName(this.food!))
             .fontSize(Sizes.FONT_XXL)
             .fontWeight(FontWeight.Bold)
             .fontColor(Colors.TEXT_ON_PRIMARY)
 
-          if (this.food!.alias && this.food!.alias.length > 0) {
-            Text(this.food!.alias.join('、'))
+          if (languageService.getAlias(this.food!).length > 0) {
+            Text(languageService.getAlias(this.food!).join(this.currentLang === 'en' ? ', ' : '、'))
               .fontSize(Sizes.FONT_SM)
               .fontColor(Colors.TEXT_ON_PRIMARY)
               .opacity(0.8)
               .margin({ top: Sizes.SPACING_XS })
           }
 
-          Text(getFoodCategoryName(this.food!.category))
+          Text(languageService.getFoodCategoryName(this.food!.category))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_ON_PRIMARY)
             .backgroundColor('#FFFFFF30')
@@ -154,7 +190,7 @@ struct FoodDetail {
       .width('100%')
       .margin({ bottom: Sizes.SPACING_MD })
 
-      Text(this.food!.description)
+      Text(languageService.getDescription(this.food!))
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_ON_PRIMARY)
         .opacity(0.95)
@@ -168,11 +204,11 @@ struct FoodDetail {
   @Builder
   OriginSection() {
     Column() {
-      this.SectionTitle('🏛️ 起源')
+      this.SectionTitle('🏛️ ' + languageService.t('labels.origin'))
 
       Row() {
         Column() {
-          Text('起源地')
+          Text(languageService.t('labels.originLocation'))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
 
@@ -186,11 +222,11 @@ struct FoodDetail {
         .alignItems(HorizontalAlign.Start)
 
         Column() {
-          Text('起源时间')
+          Text(languageService.t('labels.originTime'))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
 
-          Text(this.food!.origin.time.display)
+          Text(languageService.getTimeDisplay(this.food!.origin.time))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
@@ -211,7 +247,7 @@ struct FoodDetail {
   @Builder
   IngredientsSection() {
     Column() {
-      this.SectionTitle('🥗 主要食材')
+      this.SectionTitle('🥗 ' + languageService.t('labels.ingredients'))
 
       ForEach(this.ingredients, (crop: Crop) => {
         this.CropItem(crop)
@@ -232,11 +268,11 @@ struct FoodDetail {
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(crop.name)
+        Text(languageService.getName(crop))
           .fontSize(Sizes.FONT_MD)
           .fontColor(Colors.TEXT_PRIMARY)
 
-        Text(`起源于${dataService.getLocationName(crop.origin.location)}`)
+        Text(languageService.t('labels.origin') + ': ' + dataService.getLocationName(crop.origin.location))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: 2 })
@@ -261,7 +297,7 @@ struct FoodDetail {
   @Builder
   SpreadSection() {
     Column() {
-      this.SectionTitle('🌍 传播历史')
+      this.SectionTitle('🌍 ' + languageService.t('labels.spreadHistory'))
 
       ForEach(this.food!.spreads, (spread: SpreadEvent, index: number) => {
         this.SpreadItem(spread, index)
@@ -277,7 +313,6 @@ struct FoodDetail {
   @Builder
   SpreadItem(spread: SpreadEvent, index: number) {
     Row() {
-      // 时间线
       Column() {
         Circle({ width: 12, height: 12 })
           .fill(Colors.PRIMARY)
@@ -294,7 +329,7 @@ struct FoodDetail {
       .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(spread.time.display)
+        Text(languageService.getTimeDisplay(spread.time))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.PRIMARY)
           .fontWeight(FontWeight.Medium)
@@ -315,8 +350,8 @@ struct FoodDetail {
         }
         .margin({ top: Sizes.SPACING_XS })
 
-        if (spread.via) {
-          Text(spread.via)
+        if (languageService.getVia(spread)) {
+          Text(languageService.getVia(spread) || '')
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_SECONDARY)
             .margin({ top: Sizes.SPACING_XS })
@@ -333,7 +368,7 @@ struct FoodDetail {
   @Builder
   CurrentRegionsSection() {
     Column() {
-      this.SectionTitle('📍 当前流行地区')
+      this.SectionTitle('📍 ' + languageService.t('labels.popularRegions'))
 
       Flex({ wrap: FlexWrap.Wrap }) {
         ForEach(this.food!.currentRegions, (regionId: string) => {

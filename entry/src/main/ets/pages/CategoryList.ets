@@ -5,6 +5,7 @@
 
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
+import { languageService, Language } from '../services/LanguageService';
 import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getCropCategoryColor, getFoodCategoryColor } from '../common/Constants';
 import { Crop, Food, CropCategory, FoodCategory, getCropCategoryName, getFoodCategoryName } from '../models/DataModels';
 
@@ -36,6 +37,7 @@ struct CategoryList {
   @State type: string = ''; // 'crop' or 'food'
   @State crops: Crop[] = [];
   @State foods: Food[] = [];
+  @State currentLang: Language = languageService.getLanguage();
 
   aboutToAppear(): void {
     dataService.init();
@@ -51,6 +53,15 @@ struct CategoryList {
     } else {
       this.foods = dataService.getFoodsByCategory(this.category as FoodCategory);
     }
+  }
+
+  toggleLanguage(): void {
+    this.currentLang = languageService.toggleLanguage();
+  }
+
+  goHome(): void {
+    router.clear();
+    router.pushUrl({ url: 'pages/Index' });
   }
 
   build() {
@@ -95,6 +106,29 @@ struct CategoryList {
           })
 
         Blank()
+
+        Column() {
+          Text(NavIcons.HOME)
+            .fontSize(Sizes.FONT_LG)
+            .fontColor(Colors.TEXT_ON_PRIMARY)
+            .padding(Sizes.SPACING_SM)
+            .onClick(() => {
+              this.goHome();
+            })
+
+          Text(languageService.getToggleButtonText())
+            .fontSize(Sizes.FONT_XS)
+            .fontWeight(FontWeight.Medium)
+            .fontColor(Colors.TEXT_ON_PRIMARY)
+            .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+            .borderRadius(Sizes.RADIUS_MEDIUM)
+            .backgroundColor('rgba(255, 255, 255, 0.15)')
+            .margin({ top: 4 })
+            .onClick(() => {
+              this.toggleLanguage();
+            })
+        }
+        .alignItems(HorizontalAlign.Center)
       }
       .width('100%')
 
@@ -109,7 +143,7 @@ struct CategoryList {
             .fontWeight(FontWeight.Bold)
             .fontColor(Colors.TEXT_ON_PRIMARY)
 
-          Text(`共 ${this.type === 'crop' ? this.crops.length : this.foods.length} 项`)
+          Text(`${this.type === 'crop' ? this.crops.length : this.foods.length} ${this.currentLang === 'en' ? 'items' : '项'}`)
             .fontSize(Sizes.FONT_SM)
             .fontColor(Colors.TEXT_ON_PRIMARY)
             .opacity(0.8)
@@ -139,20 +173,20 @@ struct CategoryList {
 
       Column() {
         Row() {
-          Text(crop.name)
+          Text(languageService.getName(crop))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
 
-          if (crop.alias && crop.alias.length > 0) {
-            Text(`（${crop.alias[0]}）`)
+          if (languageService.getAlias(crop).length > 0) {
+            Text(`（${languageService.getAlias(crop)[0]}）`)
               .fontSize(Sizes.FONT_SM)
               .fontColor(Colors.TEXT_SECONDARY)
               .margin({ left: Sizes.SPACING_XS })
           }
         }
 
-        Text(`起源：${dataService.getLocationName(crop.origin.location)} · ${crop.origin.time.display}`)
+        Text(`${languageService.t('labels.origin')}: ${dataService.getLocationName(crop.origin.location)} · ${languageService.getTimeDisplay(crop.origin.time)}`)
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: Sizes.SPACING_XS })
@@ -188,20 +222,20 @@ struct CategoryList {
 
       Column() {
         Row() {
-          Text(food.name)
+          Text(languageService.getName(food))
             .fontSize(Sizes.FONT_MD)
             .fontWeight(FontWeight.Medium)
             .fontColor(Colors.TEXT_PRIMARY)
 
-          if (food.alias && food.alias.length > 0) {
-            Text(`（${food.alias[0]}）`)
+          if (languageService.getAlias(food).length > 0) {
+            Text(`（${languageService.getAlias(food)[0]}）`)
               .fontSize(Sizes.FONT_SM)
               .fontColor(Colors.TEXT_SECONDARY)
               .margin({ left: Sizes.SPACING_XS })
           }
         }
 
-        Text(`起源：${dataService.getLocationName(food.origin.location)} · ${food.origin.time.display}`)
+        Text(`${languageService.t('labels.origin')}: ${dataService.getLocationName(food.origin.location)} · ${languageService.getTimeDisplay(food.origin.time)}`)
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: Sizes.SPACING_XS })
@@ -230,9 +264,9 @@ struct CategoryList {
 
   getCategoryName(): string {
     if (this.type === 'crop') {
-      return getCropCategoryName(this.category as CropCategory);
+      return languageService.getCropCategoryName(this.category);
     } else {
-      return getFoodCategoryName(this.category as FoodCategory);
+      return languageService.getFoodCategoryName(this.category);
     }
   }
 

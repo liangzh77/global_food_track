@@ -5,6 +5,7 @@
 import router from '@ohos.router';
 import { dataService } from '../services/DataService';
 import { timelineService } from '../services/TimelineService';
+import { languageService, Language } from '../services/LanguageService';
 import { Colors, Sizes, NavIcons, getCropIcon, getFoodIcon, getLocationIcon } from '../common/Constants';
 import { Location, CropCategory, FoodCategory, getCropCategoryName, getFoodCategoryName, Era, ERAS } from '../models/DataModels';
 
@@ -57,32 +58,41 @@ class EraParams {
 struct Index {
   @State searchText: string = '';
   @State activeTab: number = 0;
+  @State currentLang: Language = languageService.getLanguage();
 
-  private cropCategories: CategoryItem[] = [
-    new CategoryItem('grain', '谷物'),
-    new CategoryItem('vegetable', '蔬菜'),
-    new CategoryItem('fruit', '水果'),
-    new CategoryItem('legume', '豆类'),
-    new CategoryItem('spice', '香料'),
-    new CategoryItem('beverage', '饮料作物'),
-    new CategoryItem('oil', '油料作物'),
-    new CategoryItem('sugar', '糖料作物'),
-    new CategoryItem('nut', '坚果')
-  ];
+  private getCropCategories(): CategoryItem[] {
+    return [
+      new CategoryItem('grain', languageService.t('cropCategories.grain')),
+      new CategoryItem('vegetable', languageService.t('cropCategories.vegetable')),
+      new CategoryItem('fruit', languageService.t('cropCategories.fruit')),
+      new CategoryItem('legume', languageService.t('cropCategories.legume')),
+      new CategoryItem('spice', languageService.t('cropCategories.spice')),
+      new CategoryItem('beverage', languageService.t('cropCategories.beverage')),
+      new CategoryItem('oil', languageService.t('cropCategories.oil')),
+      new CategoryItem('sugar', languageService.t('cropCategories.sugar')),
+      new CategoryItem('nut', languageService.t('cropCategories.nut'))
+    ];
+  }
 
-  private foodCategories: CategoryItem[] = [
-    new CategoryItem('staple', '主食'),
-    new CategoryItem('dish', '菜肴'),
-    new CategoryItem('beverage', '饮品'),
-    new CategoryItem('dessert', '甜点'),
-    new CategoryItem('snack', '小吃'),
-    new CategoryItem('condiment', '调味品'),
-    new CategoryItem('preserved', '腌制食品')
-  ];
+  private getFoodCategories(): CategoryItem[] {
+    return [
+      new CategoryItem('staple', languageService.t('foodCategories.staple')),
+      new CategoryItem('dish', languageService.t('foodCategories.dish')),
+      new CategoryItem('beverage', languageService.t('foodCategories.beverage')),
+      new CategoryItem('dessert', languageService.t('foodCategories.dessert')),
+      new CategoryItem('snack', languageService.t('foodCategories.snack')),
+      new CategoryItem('condiment', languageService.t('foodCategories.condiment')),
+      new CategoryItem('preserved', languageService.t('foodCategories.preserved'))
+    ];
+  }
 
   aboutToAppear(): void {
     dataService.init();
     timelineService.init();
+  }
+
+  toggleLanguage(): void {
+    this.currentLang = languageService.toggleLanguage();
   }
 
   build() {
@@ -116,17 +126,34 @@ struct Index {
 
   @Builder
   Header() {
-    Column() {
-      Text('食物全球史')
-        .fontSize(Sizes.FONT_TITLE)
-        .fontWeight(FontWeight.Bold)
-        .fontColor(Colors.TEXT_ON_PRIMARY)
+    Row() {
+      Column() {
+        Text(languageService.t('app.title'))
+          .fontSize(Sizes.FONT_TITLE)
+          .fontWeight(FontWeight.Bold)
+          .fontColor(Colors.TEXT_ON_PRIMARY)
 
-      Text('探索作物与食物的起源与传播')
-        .fontSize(Sizes.FONT_SM)
+        Text(languageService.t('app.subtitle'))
+          .fontSize(Sizes.FONT_SM)
+          .fontColor(Colors.TEXT_ON_PRIMARY)
+          .opacity(0.9)
+          .margin({ top: Sizes.SPACING_XS })
+      }
+      .alignItems(HorizontalAlign.Start)
+      .layoutWeight(1)
+
+      // 语言切换按钮
+      Text(languageService.getToggleButtonText())
+        .fontSize(Sizes.FONT_XS)
+        .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_ON_PRIMARY)
-        .opacity(0.9)
-        .margin({ top: Sizes.SPACING_XS })
+        .padding({ left: 12, right: 12, top: 6, bottom: 6 })
+        .borderRadius(Sizes.RADIUS_LARGE)
+        .backgroundColor('rgba(255, 255, 255, 0.15)')
+        .border({ width: 1, color: 'rgba(255, 255, 255, 0.5)' })
+        .onClick(() => {
+          this.toggleLanguage();
+        })
     }
     .width('100%')
     .padding({
@@ -136,7 +163,7 @@ struct Index {
       right: Sizes.SPACING_MD
     })
     .backgroundColor(Colors.PRIMARY)
-    .alignItems(HorizontalAlign.Start)
+    .alignItems(VerticalAlign.Top)
   }
 
   @Builder
@@ -146,7 +173,7 @@ struct Index {
         .fontSize(Sizes.FONT_LG)
         .margin({ right: Sizes.SPACING_SM })
 
-      TextInput({ placeholder: '搜索作物、食物或地点...', text: this.searchText })
+      TextInput({ placeholder: languageService.t('placeholders.search'), text: this.searchText })
         .layoutWeight(1)
         .height(40)
         .backgroundColor('transparent')
@@ -183,10 +210,10 @@ struct Index {
   @Builder
   TabBar() {
     Row() {
-      this.TabItem('作物', 0)
-      this.TabItem('食物', 1)
-      this.TabItem('地区', 2)
-      this.TabItem('时间线', 3)
+      this.TabItem(languageService.t('tabs.crops'), 0)
+      this.TabItem(languageService.t('tabs.foods'), 1)
+      this.TabItem(languageService.t('tabs.regions'), 2)
+      this.TabItem(languageService.t('tabs.timeline'), 3)
     }
     .width('100%')
     .justifyContent(FlexAlign.SpaceEvenly)
@@ -215,7 +242,7 @@ struct Index {
   @Builder
   CropCategories() {
     Column() {
-      Text('按类别探索作物')
+      Text(languageService.t('sections.exploreByCropCategory'))
         .fontSize(Sizes.FONT_LG)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_PRIMARY)
@@ -223,7 +250,7 @@ struct Index {
         .alignSelf(ItemAlign.Start)
 
       Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceBetween }) {
-        ForEach(this.cropCategories, (item: CategoryItem) => {
+        ForEach(this.getCropCategories(), (item: CategoryItem) => {
           this.CategoryCard(item.key, item.name, getCropIcon(item.key), 'crop')
         })
       }
@@ -236,7 +263,7 @@ struct Index {
   @Builder
   FoodCategories() {
     Column() {
-      Text('按类别探索食物')
+      Text(languageService.t('sections.exploreByFoodCategory'))
         .fontSize(Sizes.FONT_LG)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_PRIMARY)
@@ -244,7 +271,7 @@ struct Index {
         .alignSelf(ItemAlign.Start)
 
       Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceBetween }) {
-        ForEach(this.foodCategories, (item: CategoryItem) => {
+        ForEach(this.getFoodCategories(), (item: CategoryItem) => {
           this.CategoryCard(item.key, item.name, getFoodIcon(item.key), 'food')
         })
       }
@@ -288,7 +315,7 @@ struct Index {
   @Builder
   LocationExplorer() {
     Column() {
-      Text('按地区探索')
+      Text(languageService.t('sections.exploreByRegion'))
         .fontSize(Sizes.FONT_LG)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_PRIMARY)
@@ -347,22 +374,22 @@ struct Index {
     const parts: string[] = [];
 
     if (countries.length > 0) {
-      parts.push(countries.length.toString() + '个国家');
+      parts.push(countries.length.toString() + languageService.t('units.countries'));
     }
     if (origins.crops.length > 0) {
-      parts.push(origins.crops.length.toString() + '种起源作物');
+      parts.push(origins.crops.length.toString() + languageService.t('units.originCrops'));
     }
     if (origins.foods.length > 0) {
-      parts.push(origins.foods.length.toString() + '种起源食物');
+      parts.push(origins.foods.length.toString() + languageService.t('units.originFoods'));
     }
 
-    return parts.length > 0 ? parts.join(' · ') : '点击探索';
+    return parts.length > 0 ? parts.join(' · ') : languageService.t('empty.clickToExplore');
   }
 
   @Builder
   TimelineExplorer() {
     Column() {
-      Text('按时代探索历史')
+      Text(languageService.t('sections.exploreByEra'))
         .fontSize(Sizes.FONT_LG)
         .fontWeight(FontWeight.Medium)
         .fontColor(Colors.TEXT_PRIMARY)
@@ -371,12 +398,12 @@ struct Index {
 
       // 时间线入口卡片
       Column() {
-        Text('追溯食物与作物从起源到全球传播的历史轨迹')
+        Text(languageService.t('sections.timelineIntro'))
           .fontSize(Sizes.FONT_SM)
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ bottom: Sizes.SPACING_MD })
 
-        Button('查看完整时间线 →')
+        Button(languageService.t('buttons.viewFullTimeline'))
           .fontSize(Sizes.FONT_SM)
           .fontWeight(FontWeight.Medium)
           .backgroundColor(Colors.PRIMARY)
@@ -411,7 +438,7 @@ struct Index {
         .margin({ right: Sizes.SPACING_MD })
 
       Column() {
-        Text(era.name)
+        Text(languageService.getEraName(era.id))
           .fontSize(Sizes.FONT_MD)
           .fontWeight(FontWeight.Medium)
           .fontColor(Colors.TEXT_PRIMARY)
@@ -421,7 +448,7 @@ struct Index {
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: 2 })
 
-        Text(era.description)
+        Text(languageService.getEraDescription(era.id))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_HINT)
           .margin({ top: 4 })
@@ -435,7 +462,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .fontColor(Colors.PRIMARY)
 
-        Text('事件')
+        Text(languageService.t('labels.events'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.PRIMARY)
       }

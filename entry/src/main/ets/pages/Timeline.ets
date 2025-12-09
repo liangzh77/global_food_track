@@ -3,8 +3,9 @@
  */
 
 import router from '@ohos.router';
-import { Colors, Sizes } from '../common/Constants';
+import { Colors, Sizes, NavIcons } from '../common/Constants';
 import { timelineService } from '../services/TimelineService';
+import { languageService, Language } from '../services/LanguageService';
 import { Era, TimelineEvent } from '../models/DataModels';
 
 class EraParams {
@@ -22,6 +23,7 @@ struct Timeline {
   @State totalEvents: number = 0;
   @State totalCrops: number = 0;
   @State totalFoods: number = 0;
+  @State currentLang: Language = languageService.getLanguage();
 
   aboutToAppear(): void {
     timelineService.init();
@@ -42,6 +44,15 @@ struct Timeline {
     });
     this.totalCrops = cropIds.size;
     this.totalFoods = foodIds.size;
+  }
+
+  toggleLanguage(): void {
+    this.currentLang = languageService.toggleLanguage();
+  }
+
+  goHome(): void {
+    router.clear();
+    router.pushUrl({ url: 'pages/Index' });
   }
 
   build() {
@@ -77,12 +88,49 @@ struct Timeline {
   @Builder
   Header() {
     Column() {
-      Text('时间线')
+      Row() {
+        Text(NavIcons.BACK)
+          .fontSize(Sizes.FONT_XL)
+          .fontColor(Colors.TEXT_ON_PRIMARY)
+          .padding(Sizes.SPACING_SM)
+          .onClick(() => {
+            router.back();
+          })
+
+        Blank()
+
+        Column() {
+          Text(NavIcons.HOME)
+            .fontSize(Sizes.FONT_LG)
+            .fontColor(Colors.TEXT_ON_PRIMARY)
+            .padding(Sizes.SPACING_SM)
+            .onClick(() => {
+              this.goHome();
+            })
+
+          Text(languageService.getToggleButtonText())
+            .fontSize(Sizes.FONT_XS)
+            .fontWeight(FontWeight.Medium)
+            .fontColor(Colors.TEXT_ON_PRIMARY)
+            .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+            .borderRadius(Sizes.RADIUS_MEDIUM)
+            .backgroundColor('rgba(255, 255, 255, 0.15)')
+            .margin({ top: 4 })
+            .onClick(() => {
+              this.toggleLanguage();
+            })
+        }
+        .alignItems(HorizontalAlign.Center)
+      }
+      .width('100%')
+
+      Text(languageService.t('tabs.timeline'))
         .fontSize(Sizes.FONT_TITLE)
         .fontWeight(FontWeight.Bold)
         .fontColor(Colors.TEXT_ON_PRIMARY)
+        .margin({ top: Sizes.SPACING_SM })
 
-      Text('探索作物与食物的历史传播')
+      Text(languageService.t('sections.timelineIntro'))
         .fontSize(Sizes.FONT_SM)
         .fontColor(Colors.TEXT_ON_PRIMARY)
         .opacity(0.9)
@@ -90,7 +138,7 @@ struct Timeline {
     }
     .width('100%')
     .padding({
-      top: Sizes.SPACING_LG,
+      top: Sizes.SPACING_SM,
       bottom: Sizes.SPACING_LG,
       left: Sizes.SPACING_MD,
       right: Sizes.SPACING_MD
@@ -102,9 +150,9 @@ struct Timeline {
   @Builder
   StatsOverview() {
     Row() {
-      this.StatItem(this.totalEvents.toString(), '历史事件')
-      this.StatItem(this.totalCrops.toString(), '作物')
-      this.StatItem(this.totalFoods.toString(), '食物')
+      this.StatItem(this.totalEvents.toString(), languageService.t('labels.events'))
+      this.StatItem(this.totalCrops.toString(), languageService.t('tabs.crops'))
+      this.StatItem(this.totalFoods.toString(), languageService.t('tabs.foods'))
     }
     .width('100%')
     .justifyContent(FlexAlign.SpaceAround)
@@ -142,10 +190,10 @@ struct Timeline {
   @Builder
   Legend() {
     Row() {
-      this.LegendItem('#4CAF50', '作物起源')
-      this.LegendItem('#2196F3', '作物传播')
-      this.LegendItem('#FF9800', '食物起源')
-      this.LegendItem('#9C27B0', '食物传播')
+      this.LegendItem('#4CAF50', languageService.t('legend.cropOrigin'))
+      this.LegendItem('#2196F3', languageService.t('legend.cropSpread'))
+      this.LegendItem('#FF9800', languageService.t('legend.foodOrigin'))
+      this.LegendItem('#9C27B0', languageService.t('legend.foodSpread'))
     }
     .width('100%')
     .justifyContent(FlexAlign.Center)
@@ -203,7 +251,7 @@ struct Timeline {
 
       // 信息
       Column() {
-        Text(era.name)
+        Text(languageService.getEraName(era.id))
           .fontSize(Sizes.FONT_LG)
           .fontWeight(FontWeight.Bold)
           .fontColor(Colors.TEXT_PRIMARY)
@@ -213,7 +261,7 @@ struct Timeline {
           .fontColor(Colors.TEXT_SECONDARY)
           .margin({ top: 2 })
 
-        Text(era.description)
+        Text(languageService.getEraDescription(era.id))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.TEXT_HINT)
           .margin({ top: 4 })
@@ -228,7 +276,7 @@ struct Timeline {
           .fontWeight(FontWeight.Bold)
           .fontColor(Colors.PRIMARY)
 
-        Text('事件')
+        Text(languageService.t('labels.events'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(Colors.PRIMARY)
       }
@@ -257,7 +305,7 @@ struct Timeline {
   @Builder
   BottomNav() {
     Row() {
-      Text('← 返回首页')
+      Text(languageService.t('buttons.backToHome'))
         .fontSize(Sizes.FONT_MD)
         .fontColor(Colors.PRIMARY)
         .fontWeight(FontWeight.Medium)

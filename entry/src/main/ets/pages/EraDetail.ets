@@ -3,8 +3,9 @@
  */
 
 import router from '@ohos.router';
-import { Colors, Sizes } from '../common/Constants';
+import { Colors, Sizes, NavIcons } from '../common/Constants';
 import { timelineService } from '../services/TimelineService';
+import { languageService, Language } from '../services/LanguageService';
 import {
   Era,
   TimelineEvent,
@@ -52,6 +53,7 @@ struct EraDetail {
   @State filter: TimelineFilter = new TimelineFilter();
   @State selectedEvent: TimelineEvent | null = null;
   @State showModal: boolean = false;
+  @State currentLang: Language = languageService.getLanguage();
 
   aboutToAppear(): void {
     timelineService.init();
@@ -71,8 +73,17 @@ struct EraDetail {
     this.filteredEvents = timelineService.filterEvents(this.allEvents, this.filter);
   }
 
+  toggleLanguage(): void {
+    this.currentLang = languageService.toggleLanguage();
+  }
+
+  goHome(): void {
+    router.clear();
+    router.pushUrl({ url: 'pages/Index' });
+  }
+
   getEventTypeLabel(event: TimelineEvent): string {
-    return getTimelineEntityTypeName(event.entityType) + getEventTypeName(event.eventType);
+    return languageService.getTimelineEntityTypeName(event.entityType) + languageService.getEventTypeName(event.eventType);
   }
 
   build() {
@@ -110,13 +121,38 @@ struct EraDetail {
   Header() {
     Column() {
       Row() {
-        Text('‹ 返回')
-          .fontSize(Sizes.FONT_MD)
+        Text(NavIcons.BACK)
+          .fontSize(Sizes.FONT_XL)
           .fontColor(Colors.TEXT_ON_PRIMARY)
-          .opacity(0.9)
+          .padding(Sizes.SPACING_SM)
           .onClick(() => {
             router.back();
           })
+
+        Blank()
+
+        Column() {
+          Text(NavIcons.HOME)
+            .fontSize(Sizes.FONT_LG)
+            .fontColor(Colors.TEXT_ON_PRIMARY)
+            .padding(Sizes.SPACING_SM)
+            .onClick(() => {
+              this.goHome();
+            })
+
+          Text(languageService.getToggleButtonText())
+            .fontSize(Sizes.FONT_XS)
+            .fontWeight(FontWeight.Medium)
+            .fontColor(Colors.TEXT_ON_PRIMARY)
+            .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+            .borderRadius(Sizes.RADIUS_MEDIUM)
+            .backgroundColor('rgba(255, 255, 255, 0.15)')
+            .margin({ top: 4 })
+            .onClick(() => {
+              this.toggleLanguage();
+            })
+        }
+        .alignItems(HorizontalAlign.Center)
       }
       .width('100%')
 
@@ -126,7 +162,7 @@ struct EraDetail {
           .margin({ right: Sizes.SPACING_MD })
 
         Column() {
-          Text(this.era?.name || '')
+          Text(languageService.getEraName(this.era?.id || ''))
             .fontSize(Sizes.FONT_XXL)
             .fontWeight(FontWeight.Bold)
             .fontColor(Colors.TEXT_ON_PRIMARY)
@@ -152,7 +188,7 @@ struct EraDetail {
     Column() {
       // 实体类型筛选
       Row() {
-        Text('全部')
+        Text(languageService.t('filters.all'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.entityType === 'all' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.entityType === 'all' ? Colors.PRIMARY : 'transparent')
@@ -165,7 +201,7 @@ struct EraDetail {
             this.applyFilter();
           })
 
-        Text('作物')
+        Text(languageService.t('tabs.crops'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.entityType === 'crop' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.entityType === 'crop' ? Colors.PRIMARY : 'transparent')
@@ -178,7 +214,7 @@ struct EraDetail {
             this.applyFilter();
           })
 
-        Text('食物')
+        Text(languageService.t('tabs.foods'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.entityType === 'food' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.entityType === 'food' ? Colors.PRIMARY : 'transparent')
@@ -195,7 +231,7 @@ struct EraDetail {
 
       // 事件类型筛选
       Row() {
-        Text('全部')
+        Text(languageService.t('filters.all'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.eventType === 'all' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.eventType === 'all' ? Colors.PRIMARY : 'transparent')
@@ -208,7 +244,7 @@ struct EraDetail {
             this.applyFilter();
           })
 
-        Text('起源')
+        Text(languageService.t('eventTypes.origin'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.eventType === 'origin' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.eventType === 'origin' ? Colors.PRIMARY : 'transparent')
@@ -221,7 +257,7 @@ struct EraDetail {
             this.applyFilter();
           })
 
-        Text('传播')
+        Text(languageService.t('eventTypes.spread'))
           .fontSize(Sizes.FONT_XS)
           .fontColor(this.filter.eventType === 'spread' ? Colors.TEXT_ON_PRIMARY : Colors.TEXT_SECONDARY)
           .backgroundColor(this.filter.eventType === 'spread' ? Colors.PRIMARY : 'transparent')
@@ -243,7 +279,7 @@ struct EraDetail {
   @Builder
   SearchBar() {
     Row() {
-      TextInput({ placeholder: '搜索作物、食物或地点...', text: this.filter.keyword })
+      TextInput({ placeholder: languageService.t('placeholders.searchTimeline'), text: this.filter.keyword })
         .layoutWeight(1)
         .height(40)
         .backgroundColor('#F5F5F5')
@@ -262,7 +298,9 @@ struct EraDetail {
   @Builder
   StatsBar() {
     Row() {
-      Text(`共 ${this.filteredEvents.length} 个事件`)
+      Text(this.currentLang === 'en'
+        ? `${this.filteredEvents.length} events`
+        : `共 ${this.filteredEvents.length} 个事件`)
         .fontSize(Sizes.FONT_XS)
         .fontColor(Colors.TEXT_SECONDARY)
     }
@@ -276,7 +314,7 @@ struct EraDetail {
   TimelineList() {
     if (this.filteredEvents.length === 0) {
       Column() {
-        Text('暂无符合条件的事件')
+        Text(languageService.t('empty.noEvents'))
           .fontSize(Sizes.FONT_MD)
           .fontColor(Colors.TEXT_HINT)
       }
@@ -466,20 +504,20 @@ struct EraDetail {
       // 内容
       Column() {
         if (this.selectedEvent?.eventType === 'origin') {
-          this.DetailRow('起源地', `📍 ${this.selectedEvent?.location || ''}`, this.selectedEvent?.locationId)
+          this.DetailRow(languageService.t('labels.originLocation'), `📍 ${this.selectedEvent?.location || ''}`, this.selectedEvent?.locationId)
         } else {
-          this.DetailRow('传播路径',
+          this.DetailRow(languageService.t('labels.spreadPath'),
             `${this.selectedEvent?.fromLocation || ''} → ${this.selectedEvent?.toLocation || ''}`,
             undefined)
 
           if (this.selectedEvent?.via) {
-            this.DetailRow('传播途径', this.selectedEvent.via, undefined)
+            this.DetailRow(languageService.t('labels.spreadVia'), this.selectedEvent.via, undefined)
           }
         }
 
         // 简介
         Column() {
-          Text('简介')
+          Text(languageService.t('labels.description'))
             .fontSize(Sizes.FONT_XS)
             .fontColor(Colors.TEXT_HINT)
 
@@ -497,7 +535,9 @@ struct EraDetail {
       .padding(Sizes.SPACING_LG)
 
       // 底部按钮
-      Button(`查看${this.selectedEvent?.entityType === 'crop' ? '作物' : '食物'}详情 →`)
+      Button(this.selectedEvent?.entityType === 'crop'
+        ? languageService.t('buttons.viewCropDetails')
+        : languageService.t('buttons.viewFoodDetails'))
         .width('90%')
         .height(44)
         .fontSize(Sizes.FONT_MD)
