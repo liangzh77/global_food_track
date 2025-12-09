@@ -24,6 +24,12 @@ export const LOCATIONS_DATA: Location[] = [
   { id: 'pakistan', name: '巴基斯坦', nameEn: 'Pakistan', type: 'country', parent: 'asia' },
   { id: 'philippines', name: '菲律宾', nameEn: 'Philippines', type: 'country', parent: 'asia' },
   { id: 'sri-lanka', name: '斯里兰卡', nameEn: 'Sri Lanka', type: 'country', parent: 'asia' },
+  { id: 'taiwan', name: '台湾', nameEn: 'Taiwan', type: 'country', parent: 'asia' },
+  { id: 'singapore', name: '新加坡', nameEn: 'Singapore', type: 'country', parent: 'asia' },
+  { id: 'bangladesh', name: '孟加拉国', nameEn: 'Bangladesh', type: 'country', parent: 'asia' },
+
+  // 亚洲地区
+  { id: 'hong kong', name: '香港', nameEn: 'Hong Kong', type: 'region', parent: 'china' },
 
   // 欧洲国家
   { id: 'italy', name: '意大利', nameEn: 'Italy', type: 'country', parent: 'europe' },
@@ -50,8 +56,11 @@ export const LOCATIONS_DATA: Location[] = [
   { id: 'brazil', name: '巴西', nameEn: 'Brazil', type: 'country', parent: 'south-america' },
   { id: 'peru', name: '秘鲁', nameEn: 'Peru', type: 'country', parent: 'south-america' },
   { id: 'argentina', name: '阿根廷', nameEn: 'Argentina', type: 'country', parent: 'south-america' },
+  { id: 'uruguay', name: '乌拉圭', nameEn: 'Uruguay', type: 'country', parent: 'south-america' },
   { id: 'colombia', name: '哥伦比亚', nameEn: 'Colombia', type: 'country', parent: 'south-america' },
   { id: 'ecuador', name: '厄瓜多尔', nameEn: 'Ecuador', type: 'country', parent: 'south-america' },
+  { id: 'chile', name: '智利', nameEn: 'Chile', type: 'country', parent: 'south-america' },
+  { id: 'venezuela', name: '委内瑞拉', nameEn: 'Venezuela', type: 'country', parent: 'south-america' },
 
   // 非洲国家
   { id: 'egypt', name: '埃及', nameEn: 'Egypt', type: 'country', parent: 'africa' },
@@ -62,6 +71,10 @@ export const LOCATIONS_DATA: Location[] = [
   { id: 'ghana', name: '加纳', nameEn: 'Ghana', type: 'country', parent: 'africa' },
   { id: 'morocco', name: '摩洛哥', nameEn: 'Morocco', type: 'country', parent: 'africa' },
   { id: 'nigeria', name: '尼日利亚', nameEn: 'Nigeria', type: 'country', parent: 'africa' },
+  { id: 'algeria', name: '阿尔及利亚', nameEn: 'Algeria', type: 'country', parent: 'africa' },
+  { id: 'tunisia', name: '突尼斯', nameEn: 'Tunisia', type: 'country', parent: 'africa' },
+  { id: 'eritrea', name: '厄立特里亚', nameEn: 'Eritrea', type: 'country', parent: 'africa' },
+  { id: 'senegal', name: '塞内加尔', nameEn: 'Senegal', type: 'country', parent: 'africa' },
 
   // 中东国家
   { id: 'turkey', name: '土耳其', nameEn: 'Turkey', type: 'country', parent: 'middle-east' },
