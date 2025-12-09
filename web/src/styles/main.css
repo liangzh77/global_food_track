@@ -186,6 +186,8 @@ body {
   margin: calc(-1 * var(--spacing-lg)) var(--spacing-md) var(--spacing-md);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   height: 48px;
+  position: relative;
+  z-index: 10;
 }
 
 .search-bar input {
